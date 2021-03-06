@@ -63,10 +63,19 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Brgy_36() As System.Drawing.Bitmap
+        Friend ReadOnly Property Brgy36() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("Brgy-36", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("Brgy36", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Data Source=sd_sql_training;Persist Security Info=True;User ID=sa;Password=81at84;Initial Catalog=MIS.
+        '''</summary>
+        Friend ReadOnly Property ConnectionString() As String
+            Get
+                Return ResourceManager.GetString("ConnectionString", resourceCulture)
             End Get
         End Property
     End Module

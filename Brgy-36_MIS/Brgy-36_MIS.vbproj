@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
+    <Import Include="Microsoft.VisualBasic.ApplicationServices" />
     <Import Include="System" />
     <Import Include="System.Collections" />
     <Import Include="System.Collections.Generic" />
@@ -95,6 +96,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Forms\F_HouseholdList.Designer.vb">
+      <DependentUpon>F_HouseholdList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_HouseholdList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\F_Login.Designer.vb">
       <DependentUpon>F_Login.vb</DependentUpon>
     </Compile>
@@ -107,14 +114,27 @@
     <Compile Include="Forms\F_Resident.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\F_ResidentsRecord.Designer.vb">
+      <DependentUpon>F_ResidentsRecord.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_ResidentsRecord.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\F_UserResitration.Designer.vb">
+      <DependentUpon>F_UserResitration.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_UserResitration.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\_mdi_MIS.Designer.vb">
       <DependentUpon>_mdi_MIS.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\_mdi_MIS.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\M_Connection.vb" />
+    <Compile Include="Modules\M_DataProcess.vb" />
     <Compile Include="Modules\M_Functions.vb" />
+    <Compile Include="Modules\M_Handler.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -132,11 +152,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\F_HouseholdList.resx">
+      <DependentUpon>F_HouseholdList.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_Login.resx">
       <DependentUpon>F_Login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_Resident.resx">
       <DependentUpon>F_Resident.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_ResidentsRecord.resx">
+      <DependentUpon>F_ResidentsRecord.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_UserResitration.resx">
+      <DependentUpon>F_UserResitration.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\_mdi_MIS.resx">
       <DependentUpon>_mdi_MIS.vb</DependentUpon>
@@ -149,6 +178,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

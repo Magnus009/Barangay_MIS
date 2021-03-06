@@ -71,19 +71,19 @@ Partial Class _mdi_MIS
         Me.mnuResidents.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewResidentToolStripMenuItem, Me.AddResidentToolStripMenuItem1})
         Me.mnuResidents.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder
         Me.mnuResidents.Name = "mnuResidents"
-        Me.mnuResidents.Size = New System.Drawing.Size(80, 20)
+        Me.mnuResidents.Size = New System.Drawing.Size(76, 20)
         Me.mnuResidents.Text = "&RESIDENTS"
         '
         'ViewResidentToolStripMenuItem
         '
         Me.ViewResidentToolStripMenuItem.Name = "ViewResidentToolStripMenuItem"
-        Me.ViewResidentToolStripMenuItem.Size = New System.Drawing.Size(192, 22)
+        Me.ViewResidentToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
         Me.ViewResidentToolStripMenuItem.Text = "View Resident's Records"
         '
         'AddResidentToolStripMenuItem1
         '
         Me.AddResidentToolStripMenuItem1.Name = "AddResidentToolStripMenuItem1"
-        Me.AddResidentToolStripMenuItem1.Size = New System.Drawing.Size(192, 22)
+        Me.AddResidentToolStripMenuItem1.Size = New System.Drawing.Size(200, 22)
         Me.AddResidentToolStripMenuItem1.Text = "Add Resident"
         '
         'mnuOfficials
@@ -96,153 +96,153 @@ Partial Class _mdi_MIS
         'ViewOfficialsRecordsToolStripMenuItem
         '
         Me.ViewOfficialsRecordsToolStripMenuItem.Name = "ViewOfficialsRecordsToolStripMenuItem"
-        Me.ViewOfficialsRecordsToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
+        Me.ViewOfficialsRecordsToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
         Me.ViewOfficialsRecordsToolStripMenuItem.Text = "View Official's Records"
         '
         'UpdateOfficialsToolStripMenuItem
         '
         Me.UpdateOfficialsToolStripMenuItem.Name = "UpdateOfficialsToolStripMenuItem"
-        Me.UpdateOfficialsToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
+        Me.UpdateOfficialsToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
         Me.UpdateOfficialsToolStripMenuItem.Text = "Update Officials"
         '
         'mnuCases
         '
         Me.mnuCases.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ComplaintsToolStripMenuItem, Me.IncidentsToolStripMenuItem, Me.BlotterToolStripMenuItem})
         Me.mnuCases.Name = "mnuCases"
-        Me.mnuCases.Size = New System.Drawing.Size(55, 20)
+        Me.mnuCases.Size = New System.Drawing.Size(53, 20)
         Me.mnuCases.Text = "&CASES"
         '
         'ComplaintsToolStripMenuItem
         '
         Me.ComplaintsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewComplaintsToolStripMenuItem, Me.FileComplaintsToolStripMenuItem})
         Me.ComplaintsToolStripMenuItem.Name = "ComplaintsToolStripMenuItem"
-        Me.ComplaintsToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
+        Me.ComplaintsToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.ComplaintsToolStripMenuItem.Text = "Complaints"
         '
         'ViewComplaintsToolStripMenuItem
         '
         Me.ViewComplaintsToolStripMenuItem.Name = "ViewComplaintsToolStripMenuItem"
-        Me.ViewComplaintsToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.ViewComplaintsToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
         Me.ViewComplaintsToolStripMenuItem.Text = "View Complaints"
         '
         'FileComplaintsToolStripMenuItem
         '
         Me.FileComplaintsToolStripMenuItem.Name = "FileComplaintsToolStripMenuItem"
-        Me.FileComplaintsToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.FileComplaintsToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
         Me.FileComplaintsToolStripMenuItem.Text = "File Complaint"
         '
         'IncidentsToolStripMenuItem
         '
         Me.IncidentsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewIncidentsToolStripMenuItem, Me.ReportIncidentToolStripMenuItem})
         Me.IncidentsToolStripMenuItem.Name = "IncidentsToolStripMenuItem"
-        Me.IncidentsToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
+        Me.IncidentsToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.IncidentsToolStripMenuItem.Text = "Incidents"
         '
         'ViewIncidentsToolStripMenuItem
         '
         Me.ViewIncidentsToolStripMenuItem.Name = "ViewIncidentsToolStripMenuItem"
-        Me.ViewIncidentsToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
+        Me.ViewIncidentsToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.ViewIncidentsToolStripMenuItem.Text = "View Incidents"
         '
         'ReportIncidentToolStripMenuItem
         '
         Me.ReportIncidentToolStripMenuItem.Name = "ReportIncidentToolStripMenuItem"
-        Me.ReportIncidentToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
+        Me.ReportIncidentToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.ReportIncidentToolStripMenuItem.Text = "Report Incident"
         '
         'BlotterToolStripMenuItem
         '
         Me.BlotterToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewBlotterrsToolStripMenuItem, Me.FileBlotterToolStripMenuItem})
         Me.BlotterToolStripMenuItem.Name = "BlotterToolStripMenuItem"
-        Me.BlotterToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
+        Me.BlotterToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.BlotterToolStripMenuItem.Text = "Blotters"
         '
         'ViewBlotterrsToolStripMenuItem
         '
         Me.ViewBlotterrsToolStripMenuItem.Name = "ViewBlotterrsToolStripMenuItem"
-        Me.ViewBlotterrsToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
+        Me.ViewBlotterrsToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
         Me.ViewBlotterrsToolStripMenuItem.Text = "View Blotterrs"
         '
         'FileBlotterToolStripMenuItem
         '
         Me.FileBlotterToolStripMenuItem.Name = "FileBlotterToolStripMenuItem"
-        Me.FileBlotterToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
+        Me.FileBlotterToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
         Me.FileBlotterToolStripMenuItem.Text = "File Blotter"
         '
         'mnuCertificates
         '
         Me.mnuCertificates.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BarangayClearanceToolStripMenuItem, Me.BarangayIndigencyToolStripMenuItem, Me.BarangayCertificatesToolStripMenuItem})
         Me.mnuCertificates.Name = "mnuCertificates"
-        Me.mnuCertificates.Size = New System.Drawing.Size(94, 20)
+        Me.mnuCertificates.Size = New System.Drawing.Size(90, 20)
         Me.mnuCertificates.Text = "C&ERTIFICATES"
         '
         'BarangayClearanceToolStripMenuItem
         '
         Me.BarangayClearanceToolStripMenuItem.Name = "BarangayClearanceToolStripMenuItem"
-        Me.BarangayClearanceToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.BarangayClearanceToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
         Me.BarangayClearanceToolStripMenuItem.Text = "Barangay Clearance"
         '
         'BarangayIndigencyToolStripMenuItem
         '
         Me.BarangayIndigencyToolStripMenuItem.Name = "BarangayIndigencyToolStripMenuItem"
-        Me.BarangayIndigencyToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.BarangayIndigencyToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
         Me.BarangayIndigencyToolStripMenuItem.Text = "Barangay Indigency"
         '
         'BarangayCertificatesToolStripMenuItem
         '
         Me.BarangayCertificatesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FireIncidentToolStripMenuItem, Me.COVID19RelatedToolStripMenuItem})
         Me.BarangayCertificatesToolStripMenuItem.Name = "BarangayCertificatesToolStripMenuItem"
-        Me.BarangayCertificatesToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.BarangayCertificatesToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
         Me.BarangayCertificatesToolStripMenuItem.Text = "Barangay Certificates"
         '
         'FireIncidentToolStripMenuItem
         '
         Me.FireIncidentToolStripMenuItem.Name = "FireIncidentToolStripMenuItem"
-        Me.FireIncidentToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
+        Me.FireIncidentToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.FireIncidentToolStripMenuItem.Text = "Fire Incident"
         '
         'COVID19RelatedToolStripMenuItem
         '
         Me.COVID19RelatedToolStripMenuItem.Name = "COVID19RelatedToolStripMenuItem"
-        Me.COVID19RelatedToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
+        Me.COVID19RelatedToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.COVID19RelatedToolStripMenuItem.Text = "COVID-19 Related"
         '
         'mnuInventories
         '
         Me.mnuInventories.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EquipmentsPropertiesToolStripMenuItem})
         Me.mnuInventories.Name = "mnuInventories"
-        Me.mnuInventories.Size = New System.Drawing.Size(92, 20)
+        Me.mnuInventories.Size = New System.Drawing.Size(89, 20)
         Me.mnuInventories.Text = "&INVENTORIES"
         '
         'EquipmentsPropertiesToolStripMenuItem
         '
         Me.EquipmentsPropertiesToolStripMenuItem.Name = "EquipmentsPropertiesToolStripMenuItem"
-        Me.EquipmentsPropertiesToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
+        Me.EquipmentsPropertiesToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
         Me.EquipmentsPropertiesToolStripMenuItem.Text = "Equipments/Properties"
         '
         'mnuReports
         '
         Me.mnuReports.Name = "mnuReports"
-        Me.mnuReports.Size = New System.Drawing.Size(70, 20)
+        Me.mnuReports.Size = New System.Drawing.Size(66, 20)
         Me.mnuReports.Text = "&REPORTS"
         '
         'mnuMapping
         '
         Me.mnuMapping.Name = "mnuMapping"
-        Me.mnuMapping.Size = New System.Drawing.Size(70, 20)
+        Me.mnuMapping.Size = New System.Drawing.Size(72, 20)
         Me.mnuMapping.Text = "&MAPPING"
         '
         'mnuMaintenance
         '
         Me.mnuMaintenance.Name = "mnuMaintenance"
-        Me.mnuMaintenance.Size = New System.Drawing.Size(100, 20)
+        Me.mnuMaintenance.Size = New System.Drawing.Size(102, 20)
         Me.mnuMaintenance.Text = "M&AINTENANCE"
         '
         'mnuLogout
         '
         Me.mnuLogout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
         Me.mnuLogout.Name = "mnuLogout"
-        Me.mnuLogout.Size = New System.Drawing.Size(66, 20)
+        Me.mnuLogout.Size = New System.Drawing.Size(65, 20)
         Me.mnuLogout.Text = "&LOGOUT"
         '
         '_mdi_MIS
@@ -250,7 +250,7 @@ Partial Class _mdi_MIS
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.BackgroundImage = Global.Brgy_36_MIS.My.Resources.Resources.Brgy_36
+        Me.BackgroundImage = Global.Brgy_36_MIS.My.Resources.Resources.Brgy36
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(737, 558)
         Me.Controls.Add(Me.mnuMIS)

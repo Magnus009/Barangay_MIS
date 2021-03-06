@@ -92,7 +92,8 @@ Partial Class F_Login
         Me.txtUser.Multiline = True
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(266, 26)
-        Me.txtUser.TabIndex = 1
+        Me.txtUser.TabIndex = 0
+        Me.txtUser.Tag = "*Name"
         Me.txtUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtPassword
@@ -105,7 +106,8 @@ Partial Class F_Login
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
         Me.txtPassword.Size = New System.Drawing.Size(266, 26)
-        Me.txtPassword.TabIndex = 2
+        Me.txtPassword.TabIndex = 1
+        Me.txtPassword.Tag = "*Password"
         Me.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'PictureBox1
@@ -167,12 +169,12 @@ Partial Class F_Login
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(729, 462)
         Me.ControlBox = False
+        Me.Controls.Add(Me.txtUser)
         Me.Controls.Add(Me.chkShowHide)
         Me.Controls.Add(Me.lnkRegister)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.lnkForgotPass)
         Me.Controls.Add(Me.txtPassword)
-        Me.Controls.Add(Me.txtUser)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnClose)

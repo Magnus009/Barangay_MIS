@@ -78,18 +78,24 @@ Public Class _mdi_MIS
     Private m_ChildFormNumber As Integer
 
     Private Sub _mdi_MIS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        MsgBox(Application.StartupPath())
+        'MsgBox(Application.StartupPath())
     End Sub
 
     Private Sub AddResidentToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AddResidentToolStripMenuItem1.Click
         F_Resident.MdiParent = Me
+        F_Resident.intTaskMode = 1
         F_Resident.Show()
     End Sub
 
     Private Sub mnuLogout_Click(sender As Object, e As EventArgs) Handles mnuLogout.Click
-        strUserName = ""
-        intUserLevel = Nothing
+        UserName = ""
+        UserLevel = ""
         Me.Hide()
         F_Login.Show()
+    End Sub
+
+    Private Sub ViewResidentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewResidentToolStripMenuItem.Click
+        F_ResidentsRecord.MdiParent = Me
+        F_ResidentsRecord.Show()
     End Sub
 End Class
