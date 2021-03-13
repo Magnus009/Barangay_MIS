@@ -96,12 +96,14 @@ Partial Class F_Resident
         Me.Label48 = New System.Windows.Forms.Label()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
+        Me.lblDeleted = New System.Windows.Forms.Label()
         Me.grpPersonal.SuspendLayout()
         Me.grpHouseHold.SuspendLayout()
         Me.SuspendLayout()
         '
         'grpPersonal
         '
+        Me.grpPersonal.Controls.Add(Me.lblDeleted)
         Me.grpPersonal.Controls.Add(Me.Label26)
         Me.grpPersonal.Controls.Add(Me.Label25)
         Me.grpPersonal.Controls.Add(Me.Label24)
@@ -450,7 +452,7 @@ Partial Class F_Resident
         Me.cboSex.Name = "cboSex"
         Me.cboSex.Size = New System.Drawing.Size(76, 24)
         Me.cboSex.TabIndex = 9
-        Me.cboSex.Tag = "IN:Sex*"
+        Me.cboSex.Tag = "IN;Sex*"
         '
         'txtAge
         '
@@ -494,7 +496,7 @@ Partial Class F_Resident
         Me.dtpBirthdate.Name = "dtpBirthdate"
         Me.dtpBirthdate.Size = New System.Drawing.Size(117, 21)
         Me.dtpBirthdate.TabIndex = 7
-        Me.dtpBirthdate.Tag = "IN:Date of  Birth*"
+        Me.dtpBirthdate.Tag = "IN;Date of  Birth*"
         '
         'txtDisability
         '
@@ -552,7 +554,7 @@ Partial Class F_Resident
         Me.txtCitizenship.Name = "txtCitizenship"
         Me.txtCitizenship.Size = New System.Drawing.Size(158, 20)
         Me.txtCitizenship.TabIndex = 10
-        Me.txtCitizenship.Tag = "IN:Citizenship*"
+        Me.txtCitizenship.Tag = "IN;Citizenship*"
         Me.txtCitizenship.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label8
@@ -575,7 +577,7 @@ Partial Class F_Resident
         Me.txtBirthPlace.Name = "txtBirthPlace"
         Me.txtBirthPlace.Size = New System.Drawing.Size(158, 20)
         Me.txtBirthPlace.TabIndex = 6
-        Me.txtBirthPlace.Tag = "IN:Birth Place*"
+        Me.txtBirthPlace.Tag = "IN;Birth Place*"
         Me.txtBirthPlace.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label7
@@ -624,7 +626,7 @@ Partial Class F_Resident
         Me.txtFName.Name = "txtFName"
         Me.txtFName.Size = New System.Drawing.Size(185, 20)
         Me.txtFName.TabIndex = 3
-        Me.txtFName.Tag = "IN:First Name*"
+        Me.txtFName.Tag = "IN;First Name*"
         Me.txtFName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtLName
@@ -637,7 +639,7 @@ Partial Class F_Resident
         Me.txtLName.Name = "txtLName"
         Me.txtLName.Size = New System.Drawing.Size(185, 20)
         Me.txtLName.TabIndex = 2
-        Me.txtLName.Tag = "IN:Last Name*"
+        Me.txtLName.Tag = "IN;Last Name*"
         Me.txtLName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
@@ -779,7 +781,7 @@ Partial Class F_Resident
         Me.txtHouseNo.Name = "txtHouseNo"
         Me.txtHouseNo.Size = New System.Drawing.Size(99, 20)
         Me.txtHouseNo.TabIndex = 1
-        Me.txtHouseNo.Tag = "IN:House No.*"
+        Me.txtHouseNo.Tag = "IN;House No.*"
         Me.txtHouseNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btnHouseList
@@ -912,7 +914,7 @@ Partial Class F_Resident
         Me.txtProvince.Name = "txtProvince"
         Me.txtProvince.Size = New System.Drawing.Size(197, 20)
         Me.txtProvince.TabIndex = 6
-        Me.txtProvince.Tag = "IN:Province*"
+        Me.txtProvince.Tag = "IN;Province*"
         Me.txtProvince.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label27
@@ -946,7 +948,7 @@ Partial Class F_Resident
         Me.cboRole.Name = "cboRole"
         Me.cboRole.Size = New System.Drawing.Size(118, 24)
         Me.cboRole.TabIndex = 4
-        Me.cboRole.Tag = "IN:Role*"
+        Me.cboRole.Tag = "IN;Role*"
         '
         'txtHouseContactNo
         '
@@ -981,7 +983,7 @@ Partial Class F_Resident
         Me.txtMunicipality.Name = "txtMunicipality"
         Me.txtMunicipality.Size = New System.Drawing.Size(182, 20)
         Me.txtMunicipality.TabIndex = 5
-        Me.txtMunicipality.Tag = "IN:Municipality*"
+        Me.txtMunicipality.Tag = "IN;Municipality*"
         Me.txtMunicipality.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label45
@@ -1004,7 +1006,7 @@ Partial Class F_Resident
         Me.txtStreet.Name = "txtStreet"
         Me.txtStreet.Size = New System.Drawing.Size(223, 20)
         Me.txtStreet.TabIndex = 3
-        Me.txtStreet.Tag = "IN:Street*"
+        Me.txtStreet.Tag = "IN;Street*"
         Me.txtStreet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label46
@@ -1027,7 +1029,7 @@ Partial Class F_Resident
         Me.txtBarangay.Name = "txtBarangay"
         Me.txtBarangay.Size = New System.Drawing.Size(199, 20)
         Me.txtBarangay.TabIndex = 2
-        Me.txtBarangay.Tag = "IN:Barangay*"
+        Me.txtBarangay.Tag = "IN;Barangay*"
         Me.txtBarangay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label47
@@ -1072,6 +1074,20 @@ Partial Class F_Resident
         Me.btnSave.Text = "&SAVE"
         Me.btnSave.UseVisualStyleBackColor = True
         '
+        'lblDeleted
+        '
+        Me.lblDeleted.BackColor = System.Drawing.Color.Red
+        Me.lblDeleted.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblDeleted.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDeleted.ForeColor = System.Drawing.Color.White
+        Me.lblDeleted.Location = New System.Drawing.Point(232, 19)
+        Me.lblDeleted.Name = "lblDeleted"
+        Me.lblDeleted.Size = New System.Drawing.Size(187, 36)
+        Me.lblDeleted.TabIndex = 47
+        Me.lblDeleted.Text = "DELETED"
+        Me.lblDeleted.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblDeleted.Visible = False
+        '
         'F_Resident
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
@@ -1083,7 +1099,7 @@ Partial Class F_Resident
         Me.Controls.Add(Me.grpHouseHold)
         Me.Controls.Add(Me.grpPersonal)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -1172,4 +1188,5 @@ Partial Class F_Resident
     Friend WithEvents btnClear As System.Windows.Forms.Button
     Friend WithEvents btnSave As System.Windows.Forms.Button
     Friend WithEvents btnHouseList As System.Windows.Forms.Button
+    Friend WithEvents lblDeleted As System.Windows.Forms.Label
 End Class

@@ -12,7 +12,7 @@
             strQuery = "SELECT R.Code, R.FamilyName, R.GivenName, R.MiddleName, R.ExtensionName, R.BirthPlace, R.BirthDate," & vbCrLf
             strQuery &= "R.Gender, R.Citizenship, R.CivilStatus, R.ContactNo, R.Occupation, R.DateOfCaseStudy," & vbCrLf
             strQuery &= "R.SamahanID, R.isVoter, R.inHabitant, R.Indigent, R.isPWD, R.Disabilities," & vbCrLf
-            strQuery &= "H.HouseholdNo, H.Barangay, H.Street, HM.Role, H.Municipality, H.Province, H.ContactNo FROM Residents R" & vbCrLf
+            strQuery &= "H.HouseholdNo, H.Barangay, H.Street, HM.Role, H.Municipality, H.Province, H.ContactNo, R.DeletedDate FROM Residents R" & vbCrLf
             strQuery &= "LEFT JOIN HouseholdMember HM ON R.Code = HM.ResidentCode" & vbCrLf
             strQuery &= "LEFT JOIN Household H ON HM.HouseholdNo = H.HouseholdNo" & vbCrLf
             strQuery &= "WHERE R.Code = '" & strResidentCode & "'"
@@ -47,6 +47,10 @@
                 txtMunicipality.Text = fn_checkNull(.Tables(0).Rows(0)(23))
                 txtProvince.Text = fn_checkNull(.Tables(0).Rows(0)(24))
                 txtHouseContactNo.Text = fn_checkNull(.Tables(0).Rows(0)(25))
+
+                If Not IsDBNull(.Tables(0).Rows(0)("DeletedDate")) Then
+                    lblDeleted.Visible = True
+                End If
             End With
             Me.MdiParent = _mdi_MIS
             Me.Show()
@@ -57,6 +61,15 @@
 
     Private Sub F_Resident_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         formMode(intTaskMode, Me)
+
+        btnHouseList.Visible = False
+        If UserLevel <> "0" Then
+            btnSave.Visible = False
+            btnClear.Visible = False
+        Else
+            btnClear.Text = IIf(lblDeleted.Visible, "&RETRIVE", "&DELETE")
+        End If
+
         Call subDisabled()
         strCompleteAddress(0) = txtHouseNo.Text & " "
         strCompleteAddress(1) = txtStreet.Text & ", "
@@ -87,7 +100,6 @@
                 strRequire = ""
             Else
                 If intTaskMode = 1 Then
-                    strQuery = ""
                     strQuery = "EXECUTE sp_registerResident " & vbCrLf
                     strQuery &= "'" & txtLName.Text & "'," & vbCrLf
                     strQuery &= "'" & txtFName.Text & "'," & vbCrLf
@@ -122,6 +134,9 @@
                     Else
                         MsgBox("Resident Registered Failed", MsgBoxStyle.Critical, "Registration")
                     End If
+                ElseIf intTaskMode = 2 Then
+                    strQuery = ""
+
 
                 End If
             End If
@@ -183,7 +198,7 @@
     End Sub
 
     Private Sub btnHouseList_Click(sender As Object, e As EventArgs) Handles btnHouseList.Click
-        F_HouseholdList.ShowDialog()
+        F_HouseholdList.Show()
     End Sub
 
     Public Sub getHouseInfo(strHouseNo As String)
@@ -208,6 +223,19 @@
                     Call subCompleteAddress()
                 End If
             End With
+        End If
+    End Sub
+
+    Private Sub txtHouseNo_TextChanged(sender As Object, e As EventArgs) Handles txtHouseNo.TextChanged
+        If txtHouseNo.Text = "" Then
+            txtBarangay.Text = ""
+            txtStreet.Text = ""
+            txtMunicipality.Text = ""
+            txtProvince.Text = ""
+            txtHouseContactNo.Text = ""
+            cboRole.SelectedIndex = 0
+            cboRole.Enabled = True
+            txtCompleteAdd.Text = ""
         End If
     End Sub
 End Class

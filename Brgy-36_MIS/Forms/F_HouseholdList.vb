@@ -41,11 +41,16 @@
 
     Private Sub datHouses_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datHouses.CellContentClick
         If e.ColumnIndex = 4 Then
+            Dim strHouseNo As String = datHouses.Rows(e.RowIndex).Cells(0).Value
             If MsgBox("Do you want to select this house as your reference?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "SELECT HOUSE") = vbYes Then
-                F_Resident.txtHouseNo.Text = datHouses.Rows(e.RowIndex).Cells(0).Value
                 Me.Close()
-                F_Resident.getHouseInfo(datHouses.Rows(e.RowIndex).Cells(0).Value)
-                Call F_Resident.subCompleteAddress()
+
+                With F_Resident
+                    .txtHouseNo.Text = strHouseNo
+                    .getHouseInfo(strHouseNo)
+                    .cboRole.SelectedIndex = 2
+                    .cboRole.Enabled = False
+                End With
             End If
         End If
     End Sub

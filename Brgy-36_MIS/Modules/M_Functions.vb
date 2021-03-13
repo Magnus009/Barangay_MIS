@@ -144,6 +144,20 @@ errClear:
                             Else
                                 ctrl.Enabled = blnWrite
                             End If
+                        ElseIf InStr(ctrl.Tag, "IN;") Then
+                            If ctrl.GetType() = GetType(TextBox) Then
+                                Dim txt As TextBox
+                                txt = ctrl
+                                txt.ReadOnly = True
+                                txt.BackColor = Color.White
+                            ElseIf ctrl.GetType() = GetType(MaskedTextBox) Then
+                                Dim mtxt As MaskedTextBox
+                                mtxt = ctrl
+                                mtxt.ReadOnly = True
+                                mtxt.BackColor = Color.White
+                            Else
+                                ctrl.Enabled = False
+                            End If
                         End If
 
                         If ctrl.Tag = "reqSign" Then

@@ -1,15 +1,14 @@
 ﻿Public Class F_Login
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        Dim dsRecord As New DataSet
+        Dim dtUser As New DataTable
+
         strRequire = "" : blnRequired = False
         If fn_CheckRequire(Me) Then
             MsgBox("Please input users:" + vbCrLf + strRequire, MsgBoxStyle.Exclamation, "LOGIN")
         Else
-            strQuery += "SELECT * FROM M_UserAccounts" & vbCrLf
+            strQuery = "SELECT * FROM M_UserAccounts" & vbCrLf
             strQuery += "WHERE UserName COLLATE Latin1_General_CS_AS = '" + txtUser.Text + "'"
-            dsRecord = SQL_SELECT(strQuery)
-            Dim dtUser As New DataTable
-            dtUser = dsRecord.Tables(0)
+            dtUser = SQL_SELECT(strQuery).Tables(0)
 
             With dtUser
                 If .Rows.Count > 0 Then
@@ -50,7 +49,7 @@
     End Sub
     Private Sub F_Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim App As AppDomain = AppDomain.CurrentDomain
-        AddHandler App.UnhandledException, AddressOf GlobalException_Handler
+        'AddHandler App.UnhandledException, AddressOf GlobalException_Handler
     End Sub
 
 
