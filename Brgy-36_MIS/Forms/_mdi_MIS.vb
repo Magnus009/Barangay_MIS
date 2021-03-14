@@ -98,4 +98,42 @@ Public Class _mdi_MIS
         F_ResidentsRecord.MdiParent = Me
         F_ResidentsRecord.Show()
     End Sub
+
+    Private Sub ViewOfficialsRecordsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewOfficialsRecordsToolStripMenuItem.Click
+        F_Officials.MdiParent = Me
+        F_Officials.Show()
+    End Sub
+
+    Private Sub UpdateOfficialsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UpdateOfficialsToolStripMenuItem.Click
+    End Sub
+
+    Private Sub ViewComplaintsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewComplaintsToolStripMenuItem.Click
+        F_CasesRecords.MdiParent = Me
+        F_CasesRecords.Show()
+    End Sub
+
+    Private Sub ViewIncidentsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewIncidentsToolStripMenuItem.Click
+        F_CasesRecords.MdiParent = Me
+        F_CasesRecords.Show()
+    End Sub
+
+    Private Sub ViewBlotterrsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewBlotterrsToolStripMenuItem.Click
+        F_CasesRecords.MdiParent = Me
+        F_CasesRecords.Show()
+    End Sub
+
+    Private Sub FileComplaintsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FileComplaintsToolStripMenuItem.Click
+        F_CaseFile.MdiParent = Me
+        F_CaseFile.Show()
+    End Sub
+
+    Private Sub ReportIncidentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportIncidentToolStripMenuItem.Click
+        F_CaseFile.MdiParent = Me
+        F_CaseFile.Show()
+    End Sub
+
+    Private Sub FileBlotterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FileBlotterToolStripMenuItem.Click
+        F_CaseFile.MdiParent = Me
+        F_CaseFile.Show()
+    End Sub
 End Class

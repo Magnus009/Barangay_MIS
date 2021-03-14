@@ -96,6 +96,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Forms\F_CaseFile.Designer.vb">
+      <DependentUpon>F_CaseFile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_CaseFile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\F_CasesRecords.Designer.vb">
+      <DependentUpon>F_CasesRecords.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_CasesRecords.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\F_CurrentOfficials.Designer.vb">
+      <DependentUpon>F_CurrentOfficials.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_CurrentOfficials.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\F_HouseholdList.Designer.vb">
       <DependentUpon>F_HouseholdList.vb</DependentUpon>
     </Compile>
@@ -106,6 +124,18 @@
       <DependentUpon>F_Login.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\F_Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\F_Officials.Designer.vb">
+      <DependentUpon>F_Officials.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_Officials.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\F_PeopleInvolved.Designer.vb">
+      <DependentUpon>F_PeopleInvolved.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_PeopleInvolved.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\F_Resident.Designer.vb">
@@ -152,11 +182,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\F_CaseFile.resx">
+      <DependentUpon>F_CaseFile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_CasesRecords.resx">
+      <DependentUpon>F_CasesRecords.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_CurrentOfficials.resx">
+      <DependentUpon>F_CurrentOfficials.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_HouseholdList.resx">
       <DependentUpon>F_HouseholdList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_Login.resx">
       <DependentUpon>F_Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_Officials.resx">
+      <DependentUpon>F_Officials.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_PeopleInvolved.resx">
+      <DependentUpon>F_PeopleInvolved.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_Resident.resx">
       <DependentUpon>F_Resident.vb</DependentUpon>
