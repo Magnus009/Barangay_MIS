@@ -23,19 +23,18 @@ Partial Class F_CaseFile
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.txtCode = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.lblCaseCode = New System.Windows.Forms.Label()
+        Me.txtIncharge = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtReportedBy = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.dtpIncident = New System.Windows.Forms.DateTimePicker()
-        Me.dtpReported = New System.Windows.Forms.DateTimePicker()
+        Me.dtpReportedDate = New System.Windows.Forms.DateTimePicker()
+        Me.dtpIncidentDate = New System.Windows.Forms.DateTimePicker()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtCaseReport = New System.Windows.Forms.TextBox()
+        Me.lblCaseReport = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.datPeopleInvolved = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -44,12 +43,17 @@ Partial Class F_CaseFile
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.datDocuments = New System.Windows.Forms.DataGridView()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnAttach = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cboStatus = New System.Windows.Forms.ComboBox()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         CType(Me.datPeopleInvolved, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.datDocuments, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -58,32 +62,34 @@ Partial Class F_CaseFile
         '
         Me.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCode.Location = New System.Drawing.Point(148, 12)
-        Me.txtCode.MaxLength = 20
+        Me.txtCode.MaxLength = 10
         Me.txtCode.Name = "txtCode"
+        Me.txtCode.ReadOnly = True
         Me.txtCode.Size = New System.Drawing.Size(118, 21)
-        Me.txtCode.TabIndex = 7
+        Me.txtCode.TabIndex = 0
         Me.txtCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label1
+        'lblCaseCode
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label1.Location = New System.Drawing.Point(64, 14)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(78, 16)
-        Me.Label1.TabIndex = 8
-        Me.Label1.Text = "CASE CODE :"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblCaseCode.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblCaseCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.lblCaseCode.Location = New System.Drawing.Point(16, 14)
+        Me.lblCaseCode.Name = "lblCaseCode"
+        Me.lblCaseCode.Size = New System.Drawing.Size(126, 16)
+        Me.lblCaseCode.TabIndex = 8
+        Me.lblCaseCode.Text = "CASE CODE :"
+        Me.lblCaseCode.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'TextBox1
+        'txtIncharge
         '
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Location = New System.Drawing.Point(148, 66)
-        Me.TextBox1.MaxLength = 20
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(213, 21)
-        Me.TextBox1.TabIndex = 9
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtIncharge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtIncharge.Location = New System.Drawing.Point(148, 66)
+        Me.txtIncharge.MaxLength = 20
+        Me.txtIncharge.Name = "txtIncharge"
+        Me.txtIncharge.Size = New System.Drawing.Size(213, 21)
+        Me.txtIncharge.TabIndex = 4
+        Me.txtIncharge.Tag = "IN;Officer In-charge*"
+        Me.txtIncharge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
         '
@@ -96,15 +102,16 @@ Partial Class F_CaseFile
         Me.Label2.Text = "OFFICIAL IN-CHARGE :"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'TextBox2
+        'txtReportedBy
         '
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox2.Location = New System.Drawing.Point(148, 39)
-        Me.TextBox2.MaxLength = 20
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(213, 21)
-        Me.TextBox2.TabIndex = 11
-        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtReportedBy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtReportedBy.Location = New System.Drawing.Point(148, 39)
+        Me.txtReportedBy.MaxLength = 20
+        Me.txtReportedBy.Name = "txtReportedBy"
+        Me.txtReportedBy.Size = New System.Drawing.Size(213, 21)
+        Me.txtReportedBy.TabIndex = 2
+        Me.txtReportedBy.Tag = "IN;Reported By*"
+        Me.txtReportedBy.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label3
         '
@@ -117,16 +124,6 @@ Partial Class F_CaseFile
         Me.Label3.Text = "REPORTED BY :"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'TextBox3
-        '
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox3.Location = New System.Drawing.Point(509, 12)
-        Me.TextBox3.MaxLength = 20
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(118, 21)
-        Me.TextBox3.TabIndex = 13
-        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -138,25 +135,25 @@ Partial Class F_CaseFile
         Me.Label4.Text = "STATUS :"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'dtpIncident
+        'dtpReportedDate
         '
-        Me.dtpIncident.CustomFormat = "yyyy/MM/dd"
-        Me.dtpIncident.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpIncident.Location = New System.Drawing.Point(509, 39)
-        Me.dtpIncident.Name = "dtpIncident"
-        Me.dtpIncident.ShowCheckBox = True
-        Me.dtpIncident.Size = New System.Drawing.Size(118, 21)
-        Me.dtpIncident.TabIndex = 18
+        Me.dtpReportedDate.CustomFormat = "yyyy/MM/dd"
+        Me.dtpReportedDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpReportedDate.Location = New System.Drawing.Point(509, 39)
+        Me.dtpReportedDate.Name = "dtpReportedDate"
+        Me.dtpReportedDate.Size = New System.Drawing.Size(118, 21)
+        Me.dtpReportedDate.TabIndex = 3
+        Me.dtpReportedDate.Tag = "IN;"
         '
-        'dtpReported
+        'dtpIncidentDate
         '
-        Me.dtpReported.CustomFormat = "yyyy/MM/dd"
-        Me.dtpReported.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpReported.Location = New System.Drawing.Point(509, 66)
-        Me.dtpReported.Name = "dtpReported"
-        Me.dtpReported.ShowCheckBox = True
-        Me.dtpReported.Size = New System.Drawing.Size(118, 21)
-        Me.dtpReported.TabIndex = 17
+        Me.dtpIncidentDate.CustomFormat = "yyyy/MM/dd"
+        Me.dtpIncidentDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpIncidentDate.Location = New System.Drawing.Point(509, 66)
+        Me.dtpIncidentDate.Name = "dtpIncidentDate"
+        Me.dtpIncidentDate.Size = New System.Drawing.Size(118, 21)
+        Me.dtpIncidentDate.TabIndex = 5
+        Me.dtpIncidentDate.Tag = "IN;"
         '
         'Label5
         '
@@ -180,27 +177,28 @@ Partial Class F_CaseFile
         Me.Label6.Text = "DATE OF INCIDENT :"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'TextBox4
+        'txtCaseReport
         '
-        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox4.Location = New System.Drawing.Point(20, 125)
-        Me.TextBox4.MaxLength = 20
-        Me.TextBox4.Multiline = True
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(608, 98)
-        Me.TextBox4.TabIndex = 19
-        Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtCaseReport.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCaseReport.Location = New System.Drawing.Point(20, 125)
+        Me.txtCaseReport.MaxLength = 1000
+        Me.txtCaseReport.Multiline = True
+        Me.txtCaseReport.Name = "txtCaseReport"
+        Me.txtCaseReport.Size = New System.Drawing.Size(608, 98)
+        Me.txtCaseReport.TabIndex = 6
+        Me.txtCaseReport.Tag = "IN:Case Report*"
+        Me.txtCaseReport.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label7
+        'lblCaseReport
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label7.Location = New System.Drawing.Point(17, 106)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(104, 16)
-        Me.Label7.TabIndex = 20
-        Me.Label7.Text = "CASE STATEMENT :"
-        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblCaseReport.AutoSize = True
+        Me.lblCaseReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.lblCaseReport.Location = New System.Drawing.Point(17, 106)
+        Me.lblCaseReport.Name = "lblCaseReport"
+        Me.lblCaseReport.Size = New System.Drawing.Size(87, 16)
+        Me.lblCaseReport.TabIndex = 20
+        Me.lblCaseReport.Text = "CASE REPORT :"
+        Me.lblCaseReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label8
         '
@@ -226,7 +224,7 @@ Partial Class F_CaseFile
         Me.datPeopleInvolved.ReadOnly = True
         Me.datPeopleInvolved.RowHeadersVisible = False
         Me.datPeopleInvolved.Size = New System.Drawing.Size(419, 107)
-        Me.datPeopleInvolved.TabIndex = 22
+        Me.datPeopleInvolved.TabIndex = 7
         '
         'Column1
         '
@@ -272,7 +270,19 @@ Partial Class F_CaseFile
         Me.datDocuments.RowHeadersVisible = False
         Me.datDocuments.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
         Me.datDocuments.Size = New System.Drawing.Size(183, 107)
-        Me.datDocuments.TabIndex = 23
+        Me.datDocuments.TabIndex = 9
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "FILE NAME"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "VIEW"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
         '
         'Label9
         '
@@ -291,7 +301,7 @@ Partial Class F_CaseFile
         Me.btnAdd.Location = New System.Drawing.Point(377, 361)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(62, 27)
-        Me.btnAdd.TabIndex = 25
+        Me.btnAdd.TabIndex = 8
         Me.btnAdd.Text = "&ADD"
         Me.btnAdd.UseVisualStyleBackColor = True
         '
@@ -301,7 +311,7 @@ Partial Class F_CaseFile
         Me.btnAttach.Location = New System.Drawing.Point(514, 361)
         Me.btnAttach.Name = "btnAttach"
         Me.btnAttach.Size = New System.Drawing.Size(114, 27)
-        Me.btnAttach.TabIndex = 26
+        Me.btnAttach.TabIndex = 10
         Me.btnAttach.Text = "A&TTACH FILE"
         Me.btnAttach.UseVisualStyleBackColor = True
         '
@@ -311,27 +321,83 @@ Partial Class F_CaseFile
         Me.btnSave.Location = New System.Drawing.Point(514, 399)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(114, 52)
-        Me.btnSave.TabIndex = 27
+        Me.btnSave.TabIndex = 11
         Me.btnSave.Text = "&SAVE"
         Me.btnSave.UseVisualStyleBackColor = True
         '
-        'Column6
+        'cboStatus
         '
-        Me.Column6.HeaderText = "FILE NAME"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
+        Me.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboStatus.FormattingEnabled = True
+        Me.cboStatus.Items.AddRange(New Object() {"NEW", "ON-GOING", "PENDING", "CLOSED"})
+        Me.cboStatus.Location = New System.Drawing.Point(509, 10)
+        Me.cboStatus.Name = "cboStatus"
+        Me.cboStatus.Size = New System.Drawing.Size(118, 24)
+        Me.cboStatus.TabIndex = 1
+        Me.cboStatus.Tag = "IN:Status*"
         '
-        'Column7
+        'Label19
         '
-        Me.Column7.HeaderText = "VIEW"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.Color.Red
+        Me.Label19.Location = New System.Drawing.Point(46, 41)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(11, 13)
+        Me.Label19.TabIndex = 40
+        Me.Label19.Tag = "reqSign"
+        Me.Label19.Text = "*"
+        Me.Label19.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Red
+        Me.Label1.Location = New System.Drawing.Point(6, 68)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(11, 13)
+        Me.Label1.TabIndex = 41
+        Me.Label1.Tag = "reqSign"
+        Me.Label1.Text = "*"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Red
+        Me.Label7.Location = New System.Drawing.Point(8, 106)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(11, 13)
+        Me.Label7.TabIndex = 42
+        Me.Label7.Tag = "reqSign"
+        Me.Label7.Text = "*"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.Red
+        Me.Label10.Location = New System.Drawing.Point(445, 14)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(11, 13)
+        Me.Label10.TabIndex = 43
+        Me.Label10.Tag = "reqSign"
+        Me.Label10.Text = "*"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'F_CaseFile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(644, 461)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Label19)
+        Me.Controls.Add(Me.cboStatus)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.btnAttach)
         Me.Controls.Add(Me.btnAdd)
@@ -339,27 +405,27 @@ Partial Class F_CaseFile
         Me.Controls.Add(Me.datDocuments)
         Me.Controls.Add(Me.datPeopleInvolved)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.dtpIncident)
-        Me.Controls.Add(Me.dtpReported)
+        Me.Controls.Add(Me.txtCaseReport)
+        Me.Controls.Add(Me.lblCaseReport)
+        Me.Controls.Add(Me.dtpReportedDate)
+        Me.Controls.Add(Me.dtpIncidentDate)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.txtReportedBy)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtIncharge)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtCode)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblCaseCode)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "F_CaseFile"
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FILE CASE"
         CType(Me.datPeopleInvolved, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.datDocuments, System.ComponentModel.ISupportInitialize).EndInit()
@@ -368,19 +434,18 @@ Partial Class F_CaseFile
 
     End Sub
     Friend WithEvents txtCode As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents lblCaseCode As System.Windows.Forms.Label
+    Friend WithEvents txtIncharge As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents txtReportedBy As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents dtpIncident As System.Windows.Forms.DateTimePicker
-    Friend WithEvents dtpReported As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtpReportedDate As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtpIncidentDate As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
-    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents txtCaseReport As System.Windows.Forms.TextBox
+    Friend WithEvents lblCaseReport As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents datPeopleInvolved As System.Windows.Forms.DataGridView
     Friend WithEvents datDocuments As System.Windows.Forms.DataGridView
@@ -395,4 +460,9 @@ Partial Class F_CaseFile
     Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column6 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column7 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cboStatus As System.Windows.Forms.ComboBox
+    Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
 End Class

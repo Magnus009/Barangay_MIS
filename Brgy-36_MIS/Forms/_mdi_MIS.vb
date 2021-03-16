@@ -123,17 +123,14 @@ Public Class _mdi_MIS
     End Sub
 
     Private Sub FileComplaintsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FileComplaintsToolStripMenuItem.Click
-        F_CaseFile.MdiParent = Me
-        F_CaseFile.Show()
+        F_CaseFile.openCase(0, 1)
     End Sub
 
     Private Sub ReportIncidentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportIncidentToolStripMenuItem.Click
-        F_CaseFile.MdiParent = Me
-        F_CaseFile.Show()
+        F_CaseFile.openCase(1, 1)
     End Sub
 
     Private Sub FileBlotterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FileBlotterToolStripMenuItem.Click
-        F_CaseFile.MdiParent = Me
-        F_CaseFile.Show()
+        F_CaseFile.openCase(2, 1)
     End Sub
 End Class

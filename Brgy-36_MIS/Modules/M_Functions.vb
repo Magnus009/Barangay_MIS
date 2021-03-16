@@ -1,33 +1,88 @@
-﻿Module M_Functions
+﻿Imports System.IO
+
+Module M_Functions
     Public strRequire As String
     Public blnRequired As Boolean
 
     Public clrDeactivated = Color.FromArgb(255, 188, 54)
     Public clrDeleted = Color.FromArgb(255, 84, 84)
 
-    Public Sub fn_ClearField(container As Form)
-        On Error GoTo errClear
-        For Each ctrl As Control In container.Controls
-            Select Case ctrl.GetType()
-                Case GetType(TextBox)
-                    ctrl.Text = ""
-                Case GetType(GroupBox)
-                    groupControls(ctrl)
-                Case GetType(Label)
-                    'No Event
-                Case GetType(ComboBox)
-                    Dim cbo As New ComboBox
-                    cbo = ctrl
-                    cbo.SelectedIndex = -1
-                Case Else
-                    'No Event
-            End Select
-        Next
-errClear:
-        If Err.Number <> 0 Then
-            MsgBox(Err.Number & "-->" & Err.Description, MsgBoxStyle.Critical, "Invalid Action")
+    Public Function openFileDialog() As String
+        Dim fileDialog As New OpenFileDialog
+        Dim strFileName As String = ""
+
+        With fileDialog
+            .Title = "Select Supporting Documents"
+            .Multiselect = False
+            .InitialDirectory = My.Computer.FileSystem.SpecialDirectories.Desktop
+            .Filter = "All Files(*.*)|*.*"
+
+            If .ShowDialog = DialogResult.OK Then
+                strFileName = .FileName
+            End If
+        End With
+        Return strFileName
+    End Function
+
+    Public Function copyToTemp(strSourceFile As String) As String
+        Dim strTempDocsFileName As String
+        Dim strFileName() As String
+
+        strFileName = strSourceFile.Split("\")
+        strTempDocsFileName = getTempDocsPath() + strFileName(strFileName.Length - 1)
+        Try
+            File.Copy(strSourceFile, strTempDocsFileName, True)
+        Catch ex As Exception
+
+        End Try
+        Return strTempDocsFileName
+    End Function
+
+    Public Function getTempDocsPath() As String
+        Dim strTempPath As String
+
+        strTempPath = Path.GetTempPath + "SupportingDocuments\"
+
+        If Not Directory.Exists(strTempPath) Then
+            Directory.CreateDirectory(strTempPath)
         End If
-        
+
+            Return strTempPath
+    End Function
+
+    Public Function getDesktopDocsPath() As String
+        Dim strDesktopPath As String
+
+        strDesktopPath = My.Computer.FileSystem.SpecialDirectories.Desktop + "SupportingDocuments\"
+
+        If Not Directory.Exists(strDesktopPath) Then
+            Directory.CreateDirectory(strDesktopPath)
+        End If
+
+        Return strDesktopPath
+    End Function
+
+    Public Sub fn_ClearField(container As Form)
+        Try
+            For Each ctrl As Control In container.Controls
+                Select Case ctrl.GetType()
+                    Case GetType(TextBox)
+                        ctrl.Text = ""
+                    Case GetType(GroupBox)
+                        groupControls(ctrl)
+                    Case GetType(Label)
+                        'No Event
+                    Case GetType(ComboBox)
+                        Dim cbo As New ComboBox
+                        cbo = ctrl
+                        cbo.SelectedIndex = -1
+                    Case Else
+                        'No Event
+                End Select
+            Next
+        Catch ex As Exception
+            MsgBox(Err.Number & "-->" & Err.Description, MsgBoxStyle.Critical, "Invalid Action")
+        End Try
     End Sub
 
     Private Sub groupControls(group As GroupBox)
@@ -50,28 +105,6 @@ errClear:
             End Select
         Next
     End Sub
-
-    Public Function subCheckRequire(container As Control) As Boolean
-        Dim blnIncomplete As Boolean = False
-
-        For Each ctrl As Control In container.Controls
-            Select Case ctrl.GetType()
-                Case GetType(GroupBox)
-                    subCheckRequire(ctrl)
-                Case Else
-                    If Left(ctrl.Tag, 1) = "*" Then
-                        If ctrl.Text = "" Then
-                            strRequire &= "- " & Mid(ctrl.Tag, 2, Len(ctrl.Tag) - 1) & vbCrLf
-                        End If
-                    End If
-            End Select
-        Next
-        If strRequire <> "" Then
-            blnIncomplete = True
-        End If
-
-        Return blnIncomplete
-    End Function
 
     Public Sub subRowColor(datTable As DataGridView)
         Try
@@ -116,10 +149,10 @@ errClear:
             Case 0 'Read Only
                 blnWrite = False
                 blnShow = False
-            Case 1 'Create/Register
+            Case 1 'Create
                 blnWrite = True
                 blnShow = True
-            Case 2 'Modify/Update
+            Case 2 'Modify
                 blnWrite = True
                 blnShow = False
         End Select
@@ -144,7 +177,7 @@ errClear:
                             Else
                                 ctrl.Enabled = blnWrite
                             End If
-                        ElseIf InStr(ctrl.Tag, "IN;") Then
+                        ElseIf InStr(ctrl.Tag, "IN;") And intMode <> 1 Then
                             If ctrl.GetType() = GetType(TextBox) Then
                                 Dim txt As TextBox
                                 txt = ctrl
@@ -181,7 +214,7 @@ errClear:
                 Case Else
                     If Right(ctrl.Tag, 1) = "*" Then
                         If ctrl.Text = "" Then
-                            strRequire &= "- " & Mid(ctrl.Tag, 3, Len(ctrl.Tag) - 1) & vbCrLf
+                            strRequire &= "- " & Mid(ctrl.Tag, 4, Len(ctrl.Tag) - 4) & vbCrLf
                         End If
                     End If
             End Select
@@ -192,4 +225,5 @@ errClear:
 
         Return blnRequired
     End Function
+
 End Module

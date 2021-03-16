@@ -62,12 +62,14 @@
     Private Sub F_Resident_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         formMode(intTaskMode, Me)
 
-        btnHouseList.Visible = False
-        If UserLevel <> "0" Then
-            btnSave.Visible = False
-            btnClear.Visible = False
-        Else
-            btnClear.Text = IIf(lblDeleted.Visible, "&RETRIVE", "&DELETE")
+        If intTaskMode <> 1 Then
+            btnHouseList.Visible = False
+            If UserLevel <> "0" Then
+                btnSave.Visible = False
+                btnClear.Visible = False
+            Else
+                btnClear.Text = IIf(lblDeleted.Visible, "&RETRIVE", "&DELETE")
+            End If
         End If
 
         Call subDisabled()
@@ -95,7 +97,7 @@
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Try
-            If subCheckRequire(Me) Then
+            If fn_CheckRequire(Me) Then
                 MsgBox("Please complete the required fields(*):" & vbCrLf & strRequire, MsgBoxStyle.Exclamation, "Required Items")
                 strRequire = ""
             Else

@@ -22,6 +22,7 @@ Partial Class F_PeopleInvolved
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt = New System.Windows.Forms.TextBox()
@@ -35,9 +36,10 @@ Partial Class F_PeopleInvolved
         Me.datDocuments = New System.Windows.Forms.DataGridView()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.chkResident = New System.Windows.Forms.CheckBox()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colFileName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDateSubmitted = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colView = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.colTempFile = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.datDocuments, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -48,7 +50,7 @@ Partial Class F_PeopleInvolved
         Me.txtName.MaxLength = 50
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(189, 21)
-        Me.txtName.TabIndex = 9
+        Me.txtName.TabIndex = 1
         Me.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
@@ -69,7 +71,7 @@ Partial Class F_PeopleInvolved
         Me.txt.MaxLength = 50
         Me.txt.Name = "txt"
         Me.txt.Size = New System.Drawing.Size(189, 21)
-        Me.txt.TabIndex = 11
+        Me.txt.TabIndex = 3
         Me.txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
@@ -90,7 +92,7 @@ Partial Class F_PeopleInvolved
         Me.TextBox2.MaxLength = 20
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(118, 21)
-        Me.TextBox2.TabIndex = 13
+        Me.TextBox2.TabIndex = 4
         Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label3
@@ -108,12 +110,11 @@ Partial Class F_PeopleInvolved
         '
         Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBox3.Location = New System.Drawing.Point(12, 121)
-        Me.TextBox3.MaxLength = 20
+        Me.TextBox3.MaxLength = 1000
         Me.TextBox3.Multiline = True
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(360, 107)
-        Me.TextBox3.TabIndex = 15
-        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox3.TabIndex = 5
         '
         'Label4
         '
@@ -132,7 +133,7 @@ Partial Class F_PeopleInvolved
         Me.btnAttach.Location = New System.Drawing.Point(12, 367)
         Me.btnAttach.Name = "btnAttach"
         Me.btnAttach.Size = New System.Drawing.Size(114, 27)
-        Me.btnAttach.TabIndex = 29
+        Me.btnAttach.TabIndex = 6
         Me.btnAttach.Text = "A&TTACH FILE"
         Me.btnAttach.UseVisualStyleBackColor = True
         '
@@ -149,14 +150,21 @@ Partial Class F_PeopleInvolved
         '
         'datDocuments
         '
-        Me.datDocuments.AllowUserToAddRows = False
         Me.datDocuments.AllowUserToDeleteRows = False
         Me.datDocuments.AllowUserToResizeColumns = False
         Me.datDocuments.AllowUserToResizeRows = False
         Me.datDocuments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datDocuments.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.datDocuments.ColumnHeadersHeight = 30
         Me.datDocuments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.datDocuments.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3})
+        Me.datDocuments.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colFileName, Me.colDateSubmitted, Me.colView, Me.colTempFile})
         Me.datDocuments.Location = New System.Drawing.Point(12, 259)
         Me.datDocuments.MultiSelect = False
         Me.datDocuments.Name = "datDocuments"
@@ -172,7 +180,7 @@ Partial Class F_PeopleInvolved
         Me.btnSave.Location = New System.Drawing.Point(258, 400)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(114, 35)
-        Me.btnSave.TabIndex = 30
+        Me.btnSave.TabIndex = 7
         Me.btnSave.Text = "&SAVE"
         Me.btnSave.UseVisualStyleBackColor = True
         '
@@ -182,27 +190,40 @@ Partial Class F_PeopleInvolved
         Me.chkResident.Location = New System.Drawing.Point(301, 12)
         Me.chkResident.Name = "chkResident"
         Me.chkResident.Size = New System.Drawing.Size(76, 20)
-        Me.chkResident.TabIndex = 31
+        Me.chkResident.TabIndex = 2
         Me.chkResident.Text = "RESIDENT"
         Me.chkResident.UseVisualStyleBackColor = True
         '
-        'Column1
+        'colFileName
         '
-        Me.Column1.HeaderText = "FILE NAME"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
+        Me.colFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colFileName.HeaderText = "FILE NAME"
+        Me.colFileName.Name = "colFileName"
+        Me.colFileName.ReadOnly = True
         '
-        'Column2
+        'colDateSubmitted
         '
-        Me.Column2.HeaderText = "DATE SUBMITTED"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
+        Me.colDateSubmitted.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colDateSubmitted.HeaderText = "DATE SUBMITTED"
+        Me.colDateSubmitted.Name = "colDateSubmitted"
+        Me.colDateSubmitted.ReadOnly = True
         '
-        'Column3
+        'colView
         '
-        Me.Column3.HeaderText = "VIEW"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
+        Me.colView.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.colView.HeaderText = ""
+        Me.colView.Name = "colView"
+        Me.colView.ReadOnly = True
+        Me.colView.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.colView.Text = "•••"
+        Me.colView.Width = 50
+        '
+        'colTempFile
+        '
+        Me.colTempFile.HeaderText = "tempLocation"
+        Me.colTempFile.Name = "colTempFile"
+        Me.colTempFile.ReadOnly = True
+        Me.colTempFile.Visible = False
         '
         'F_PeopleInvolved
         '
@@ -250,7 +271,8 @@ Partial Class F_PeopleInvolved
     Friend WithEvents datDocuments As System.Windows.Forms.DataGridView
     Friend WithEvents btnSave As System.Windows.Forms.Button
     Friend WithEvents chkResident As System.Windows.Forms.CheckBox
-    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colFileName As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colDateSubmitted As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colView As System.Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents colTempFile As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

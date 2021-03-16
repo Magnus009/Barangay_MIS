@@ -48,9 +48,13 @@
         Me.Close()
     End Sub
     Private Sub F_Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim App As AppDomain = AppDomain.CurrentDomain
+        Dim strFileName As String
+        strFileName = openFileDialog()
+        If strFileName <> "" Then
+            MsgBox(strFileName)
+        End If
+
+        'Dim App As AppDomain = AppDomain.CurrentDomain
         'AddHandler App.UnhandledException, AddressOf GlobalException_Handler
     End Sub
-
-
 End Class
