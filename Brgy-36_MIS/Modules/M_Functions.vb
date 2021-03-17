@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Diagnostics.Process
 
 Module M_Functions
     Public strRequire As String
@@ -26,16 +27,32 @@ Module M_Functions
 
     Public Function copyToTemp(strSourceFile As String) As String
         Dim strTempDocsFileName As String
-        Dim strFileName() As String
-
-        strFileName = strSourceFile.Split("\")
-        strTempDocsFileName = getTempDocsPath() + strFileName(strFileName.Length - 1)
+        strTempDocsFileName = getTempDocsPath() + getFileName(strSourceFile)
         Try
             File.Copy(strSourceFile, strTempDocsFileName, True)
         Catch ex As Exception
-
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
         Return strTempDocsFileName
+    End Function
+
+    Public Sub openFile(strSourceFile)
+        Try
+            If File.Exists(strSourceFile) Then
+                Start(strSourceFile)
+            Else
+                Throw New Exception("File does not exist!")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
+    Public Function getFileName(strSourceFile As String) As String
+        Dim strFile() As String
+
+        strFile = strSourceFile.Split("\")
+        Return strFile(strFile.Length - 1)
     End Function
 
     Public Function getTempDocsPath() As String
@@ -70,12 +87,18 @@ Module M_Functions
                         ctrl.Text = ""
                     Case GetType(GroupBox)
                         groupControls(ctrl)
-                    Case GetType(Label)
-                        'No Event
                     Case GetType(ComboBox)
                         Dim cbo As New ComboBox
                         cbo = ctrl
                         cbo.SelectedIndex = -1
+                    Case GetType(CheckBox)
+                        Dim chk As New CheckBox
+                        chk = ctrl
+                        chk.Checked = False
+                    Case GetType(DataGridView)
+                        Dim dgv As New DataGridView
+                        dgv = ctrl
+                        dgv.Rows.Clear()
                     Case Else
                         'No Event
                 End Select

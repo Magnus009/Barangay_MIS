@@ -90,6 +90,89 @@
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        F_PeopleInvolved.strInvolveID = datPeopleInvolved.Rows.Count
         F_PeopleInvolved.ShowDialog()
+        fn_ClearField(F_PeopleInvolved)
+    End Sub
+
+    Private Sub F_CaseFile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        With datPeopleInvolved
+            .Columns(1).Width = .Width * 0.3
+            .Columns(2).Width = .Width * 0.22
+            .Columns(3).Width = .Width * 0.15
+            .Columns(4).Width = .Width * 0.22
+            .Columns(5).Width = .Width * 0.1
+        End With
+    End Sub
+
+    Private Sub datDocuments_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datDocuments.CellContentClick
+        If e.ColumnIndex = 4 Then
+            openFile(datDocuments.Rows(e.RowIndex).Cells("colSourceFile").Value)
+        End If
+    End Sub
+
+    Private Sub btnAttach_Click(sender As Object, e As EventArgs) Handles btnAttach.Click
+        Try
+            Dim strSourceFile, strFileName, strTempFile As String
+            strSourceFile = openFileDialog()
+
+            If strSourceFile <> "" Then
+                strFileName = getFileName(strSourceFile)
+                strTempFile = ""
+
+                With datDocuments
+                    Dim blnExist As Boolean = False
+                    If .Rows.Count = 0 Then strTempFile = copyToTemp(strSourceFile)
+
+                    For Each dr As DataGridViewRow In .Rows
+                        If UCase(dr.Cells(1).Value) = UCase(strFileName) Then
+                            blnExist = True
+                        Else
+                            strTempFile = copyToTemp(strSourceFile)
+                        End If
+                    Next
+
+                    If blnExist Then
+                        Throw New Exception("File already exist!")
+                    Else
+                        Dim row As String()
+                        row = New String() {"", strFileName, Today, strTempFile, "•••", "X"}
+                        .Rows.Add(row)
+                    End If
+                End With
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
+    Private Sub datPeopleInvolved_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datPeopleInvolved.CellContentClick
+        If e.ColumnIndex = 5 Then
+            With F_PeopleInvolved
+                'Involved Details
+                .strInvolveID = datPeopleInvolved.Rows(e.RowIndex).Cells("colID").Value
+                .txtName.Text = datPeopleInvolved.Rows(e.RowIndex).Cells("colName").Value
+                .chkResident.Checked = datPeopleInvolved.Rows(e.RowIndex).Cells("colResident").Value
+                .txtInvolvement.Text = datPeopleInvolved.Rows(e.RowIndex).Cells("colInvolvement").Value
+                .txtContactNo.Text = datPeopleInvolved.Rows(e.RowIndex).Cells("colContactNo").Value
+                .txtStatement.Text = datPeopleInvolved.Rows(e.RowIndex).Cells("colStatement").Value
+                'Supporting Documents
+                .datDocuments.Rows.Clear()
+                For Each dgr As DataGridViewRow In datDocuments.Rows
+                    If dgr.Cells("colPresenterID").Value = datPeopleInvolved.Rows(e.RowIndex).Cells("colID").Value Then
+                        Dim row As String()
+                        row = New String() {dgr.Cells("colPresenterID").Value, _
+                                            dgr.Cells("colFileName").Value, _
+                                            dgr.Cells("colDateSubmitted").Value, _
+                                            dgr.Cells("colSourceFile").Value, _
+                                            "•••", _
+                                            "X"}
+                        .datDocuments.Rows.Add(row)
+                    End If
+                Next
+                .ShowDialog()
+            End With
+        End If
     End Sub
 End Class

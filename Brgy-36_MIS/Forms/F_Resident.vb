@@ -138,12 +138,10 @@
                     End If
                 ElseIf intTaskMode = 2 Then
                     strQuery = ""
-
-
                 End If
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 
