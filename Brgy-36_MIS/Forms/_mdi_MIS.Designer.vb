@@ -160,13 +160,13 @@ Partial Class _mdi_MIS
         'ViewBlotterrsToolStripMenuItem
         '
         Me.ViewBlotterrsToolStripMenuItem.Name = "ViewBlotterrsToolStripMenuItem"
-        Me.ViewBlotterrsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ViewBlotterrsToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
         Me.ViewBlotterrsToolStripMenuItem.Text = "View Blotterrs"
         '
         'FileBlotterToolStripMenuItem
         '
         Me.FileBlotterToolStripMenuItem.Name = "FileBlotterToolStripMenuItem"
-        Me.FileBlotterToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.FileBlotterToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
         Me.FileBlotterToolStripMenuItem.Text = "File Blotter"
         '
         'mnuCertificates
@@ -262,7 +262,6 @@ Partial Class _mdi_MIS
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "_mdi_MIS"
         Me.Text = "MANAGEMENT INFORMATION SYSTEM  of BARANGAY 36-A  (SAP-SAP)"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.mnuMIS.ResumeLayout(False)
         Me.mnuMIS.PerformLayout()
         Me.ResumeLayout(False)

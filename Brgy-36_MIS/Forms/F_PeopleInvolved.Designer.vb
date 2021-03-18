@@ -35,17 +35,17 @@ Partial Class F_PeopleInvolved
         Me.btnAttach = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.datDocuments = New System.Windows.Forms.DataGridView()
-        Me.btnSave = New System.Windows.Forms.Button()
-        Me.chkResident = New System.Windows.Forms.CheckBox()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colFileName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colDateSubmitted = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colTempFile = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colView = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.colDelete = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.btnSave = New System.Windows.Forms.Button()
+        Me.chkResident = New System.Windows.Forms.CheckBox()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.datDocuments, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -57,7 +57,7 @@ Partial Class F_PeopleInvolved
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(189, 21)
         Me.txtName.TabIndex = 1
-        Me.txtName.Tag = "IN;Name*"
+        Me.txtName.Tag = "IN:Name*"
         Me.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
@@ -79,7 +79,7 @@ Partial Class F_PeopleInvolved
         Me.txtInvolvement.Name = "txtInvolvement"
         Me.txtInvolvement.Size = New System.Drawing.Size(189, 21)
         Me.txtInvolvement.TabIndex = 3
-        Me.txtInvolvement.Tag = "IN;Involvement*"
+        Me.txtInvolvement.Tag = "IN:Involvement*"
         Me.txtInvolvement.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
@@ -187,6 +187,64 @@ Partial Class F_PeopleInvolved
         Me.datDocuments.Size = New System.Drawing.Size(360, 107)
         Me.datDocuments.TabIndex = 27
         '
+        'colID
+        '
+        Me.colID.HeaderText = "ID"
+        Me.colID.Name = "colID"
+        Me.colID.ReadOnly = True
+        Me.colID.Visible = False
+        '
+        'colFileName
+        '
+        Me.colFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.colFileName.FillWeight = 193.1973!
+        Me.colFileName.HeaderText = "FILE NAME"
+        Me.colFileName.Name = "colFileName"
+        Me.colFileName.ReadOnly = True
+        Me.colFileName.Width = 180
+        '
+        'colDateSubmitted
+        '
+        Me.colDateSubmitted.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colDateSubmitted.FillWeight = 6.802719!
+        Me.colDateSubmitted.HeaderText = "DATE SUBMITTED"
+        Me.colDateSubmitted.Name = "colDateSubmitted"
+        Me.colDateSubmitted.ReadOnly = True
+        '
+        'colTempFile
+        '
+        Me.colTempFile.HeaderText = "tempLocation"
+        Me.colTempFile.Name = "colTempFile"
+        Me.colTempFile.ReadOnly = True
+        Me.colTempFile.Visible = False
+        '
+        'colView
+        '
+        Me.colView.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.colView.HeaderText = ""
+        Me.colView.Name = "colView"
+        Me.colView.ReadOnly = True
+        Me.colView.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.colView.Text = "•••"
+        Me.colView.Width = 30
+        '
+        'colDelete
+        '
+        Me.colDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        Me.colDelete.DefaultCellStyle = DataGridViewCellStyle2
+        Me.colDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.colDelete.HeaderText = ""
+        Me.colDelete.Name = "colDelete"
+        Me.colDelete.ReadOnly = True
+        Me.colDelete.Text = "X"
+        Me.colDelete.Width = 30
+        '
         'btnSave
         '
         Me.btnSave.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -245,64 +303,6 @@ Partial Class F_PeopleInvolved
         Me.Label6.Tag = "reqSign"
         Me.Label6.Text = "*"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'colID
-        '
-        Me.colID.HeaderText = "ID"
-        Me.colID.Name = "colID"
-        Me.colID.ReadOnly = True
-        Me.colID.Visible = False
-        '
-        'colFileName
-        '
-        Me.colFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.colFileName.FillWeight = 193.1973!
-        Me.colFileName.HeaderText = "FILE NAME"
-        Me.colFileName.Name = "colFileName"
-        Me.colFileName.ReadOnly = True
-        Me.colFileName.Width = 180
-        '
-        'colDateSubmitted
-        '
-        Me.colDateSubmitted.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colDateSubmitted.FillWeight = 6.802719!
-        Me.colDateSubmitted.HeaderText = "DATE SUBMITTED"
-        Me.colDateSubmitted.Name = "colDateSubmitted"
-        Me.colDateSubmitted.ReadOnly = True
-        '
-        'colTempFile
-        '
-        Me.colTempFile.HeaderText = "tempLocation"
-        Me.colTempFile.Name = "colTempFile"
-        Me.colTempFile.ReadOnly = True
-        Me.colTempFile.Visible = False
-        '
-        'colView
-        '
-        Me.colView.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.colView.HeaderText = ""
-        Me.colView.Name = "colView"
-        Me.colView.ReadOnly = True
-        Me.colView.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.colView.Text = "•••"
-        Me.colView.Width = 30
-        '
-        'colDelete
-        '
-        Me.colDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        Me.colDelete.DefaultCellStyle = DataGridViewCellStyle2
-        Me.colDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.colDelete.HeaderText = ""
-        Me.colDelete.Name = "colDelete"
-        Me.colDelete.ReadOnly = True
-        Me.colDelete.Text = "X"
-        Me.colDelete.Width = 30
         '
         'F_PeopleInvolved
         '

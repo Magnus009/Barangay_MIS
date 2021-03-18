@@ -1,6 +1,8 @@
 ﻿Public Class F_PeopleInvolved
     Public strInvolveID As String
 
+    Dim intFormMode As Integer
+
     Private Sub btnAttach_Click(sender As Object, e As EventArgs) Handles btnAttach.Click
         Try
             Dim strSourceFile, strFileName, strTempFile As String
@@ -40,7 +42,7 @@
     Private Sub datDocuments_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datDocuments.CellContentClick
         If e.ColumnIndex = 4 Then
             Dim strFile As String
-            strFile = datDocuments.Rows(e.RowIndex).Cells(2).Value
+            strFile = datDocuments.Rows(e.RowIndex).Cells(3).Value
             openFile(strFile)
         ElseIf e.ColumnIndex = 5 Then
             MsgBox("Do you want to remove this file?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "REMOVE FILE")
@@ -54,38 +56,77 @@
         Try
             If fn_CheckRequire(Me) Then
                 MsgBox("Please complete the required fields(*):" & vbCrLf & strRequire, MsgBoxStyle.Exclamation, "Required Items")
-                strRequire = ""
+                strRequire = "" : blnRequired = False
             Else
-                With F_CaseFile.datPeopleInvolved
-                    Dim strPeopleID As String
+                If btnSave.Text = "&UPDATE" Then
+                    'Reload Documents-----------------------------------
+                    With F_CaseFile.datDocuments
+                        Dim strRows As String = ""
+                        For Each dr As DataGridViewRow In .Rows
+                            If dr.Cells(0).Value = strInvolveID Then
+                                strRows += dr.Index.ToString + ","
+                            End If
+                        Next
+                        strRows = Strings.Left(strRows, Len(strRows) - 1)
+                        For Each row As String In strRows.Split(",").Reverse
+                            Dim intRow As Integer
+                            intRow = Convert.ToInt32(row)
+                            .Rows.RemoveAt(intRow)
+                        Next
 
-                    strPeopleID = .Rows.Count
+                        For Each dgr As DataGridViewRow In datDocuments.Rows
+                            Dim row As String()
+                            row = New String() {dgr.Cells(0).Value, _
+                                                dgr.Cells(1).Value, _
+                                                dgr.Cells(2).Value, _
+                                                dgr.Cells(3).Value, _
+                                                "•••", _
+                                                "X"}
+                            .Rows.Add(row)
+                        Next
+                    End With
+                    '---------------------------------------------------
+                    'UpdatePeople Involved Detals-----------------------
+                    With F_CaseFile.datPeopleInvolved
+                        For Each dr As DataGridViewRow In .Rows
+                            If dr.Cells(0).Value = strInvolveID Then
+                                dr.Cells(2).Value = txtInvolvement.Text
+                                dr.Cells(3).Value = chkResident.Checked
+                                dr.Cells(4).Value = txtContactNo.Text
+                                dr.Cells(6).Value = txtStatement.Text
+                            End If
+                        Next
+                    End With
+                    '---------------------------------------------------
+                Else
+                    With F_CaseFile.datPeopleInvolved
+                        Dim strPeopleID As String
+                        strPeopleID = .Rows.Count
 
-
-                    For Each dgPeople As DataGridViewRow In .Rows '2021/03/17
-                        If strInvolveID = dgPeople.Cells(0).Value Then
-
-                        End If
-                    Next
-
-                    Dim row As String()
-                    row = New String() {strPeopleID, txtName.Text, txtInvolvement.Text, chkResident.Checked, txtContactNo.Text, "•••", txtStatement.Text}
-                    .Rows.Add(row)
-                End With
-
-                With F_CaseFile.datDocuments
-                    For Each dr As DataGridViewRow In .Rows
-                        If dr.Cells(0).Value = strInvolveID Then
-                            .Rows.Remove(dr)
-                        End If
-                    Next
-
-                    For Each dgr As DataGridViewRow In datDocuments.Rows
                         Dim row As String()
-                        row = New String() {dgr.Cells(0).Value, dgr.Cells(1).Value, dgr.Cells(2).Value, dgr.Cells(3).Value, "•••"}
+                        row = New String() {strPeopleID, _
+                                            txtName.Text, _
+                                            txtInvolvement.Text, _
+                                            chkResident.Checked, _
+                                            txtContactNo.Text, _
+                                            "•••", _
+                                            txtStatement.Text}
                         .Rows.Add(row)
-                    Next
-                End With
+                    End With
+
+                    With F_CaseFile.datDocuments
+                        For Each dgr As DataGridViewRow In datDocuments.Rows
+                            Dim row As String()
+                            row = New String() {dgr.Cells(0).Value, _
+                                                dgr.Cells(1).Value, _
+                                                dgr.Cells(2).Value, _
+                                                dgr.Cells(3).Value, _
+                                                "•••", _
+                                                "X"}
+                            .Rows.Add(row)
+                        Next
+                    End With
+                End If
 
                 Me.Close()
             End If
@@ -93,4 +134,24 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+
+    Public Sub loadDetails(intTaskMode As Integer)
+        formMode(intTaskMode, Me)
+        intFormMode = intTaskMode
+
+        If intTaskMode = 0 Then
+            btnAttach.Visible = False
+            btnSave.Visible = False
+            Me.Height = Me.Height - (btnAttach.Height + btnSave.Height)
+            datDocuments.Columns("colDelete").Visible = False
+        ElseIf intTaskMode = 1 Then
+            fn_ClearField(Me)
+            btnSave.Text = "&SAVE"
+        Else
+            btnSave.Text = "&UPDATE"
+        End If
+
+        Me.ShowDialog()
+    End Sub
+
 End Class

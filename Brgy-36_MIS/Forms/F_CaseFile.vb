@@ -1,4 +1,5 @@
 ﻿Public Class F_CaseFile
+    Dim intFormTask As Integer
     Private Sub save(intCaseType As Integer, intTaskMode As Integer)
         'CaseType:: [0]=>Complaints || [1]=>Incidents || [2]=>Blotters
         'TaskMode:: [0]=>Read only  || [1]=>Create    || [2]=>Modify
@@ -54,6 +55,7 @@
         'TaskMode:: [0]=>Read only  || [1]=>Create    || [2]=>Modify
 
         Try
+            intFormTask = intTaskMode
             'Case Type
             Select Case intCaseType
                 Case 0
@@ -90,10 +92,12 @@
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        F_PeopleInvolved.strInvolveID = datPeopleInvolved.Rows.Count
-        F_PeopleInvolved.ShowDialog()
-        fn_ClearField(F_PeopleInvolved)
+        With F_PeopleInvolved
+            .strInvolveID = datPeopleInvolved.Rows.Count
+            .loadDetails(intFormTask)
+        End With
     End Sub
+
 
     Private Sub F_CaseFile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         With datPeopleInvolved
@@ -171,8 +175,21 @@
                         .datDocuments.Rows.Add(row)
                     End If
                 Next
-                .ShowDialog()
+                .loadDetails(2)
             End With
         End If
+    End Sub
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        Try
+            If fn_CheckRequire(Me) Then
+                MsgBox("Please complete the required fields(*):" & vbCrLf & strRequire, MsgBoxStyle.Exclamation, "Required Items")
+                strRequire = "" : blnRequired = False
+            Else
+
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
