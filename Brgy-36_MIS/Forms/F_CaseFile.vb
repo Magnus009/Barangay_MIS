@@ -1,12 +1,14 @@
 ﻿Public Class F_CaseFile
     Dim intFormTask As Integer
-    Private Sub save(intCaseType As Integer, intTaskMode As Integer)
+    Private Sub saveFiledCase(intTaskMode As Integer)
         'CaseType:: [0]=>Complaints || [1]=>Incidents || [2]=>Blotters
         'TaskMode:: [0]=>Read only  || [1]=>Create    || [2]=>Modify
 
         Try
             Dim strCaseID As String = ""
             Dim strCaseCode As String
+            Dim strFile As String
+            Dim intDocNo As Integer
 
             If intTaskMode = 1 Then
                 strRequire = "" : blnRequired = False
@@ -27,8 +29,8 @@
                     'Create Case Header Record
                     strQuery = "INSERT INTO dbo.CasesHeader (Code, TypeID, StatusID, CaseReport, InCharge, ReportedBy, ReportedDate, IncidentDate, CreatedDate, UpdatedDate, UpdatedBy)" + vbCrLf
                     strQuery += "VALUES ('" + strCaseCode + "', "
-                    strQuery += intCaseType + ", "
-                    strQuery += cboStatus.SelectedIndex + ", "
+                    strQuery += strCaseID + ", "
+                    strQuery += cboStatus.SelectedIndex.ToString + ", "
                     strQuery += "'" + txtCaseReport.Text + "', "
                     strQuery += "'" + txtIncharge.Text + "', "
                     strQuery += "'" + txtReportedBy.Text + "', "
@@ -40,9 +42,69 @@
 
                     If SQL_EXECUTE(strQuery) Then
                         'Add Case Details
+                        For Each drPeople As DataGridViewRow In datPeopleInvolved.Rows
+                            Dim strResident As String = IIf(drPeople.Cells("colResident").Value = "True", "1", "0")
+
+                            strQuery = "INSERT INTO CasesDetails (Code, Seq, PersonInvolved, isResident, Involvement, ContactNo, Statement, CreatedDate, UpdatedDate, UpdatedBy)" + vbCrLf
+                            strQuery += "VALUES ('" + strCaseCode + "', "
+                            strQuery += drPeople.Cells("colID").Value + ", "
+                            strQuery += "'" + drPeople.Cells("colName").Value + "', "
+                            strQuery += strResident + ", "
+                            strQuery += "'" + drPeople.Cells("colInvolvement").Value + "', "
+                            strQuery += "'" + drPeople.Cells("colContactNo").Value + "', "
+                            strQuery += "'" + drPeople.Cells("colStatement").Value + "', "
+                            strQuery += "getdate(), "
+                            strQuery += "getdate(), "
+                            strQuery += "'" + UserName + "')"
+
+                            If SQL_EXECUTE(strQuery) Then
+                                intDocNo = 0
+
+                                For Each drDocs As DataGridViewRow In datDocuments.Rows
+                                    If drDocs.Cells("colPresenterID").Value = drPeople.Cells("colID").Value Then
+                                        'Check Desktop Documents Directory
+                                        strFile = copyToDocsDirectory(drDocs.Cells("colSourceFile").Value)
+                                        intDocNo += 1
+
+                                        'Add Case Details
+                                        strQuery = "INSERT INTO dbo.CasesDocuments (Code, Seq, DocNo, FilePath, SubmittedDate, CreatedDate, UpdatedDate, UpdatedBy)" + vbCrLf
+                                        strQuery += "VALUES ('" + strCaseCode + "', "
+                                        strQuery += fn_checkNull(drDocs.Cells("colPresenterID").Value) + ", "
+                                        strQuery += intDocNo.ToString + ", "
+                                        strQuery += "'" + strFile + "', "
+                                        strQuery += "'" + drDocs.Cells("colDateSubmitted").Value + "', "
+                                        strQuery += "getdate(), "
+                                        strQuery += "getdate(), "
+                                        strQuery += "'" + UserName + "')"
+                                        SQL_EXECUTE(strQuery)
+                                    End If
+                                Next
+                            End If
+                        Next
+
 
                     End If
+                    'Independent Docs
+                    intDocNo = 0
+                    For Each drDocs As DataGridViewRow In datDocuments.Rows
+                        If drDocs.Cells("colPresenterID").Value = "" Then
+                            'Check Desktop Documents Directory
+                            strFile = copyToDocsDirectory(drDocs.Cells("colSourceFile").Value)
+                            intDocNo += 1
 
+                            'Add Case Details
+                            strQuery = "INSERT INTO dbo.CasesDocuments (Code, Seq, DocNo, FilePath, SubmittedDate, CreatedDate, UpdatedDate, UpdatedBy)" + vbCrLf
+                            strQuery += "VALUES ('" + strCaseCode + "', "
+                            strQuery += "-1, "
+                            strQuery += intDocNo.ToString + ", "
+                            strQuery += "'" + strFile + "', "
+                            strQuery += "'" + drDocs.Cells("colDateSubmitted").Value + "', "
+                            strQuery += "getdate(), "
+                            strQuery += "getdate(), "
+                            strQuery += "'" + UserName + "')"
+                            SQL_EXECUTE(strQuery)
+                        End If
+                    Next
                 End If
             End If
         Catch ex As Exception
@@ -181,15 +243,11 @@
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        Try
-            If fn_CheckRequire(Me) Then
-                MsgBox("Please complete the required fields(*):" & vbCrLf & strRequire, MsgBoxStyle.Exclamation, "Required Items")
-                strRequire = "" : blnRequired = False
-            Else
+        MsgBox("Do you want to save this record?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "File Case")
+        If vbYes Then
+            saveFiledCase(intFormTask)
+            Me.Close()
+        End If
 
-            End If
-        Catch ex As Exception
-
-        End Try
     End Sub
 End Class

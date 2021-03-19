@@ -36,6 +36,17 @@ Module M_Functions
         Return strTempDocsFileName
     End Function
 
+    Public Function copyToDocsDirectory(strSourceFile As String) As String
+        Dim strDeskDocsFileName As String
+        strDeskDocsFileName = getDesktopDocsPath() + getFileName(strSourceFile)
+        Try
+            File.Copy(strSourceFile, strDeskDocsFileName, True)
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+        Return strDeskDocsFileName
+    End Function
+
     Public Sub openFile(strSourceFile)
         Try
             If File.Exists(strSourceFile) Then
@@ -70,7 +81,7 @@ Module M_Functions
     Public Function getDesktopDocsPath() As String
         Dim strDesktopPath As String
 
-        strDesktopPath = My.Computer.FileSystem.SpecialDirectories.Desktop + "SupportingDocuments\"
+        strDesktopPath = My.Computer.FileSystem.SpecialDirectories.Desktop + "\SupportingDocuments\"
 
         If Not Directory.Exists(strDesktopPath) Then
             Directory.CreateDirectory(strDesktopPath)
