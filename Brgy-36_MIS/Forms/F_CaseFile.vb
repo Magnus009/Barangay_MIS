@@ -81,9 +81,8 @@
                                 Next
                             End If
                         Next
-
-
                     End If
+
                     'Independent Docs
                     intDocNo = 0
                     For Each drDocs As DataGridViewRow In datDocuments.Rows
@@ -139,11 +138,55 @@
             'Task Mode
             formMode(intTaskMode, Me)
             If intTaskMode = 1 Then
-                cboStatus.SelectedIndex = 0
+                cboStatus.SelectedValue = 0
             ElseIf intTaskMode = 0 Then
                 btnSave.Visible = False
                 btnAdd.Visible = False
                 btnAttach.Visible = False
+            End If
+
+            If intTaskMode <> 1 Then
+                'load Case Header
+                Dim dtHeader As New DataTable
+                strQuery = "SELECT * FROM CasesHeader" + vbCrLf
+                strQuery += "WHERE Code = '" + txtCode.Text + "'" + vbCrLf
+                strQuery += "AND DeletedDate IS NOT NULL"
+                dtHeader = SQL_SELECT(strQuery).Tables(0)
+
+                txtReportedBy.Text = dtHeader.Rows(0)("ReportedBy")
+                txtIncharge.Text = dtHeader.Rows(0)("InCharge")
+                cboStatus.SelectedValue = dtHeader.Rows(0)("StatusID")
+                dtpReportedDate.Value = dtHeader.Rows(0)("ReportedDate")
+                dtpIncidentDate.Value = dtHeader.Rows(0)("IncidentDate")
+                txtCaseReport.Text = dtHeader.Rows(0)("StatusID")
+
+                'load People Involved
+                Dim dtPeople As New DataTable
+                strQuery = "SELECT * FROM CasesDetails" + vbCrLf
+                strQuery += "WHERE Code = '" + txtCode.Text + "'" + vbCrLf
+                strQuery += "AND DeletedDate IS NOT NULL"
+                dtPeople = SQL_SELECT(strQuery).Tables(0)
+                Dim rowPeople As String()
+
+                datPeopleInvolved.Rows.Clear()
+                For Each row As DataRow In dtPeople.Rows
+                    rowPeople = New String() {row(1), row(2), row(4), row(3), row(5), "•••", row(6)}
+                    datPeopleInvolved.Rows.Add(rowPeople)
+                Next
+
+                'load Case Documents
+                Dim dtDocuments As New DataTable
+                strQuery = "SELECT * FROM CasesDocuments" + vbCrLf
+                strQuery += "WHERE Code = '" + txtCode.Text + "'" + vbCrLf
+                strQuery += "AND DeletedDate IS NOT NULL"
+                dtDocuments = SQL_SELECT(strQuery).Tables(0)
+                Dim rowDocs As String()
+
+                datDocuments.Rows.Clear()
+                For Each row As DataRow In dtDocuments.Rows
+                    rowDocs = New String() {row(1), getFileName(row(3)), row(4), row(3), "•••", "X"}
+                    datDocuments.Rows.Add(rowDocs)
+                Next
             End If
 
             Me.MdiParent = _mdi_MIS
@@ -162,6 +205,7 @@
 
 
     Private Sub F_CaseFile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        loadCaseStatus()
         With datPeopleInvolved
             .Columns(1).Width = .Width * 0.3
             .Columns(2).Width = .Width * 0.22
@@ -171,10 +215,44 @@
         End With
     End Sub
 
+    Private Sub loadCaseStatus()
+        Try
+            Dim dtStatus As New DataTable("caseStatus")
+            strQuery = "SELECT ID, Description FROM M_CaseStatus WHERE DeletedDate IS NULL"
+            dtStatus = SQL_SELECT(strQuery).Tables(0)
+
+            cboStatus.Items.Clear()
+            cboStatus.DataSource = dtStatus
+            cboStatus.DisplayMember = "Description"
+            cboStatus.ValueMember = "ID"
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
     Private Sub datDocuments_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datDocuments.CellContentClick
         If e.ColumnIndex = 4 Then
             openFile(datDocuments.Rows(e.RowIndex).Cells("colSourceFile").Value)
+        ElseIf e.ColumnIndex = 5 Then
+
         End If
+    End Sub
+
+    Private Sub deleteDocs(intPresenterID As Integer, strSourceFile As String)
+        'TaskMode:: [0]=>Read only  || [1]=>Create    || [2]=>Modify
+        Try
+            If intFormTask = 1 Then
+
+            ElseIf intFormTask = 2 Then
+                strQuery = "UPDATE CasesDocuments" + vbCrLf
+                strQuery += "SET DeletedDate = getdate()" + vbCrLf
+                strQuery += "WHERE Code = '" + txtCode.Text + "'" + vbCrLf
+                strQuery += "AND Seq = " + intPresenterID.ToString + vbCrLf
+                strQuery += "AND FilePath = '" + strSourceFile + "'"
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
     End Sub
 
     Private Sub btnAttach_Click(sender As Object, e As EventArgs) Handles btnAttach.Click

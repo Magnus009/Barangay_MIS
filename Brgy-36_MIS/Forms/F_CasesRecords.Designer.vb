@@ -22,6 +22,7 @@ Partial Class F_CasesRecords
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.txtCode = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -32,11 +33,6 @@ Partial Class F_CasesRecords
         Me.dtpReported = New System.Windows.Forms.DateTimePicker()
         Me.dtpIncident = New System.Windows.Forms.DateTimePicker()
         Me.datCases = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnFile = New System.Windows.Forms.Button()
         CType(Me.datCases, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -139,10 +135,20 @@ Partial Class F_CasesRecords
         '
         Me.datCases.AllowUserToAddRows = False
         Me.datCases.AllowUserToDeleteRows = False
+        Me.datCases.AllowUserToResizeColumns = False
+        Me.datCases.AllowUserToResizeRows = False
         Me.datCases.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.datCases.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datCases.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.datCases.ColumnHeadersHeight = 30
         Me.datCases.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.datCases.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
         Me.datCases.Location = New System.Drawing.Point(19, 71)
         Me.datCases.MultiSelect = False
         Me.datCases.Name = "datCases"
@@ -153,36 +159,6 @@ Partial Class F_CasesRecords
         Me.datCases.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.datCases.Size = New System.Drawing.Size(668, 350)
         Me.datCases.TabIndex = 14
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "CODE"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "REPORTED BY"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "DATE OF INCIDENT"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "STATUS"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "VIEW"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
         '
         'btnFile
         '
@@ -233,10 +209,5 @@ Partial Class F_CasesRecords
     Friend WithEvents dtpReported As System.Windows.Forms.DateTimePicker
     Friend WithEvents dtpIncident As System.Windows.Forms.DateTimePicker
     Friend WithEvents datCases As System.Windows.Forms.DataGridView
-    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents btnFile As System.Windows.Forms.Button
 End Class

@@ -109,17 +109,17 @@ Public Class _mdi_MIS
 
     Private Sub ViewComplaintsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewComplaintsToolStripMenuItem.Click
         F_CasesRecords.MdiParent = Me
-        F_CasesRecords.Show()
+        F_CasesRecords.loadCaseRecords(0)
     End Sub
 
     Private Sub ViewIncidentsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewIncidentsToolStripMenuItem.Click
         F_CasesRecords.MdiParent = Me
-        F_CasesRecords.Show()
+        F_CasesRecords.loadCaseRecords(1)
     End Sub
 
     Private Sub ViewBlotterrsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewBlotterrsToolStripMenuItem.Click
         F_CasesRecords.MdiParent = Me
-        F_CasesRecords.Show()
+        F_CasesRecords.loadCaseRecords(2)
     End Sub
 
     Private Sub FileComplaintsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FileComplaintsToolStripMenuItem.Click

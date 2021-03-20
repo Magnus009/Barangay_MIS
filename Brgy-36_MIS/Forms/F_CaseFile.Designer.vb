@@ -22,9 +22,9 @@ Partial Class F_CaseFile
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtCode = New System.Windows.Forms.TextBox()
         Me.lblCaseCode = New System.Windows.Forms.Label()
         Me.txtIncharge = New System.Windows.Forms.TextBox()
@@ -48,6 +48,12 @@ Partial Class F_CaseFile
         Me.colView = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.colStatement = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.datDocuments = New System.Windows.Forms.DataGridView()
+        Me.colPresenterID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colFileName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDateSubmitted = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colSourceFile = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colOpen = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.colDelete = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnAttach = New System.Windows.Forms.Button()
@@ -56,12 +62,6 @@ Partial Class F_CaseFile
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.colPresenterID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colFileName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colDateSubmitted = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colSourceFile = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colOpen = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.colDelete = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.datPeopleInvolved, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.datDocuments, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -224,14 +224,14 @@ Partial Class F_CaseFile
         Me.datPeopleInvolved.AllowUserToDeleteRows = False
         Me.datPeopleInvolved.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.datPeopleInvolved.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datPeopleInvolved.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datPeopleInvolved.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.datPeopleInvolved.ColumnHeadersHeight = 30
         Me.datPeopleInvolved.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.datPeopleInvolved.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.colName, Me.colInvolvement, Me.colResident, Me.colContactNo, Me.colView, Me.colStatement})
@@ -307,14 +307,14 @@ Partial Class F_CaseFile
         Me.datDocuments.AllowUserToDeleteRows = False
         Me.datDocuments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.datDocuments.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datDocuments.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datDocuments.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.datDocuments.ColumnHeadersHeight = 30
         Me.datDocuments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.datDocuments.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colPresenterID, Me.colFileName, Me.colDateSubmitted, Me.colSourceFile, Me.colOpen, Me.colDelete})
@@ -326,6 +326,60 @@ Partial Class F_CaseFile
         Me.datDocuments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.datDocuments.Size = New System.Drawing.Size(183, 235)
         Me.datDocuments.TabIndex = 9
+        '
+        'colPresenterID
+        '
+        Me.colPresenterID.HeaderText = "PresenterID"
+        Me.colPresenterID.Name = "colPresenterID"
+        Me.colPresenterID.ReadOnly = True
+        Me.colPresenterID.Visible = False
+        '
+        'colFileName
+        '
+        Me.colFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colFileName.FillWeight = 201.6989!
+        Me.colFileName.HeaderText = "FILE NAME"
+        Me.colFileName.Name = "colFileName"
+        Me.colFileName.ReadOnly = True
+        Me.colFileName.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
+        'colDateSubmitted
+        '
+        Me.colDateSubmitted.HeaderText = "Date Submited"
+        Me.colDateSubmitted.Name = "colDateSubmitted"
+        Me.colDateSubmitted.ReadOnly = True
+        Me.colDateSubmitted.Visible = False
+        '
+        'colSourceFile
+        '
+        Me.colSourceFile.HeaderText = "Source File"
+        Me.colSourceFile.Name = "colSourceFile"
+        Me.colSourceFile.ReadOnly = True
+        Me.colSourceFile.Visible = False
+        '
+        'colOpen
+        '
+        Me.colOpen.FillWeight = 64.54688!
+        Me.colOpen.HeaderText = ""
+        Me.colOpen.Name = "colOpen"
+        Me.colOpen.ReadOnly = True
+        Me.colOpen.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.colOpen.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        '
+        'colDelete
+        '
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
+        Me.colDelete.DefaultCellStyle = DataGridViewCellStyle9
+        Me.colDelete.FillWeight = 68.60507!
+        Me.colDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.colDelete.HeaderText = ""
+        Me.colDelete.Name = "colDelete"
+        Me.colDelete.ReadOnly = True
         '
         'Label9
         '
@@ -372,7 +426,6 @@ Partial Class F_CaseFile
         '
         Me.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboStatus.FormattingEnabled = True
-        Me.cboStatus.Items.AddRange(New Object() {"NEW", "ON-GOING", "PENDING", "CLOSED"})
         Me.cboStatus.Location = New System.Drawing.Point(509, 10)
         Me.cboStatus.Name = "cboStatus"
         Me.cboStatus.Size = New System.Drawing.Size(118, 24)
@@ -417,60 +470,6 @@ Partial Class F_CaseFile
         Me.Label7.Tag = "reqSign"
         Me.Label7.Text = "*"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'colPresenterID
-        '
-        Me.colPresenterID.HeaderText = "PresenterID"
-        Me.colPresenterID.Name = "colPresenterID"
-        Me.colPresenterID.ReadOnly = True
-        Me.colPresenterID.Visible = False
-        '
-        'colFileName
-        '
-        Me.colFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colFileName.FillWeight = 201.6989!
-        Me.colFileName.HeaderText = "FILE NAME"
-        Me.colFileName.Name = "colFileName"
-        Me.colFileName.ReadOnly = True
-        Me.colFileName.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        '
-        'colDateSubmitted
-        '
-        Me.colDateSubmitted.HeaderText = "Date Submited"
-        Me.colDateSubmitted.Name = "colDateSubmitted"
-        Me.colDateSubmitted.ReadOnly = True
-        Me.colDateSubmitted.Visible = False
-        '
-        'colSourceFile
-        '
-        Me.colSourceFile.HeaderText = "Source File"
-        Me.colSourceFile.Name = "colSourceFile"
-        Me.colSourceFile.ReadOnly = True
-        Me.colSourceFile.Visible = False
-        '
-        'colOpen
-        '
-        Me.colOpen.FillWeight = 64.54688!
-        Me.colOpen.HeaderText = ""
-        Me.colOpen.Name = "colOpen"
-        Me.colOpen.ReadOnly = True
-        Me.colOpen.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.colOpen.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'colDelete
-        '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        Me.colDelete.DefaultCellStyle = DataGridViewCellStyle3
-        Me.colDelete.FillWeight = 68.60507!
-        Me.colDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.colDelete.HeaderText = ""
-        Me.colDelete.Name = "colDelete"
-        Me.colDelete.ReadOnly = True
         '
         'F_CaseFile
         '
