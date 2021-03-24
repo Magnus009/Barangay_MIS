@@ -6,23 +6,7 @@ Brgy-36_MIS
 </name>
 </assembly>
 <members>
-<member name="T:Brgy_36_MIS.dsIndigency.RequestDetailsDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Brgy_36_MIS.dsIndigency.RequestDetailsRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Brgy_36_MIS.dsIndigency.RequestDetailsRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Brgy_36_MIS.dsIndigency">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="P:Brgy_36_MIS.My.Resources.Resources.ResourceManager">
+<member name="P:Brgy_36_MIS.My.Resources.Resources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.
 </summary>

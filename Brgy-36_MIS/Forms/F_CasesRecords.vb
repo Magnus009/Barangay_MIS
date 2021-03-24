@@ -34,4 +34,6 @@
             F_CaseFile.openCase(intCaseType, IIf(UserLevel = "0", 2, 0))
         End If
     End Sub
+
+
 End Class
