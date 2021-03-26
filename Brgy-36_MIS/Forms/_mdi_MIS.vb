@@ -133,4 +133,31 @@ Public Class _mdi_MIS
     Private Sub FileBlotterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FileBlotterToolStripMenuItem.Click
         F_CaseFile.openCase(2, 1)
     End Sub
+
+    Private Sub ViewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewToolStripMenuItem.Click
+        F_Samahan.MdiParent = Me
+        F_Samahan.Show()
+    End Sub
+
+    Private Sub RegisterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegisterToolStripMenuItem.Click
+        Dim formRegSamahan As New F_AddSamahan
+        formRegSamahan.MdiParent = Me
+        formRegSamahan.Show()
+    End Sub
+
+    Private Sub RegisterToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles RegisterToolStripMenuItem1.Click
+        Dim formRegistration As New F_UserRegistration
+        formRegistration.MdiParent = Me
+        formRegistration.Show()
+    End Sub
+
+    Private Sub EquipmentsPropertiesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EquipmentsPropertiesToolStripMenuItem.Click
+        F_Inventory.MdiParent = Me
+        F_Inventory.Show()
+    End Sub
+
+    Private Sub ViewToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ViewToolStripMenuItem1.Click
+        F_UserAccounts.MdiParent = Me
+        F_UserAccounts.Show()
+    End Sub
 End Class

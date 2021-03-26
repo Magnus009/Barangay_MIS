@@ -24,7 +24,6 @@ Partial Class F_Officials
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(F_Officials))
         Me.picCaviteCityLogo = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.picBarangayLogo = New System.Windows.Forms.PictureBox()
         Me.datOfficials = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -49,16 +48,6 @@ Partial Class F_Officials
         Me.picCaviteCityLogo.Size = New System.Drawing.Size(80, 75)
         Me.picCaviteCityLogo.TabIndex = 0
         Me.picCaviteCityLogo.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(120, 34)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(373, 32)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "BARANGAY 36-A (SAP-SAP)"
         '
         'picBarangayLogo
         '
@@ -162,7 +151,6 @@ Partial Class F_Officials
         Me.Controls.Add(Me.lblSearch)
         Me.Controls.Add(Me.datOfficials)
         Me.Controls.Add(Me.picBarangayLogo)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.picCaviteCityLogo)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -182,7 +170,6 @@ Partial Class F_Officials
 
     End Sub
     Friend WithEvents picCaviteCityLogo As System.Windows.Forms.PictureBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents picBarangayLogo As System.Windows.Forms.PictureBox
     Friend WithEvents datOfficials As System.Windows.Forms.DataGridView
     Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn

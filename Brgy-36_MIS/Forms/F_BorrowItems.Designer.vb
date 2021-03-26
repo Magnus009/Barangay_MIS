@@ -296,6 +296,10 @@ Partial Class F_BorrowItems
         Me.Controls.Add(Me.lblCode)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+<<<<<<< HEAD
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+=======
+>>>>>>> 0cc0851a47f557d2d9b122cfb02ce042dfa8eb44
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
