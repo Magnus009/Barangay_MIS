@@ -91,6 +91,7 @@ Public Class _mdi_MIS
         UserName = ""
         UserLevel = ""
         Me.Hide()
+        F_Dashboard.Hide()
         F_Login.Show()
     End Sub
 

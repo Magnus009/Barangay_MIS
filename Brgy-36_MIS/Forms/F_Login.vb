@@ -25,6 +25,7 @@
                         UserName = .Rows(0)("UserName")
                         UserLevel = .Rows(0)("UserLevel").ToString
                         _mdi_MIS.Show()
+                        F_Dashboard.Show()
                         txtUser.Clear()
                         txtPassword.Clear()
                         Me.Hide()

@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0EC876DB-F647-4C97-BDB9-18FEA3BE6258}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Brgy_36_MIS.My.MyApplication</StartupObject>
+    <StartupObject>Brgy_36_MIS.F_Login</StartupObject>
     <RootNamespace>Brgy_36_MIS</RootNamespace>
     <AssemblyName>Brgy-36_MIS</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -75,6 +75,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -96,7 +97,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-<<<<<<< HEAD
     <Compile Include="Forms\F_AddSamahan.Designer.vb">
       <DependentUpon>F_AddSamahan.vb</DependentUpon>
     </Compile>
@@ -112,11 +112,6 @@
     <Compile Include="Forms\F_BorrowItems.Designer.vb">
       <DependentUpon>F_BorrowItems.vb</DependentUpon>
     </Compile>
-=======
-    <Compile Include="Forms\F_BorrowItems.Designer.vb">
-      <DependentUpon>F_BorrowItems.vb</DependentUpon>
-    </Compile>
->>>>>>> 0cc0851a47f557d2d9b122cfb02ce042dfa8eb44
     <Compile Include="Forms\F_BorrowItems.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +131,12 @@
       <DependentUpon>F_CurrentOfficials.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\F_CurrentOfficials.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\F_Dashboard.Designer.vb">
+      <DependentUpon>F_Dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_Dashboard.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\F_HouseholdList.Designer.vb">
@@ -230,15 +231,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <EmbeddedResource Include="Forms\F_AddSamahan.resx">
       <DependentUpon>F_AddSamahan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_BarangayIndigency.resx">
       <DependentUpon>F_BarangayIndigency.vb</DependentUpon>
     </EmbeddedResource>
-=======
->>>>>>> 0cc0851a47f557d2d9b122cfb02ce042dfa8eb44
     <EmbeddedResource Include="Forms\F_BorrowItems.resx">
       <DependentUpon>F_BorrowItems.vb</DependentUpon>
     </EmbeddedResource>
@@ -250,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_CurrentOfficials.resx">
       <DependentUpon>F_CurrentOfficials.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_Dashboard.resx">
+      <DependentUpon>F_Dashboard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_HouseholdList.resx">
       <DependentUpon>F_HouseholdList.vb</DependentUpon>
