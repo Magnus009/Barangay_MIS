@@ -4,7 +4,7 @@
     Private Sub F_Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Left = 0
-            Top = Screen.PrimaryScreen.Bounds.Height / 8
+            Top = Screen.PrimaryScreen.Bounds.Height / 12
             btnShowHide.Text = "◄"
             loadChart(1, chrtResident)
         Catch ex As Exception

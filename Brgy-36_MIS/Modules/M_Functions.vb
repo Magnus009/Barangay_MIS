@@ -260,4 +260,21 @@ Module M_Functions
         Return blnRequired
     End Function
 
+    Public Sub subCellFormat(ByVal sender As Object, e As DataGridViewCellFormattingEventArgs)
+        Dim dvgObj As New DataGridView
+        dvgObj = sender
+        With dvgObj
+            For Each row As DataGridViewRow In dvgObj.Rows
+                Select Case row.Cells("colStatus").Value.ToString
+                    Case "deleted"
+                        row.DefaultCellStyle.BackColor = My.Settings.Deleted
+                    Case "deactivated"
+                        row.DefaultCellStyle.BackColor = My.Settings.Deactivated
+                    Case Else
+                        row.DefaultCellStyle.BackColor = Color.White
+                End Select
+            Next
+        End With
+    End Sub
+
 End Module

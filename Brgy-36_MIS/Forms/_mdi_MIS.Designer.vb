@@ -250,26 +250,26 @@ Partial Class _mdi_MIS
         '
         Me.SamahanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewToolStripMenuItem1, Me.RegisterToolStripMenuItem1})
         Me.SamahanToolStripMenuItem.Name = "SamahanToolStripMenuItem"
-        Me.SamahanToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SamahanToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.SamahanToolStripMenuItem.Text = "Accounts"
         '
         'ViewToolStripMenuItem1
         '
         Me.ViewToolStripMenuItem1.Name = "ViewToolStripMenuItem1"
-        Me.ViewToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.ViewToolStripMenuItem1.Size = New System.Drawing.Size(116, 22)
         Me.ViewToolStripMenuItem1.Text = "View"
         '
         'RegisterToolStripMenuItem1
         '
         Me.RegisterToolStripMenuItem1.Name = "RegisterToolStripMenuItem1"
-        Me.RegisterToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.RegisterToolStripMenuItem1.Size = New System.Drawing.Size(116, 22)
         Me.RegisterToolStripMenuItem1.Text = "Register"
         '
         'SamahanToolStripMenuItem1
         '
         Me.SamahanToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewToolStripMenuItem, Me.RegisterToolStripMenuItem})
         Me.SamahanToolStripMenuItem1.Name = "SamahanToolStripMenuItem1"
-        Me.SamahanToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.SamahanToolStripMenuItem1.Size = New System.Drawing.Size(145, 22)
         Me.SamahanToolStripMenuItem1.Text = "Samahan"
         '
         'ViewToolStripMenuItem
@@ -287,7 +287,7 @@ Partial Class _mdi_MIS
         'BackupDataToolStripMenuItem
         '
         Me.BackupDataToolStripMenuItem.Name = "BackupDataToolStripMenuItem"
-        Me.BackupDataToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BackupDataToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.BackupDataToolStripMenuItem.Text = "Back-up Data"
         '
         'mnuLogout
@@ -314,6 +314,7 @@ Partial Class _mdi_MIS
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "_mdi_MIS"
         Me.Text = "MANAGEMENT INFORMATION SYSTEM  of BARANGAY 36-A  (SAP-SAP)"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.mnuMIS.ResumeLayout(False)
         Me.mnuMIS.PerformLayout()
         Me.ResumeLayout(False)

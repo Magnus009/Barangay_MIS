@@ -51,18 +51,17 @@
                 MsgBox("Please fill out all the required field" & vbCrLf & strRequire, vbOKOnly + vbExclamation)
             Else
                 strQuery = ""
-                strQuery += "SELECT count(UserID) FROM M_UserAccounts" & vbCrLf
+                strQuery += "SELECT UserID FROM M_UserAccounts" & vbCrLf
                 strQuery += "WHERE UserName = '" + txtUserName.Text + "'" & vbCrLf
                 dsCheckUser = SQL_SELECT(strQuery)
 
                 If dsCheckUser.Tables(0).Rows.Count <> 0 Then
-                    MsgBox("User Name already exist!", vbOKOnly + vbExclamation)
+                    Throw New Exception("User Name already exist!")
                 Else
                     strQuery = ""
                     strQuery += "SELECT dbo.fn_colID ('A')"
                     dsID = SQL_SELECT(strQuery)
                     strID = dsID.Tables(0).Rows(0)(0)
-
 
                     strQuery = ""
                     strQuery += "INSERT INTO dbo.M_UserAccounts " & vbCrLf
@@ -117,11 +116,11 @@
                     SQL_EXECUTE(strQuery)
 
                     MsgBox("Account Registered!", vbOKOnly + vbInformation)
+                    Me.Close()
                 End If
-
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 

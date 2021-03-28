@@ -92,7 +92,37 @@
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
-        Call fn_ClearField(Me)
+        If btnClear.Text = "&DELETE" Then
+            If MsgBox("Do you want to Delete this record?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "DELETE") Then
+                strQuery = "UPDATE Residents" + vbCrLf
+                strQuery += "SET DeletedDate = getdate()" + vbCrLf
+                strQuery += ", UpdatedDate = getdate()" + vbCrLf
+                strQuery += ", UpdatedBy = '" + UserName + "'" + vbCrLf
+                strQuery += "WHERE Code = '" + txtID.Text + "'" + vbCrLf
+
+                If SQL_EXECUTE(strQuery) Then
+                    MsgBox("Record Deleted Successfuly!", MsgBoxStyle.Information)
+                    Me.Close()
+                    F_ResidentsRecord.loadResidentRecords()
+                End If
+            End If
+        ElseIf btnClear.Text = "&RETRIVE" Then
+            If MsgBox("Do you want to Retrive this record?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "RETRIEVE") Then
+                strQuery = "UPDATE Residents" + vbCrLf
+                strQuery += "SET DeletedDate = NULL" + vbCrLf
+                strQuery += ", UpdatedDate = getdate()" + vbCrLf
+                strQuery += ", UpdatedBy = '" + UserName + "'" + vbCrLf
+                strQuery += "WHERE Code = '" + txtID.Text + "'" + vbCrLf
+
+                If SQL_EXECUTE(strQuery) Then
+                    MsgBox("Record Retrived Successfuly!", MsgBoxStyle.Information)
+                    Me.Close()
+                    F_ResidentsRecord.loadResidentRecords()
+                End If
+            End If
+        Else
+            Call fn_ClearField(Me)
+        End If
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click

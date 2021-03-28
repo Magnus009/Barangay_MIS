@@ -96,8 +96,10 @@ Partial Class F_Inventory
         Me.datItems.DefaultCellStyle = DataGridViewCellStyle2
         Me.datItems.Location = New System.Drawing.Point(14, 156)
         Me.datItems.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.datItems.MultiSelect = False
         Me.datItems.Name = "datItems"
         Me.datItems.RowHeadersVisible = False
+        Me.datItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.datItems.Size = New System.Drawing.Size(297, 469)
         Me.datItems.TabIndex = 1
         '
@@ -126,8 +128,10 @@ Partial Class F_Inventory
         Me.datBorrow.DefaultCellStyle = DataGridViewCellStyle4
         Me.datBorrow.Location = New System.Drawing.Point(318, 155)
         Me.datBorrow.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.datBorrow.MultiSelect = False
         Me.datBorrow.Name = "datBorrow"
         Me.datBorrow.RowHeadersVisible = False
+        Me.datBorrow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.datBorrow.Size = New System.Drawing.Size(688, 474)
         Me.datBorrow.TabIndex = 2
         '

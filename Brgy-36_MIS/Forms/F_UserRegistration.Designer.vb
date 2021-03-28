@@ -146,6 +146,7 @@ Partial Class F_UserRegistration
         Me.txtConfirmPass.Size = New System.Drawing.Size(257, 22)
         Me.txtConfirmPass.TabIndex = 7
         Me.txtConfirmPass.Tag = "IN;Confirm Password*"
+        Me.txtConfirmPass.UseSystemPasswordChar = True
         '
         'lblConfirmPass
         '
@@ -165,6 +166,7 @@ Partial Class F_UserRegistration
         Me.txtPassword.Size = New System.Drawing.Size(257, 22)
         Me.txtPassword.TabIndex = 5
         Me.txtPassword.Tag = "IN;Password*"
+        Me.txtPassword.UseSystemPasswordChar = True
         '
         'lblPassword
         '
@@ -310,7 +312,7 @@ Partial Class F_UserRegistration
         Me.lblQ1.TabIndex = 9
         Me.lblQ1.Text = "QUESTION 1:"
         '
-        'F_UserResitration
+        'F_UserRegistration
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -325,7 +327,7 @@ Partial Class F_UserRegistration
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "F_UserResitration"
+        Me.Name = "F_UserRegistration"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "USER REGISTRATION"
         Me.pnlHeader.ResumeLayout(False)

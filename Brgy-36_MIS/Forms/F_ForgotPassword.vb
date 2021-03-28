@@ -1,91 +1,100 @@
-﻿Public Class F_ForgotPassword
-    Dim dsUserQuestions As New DataSet
-    Dim strID As String
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+﻿Public Class F_forgotPassword
+
+    Dim dtVerification As New DataTable
+    Private Sub btnVerify_Click(sender As Object, e As EventArgs) Handles btnVerify.Click
         Try
-            Dim blnUpdated As Boolean
+            If txtUserName.Text <> "" Then
+                strQuery = "SELECT UA.UserID, UA.UserName, Q1.Question, UQ.Answer1, Q2.Question, UQ.Answer2, UA.Password FROM M_UserAccounts UA" + vbCrLf
+                strQuery += "LEFT JOIN UserQuestion UQ ON UA.UserID = UQ.UserID" + vbCrLf
+                strQuery += "INNER JOIN M_VerificationQuestion Q1 ON UQ.QuestionID1 = Q1.ID" + vbCrLf
+                strQuery += "INNER JOIN M_VerificationQuestion Q2 ON UQ.QuestionID2 = Q2.ID" + vbCrLf
+                strQuery += "WHERE UA.UserName COLLATE Latin1_General_CS_AS = '" + txtUserName.Text + "'"
+                dtVerification = SQL_SELECT(strQuery).Tables(0)
 
-            If fn_CheckRequire(Me) Then
-                MsgBox("Please complete all the required field " & vbCrLf & strRequire, vbOKOnly + vbExclamation)
+                If dtVerification.Rows.Count <> 0 Then
+                    MsgBox("Answer the security question to verify", MsgBoxStyle.Information)
+
+                    txtAnswer_1.ReadOnly = False : txtAnswer_2.ReadOnly = False
+                    lblAsterisk_1.Visible = True : lblAsterisk_2.Visible = True
+                    txtQuestion_1.Text = dtVerification.Rows(0)(2)
+                    txtQuestion_2.Text = dtVerification.Rows(0)(4)
+                End If
             Else
-                If txtAnswer1.Text <> dsUserQuestions.Tables(0).Rows(0)(2) Or txtAnswer2.Text <> dsUserQuestions.Tables(0).Rows(0)(5) Then
-                    MsgBox("Answers doesn't match!", vbOKOnly + vbExclamation)
-                Else
-                    strQuery = ""
-                    strQuery += "UPDATE dbo.M_UserAccounts" & vbCrLf
-                    strQuery += "SET Password = '" + txtNewPass.Text + "'" & vbCrLf
-                    strQuery += "WHERE UserID = '" + strID + "'" & vbCrLf
-                    blnUpdated = SQL_EXECUTE(strQuery)
+                Throw New Exception("Input USERNAME for verification")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
 
-                    If blnUpdated Then
-                        MsgBox("Password changed successfully!", vbOKOnly + vbInformation)
-                        Me.Hide()
-                    End If
 
+    Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
+        Try
+            If fn_CheckRequire(Me) Then
+                MsgBox("Please complete the required fields(*):" & vbCrLf & strRequire, MsgBoxStyle.Exclamation, "Required Items")
+                strRequire = ""
+            Else
+                If txtAnswer_1.Text.ToLower = dtVerification.Rows(0)(3).ToString.ToLower And _
+                    txtAnswer_2.Text.ToLower = dtVerification.Rows(0)(5).ToString.ToLower Then
+                    txtOldPass.Text = dtVerification.Rows(0)(6)
+                    pnlTop.Height = 230
                 End If
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-    Private Sub txtUserName_Leave(sender As Object, e As EventArgs) Handles txtUserName.Leave
+
+    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        pnlTop.Height = 20
+    End Sub
+
+    Private Sub chkShowHide_P_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowHide_P.CheckedChanged
+        showHidePass(chkShowHide_P, txtOldPass)
+    End Sub
+
+    Private Sub showHidePass(chk As CheckBox, txt As TextBox)
+        If chk.Checked Then
+            chk.Text = "&Hide"
+            txt.PasswordChar = ""
+        Else
+            chk.Text = "&Show"
+            txt.PasswordChar = "•"
+        End If
+    End Sub
+
+    Private Sub chkShowHide_NP_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowHide_NP.CheckedChanged
+        showHidePass(chkShowHide_NP, txtNewPass)
+    End Sub
+
+    Private Sub chkShowHide_CNP_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowHide_CNP.CheckedChanged
+        showHidePass(chkShowHide_CNP, txtConfirmNewPass)
+    End Sub
+
+    Private Sub F_forgotPassword_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        pnlTop.Height = 20
+    End Sub
+
+    Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
         Try
-
-            Dim dsCheckUser As New DataSet
-
-            strQuery = ""
-            strQuery += "SELECT * FROM M_UserAccounts" & vbCrLf
-            strQuery += "WHERE UserName = '" + txtUserName.Text + "'"
-            dsCheckUser = SQL_SELECT(strQuery)
-
-            If dsCheckUser.Tables(0).Rows.Count <> 0 Then
-
-                strID = dsCheckUser.Tables(0).Rows(0)(0)
-                Call getUsersQuestions()
-                txtNewPass.ReadOnly = False
-                txtConfirmPass.ReadOnly = False
-                txtAnswer1.ReadOnly = False
-                txtAnswer2.ReadOnly = False
-                txtQuestion1.Text = dsUserQuestions.Tables(0).Rows(0)(1)
-                txtQuestion2.Text = dsUserQuestions.Tables(0).Rows(0)(4)
-
+            If txtNewPass.Text = "" Or txtConfirmNewPass.Text = "" Then
+                Throw New Exception("Please Complete the required")
+            ElseIf txtNewPass.Text <> txtConfirmNewPass.Text Then
+                Throw New Exception("Please confirm your new password correctly")
             Else
-                MsgBox("User name doesn't exist!", vbOKOnly + vbExclamation)
-                txtNewPass.ReadOnly = True
-                txtConfirmPass.ReadOnly = True
-                txtAnswer1.ReadOnly = True
-                txtAnswer2.ReadOnly = True
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        Me.Hide()
-    End Sub
-    Private Sub getUsersQuestions()
-        Try
-            strQuery = ""
-            strQuery += "SELECT UQ.QuestionID1, Q1.Question,UQ.Answer1,UQ.QuestionID2, Q2.Question, UQ.Answer2 FROM UserQuestion UQ" & vbCrLf
-            strQuery += "INNER JOIN M_VerificationQuestion Q1 ON UQ.QuestionID1 = Q1.ID " & vbCrLf
-            strQuery += "INNER JOIN M_VerificationQuestion Q2 ON UQ.QuestionID2 = Q2.ID " & vbCrLf
-            strQuery += "WHERE UQ.UserID = '" + strID + "'"
-            dsUserQuestions = SQL_SELECT(strQuery)
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-    Private Sub txtConfirmPass_Leave(sender As Object, e As EventArgs) Handles txtConfirmPass.Leave
-        Try
-            If txtNewPass.Text <> txtConfirmPass.Text Then
-                MsgBox("Password mismatch!", vbOKOnly + vbExclamation)
-                txtConfirmPass.ForeColor = Color.Red
-            End If
-        Catch ex As Exception
+                strQuery = "UPDATE M_UserAccounts" + vbCrLf
+                strQuery += "SET Password = '" + txtNewPass.Text + "'"
+                strQuery += ", UpdatedDate = getdate()" + vbCrLf
+                strQuery += ", UpdatedBy = '" + dtVerification.Rows(0)(1) + "'" + vbCrLf
+                strQuery += "WHERE UserID = '" + dtVerification.Rows(0)(0) + "'"
 
+                If SQL_EXECUTE(strQuery) Then
+                    MsgBox("Password changed successfuly!", MsgBoxStyle.Information)
+                    Me.Close()
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
-    End Sub
-    Private Sub txtConfirmPass_TextChanged(sender As Object, e As EventArgs) Handles txtConfirmPass.TextChanged
-        txtConfirmPass.ForeColor = Color.Black
     End Sub
 End Class

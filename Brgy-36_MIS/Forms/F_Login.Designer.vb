@@ -31,7 +31,6 @@ Partial Class F_Login
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lnkForgotPass = New System.Windows.Forms.LinkLabel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.lnkRegister = New System.Windows.Forms.LinkLabel()
         Me.chkShowHide = New System.Windows.Forms.CheckBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -138,17 +137,6 @@ Partial Class F_Login
         Me.PictureBox2.TabIndex = 8
         Me.PictureBox2.TabStop = False
         '
-        'lnkRegister
-        '
-        Me.lnkRegister.AutoSize = True
-        Me.lnkRegister.Location = New System.Drawing.Point(521, 422)
-        Me.lnkRegister.Name = "lnkRegister"
-        Me.lnkRegister.Size = New System.Drawing.Size(107, 16)
-        Me.lnkRegister.TabIndex = 5
-        Me.lnkRegister.TabStop = True
-        Me.lnkRegister.Text = "CREATE ACCOUNT"
-        Me.lnkRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'chkShowHide
         '
         Me.chkShowHide.AutoSize = True
@@ -171,7 +159,6 @@ Partial Class F_Login
         Me.ControlBox = False
         Me.Controls.Add(Me.txtUser)
         Me.Controls.Add(Me.chkShowHide)
-        Me.Controls.Add(Me.lnkRegister)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.lnkForgotPass)
         Me.Controls.Add(Me.txtPassword)
@@ -201,6 +188,5 @@ Partial Class F_Login
     Friend WithEvents txtPassword As System.Windows.Forms.TextBox
     Friend WithEvents lnkForgotPass As System.Windows.Forms.LinkLabel
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-    Friend WithEvents lnkRegister As System.Windows.Forms.LinkLabel
     Friend WithEvents chkShowHide As System.Windows.Forms.CheckBox
 End Class

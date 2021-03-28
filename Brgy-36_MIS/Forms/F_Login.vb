@@ -48,8 +48,9 @@
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
     End Sub
-    Private Sub F_Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Dim App As AppDomain = AppDomain.CurrentDomain
-        'AddHandler App.UnhandledException, AddressOf GlobalException_Handler
+
+    Private Sub lnkForgotPass_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkForgotPass.LinkClicked
+        Dim frmForgotPass As New F_forgotPassword
+        frmForgotPass.ShowDialog()
     End Sub
 End Class

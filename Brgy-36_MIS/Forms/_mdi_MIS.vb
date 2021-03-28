@@ -77,8 +77,9 @@ Public Class _mdi_MIS
 
     Private m_ChildFormNumber As Integer
 
-    Private Sub _mdi_MIS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'MsgBox(Application.StartupPath())
+    Private Sub _mdi_MIS_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        F_Dashboard.Close()
+        F_Login.Close()
     End Sub
 
     Private Sub AddResidentToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AddResidentToolStripMenuItem1.Click
@@ -88,11 +89,13 @@ Public Class _mdi_MIS
     End Sub
 
     Private Sub mnuLogout_Click(sender As Object, e As EventArgs) Handles mnuLogout.Click
-        UserName = ""
-        UserLevel = ""
-        Me.Hide()
-        F_Dashboard.Hide()
-        F_Login.Show()
+        If MsgBox("Do you want to LOGOUT?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "CLOSE") Then
+            UserName = ""
+            UserLevel = ""
+            Me.Hide()
+            F_Dashboard.Close()
+            F_Login.Show()
+        End If
     End Sub
 
     Private Sub ViewResidentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewResidentToolStripMenuItem.Click
@@ -103,9 +106,6 @@ Public Class _mdi_MIS
     Private Sub ViewOfficialsRecordsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewOfficialsRecordsToolStripMenuItem.Click
         F_Officials.MdiParent = Me
         F_Officials.Show()
-    End Sub
-
-    Private Sub UpdateOfficialsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UpdateOfficialsToolStripMenuItem.Click
     End Sub
 
     Private Sub ViewComplaintsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewComplaintsToolStripMenuItem.Click
