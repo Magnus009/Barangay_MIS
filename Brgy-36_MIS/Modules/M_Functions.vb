@@ -289,13 +289,104 @@ Module M_Functions
                 Select Case row.Cells("colStatus").Value.ToString
                     Case "deleted"
                         row.DefaultCellStyle.BackColor = My.Settings.Deleted
+                        row.DefaultCellStyle.SelectionForeColor = My.Settings.Deleted
                     Case "deactivated"
                         row.DefaultCellStyle.BackColor = My.Settings.Deactivated
-                    Case Else
-                        row.DefaultCellStyle.BackColor = Color.White
+                        row.DefaultCellStyle.SelectionForeColor = My.Settings.Deactivated
                 End Select
             Next
         End With
+    End Sub
+
+    Public Sub formLoadSetup(container As Control)
+
+        If container.Tag = "Primary" Then
+            Dim frm As New Form
+            frm = container
+
+            frm.FormBorderStyle = FormBorderStyle.FixedSingle
+            frm.MinimizeBox = False
+            frm.MaximizeBox = False
+            frm.StartPosition = FormStartPosition.CenterScreen
+            frm.BackColor = My.Settings.Primary
+        End If
+
+        For Each ctrl As Control In container.Controls
+            Select Case ctrl.GetType
+
+                Case GetType(Panel)
+                    If ctrl.Tag = "Secondary" Then
+                        ctrl.BackColor = My.Settings.Secondary
+                    End If
+                    formLoadSetup(ctrl)
+                Case GetType(Button)
+                    Dim btn As New Button
+                    btn = ctrl
+                    btn.FlatStyle = FlatStyle.Flat
+                    btn.ForeColor = Color.White
+                    btn.Font = My.Settings.ButtonFont
+                    If btn.Tag = "Close" Then
+                        btn.BackColor = Color.Red
+                    Else
+                        btn.BackColor = My.Settings.Primary
+                    End If
+                Case GetType(Label)
+                    ctrl.Font = My.Settings.Font
+                Case GetType(TextBox)
+                    ctrl.Font = My.Settings.Font
+                    ctrl.BackColor = Color.White
+                Case GetType(DataGridView)
+                    Dim dgv As New DataGridView
+                    dgv = ctrl
+
+                    With dgv
+                        .ReadOnly = True
+                        .MultiSelect = False
+                        .GridColor = Color.Black
+                        .ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText
+                        .AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells
+                        .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None
+                        .ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
+                        .ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+                        .ColumnHeadersHeight = 30
+                        .RowHeadersVisible = False
+                        .BorderStyle = BorderStyle.FixedSingle
+                        .SelectionMode = DataGridViewSelectionMode.FullRowSelect
+                        .ScrollBars = ScrollBars.Vertical
+
+                        With .ColumnHeadersDefaultCellStyle
+                            .BackColor = My.Settings.Primary
+                            .ForeColor = Color.White
+                            .Font = My.Settings.HeaderFont
+                        End With
+
+                        With .DefaultCellStyle
+                            .SelectionBackColor = My.Settings.Selected
+                            .Alignment = DataGridViewContentAlignment.MiddleCenter
+                        End With
+
+                        With .RowTemplate
+                            .Height = 40
+                        End With
+                    End With
+
+
+
+                    For Each col As DataGridViewColumn In dgv.Columns
+                        Select Case col.GetType
+                            Case GetType(DataGridViewButtonColumn)
+                                Dim colBtn As New DataGridViewButtonColumn
+                                colBtn = col
+
+                                colBtn.FlatStyle = FlatStyle.Flat
+                                colBtn.DefaultCellStyle.BackColor = My.Settings.Primary
+                                colBtn.DefaultCellStyle.ForeColor = Color.White
+                                colBtn.DefaultCellStyle.SelectionBackColor = My.Settings.Primary
+                        End Select
+                    Next
+            End Select
+
+        Next
     End Sub
 
 End Module

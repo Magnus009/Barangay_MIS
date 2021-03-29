@@ -56,6 +56,30 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("55, 77, 112")>  _
+        Public Property Primary() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("Primary"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("Primary") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("169, 182, 207")>  _
+        Public Property Secondary() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("Secondary"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("Secondary") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("255, 128, 128")>  _
         Public Property Deleted() As Global.System.Drawing.Color
             Get
@@ -75,6 +99,54 @@ Namespace My
             End Get
             Set
                 Me("Deactivated") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Century Gothic, 9.75pt, style=Bold")>  _
+        Public Property HeaderFont() As Global.System.Drawing.Font
+            Get
+                Return CType(Me("HeaderFont"),Global.System.Drawing.Font)
+            End Get
+            Set
+                Me("HeaderFont") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("50, 113, 240")>  _
+        Public Property Selected() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("Selected"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("Selected") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Century Gothic, 8.25pt")>  _
+        Public Property Font() As Global.System.Drawing.Font
+            Get
+                Return CType(Me("Font"),Global.System.Drawing.Font)
+            End Get
+            Set
+                Me("Font") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Century Gothic, 9.75pt, style=Bold")>  _
+        Public Property ButtonFont() As Global.System.Drawing.Font
+            Get
+                Return CType(Me("ButtonFont"),Global.System.Drawing.Font)
+            End Get
+            Set
+                Me("ButtonFont") = value
             End Set
         End Property
     End Class

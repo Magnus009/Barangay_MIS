@@ -2,11 +2,29 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
   <Profiles />
   <Settings>
+    <Setting Name="Primary" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">55, 77, 112</Value>
+    </Setting>
+    <Setting Name="Secondary" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">169, 182, 207</Value>
+    </Setting>
     <Setting Name="Deleted" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">255, 128, 128</Value>
     </Setting>
     <Setting Name="Deactivated" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">255, 192, 128</Value>
+    </Setting>
+    <Setting Name="HeaderFont" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Century Gothic, 9.75pt, style=Bold</Value>
+    </Setting>
+    <Setting Name="Selected" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">50, 113, 240</Value>
+    </Setting>
+    <Setting Name="Font" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Century Gothic, 8.25pt</Value>
+    </Setting>
+    <Setting Name="ButtonFont" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Century Gothic, 9.75pt, style=Bold</Value>
     </Setting>
   </Settings>
 </SettingsFile>

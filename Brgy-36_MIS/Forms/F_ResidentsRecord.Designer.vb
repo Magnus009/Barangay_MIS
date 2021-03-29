@@ -34,15 +34,25 @@ Partial Class F_ResidentsRecord
         Me.txtHouseNo = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnSearch = New System.Windows.Forms.Button()
+        Me.pnlSearch = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.txtID = New System.Windows.Forms.TextBox()
+        Me.lblID = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtLName = New System.Windows.Forms.TextBox()
         CType(Me.datResidents, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlSearch.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'datResidents
         '
         Me.datResidents.AllowUserToAddRows = False
         Me.datResidents.AllowUserToDeleteRows = False
-        Me.datResidents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.datResidents.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
+        Me.datResidents.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
         DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle5.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -60,7 +70,7 @@ Partial Class F_ResidentsRecord
         DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.datResidents.DefaultCellStyle = DataGridViewCellStyle6
-        Me.datResidents.Location = New System.Drawing.Point(12, 58)
+        Me.datResidents.Location = New System.Drawing.Point(11, 11)
         Me.datResidents.MultiSelect = False
         Me.datResidents.Name = "datResidents"
         Me.datResidents.ReadOnly = True
@@ -77,14 +87,15 @@ Partial Class F_ResidentsRecord
         Me.datResidents.RowsDefaultCellStyle = DataGridViewCellStyle8
         Me.datResidents.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.datResidents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datResidents.Size = New System.Drawing.Size(766, 372)
+        Me.datResidents.Size = New System.Drawing.Size(345, 344)
+        Me.datResidents.StandardTab = True
         Me.datResidents.TabIndex = 5
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label1.Location = New System.Drawing.Point(33, 9)
+        Me.Label1.Location = New System.Drawing.Point(8, 12)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(99, 16)
         Me.Label1.TabIndex = 1
@@ -94,7 +105,7 @@ Partial Class F_ResidentsRecord
         'txtCode
         '
         Me.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCode.Location = New System.Drawing.Point(138, 7)
+        Me.txtCode.Location = New System.Drawing.Point(113, 10)
         Me.txtCode.MaxLength = 10
         Me.txtCode.Name = "txtCode"
         Me.txtCode.Size = New System.Drawing.Size(118, 21)
@@ -104,7 +115,7 @@ Partial Class F_ResidentsRecord
         'txtName
         '
         Me.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtName.Location = New System.Drawing.Point(137, 31)
+        Me.txtName.Location = New System.Drawing.Point(112, 34)
         Me.txtName.MaxLength = 100
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(255, 21)
@@ -115,7 +126,7 @@ Partial Class F_ResidentsRecord
         '
         Me.Label2.AutoSize = True
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label2.Location = New System.Drawing.Point(33, 36)
+        Me.Label2.Location = New System.Drawing.Point(8, 39)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(98, 16)
         Me.Label2.TabIndex = 3
@@ -125,7 +136,7 @@ Partial Class F_ResidentsRecord
         'txtHouseNo
         '
         Me.txtHouseNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtHouseNo.Location = New System.Drawing.Point(493, 4)
+        Me.txtHouseNo.Location = New System.Drawing.Point(468, 7)
         Me.txtHouseNo.MaxLength = 10
         Me.txtHouseNo.Name = "txtHouseNo"
         Me.txtHouseNo.Size = New System.Drawing.Size(156, 21)
@@ -136,7 +147,7 @@ Partial Class F_ResidentsRecord
         '
         Me.Label3.AutoSize = True
         Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label3.Location = New System.Drawing.Point(419, 7)
+        Me.Label3.Location = New System.Drawing.Point(394, 10)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(73, 16)
         Me.Label3.TabIndex = 5
@@ -145,28 +156,111 @@ Partial Class F_ResidentsRecord
         '
         'btnSearch
         '
+        Me.btnSearch.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSearch.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearch.Location = New System.Drawing.Point(663, 4)
+        Me.btnSearch.Location = New System.Drawing.Point(642, 7)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(114, 47)
         Me.btnSearch.TabIndex = 4
+        Me.btnSearch.Tag = "Primary"
         Me.btnSearch.Text = "&SEARCH"
-        Me.btnSearch.UseVisualStyleBackColor = True
+        Me.btnSearch.UseVisualStyleBackColor = False
+        '
+        'pnlSearch
+        '
+        Me.pnlSearch.Controls.Add(Me.txtName)
+        Me.pnlSearch.Controls.Add(Me.btnSearch)
+        Me.pnlSearch.Controls.Add(Me.Label1)
+        Me.pnlSearch.Controls.Add(Me.txtHouseNo)
+        Me.pnlSearch.Controls.Add(Me.txtCode)
+        Me.pnlSearch.Controls.Add(Me.Label3)
+        Me.pnlSearch.Controls.Add(Me.Label2)
+        Me.pnlSearch.Location = New System.Drawing.Point(13, 12)
+        Me.pnlSearch.Name = "pnlSearch"
+        Me.pnlSearch.Size = New System.Drawing.Size(959, 65)
+        Me.pnlSearch.TabIndex = 6
+        Me.pnlSearch.Tag = "Secondary"
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.datResidents)
+        Me.Panel1.Location = New System.Drawing.Point(13, 83)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(366, 366)
+        Me.Panel1.TabIndex = 7
+        Me.Panel1.Tag = "Secondary"
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.txtID)
+        Me.Panel2.Controls.Add(Me.lblID)
+        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Controls.Add(Me.txtLName)
+        Me.Panel2.Location = New System.Drawing.Point(385, 83)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(587, 366)
+        Me.Panel2.TabIndex = 8
+        Me.Panel2.Tag = "Secondary"
+        '
+        'txtID
+        '
+        Me.txtID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtID.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtID.Location = New System.Drawing.Point(71, 15)
+        Me.txtID.MaxLength = 10
+        Me.txtID.Multiline = True
+        Me.txtID.Name = "txtID"
+        Me.txtID.ReadOnly = True
+        Me.txtID.Size = New System.Drawing.Size(118, 21)
+        Me.txtID.TabIndex = 4
+        Me.txtID.Tag = "SG"
+        Me.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lblID
+        '
+        Me.lblID.AutoSize = True
+        Me.lblID.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblID.Location = New System.Drawing.Point(8, 17)
+        Me.lblID.Name = "lblID"
+        Me.lblID.Size = New System.Drawing.Size(46, 16)
+        Me.lblID.TabIndex = 3
+        Me.lblID.Text = "ID No. :"
+        Me.lblID.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(8, 45)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(46, 16)
+        Me.Label4.TabIndex = 5
+        Me.Label4.Text = "NAME :"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'txtLName
+        '
+        Me.txtLName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtLName.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLName.Location = New System.Drawing.Point(71, 43)
+        Me.txtLName.MaxLength = 50
+        Me.txtLName.Multiline = True
+        Me.txtLName.Name = "txtLName"
+        Me.txtLName.Size = New System.Drawing.Size(222, 21)
+        Me.txtLName.TabIndex = 6
+        Me.txtLName.Tag = "IN;Last Name*"
+        Me.txtLName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'F_ResidentsRecord
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(790, 442)
-        Me.Controls.Add(Me.btnSearch)
-        Me.Controls.Add(Me.txtHouseNo)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.txtName)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.txtCode)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.datResidents)
+        Me.ClientSize = New System.Drawing.Size(984, 461)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.pnlSearch)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -175,10 +269,15 @@ Partial Class F_ResidentsRecord
         Me.Name = "F_ResidentsRecord"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Tag = "Primary"
         Me.Text = "RESIDENT'S RECORDS"
         CType(Me.datResidents, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlSearch.ResumeLayout(False)
+        Me.pnlSearch.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents datResidents As System.Windows.Forms.DataGridView
@@ -189,4 +288,11 @@ Partial Class F_ResidentsRecord
     Friend WithEvents txtHouseNo As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents btnSearch As System.Windows.Forms.Button
+    Friend WithEvents pnlSearch As System.Windows.Forms.Panel
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents txtID As System.Windows.Forms.TextBox
+    Friend WithEvents lblID As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents txtLName As System.Windows.Forms.TextBox
 End Class
