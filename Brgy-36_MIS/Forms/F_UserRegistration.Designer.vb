@@ -66,7 +66,7 @@ Partial Class F_UserRegistration
         '
         'btnSave
         '
-        Me.btnSave.BackColor = System.Drawing.Color.Teal
+        Me.btnSave.BackColor = System.Drawing.Color.SteelBlue
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
@@ -79,7 +79,7 @@ Partial Class F_UserRegistration
         '
         'pnlHeader
         '
-        Me.pnlHeader.BackColor = System.Drawing.Color.Teal
+        Me.pnlHeader.BackColor = System.Drawing.Color.SteelBlue
         Me.pnlHeader.Controls.Add(Me.lblHeader)
         Me.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlHeader.Location = New System.Drawing.Point(0, 0)

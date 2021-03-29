@@ -48,7 +48,7 @@ Partial Class F_BorrowItems
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Teal
+        Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
         Me.Panel1.Controls.Add(Me.lblHeader)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -211,7 +211,7 @@ Partial Class F_BorrowItems
         '
         'btnSave
         '
-        Me.btnSave.BackColor = System.Drawing.Color.Teal
+        Me.btnSave.BackColor = System.Drawing.Color.SteelBlue
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White

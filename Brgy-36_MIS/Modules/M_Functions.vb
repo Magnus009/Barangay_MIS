@@ -98,6 +98,8 @@ Module M_Functions
                         ctrl.Text = ""
                     Case GetType(GroupBox)
                         groupControls(ctrl)
+                    Case GetType(Panel)
+                        panelControls(ctrl)
                     Case GetType(ComboBox)
                         Dim cbo As New ComboBox
                         cbo = ctrl
@@ -121,6 +123,25 @@ Module M_Functions
 
     Private Sub groupControls(group As GroupBox)
         For Each ctrl As Control In group.Controls
+            Select Case ctrl.GetType()
+                Case GetType(Label)
+                    'No Event
+                Case GetType(TextBox)
+                    ctrl.Text = ""
+                Case GetType(MaskedTextBox)
+                    ctrl.ResetText()
+                Case GetType(ComboBox)
+                    Dim cbo As New ComboBox
+                    cbo = ctrl
+                    cbo.SelectedIndex = -1
+                Case Else
+                    'No Event
+            End Select
+        Next
+    End Sub
+
+    Private Sub panelControls(panel As Panel)
+        For Each ctrl As Control In panel.Controls
             Select Case ctrl.GetType()
                 Case GetType(Label)
                     'No Event

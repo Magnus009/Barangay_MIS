@@ -51,7 +51,7 @@ Partial Class F_Inventory
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Teal
+        Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
         Me.Panel1.Controls.Add(Me.lblHeader)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -157,7 +157,7 @@ Partial Class F_Inventory
         '
         'btnAdd
         '
-        Me.btnAdd.BackColor = System.Drawing.Color.Teal
+        Me.btnAdd.BackColor = System.Drawing.Color.SteelBlue
         Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAdd.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.Color.White
@@ -171,7 +171,7 @@ Partial Class F_Inventory
         '
         'btnBorrow
         '
-        Me.btnBorrow.BackColor = System.Drawing.Color.Teal
+        Me.btnBorrow.BackColor = System.Drawing.Color.SteelBlue
         Me.btnBorrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBorrow.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBorrow.ForeColor = System.Drawing.Color.White
@@ -257,7 +257,7 @@ Partial Class F_Inventory
         '
         'btnFilter
         '
-        Me.btnFilter.BackColor = System.Drawing.Color.Teal
+        Me.btnFilter.BackColor = System.Drawing.Color.SteelBlue
         Me.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnFilter.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFilter.ForeColor = System.Drawing.Color.White

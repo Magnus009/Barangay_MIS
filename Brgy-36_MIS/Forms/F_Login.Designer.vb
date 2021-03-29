@@ -111,7 +111,7 @@ Partial Class F_Login
         '
         'PictureBox1
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Teal
+        Me.PictureBox1.BackColor = System.Drawing.Color.SteelBlue
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"

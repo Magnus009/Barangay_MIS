@@ -22,12 +22,12 @@ Partial Class F_Resident
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.grpPersonal = New System.Windows.Forms.GroupBox()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.lblDeleted = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
@@ -70,7 +70,6 @@ Partial Class F_Resident
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
-        Me.grpHouseHold = New System.Windows.Forms.GroupBox()
         Me.txtHouseNo = New System.Windows.Forms.TextBox()
         Me.btnHouseList = New System.Windows.Forms.Button()
         Me.Label34 = New System.Windows.Forms.Label()
@@ -96,80 +95,25 @@ Partial Class F_Resident
         Me.Label48 = New System.Windows.Forms.Label()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
-        Me.lblDeleted = New System.Windows.Forms.Label()
-        Me.grpPersonal.SuspendLayout()
-        Me.grpHouseHold.SuspendLayout()
+        Me.pnlPersonalInfo = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.pnlHouseholdInfo = New System.Windows.Forms.Panel()
+        Me.txtHouseholdNo = New System.Windows.Forms.TextBox()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.pnlPersonalInfo.SuspendLayout()
+        Me.pnlHouseholdInfo.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'grpPersonal
-        '
-        Me.grpPersonal.Controls.Add(Me.lblDeleted)
-        Me.grpPersonal.Controls.Add(Me.Label26)
-        Me.grpPersonal.Controls.Add(Me.Label25)
-        Me.grpPersonal.Controls.Add(Me.Label24)
-        Me.grpPersonal.Controls.Add(Me.Label23)
-        Me.grpPersonal.Controls.Add(Me.Label22)
-        Me.grpPersonal.Controls.Add(Me.Label20)
-        Me.grpPersonal.Controls.Add(Me.Label19)
-        Me.grpPersonal.Controls.Add(Me.Label18)
-        Me.grpPersonal.Controls.Add(Me.Label1)
-        Me.grpPersonal.Controls.Add(Me.Label17)
-        Me.grpPersonal.Controls.Add(Me.cboSamahan)
-        Me.grpPersonal.Controls.Add(Me.Label16)
-        Me.grpPersonal.Controls.Add(Me.dtpCaseStudy)
-        Me.grpPersonal.Controls.Add(Me.Label15)
-        Me.grpPersonal.Controls.Add(Me.txtContactNo)
-        Me.grpPersonal.Controls.Add(Me.chkPWD)
-        Me.grpPersonal.Controls.Add(Me.chkIndigent)
-        Me.grpPersonal.Controls.Add(Me.chkInHabitant)
-        Me.grpPersonal.Controls.Add(Me.chkVoter)
-        Me.grpPersonal.Controls.Add(Me.Label14)
-        Me.grpPersonal.Controls.Add(Me.cboCivilStatus)
-        Me.grpPersonal.Controls.Add(Me.Label13)
-        Me.grpPersonal.Controls.Add(Me.cboSex)
-        Me.grpPersonal.Controls.Add(Me.txtAge)
-        Me.grpPersonal.Controls.Add(Me.Label12)
-        Me.grpPersonal.Controls.Add(Me.Label11)
-        Me.grpPersonal.Controls.Add(Me.dtpBirthdate)
-        Me.grpPersonal.Controls.Add(Me.txtDisability)
-        Me.grpPersonal.Controls.Add(Me.lblDiasability)
-        Me.grpPersonal.Controls.Add(Me.txtOccupation)
-        Me.grpPersonal.Controls.Add(Me.Label9)
-        Me.grpPersonal.Controls.Add(Me.txtCitizenship)
-        Me.grpPersonal.Controls.Add(Me.Label8)
-        Me.grpPersonal.Controls.Add(Me.txtBirthPlace)
-        Me.grpPersonal.Controls.Add(Me.Label7)
-        Me.grpPersonal.Controls.Add(Me.txtEName)
-        Me.grpPersonal.Controls.Add(Me.txtMName)
-        Me.grpPersonal.Controls.Add(Me.txtFName)
-        Me.grpPersonal.Controls.Add(Me.txtLName)
-        Me.grpPersonal.Controls.Add(Me.Label2)
-        Me.grpPersonal.Controls.Add(Me.txtID)
-        Me.grpPersonal.Controls.Add(Me.lblID)
-        Me.grpPersonal.Controls.Add(Me.Label6)
-        Me.grpPersonal.Controls.Add(Me.Label5)
-        Me.grpPersonal.Controls.Add(Me.Label4)
-        Me.grpPersonal.Controls.Add(Me.Label3)
-        Me.grpPersonal.Controls.Add(Me.Label21)
-        Me.grpPersonal.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.grpPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.grpPersonal.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grpPersonal.Location = New System.Drawing.Point(12, 19)
-        Me.grpPersonal.Name = "grpPersonal"
-        Me.grpPersonal.Size = New System.Drawing.Size(811, 228)
-        Me.grpPersonal.TabIndex = 0
-        Me.grpPersonal.TabStop = False
-        Me.grpPersonal.Text = "PERSONAL INFORMATION"
         '
         'Label26
         '
         Me.Label26.AutoSize = True
         Me.Label26.BackColor = System.Drawing.Color.Transparent
-        Me.Label26.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.ForeColor = System.Drawing.Color.Red
-        Me.Label26.Location = New System.Drawing.Point(259, 198)
+        Me.Label26.Location = New System.Drawing.Point(330, 266)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(11, 13)
+        Me.Label26.Size = New System.Drawing.Size(14, 16)
         Me.Label26.TabIndex = 46
         Me.Label26.Tag = "reqSign"
         Me.Label26.Text = "*"
@@ -179,25 +123,53 @@ Partial Class F_Resident
         '
         Me.Label25.AutoSize = True
         Me.Label25.BackColor = System.Drawing.Color.Transparent
-        Me.Label25.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label25.ForeColor = System.Drawing.Color.Red
-        Me.Label25.Location = New System.Drawing.Point(259, 139)
+        Me.Label25.Location = New System.Drawing.Point(330, 192)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(11, 13)
+        Me.Label25.Size = New System.Drawing.Size(14, 16)
         Me.Label25.TabIndex = 45
         Me.Label25.Tag = "reqSign"
         Me.Label25.Text = "*"
         Me.Label25.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.BackColor = System.Drawing.Color.Transparent
+        Me.Label22.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.ForeColor = System.Drawing.Color.Red
+        Me.Label22.Location = New System.Drawing.Point(341, 155)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(14, 16)
+        Me.Label22.TabIndex = 42
+        Me.Label22.Tag = "reqSign"
+        Me.Label22.Text = "*"
+        Me.Label22.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'lblDeleted
+        '
+        Me.lblDeleted.BackColor = System.Drawing.Color.Red
+        Me.lblDeleted.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblDeleted.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDeleted.ForeColor = System.Drawing.Color.White
+        Me.lblDeleted.Location = New System.Drawing.Point(333, 54)
+        Me.lblDeleted.Name = "lblDeleted"
+        Me.lblDeleted.Size = New System.Drawing.Size(187, 36)
+        Me.lblDeleted.TabIndex = 47
+        Me.lblDeleted.Text = "DELETED"
+        Me.lblDeleted.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblDeleted.Visible = False
+        '
         'Label24
         '
         Me.Label24.AutoSize = True
         Me.Label24.BackColor = System.Drawing.Color.Transparent
-        Me.Label24.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.Color.Red
-        Me.Label24.Location = New System.Drawing.Point(2, 139)
+        Me.Label24.Location = New System.Drawing.Point(11, 192)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(11, 13)
+        Me.Label24.Size = New System.Drawing.Size(14, 16)
         Me.Label24.TabIndex = 44
         Me.Label24.Tag = "reqSign"
         Me.Label24.Text = "*"
@@ -207,38 +179,24 @@ Partial Class F_Resident
         '
         Me.Label23.AutoSize = True
         Me.Label23.BackColor = System.Drawing.Color.Transparent
-        Me.Label23.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label23.ForeColor = System.Drawing.Color.Red
-        Me.Label23.Location = New System.Drawing.Point(667, 103)
+        Me.Label23.Location = New System.Drawing.Point(752, 155)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(11, 13)
+        Me.Label23.Size = New System.Drawing.Size(14, 16)
         Me.Label23.TabIndex = 43
         Me.Label23.Tag = "reqSign"
         Me.Label23.Text = "*"
         Me.Label23.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.BackColor = System.Drawing.Color.Transparent
-        Me.Label22.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.ForeColor = System.Drawing.Color.Red
-        Me.Label22.Location = New System.Drawing.Point(259, 105)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(11, 13)
-        Me.Label22.TabIndex = 42
-        Me.Label22.Tag = "reqSign"
-        Me.Label22.Text = "*"
-        Me.Label22.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.Color.Red
-        Me.Label20.Location = New System.Drawing.Point(338, 85)
+        Me.Label20.Location = New System.Drawing.Point(400, 131)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(11, 13)
+        Me.Label20.Size = New System.Drawing.Size(14, 16)
         Me.Label20.TabIndex = 40
         Me.Label20.Tag = "reqSign"
         Me.Label20.Text = "*"
@@ -247,11 +205,11 @@ Partial Class F_Resident
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.Red
-        Me.Label19.Location = New System.Drawing.Point(132, 85)
+        Me.Label19.Location = New System.Drawing.Point(174, 131)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(11, 13)
+        Me.Label19.Size = New System.Drawing.Size(14, 16)
         Me.Label19.TabIndex = 39
         Me.Label19.Tag = "reqSign"
         Me.Label19.Text = "*"
@@ -262,7 +220,7 @@ Partial Class F_Resident
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.Red
-        Me.Label18.Location = New System.Drawing.Point(687, 42)
+        Me.Label18.Location = New System.Drawing.Point(751, 75)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(11, 13)
         Me.Label18.TabIndex = 38
@@ -273,8 +231,8 @@ Partial Class F_Resident
         'Label1
         '
         Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(662, 39)
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(736, 72)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(135, 18)
         Me.Label1.TabIndex = 37
@@ -285,10 +243,10 @@ Partial Class F_Resident
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(267, 197)
+        Me.Label17.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(341, 266)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(68, 16)
+        Me.Label17.Size = New System.Drawing.Size(79, 17)
         Me.Label17.TabIndex = 36
         Me.Label17.Text = "SAMAHAN :"
         '
@@ -296,12 +254,12 @@ Partial Class F_Resident
         '
         Me.cboSamahan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboSamahan.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cboSamahan.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboSamahan.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboSamahan.FormattingEnabled = True
         Me.cboSamahan.Items.AddRange(New Object() {"", "1", "2", "3"})
-        Me.cboSamahan.Location = New System.Drawing.Point(341, 193)
+        Me.cboSamahan.Location = New System.Drawing.Point(426, 262)
         Me.cboSamahan.Name = "cboSamahan"
-        Me.cboSamahan.Size = New System.Drawing.Size(133, 24)
+        Me.cboSamahan.Size = New System.Drawing.Size(145, 25)
         Me.cboSamahan.Sorted = True
         Me.cboSamahan.TabIndex = 19
         Me.cboSamahan.Tag = "IN:Samahan*"
@@ -309,31 +267,31 @@ Partial Class F_Resident
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(10, 196)
+        Me.Label16.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(26, 266)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(126, 16)
+        Me.Label16.Size = New System.Drawing.Size(145, 17)
         Me.Label16.TabIndex = 34
         Me.Label16.Text = "DATE OF CASE STUDY :"
         '
         'dtpCaseStudy
         '
         Me.dtpCaseStudy.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dtpCaseStudy.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpCaseStudy.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpCaseStudy.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpCaseStudy.Location = New System.Drawing.Point(142, 195)
+        Me.dtpCaseStudy.Location = New System.Drawing.Point(180, 263)
         Me.dtpCaseStudy.Name = "dtpCaseStudy"
-        Me.dtpCaseStudy.Size = New System.Drawing.Size(105, 21)
+        Me.dtpCaseStudy.Size = New System.Drawing.Size(142, 23)
         Me.dtpCaseStudy.TabIndex = 18
         Me.dtpCaseStudy.Tag = "IN:"
         '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(10, 167)
+        Me.Label15.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(26, 229)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(88, 16)
+        Me.Label15.Size = New System.Drawing.Size(105, 17)
         Me.Label15.TabIndex = 32
         Me.Label15.Text = "CONTACT No. :"
         '
@@ -341,11 +299,11 @@ Partial Class F_Resident
         '
         Me.txtContactNo.BeepOnError = True
         Me.txtContactNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtContactNo.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContactNo.Location = New System.Drawing.Point(104, 165)
+        Me.txtContactNo.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtContactNo.Location = New System.Drawing.Point(140, 226)
         Me.txtContactNo.Mask = "(+63)000-000-0000"
         Me.txtContactNo.Name = "txtContactNo"
-        Me.txtContactNo.Size = New System.Drawing.Size(143, 21)
+        Me.txtContactNo.Size = New System.Drawing.Size(184, 23)
         Me.txtContactNo.TabIndex = 14
         Me.txtContactNo.Tag = "IN:"
         Me.txtContactNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -355,10 +313,10 @@ Partial Class F_Resident
         Me.chkPWD.AutoSize = True
         Me.chkPWD.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.chkPWD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.chkPWD.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkPWD.Location = New System.Drawing.Point(650, 165)
+        Me.chkPWD.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkPWD.Location = New System.Drawing.Point(727, 227)
         Me.chkPWD.Name = "chkPWD"
-        Me.chkPWD.Size = New System.Drawing.Size(144, 20)
+        Me.chkPWD.Size = New System.Drawing.Size(161, 21)
         Me.chkPWD.TabIndex = 17
         Me.chkPWD.Tag = "IN:"
         Me.chkPWD.Text = "PERSON w\ DISABILITY"
@@ -369,10 +327,10 @@ Partial Class F_Resident
         Me.chkIndigent.AutoSize = True
         Me.chkIndigent.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.chkIndigent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.chkIndigent.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkIndigent.Location = New System.Drawing.Point(511, 165)
+        Me.chkIndigent.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkIndigent.Location = New System.Drawing.Point(588, 227)
         Me.chkIndigent.Name = "chkIndigent"
-        Me.chkIndigent.Size = New System.Drawing.Size(75, 20)
+        Me.chkIndigent.Size = New System.Drawing.Size(83, 21)
         Me.chkIndigent.TabIndex = 16
         Me.chkIndigent.Tag = "IN:"
         Me.chkIndigent.Text = "INDIGENT"
@@ -385,10 +343,10 @@ Partial Class F_Resident
         Me.chkInHabitant.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkInHabitant.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.chkInHabitant.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.chkInHabitant.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkInHabitant.Location = New System.Drawing.Point(650, 136)
+        Me.chkInHabitant.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkInHabitant.Location = New System.Drawing.Point(727, 190)
         Me.chkInHabitant.Name = "chkInHabitant"
-        Me.chkInHabitant.Size = New System.Drawing.Size(88, 20)
+        Me.chkInHabitant.Size = New System.Drawing.Size(98, 21)
         Me.chkInHabitant.TabIndex = 13
         Me.chkInHabitant.Tag = "IN:"
         Me.chkInHabitant.Text = "IN-HABITANT"
@@ -399,10 +357,10 @@ Partial Class F_Resident
         Me.chkVoter.AutoSize = True
         Me.chkVoter.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.chkVoter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.chkVoter.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkVoter.Location = New System.Drawing.Point(511, 136)
+        Me.chkVoter.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkVoter.Location = New System.Drawing.Point(588, 190)
         Me.chkVoter.Name = "chkVoter"
-        Me.chkVoter.Size = New System.Drawing.Size(59, 20)
+        Me.chkVoter.Size = New System.Drawing.Size(64, 21)
         Me.chkVoter.TabIndex = 12
         Me.chkVoter.Tag = "IN:"
         Me.chkVoter.Text = "VOTER"
@@ -411,10 +369,10 @@ Partial Class F_Resident
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(267, 138)
+        Me.Label14.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(341, 192)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(81, 16)
+        Me.Label14.Size = New System.Drawing.Size(91, 17)
         Me.Label14.TabIndex = 26
         Me.Label14.Text = "CIVIL STATUS :"
         '
@@ -422,22 +380,22 @@ Partial Class F_Resident
         '
         Me.cboCivilStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboCivilStatus.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cboCivilStatus.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboCivilStatus.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboCivilStatus.FormattingEnabled = True
         Me.cboCivilStatus.Items.AddRange(New Object() {"Single", "Married", "Separated", "Widowed"})
-        Me.cboCivilStatus.Location = New System.Drawing.Point(349, 134)
+        Me.cboCivilStatus.Location = New System.Drawing.Point(433, 188)
         Me.cboCivilStatus.Name = "cboCivilStatus"
-        Me.cboCivilStatus.Size = New System.Drawing.Size(125, 24)
+        Me.cboCivilStatus.Size = New System.Drawing.Size(138, 25)
         Me.cboCivilStatus.TabIndex = 11
         Me.cboCivilStatus.Tag = "IN:Civil Status*"
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(674, 103)
+        Me.Label13.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(763, 155)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(33, 16)
+        Me.Label13.Size = New System.Drawing.Size(37, 17)
         Me.Label13.TabIndex = 24
         Me.Label13.Text = "SEX :"
         '
@@ -445,12 +403,12 @@ Partial Class F_Resident
         '
         Me.cboSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboSex.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cboSex.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboSex.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboSex.FormattingEnabled = True
         Me.cboSex.Items.AddRange(New Object() {"FEMALE", "MALE"})
-        Me.cboSex.Location = New System.Drawing.Point(712, 99)
+        Me.cboSex.Location = New System.Drawing.Point(806, 151)
         Me.cboSex.Name = "cboSex"
-        Me.cboSex.Size = New System.Drawing.Size(76, 24)
+        Me.cboSex.Size = New System.Drawing.Size(76, 25)
         Me.cboSex.TabIndex = 9
         Me.cboSex.Tag = "IN;Sex*"
         '
@@ -458,55 +416,55 @@ Partial Class F_Resident
         '
         Me.txtAge.BackColor = System.Drawing.Color.White
         Me.txtAge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtAge.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAge.Location = New System.Drawing.Point(549, 101)
+        Me.txtAge.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAge.Location = New System.Drawing.Point(648, 151)
         Me.txtAge.Multiline = True
         Me.txtAge.Name = "txtAge"
         Me.txtAge.ReadOnly = True
-        Me.txtAge.Size = New System.Drawing.Size(63, 20)
+        Me.txtAge.Size = New System.Drawing.Size(63, 25)
         Me.txtAge.TabIndex = 8
         Me.txtAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(511, 103)
+        Me.Label12.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(599, 155)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(37, 16)
+        Me.Label12.Size = New System.Drawing.Size(43, 17)
         Me.Label12.TabIndex = 21
         Me.Label12.Text = "AGE :"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(267, 103)
+        Me.Label11.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(352, 155)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(90, 16)
+        Me.Label11.Size = New System.Drawing.Size(104, 17)
         Me.Label11.TabIndex = 20
         Me.Label11.Text = "DATE OF BIRTH :"
         '
         'dtpBirthdate
         '
         Me.dtpBirthdate.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dtpBirthdate.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpBirthdate.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpBirthdate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpBirthdate.Location = New System.Drawing.Point(357, 101)
+        Me.dtpBirthdate.Location = New System.Drawing.Point(465, 152)
         Me.dtpBirthdate.Name = "dtpBirthdate"
-        Me.dtpBirthdate.Size = New System.Drawing.Size(117, 21)
+        Me.dtpBirthdate.Size = New System.Drawing.Size(117, 23)
         Me.dtpBirthdate.TabIndex = 7
         Me.dtpBirthdate.Tag = "IN;Date of  Birth*"
         '
         'txtDisability
         '
         Me.txtDisability.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtDisability.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDisability.Location = New System.Drawing.Point(563, 195)
+        Me.txtDisability.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDisability.Location = New System.Drawing.Point(675, 262)
         Me.txtDisability.MaxLength = 100
         Me.txtDisability.Multiline = True
         Me.txtDisability.Name = "txtDisability"
-        Me.txtDisability.Size = New System.Drawing.Size(232, 20)
+        Me.txtDisability.Size = New System.Drawing.Size(238, 25)
         Me.txtDisability.TabIndex = 20
         Me.txtDisability.Tag = "IN:"
         Me.txtDisability.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -514,22 +472,22 @@ Partial Class F_Resident
         'lblDiasability
         '
         Me.lblDiasability.AutoSize = True
-        Me.lblDiasability.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDiasability.Location = New System.Drawing.Point(489, 197)
+        Me.lblDiasability.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDiasability.Location = New System.Drawing.Point(585, 266)
         Me.lblDiasability.Name = "lblDiasability"
-        Me.lblDiasability.Size = New System.Drawing.Size(75, 16)
+        Me.lblDiasability.Size = New System.Drawing.Size(84, 17)
         Me.lblDiasability.TabIndex = 17
         Me.lblDiasability.Text = "DISABILITIES :"
         '
         'txtOccupation
         '
         Me.txtOccupation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtOccupation.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtOccupation.Location = New System.Drawing.Point(357, 165)
+        Me.txtOccupation.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtOccupation.Location = New System.Drawing.Point(450, 225)
         Me.txtOccupation.MaxLength = 50
         Me.txtOccupation.Multiline = True
         Me.txtOccupation.Name = "txtOccupation"
-        Me.txtOccupation.Size = New System.Drawing.Size(117, 20)
+        Me.txtOccupation.Size = New System.Drawing.Size(121, 25)
         Me.txtOccupation.TabIndex = 15
         Me.txtOccupation.Tag = "IN:"
         Me.txtOccupation.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -537,22 +495,22 @@ Partial Class F_Resident
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(267, 167)
+        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(341, 229)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(90, 16)
+        Me.Label9.Size = New System.Drawing.Size(103, 17)
         Me.Label9.TabIndex = 15
         Me.Label9.Text = "OCCUPATION :"
         '
         'txtCitizenship
         '
         Me.txtCitizenship.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCitizenship.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCitizenship.Location = New System.Drawing.Point(89, 136)
+        Me.txtCitizenship.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCitizenship.Location = New System.Drawing.Point(122, 188)
         Me.txtCitizenship.MaxLength = 20
         Me.txtCitizenship.Multiline = True
         Me.txtCitizenship.Name = "txtCitizenship"
-        Me.txtCitizenship.Size = New System.Drawing.Size(158, 20)
+        Me.txtCitizenship.Size = New System.Drawing.Size(202, 25)
         Me.txtCitizenship.TabIndex = 10
         Me.txtCitizenship.Tag = "IN;Citizenship*"
         Me.txtCitizenship.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -560,22 +518,22 @@ Partial Class F_Resident
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(10, 138)
+        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(26, 192)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(78, 16)
+        Me.Label8.Size = New System.Drawing.Size(87, 17)
         Me.Label8.TabIndex = 13
         Me.Label8.Text = "CITIZENSHIP :"
         '
         'txtBirthPlace
         '
         Me.txtBirthPlace.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtBirthPlace.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBirthPlace.Location = New System.Drawing.Point(89, 101)
+        Me.txtBirthPlace.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBirthPlace.Location = New System.Drawing.Point(129, 151)
         Me.txtBirthPlace.MaxLength = 100
         Me.txtBirthPlace.Multiline = True
         Me.txtBirthPlace.Name = "txtBirthPlace"
-        Me.txtBirthPlace.Size = New System.Drawing.Size(158, 20)
+        Me.txtBirthPlace.Size = New System.Drawing.Size(195, 25)
         Me.txtBirthPlace.TabIndex = 6
         Me.txtBirthPlace.Tag = "IN;Birth Place*"
         Me.txtBirthPlace.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -583,22 +541,22 @@ Partial Class F_Resident
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(10, 103)
+        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(26, 155)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(80, 16)
+        Me.Label7.Size = New System.Drawing.Size(93, 17)
         Me.Label7.TabIndex = 11
         Me.Label7.Text = "BIRTH PLACE :"
         '
         'txtEName
         '
         Me.txtEName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtEName.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEName.Location = New System.Drawing.Point(677, 65)
+        Me.txtEName.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEName.Location = New System.Drawing.Point(782, 106)
         Me.txtEName.MaxLength = 20
         Me.txtEName.Multiline = True
         Me.txtEName.Name = "txtEName"
-        Me.txtEName.Size = New System.Drawing.Size(118, 20)
+        Me.txtEName.Size = New System.Drawing.Size(118, 25)
         Me.txtEName.TabIndex = 5
         Me.txtEName.Tag = "IN:"
         Me.txtEName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -606,12 +564,12 @@ Partial Class F_Resident
         'txtMName
         '
         Me.txtMName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtMName.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMName.Location = New System.Drawing.Point(472, 65)
+        Me.txtMName.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMName.Location = New System.Drawing.Point(551, 106)
         Me.txtMName.MaxLength = 50
         Me.txtMName.Multiline = True
         Me.txtMName.Name = "txtMName"
-        Me.txtMName.Size = New System.Drawing.Size(185, 20)
+        Me.txtMName.Size = New System.Drawing.Size(222, 25)
         Me.txtMName.TabIndex = 4
         Me.txtMName.Tag = "IN:"
         Me.txtMName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -619,12 +577,12 @@ Partial Class F_Resident
         'txtFName
         '
         Me.txtFName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtFName.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFName.Location = New System.Drawing.Point(267, 65)
+        Me.txtFName.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFName.Location = New System.Drawing.Point(320, 106)
         Me.txtFName.MaxLength = 50
         Me.txtFName.Multiline = True
         Me.txtFName.Name = "txtFName"
-        Me.txtFName.Size = New System.Drawing.Size(185, 20)
+        Me.txtFName.Size = New System.Drawing.Size(222, 25)
         Me.txtFName.TabIndex = 3
         Me.txtFName.Tag = "IN;First Name*"
         Me.txtFName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -632,12 +590,12 @@ Partial Class F_Resident
         'txtLName
         '
         Me.txtLName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtLName.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLName.Location = New System.Drawing.Point(62, 65)
+        Me.txtLName.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLName.Location = New System.Drawing.Point(89, 106)
         Me.txtLName.MaxLength = 50
         Me.txtLName.Multiline = True
         Me.txtLName.Name = "txtLName"
-        Me.txtLName.Size = New System.Drawing.Size(185, 20)
+        Me.txtLName.Size = New System.Drawing.Size(222, 25)
         Me.txtLName.TabIndex = 2
         Me.txtLName.Tag = "IN;Last Name*"
         Me.txtLName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -645,10 +603,10 @@ Partial Class F_Resident
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(10, 67)
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(26, 110)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(46, 16)
+        Me.Label2.Size = New System.Drawing.Size(53, 17)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "NAME :"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -656,13 +614,13 @@ Partial Class F_Resident
         'txtID
         '
         Me.txtID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtID.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtID.Location = New System.Drawing.Point(62, 39)
+        Me.txtID.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtID.Location = New System.Drawing.Point(89, 69)
         Me.txtID.MaxLength = 10
         Me.txtID.Multiline = True
         Me.txtID.Name = "txtID"
         Me.txtID.ReadOnly = True
-        Me.txtID.Size = New System.Drawing.Size(118, 20)
+        Me.txtID.Size = New System.Drawing.Size(118, 25)
         Me.txtID.TabIndex = 1
         Me.txtID.Tag = "SG"
         Me.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -670,10 +628,10 @@ Partial Class F_Resident
         'lblID
         '
         Me.lblID.AutoSize = True
-        Me.lblID.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblID.Location = New System.Drawing.Point(10, 41)
+        Me.lblID.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblID.Location = New System.Drawing.Point(26, 73)
         Me.lblID.Name = "lblID"
-        Me.lblID.Size = New System.Drawing.Size(46, 16)
+        Me.lblID.Size = New System.Drawing.Size(56, 17)
         Me.lblID.TabIndex = 0
         Me.lblID.Text = "ID No. :"
         Me.lblID.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -681,10 +639,10 @@ Partial Class F_Resident
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(142, 85)
+        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(185, 131)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(25, 13)
+        Me.Label6.Size = New System.Drawing.Size(31, 16)
         Me.Label6.TabIndex = 10
         Me.Label6.Text = "LAST"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -692,10 +650,10 @@ Partial Class F_Resident
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(709, 85)
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(808, 131)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(54, 13)
+        Me.Label5.Size = New System.Drawing.Size(67, 16)
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "EXTENSION"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -703,10 +661,10 @@ Partial Class F_Resident
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(543, 85)
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(638, 131)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(42, 13)
+        Me.Label4.Size = New System.Drawing.Size(49, 16)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "MIDDLE"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -714,10 +672,10 @@ Partial Class F_Resident
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(346, 85)
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(414, 131)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(26, 13)
+        Me.Label3.Size = New System.Drawing.Size(34, 16)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "FIRST"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -726,60 +684,25 @@ Partial Class F_Resident
         '
         Me.Label21.AutoSize = True
         Me.Label21.BackColor = System.Drawing.Color.Transparent
-        Me.Label21.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.Red
-        Me.Label21.Location = New System.Drawing.Point(2, 103)
+        Me.Label21.Location = New System.Drawing.Point(13, 155)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(11, 13)
+        Me.Label21.Size = New System.Drawing.Size(14, 16)
         Me.Label21.TabIndex = 41
         Me.Label21.Tag = "reqSign"
         Me.Label21.Text = "*"
         Me.Label21.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'grpHouseHold
-        '
-        Me.grpHouseHold.Controls.Add(Me.txtHouseNo)
-        Me.grpHouseHold.Controls.Add(Me.btnHouseList)
-        Me.grpHouseHold.Controls.Add(Me.Label34)
-        Me.grpHouseHold.Controls.Add(Me.Label33)
-        Me.grpHouseHold.Controls.Add(Me.Label32)
-        Me.grpHouseHold.Controls.Add(Me.Label31)
-        Me.grpHouseHold.Controls.Add(Me.Label30)
-        Me.grpHouseHold.Controls.Add(Me.Label29)
-        Me.grpHouseHold.Controls.Add(Me.txtCompleteAdd)
-        Me.grpHouseHold.Controls.Add(Me.Label28)
-        Me.grpHouseHold.Controls.Add(Me.txtProvince)
-        Me.grpHouseHold.Controls.Add(Me.Label27)
-        Me.grpHouseHold.Controls.Add(Me.Label40)
-        Me.grpHouseHold.Controls.Add(Me.cboRole)
-        Me.grpHouseHold.Controls.Add(Me.txtHouseContactNo)
-        Me.grpHouseHold.Controls.Add(Me.Label43)
-        Me.grpHouseHold.Controls.Add(Me.txtMunicipality)
-        Me.grpHouseHold.Controls.Add(Me.Label45)
-        Me.grpHouseHold.Controls.Add(Me.txtStreet)
-        Me.grpHouseHold.Controls.Add(Me.Label46)
-        Me.grpHouseHold.Controls.Add(Me.txtBarangay)
-        Me.grpHouseHold.Controls.Add(Me.Label47)
-        Me.grpHouseHold.Controls.Add(Me.Label48)
-        Me.grpHouseHold.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.grpHouseHold.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.grpHouseHold.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grpHouseHold.Location = New System.Drawing.Point(12, 253)
-        Me.grpHouseHold.Name = "grpHouseHold"
-        Me.grpHouseHold.Size = New System.Drawing.Size(811, 131)
-        Me.grpHouseHold.TabIndex = 1
-        Me.grpHouseHold.TabStop = False
-        Me.grpHouseHold.Text = "HOUSEHOLD INFORMATION"
-        '
         'txtHouseNo
         '
         Me.txtHouseNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtHouseNo.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtHouseNo.Location = New System.Drawing.Point(89, 39)
+        Me.txtHouseNo.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtHouseNo.Location = New System.Drawing.Point(135, 92)
         Me.txtHouseNo.MaxLength = 10
         Me.txtHouseNo.Multiline = True
         Me.txtHouseNo.Name = "txtHouseNo"
-        Me.txtHouseNo.Size = New System.Drawing.Size(99, 20)
+        Me.txtHouseNo.Size = New System.Drawing.Size(99, 25)
         Me.txtHouseNo.TabIndex = 1
         Me.txtHouseNo.Tag = "IN;House No.*"
         Me.txtHouseNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -788,10 +711,10 @@ Partial Class F_Resident
         '
         Me.btnHouseList.BackColor = System.Drawing.Color.White
         Me.btnHouseList.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btnHouseList.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnHouseList.Location = New System.Drawing.Point(185, 38)
+        Me.btnHouseList.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnHouseList.Location = New System.Drawing.Point(233, 91)
         Me.btnHouseList.Name = "btnHouseList"
-        Me.btnHouseList.Size = New System.Drawing.Size(29, 22)
+        Me.btnHouseList.Size = New System.Drawing.Size(29, 27)
         Me.btnHouseList.TabIndex = 55
         Me.btnHouseList.Text = "..."
         Me.btnHouseList.UseVisualStyleBackColor = False
@@ -802,7 +725,7 @@ Partial Class F_Resident
         Me.Label34.BackColor = System.Drawing.Color.Transparent
         Me.Label34.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label34.ForeColor = System.Drawing.Color.Red
-        Me.Label34.Location = New System.Drawing.Point(514, 73)
+        Me.Label34.Location = New System.Drawing.Point(597, 140)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(11, 13)
         Me.Label34.TabIndex = 54
@@ -816,7 +739,7 @@ Partial Class F_Resident
         Me.Label33.BackColor = System.Drawing.Color.Transparent
         Me.Label33.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label33.ForeColor = System.Drawing.Color.Red
-        Me.Label33.Location = New System.Drawing.Point(221, 73)
+        Me.Label33.Location = New System.Drawing.Point(272, 140)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(11, 13)
         Me.Label33.TabIndex = 53
@@ -830,7 +753,7 @@ Partial Class F_Resident
         Me.Label32.BackColor = System.Drawing.Color.Transparent
         Me.Label32.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label32.ForeColor = System.Drawing.Color.Red
-        Me.Label32.Location = New System.Drawing.Point(32, 73)
+        Me.Label32.Location = New System.Drawing.Point(78, 140)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(11, 13)
         Me.Label32.TabIndex = 52
@@ -844,7 +767,7 @@ Partial Class F_Resident
         Me.Label31.BackColor = System.Drawing.Color.Transparent
         Me.Label31.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label31.ForeColor = System.Drawing.Color.Red
-        Me.Label31.Location = New System.Drawing.Point(514, 43)
+        Me.Label31.Location = New System.Drawing.Point(624, 96)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(11, 13)
         Me.Label31.TabIndex = 51
@@ -858,7 +781,7 @@ Partial Class F_Resident
         Me.Label30.BackColor = System.Drawing.Color.Transparent
         Me.Label30.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label30.ForeColor = System.Drawing.Color.Red
-        Me.Label30.Location = New System.Drawing.Point(221, 43)
+        Me.Label30.Location = New System.Drawing.Point(287, 96)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(11, 13)
         Me.Label30.TabIndex = 50
@@ -872,7 +795,7 @@ Partial Class F_Resident
         Me.Label29.BackColor = System.Drawing.Color.Transparent
         Me.Label29.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label29.ForeColor = System.Drawing.Color.Red
-        Me.Label29.Location = New System.Drawing.Point(2, 43)
+        Me.Label29.Location = New System.Drawing.Point(42, 96)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(11, 13)
         Me.Label29.TabIndex = 49
@@ -885,34 +808,34 @@ Partial Class F_Resident
         Me.txtCompleteAdd.BackColor = System.Drawing.Color.White
         Me.txtCompleteAdd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCompleteAdd.Enabled = False
-        Me.txtCompleteAdd.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCompleteAdd.Location = New System.Drawing.Point(428, 101)
+        Me.txtCompleteAdd.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCompleteAdd.Location = New System.Drawing.Point(433, 180)
         Me.txtCompleteAdd.MaxLength = 100
         Me.txtCompleteAdd.Multiline = True
         Me.txtCompleteAdd.Name = "txtCompleteAdd"
-        Me.txtCompleteAdd.Size = New System.Drawing.Size(367, 20)
+        Me.txtCompleteAdd.Size = New System.Drawing.Size(480, 25)
         Me.txtCompleteAdd.TabIndex = 8
         Me.txtCompleteAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label28
         '
         Me.Label28.AutoSize = True
-        Me.Label28.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.Location = New System.Drawing.Point(298, 103)
+        Me.Label28.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label28.Location = New System.Drawing.Point(293, 184)
         Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(124, 16)
+        Me.Label28.Size = New System.Drawing.Size(142, 17)
         Me.Label28.TabIndex = 47
         Me.Label28.Text = "COMPLETE ADDRESS :"
         '
         'txtProvince
         '
         Me.txtProvince.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtProvince.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtProvince.Location = New System.Drawing.Point(598, 70)
+        Me.txtProvince.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtProvince.Location = New System.Drawing.Point(690, 136)
         Me.txtProvince.MaxLength = 20
         Me.txtProvince.Multiline = True
         Me.txtProvince.Name = "txtProvince"
-        Me.txtProvince.Size = New System.Drawing.Size(197, 20)
+        Me.txtProvince.Size = New System.Drawing.Size(223, 25)
         Me.txtProvince.TabIndex = 6
         Me.txtProvince.Tag = "IN;Province*"
         Me.txtProvince.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -920,20 +843,20 @@ Partial Class F_Resident
         'Label27
         '
         Me.Label27.AutoSize = True
-        Me.Label27.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.Location = New System.Drawing.Point(521, 72)
+        Me.Label27.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.Location = New System.Drawing.Point(604, 140)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(71, 16)
+        Me.Label27.Size = New System.Drawing.Size(83, 17)
         Me.Label27.TabIndex = 46
         Me.Label27.Text = "PROVINCE :"
         '
         'Label40
         '
         Me.Label40.AutoSize = True
-        Me.Label40.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label40.Location = New System.Drawing.Point(41, 72)
+        Me.Label40.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label40.Location = New System.Drawing.Point(85, 140)
         Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(42, 16)
+        Me.Label40.Size = New System.Drawing.Size(48, 17)
         Me.Label40.TabIndex = 24
         Me.Label40.Text = "ROLE :"
         '
@@ -941,24 +864,24 @@ Partial Class F_Resident
         '
         Me.cboRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboRole.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cboRole.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboRole.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboRole.FormattingEnabled = True
         Me.cboRole.Items.AddRange(New Object() {"", "HEAD", "MEMBER"})
-        Me.cboRole.Location = New System.Drawing.Point(89, 68)
+        Me.cboRole.Location = New System.Drawing.Point(135, 136)
         Me.cboRole.Name = "cboRole"
-        Me.cboRole.Size = New System.Drawing.Size(118, 24)
+        Me.cboRole.Size = New System.Drawing.Size(127, 25)
         Me.cboRole.TabIndex = 4
         Me.cboRole.Tag = "IN;Role*"
         '
         'txtHouseContactNo
         '
         Me.txtHouseContactNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtHouseContactNo.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtHouseContactNo.Location = New System.Drawing.Point(104, 101)
+        Me.txtHouseContactNo.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtHouseContactNo.Location = New System.Drawing.Point(135, 180)
         Me.txtHouseContactNo.MaxLength = 100
         Me.txtHouseContactNo.Multiline = True
         Me.txtHouseContactNo.Name = "txtHouseContactNo"
-        Me.txtHouseContactNo.Size = New System.Drawing.Size(180, 20)
+        Me.txtHouseContactNo.Size = New System.Drawing.Size(127, 25)
         Me.txtHouseContactNo.TabIndex = 7
         Me.txtHouseContactNo.Tag = "IN:"
         Me.txtHouseContactNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -966,22 +889,22 @@ Partial Class F_Resident
         'Label43
         '
         Me.Label43.AutoSize = True
-        Me.Label43.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label43.Location = New System.Drawing.Point(10, 103)
+        Me.Label43.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label43.Location = New System.Drawing.Point(28, 184)
         Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(88, 16)
+        Me.Label43.Size = New System.Drawing.Size(105, 17)
         Me.Label43.TabIndex = 17
         Me.Label43.Text = "CONTACT No. :"
         '
         'txtMunicipality
         '
         Me.txtMunicipality.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtMunicipality.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMunicipality.Location = New System.Drawing.Point(325, 70)
+        Me.txtMunicipality.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMunicipality.Location = New System.Drawing.Point(381, 136)
         Me.txtMunicipality.MaxLength = 20
         Me.txtMunicipality.Multiline = True
         Me.txtMunicipality.Name = "txtMunicipality"
-        Me.txtMunicipality.Size = New System.Drawing.Size(182, 20)
+        Me.txtMunicipality.Size = New System.Drawing.Size(199, 25)
         Me.txtMunicipality.TabIndex = 5
         Me.txtMunicipality.Tag = "IN;Municipality*"
         Me.txtMunicipality.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -989,22 +912,22 @@ Partial Class F_Resident
         'Label45
         '
         Me.Label45.AutoSize = True
-        Me.Label45.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label45.Location = New System.Drawing.Point(229, 72)
+        Me.Label45.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label45.Location = New System.Drawing.Point(280, 140)
         Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(90, 16)
+        Me.Label45.Size = New System.Drawing.Size(100, 17)
         Me.Label45.TabIndex = 13
         Me.Label45.Text = "MUNICIPALITY :"
         '
         'txtStreet
         '
         Me.txtStreet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtStreet.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtStreet.Location = New System.Drawing.Point(572, 39)
+        Me.txtStreet.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtStreet.Location = New System.Drawing.Point(690, 92)
         Me.txtStreet.MaxLength = 100
         Me.txtStreet.Multiline = True
         Me.txtStreet.Name = "txtStreet"
-        Me.txtStreet.Size = New System.Drawing.Size(223, 20)
+        Me.txtStreet.Size = New System.Drawing.Size(223, 25)
         Me.txtStreet.TabIndex = 3
         Me.txtStreet.Tag = "IN;Street*"
         Me.txtStreet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -1012,22 +935,22 @@ Partial Class F_Resident
         'Label46
         '
         Me.Label46.AutoSize = True
-        Me.Label46.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label46.Location = New System.Drawing.Point(521, 41)
+        Me.Label46.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label46.Location = New System.Drawing.Point(633, 96)
         Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(49, 16)
+        Me.Label46.Size = New System.Drawing.Size(54, 17)
         Me.Label46.TabIndex = 11
         Me.Label46.Text = "STREET :"
         '
         'txtBarangay
         '
         Me.txtBarangay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtBarangay.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBarangay.Location = New System.Drawing.Point(308, 39)
+        Me.txtBarangay.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBarangay.Location = New System.Drawing.Point(381, 92)
         Me.txtBarangay.MaxLength = 50
         Me.txtBarangay.Multiline = True
         Me.txtBarangay.Name = "txtBarangay"
-        Me.txtBarangay.Size = New System.Drawing.Size(199, 20)
+        Me.txtBarangay.Size = New System.Drawing.Size(199, 25)
         Me.txtBarangay.TabIndex = 2
         Me.txtBarangay.Tag = "IN;Barangay*"
         Me.txtBarangay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -1035,10 +958,10 @@ Partial Class F_Resident
         'Label47
         '
         Me.Label47.AutoSize = True
-        Me.Label47.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label47.Location = New System.Drawing.Point(229, 41)
+        Me.Label47.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label47.Location = New System.Drawing.Point(294, 96)
         Me.Label47.Name = "Label47"
-        Me.Label47.Size = New System.Drawing.Size(73, 16)
+        Me.Label47.Size = New System.Drawing.Size(86, 17)
         Me.Label47.TabIndex = 2
         Me.Label47.Text = "BARANGAY :"
         Me.Label47.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1046,60 +969,196 @@ Partial Class F_Resident
         'Label48
         '
         Me.Label48.AutoSize = True
-        Me.Label48.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label48.Location = New System.Drawing.Point(10, 41)
+        Me.Label48.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label48.Location = New System.Drawing.Point(49, 96)
         Me.Label48.Name = "Label48"
-        Me.Label48.Size = New System.Drawing.Size(73, 16)
+        Me.Label48.Size = New System.Drawing.Size(84, 17)
         Me.Label48.TabIndex = 0
         Me.Label48.Text = "HOUSE No. :"
         Me.Label48.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'btnClear
         '
-        Me.btnClear.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClear.Location = New System.Drawing.Point(619, 390)
+        Me.btnClear.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClear.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.Color.White
+        Me.btnClear.Location = New System.Drawing.Point(731, 558)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(99, 44)
+        Me.btnClear.Size = New System.Drawing.Size(99, 40)
         Me.btnClear.TabIndex = 2
         Me.btnClear.Text = "&CLEAR"
-        Me.btnClear.UseVisualStyleBackColor = True
+        Me.btnClear.UseVisualStyleBackColor = False
         '
         'btnSave
         '
-        Me.btnSave.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.Location = New System.Drawing.Point(724, 390)
+        Me.btnSave.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSave.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSave.ForeColor = System.Drawing.Color.White
+        Me.btnSave.Location = New System.Drawing.Point(836, 558)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(99, 44)
+        Me.btnSave.Size = New System.Drawing.Size(99, 40)
         Me.btnSave.TabIndex = 3
         Me.btnSave.Text = "&SAVE"
-        Me.btnSave.UseVisualStyleBackColor = True
+        Me.btnSave.UseVisualStyleBackColor = False
         '
-        'lblDeleted
+        'pnlPersonalInfo
         '
-        Me.lblDeleted.BackColor = System.Drawing.Color.Red
-        Me.lblDeleted.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblDeleted.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDeleted.ForeColor = System.Drawing.Color.White
-        Me.lblDeleted.Location = New System.Drawing.Point(232, 19)
-        Me.lblDeleted.Name = "lblDeleted"
-        Me.lblDeleted.Size = New System.Drawing.Size(187, 36)
-        Me.lblDeleted.TabIndex = 47
-        Me.lblDeleted.Text = "DELETED"
-        Me.lblDeleted.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.lblDeleted.Visible = False
+        Me.pnlPersonalInfo.BackColor = System.Drawing.Color.White
+        Me.pnlPersonalInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlPersonalInfo.Controls.Add(Me.lblDeleted)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label26)
+        Me.pnlPersonalInfo.Controls.Add(Me.txtID)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label25)
+        Me.pnlPersonalInfo.Controls.Add(Me.lblID)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label22)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label24)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label18)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label17)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label10)
+        Me.pnlPersonalInfo.Controls.Add(Me.cboSamahan)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label1)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label16)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label23)
+        Me.pnlPersonalInfo.Controls.Add(Me.dtpCaseStudy)
+        Me.pnlPersonalInfo.Controls.Add(Me.txtMName)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label15)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label20)
+        Me.pnlPersonalInfo.Controls.Add(Me.txtContactNo)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label3)
+        Me.pnlPersonalInfo.Controls.Add(Me.chkPWD)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label19)
+        Me.pnlPersonalInfo.Controls.Add(Me.chkIndigent)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label4)
+        Me.pnlPersonalInfo.Controls.Add(Me.chkInHabitant)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label5)
+        Me.pnlPersonalInfo.Controls.Add(Me.chkVoter)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label6)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label14)
+        Me.pnlPersonalInfo.Controls.Add(Me.cboCivilStatus)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label2)
+        Me.pnlPersonalInfo.Controls.Add(Me.txtDisability)
+        Me.pnlPersonalInfo.Controls.Add(Me.txtLName)
+        Me.pnlPersonalInfo.Controls.Add(Me.lblDiasability)
+        Me.pnlPersonalInfo.Controls.Add(Me.txtFName)
+        Me.pnlPersonalInfo.Controls.Add(Me.txtOccupation)
+        Me.pnlPersonalInfo.Controls.Add(Me.txtEName)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label9)
+        Me.pnlPersonalInfo.Controls.Add(Me.txtBirthPlace)
+        Me.pnlPersonalInfo.Controls.Add(Me.txtCitizenship)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label21)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label8)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label13)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label7)
+        Me.pnlPersonalInfo.Controls.Add(Me.cboSex)
+        Me.pnlPersonalInfo.Controls.Add(Me.dtpBirthdate)
+        Me.pnlPersonalInfo.Controls.Add(Me.txtAge)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label11)
+        Me.pnlPersonalInfo.Controls.Add(Me.Label12)
+        Me.pnlPersonalInfo.Location = New System.Drawing.Point(10, 25)
+        Me.pnlPersonalInfo.Name = "pnlPersonalInfo"
+        Me.pnlPersonalInfo.Size = New System.Drawing.Size(925, 300)
+        Me.pnlPersonalInfo.TabIndex = 1
+        '
+        'Label10
+        '
+        Me.Label10.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(0, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(925, 36)
+        Me.Label10.TabIndex = 48
+        Me.Label10.Text = "    PERSONAL INFORMATION"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'pnlHouseholdInfo
+        '
+        Me.pnlHouseholdInfo.BackColor = System.Drawing.Color.White
+        Me.pnlHouseholdInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlHouseholdInfo.Controls.Add(Me.Label35)
+        Me.pnlHouseholdInfo.Controls.Add(Me.txtHouseholdNo)
+        Me.pnlHouseholdInfo.Controls.Add(Me.Label36)
+        Me.pnlHouseholdInfo.Controls.Add(Me.Label31)
+        Me.pnlHouseholdInfo.Controls.Add(Me.Label34)
+        Me.pnlHouseholdInfo.Controls.Add(Me.txtHouseNo)
+        Me.pnlHouseholdInfo.Controls.Add(Me.Label33)
+        Me.pnlHouseholdInfo.Controls.Add(Me.Label32)
+        Me.pnlHouseholdInfo.Controls.Add(Me.btnHouseList)
+        Me.pnlHouseholdInfo.Controls.Add(Me.txtCompleteAdd)
+        Me.pnlHouseholdInfo.Controls.Add(Me.Label47)
+        Me.pnlHouseholdInfo.Controls.Add(Me.Label28)
+        Me.pnlHouseholdInfo.Controls.Add(Me.Label48)
+        Me.pnlHouseholdInfo.Controls.Add(Me.txtProvince)
+        Me.pnlHouseholdInfo.Controls.Add(Me.txtBarangay)
+        Me.pnlHouseholdInfo.Controls.Add(Me.Label27)
+        Me.pnlHouseholdInfo.Controls.Add(Me.Label46)
+        Me.pnlHouseholdInfo.Controls.Add(Me.Label40)
+        Me.pnlHouseholdInfo.Controls.Add(Me.cboRole)
+        Me.pnlHouseholdInfo.Controls.Add(Me.txtStreet)
+        Me.pnlHouseholdInfo.Controls.Add(Me.txtHouseContactNo)
+        Me.pnlHouseholdInfo.Controls.Add(Me.Label30)
+        Me.pnlHouseholdInfo.Controls.Add(Me.Label43)
+        Me.pnlHouseholdInfo.Controls.Add(Me.Label29)
+        Me.pnlHouseholdInfo.Controls.Add(Me.txtMunicipality)
+        Me.pnlHouseholdInfo.Controls.Add(Me.Label45)
+        Me.pnlHouseholdInfo.Location = New System.Drawing.Point(10, 331)
+        Me.pnlHouseholdInfo.Name = "pnlHouseholdInfo"
+        Me.pnlHouseholdInfo.Size = New System.Drawing.Size(925, 221)
+        Me.pnlHouseholdInfo.TabIndex = 4
+        '
+        'txtHouseholdNo
+        '
+        Me.txtHouseholdNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtHouseholdNo.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtHouseholdNo.Location = New System.Drawing.Point(135, 56)
+        Me.txtHouseholdNo.MaxLength = 10
+        Me.txtHouseholdNo.Multiline = True
+        Me.txtHouseholdNo.Name = "txtHouseholdNo"
+        Me.txtHouseholdNo.ReadOnly = True
+        Me.txtHouseholdNo.Size = New System.Drawing.Size(99, 25)
+        Me.txtHouseholdNo.TabIndex = 57
+        Me.txtHouseholdNo.Tag = ""
+        Me.txtHouseholdNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label36.Location = New System.Drawing.Point(13, 60)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(120, 17)
+        Me.Label36.TabIndex = 56
+        Me.Label36.Text = "HOUSEHOLD No. :"
+        Me.Label36.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label35
+        '
+        Me.Label35.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label35.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label35.ForeColor = System.Drawing.Color.White
+        Me.Label35.Location = New System.Drawing.Point(-1, 0)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(925, 36)
+        Me.Label35.TabIndex = 58
+        Me.Label35.Text = "    HOUSEHOLD INFORMATION"
+        Me.Label35.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'F_Resident
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(835, 442)
+        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.ClientSize = New System.Drawing.Size(944, 611)
+        Me.Controls.Add(Me.pnlHouseholdInfo)
+        Me.Controls.Add(Me.pnlPersonalInfo)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.btnClear)
-        Me.Controls.Add(Me.grpHouseHold)
-        Me.Controls.Add(Me.grpPersonal)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -1107,14 +1166,13 @@ Partial Class F_Resident
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "RESIDENT"
-        Me.grpPersonal.ResumeLayout(False)
-        Me.grpPersonal.PerformLayout()
-        Me.grpHouseHold.ResumeLayout(False)
-        Me.grpHouseHold.PerformLayout()
+        Me.pnlPersonalInfo.ResumeLayout(False)
+        Me.pnlPersonalInfo.PerformLayout()
+        Me.pnlHouseholdInfo.ResumeLayout(False)
+        Me.pnlHouseholdInfo.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents grpPersonal As System.Windows.Forms.GroupBox
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents cboSamahan As System.Windows.Forms.ComboBox
     Friend WithEvents Label16 As System.Windows.Forms.Label
@@ -1162,7 +1220,6 @@ Partial Class F_Resident
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents grpHouseHold As System.Windows.Forms.GroupBox
     Friend WithEvents Label34 As System.Windows.Forms.Label
     Friend WithEvents Label33 As System.Windows.Forms.Label
     Friend WithEvents Label32 As System.Windows.Forms.Label
@@ -1189,4 +1246,10 @@ Partial Class F_Resident
     Friend WithEvents btnSave As System.Windows.Forms.Button
     Friend WithEvents btnHouseList As System.Windows.Forms.Button
     Friend WithEvents lblDeleted As System.Windows.Forms.Label
+    Friend WithEvents pnlPersonalInfo As System.Windows.Forms.Panel
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents pnlHouseholdInfo As System.Windows.Forms.Panel
+    Friend WithEvents txtHouseholdNo As System.Windows.Forms.TextBox
+    Friend WithEvents Label36 As System.Windows.Forms.Label
+    Friend WithEvents Label35 As System.Windows.Forms.Label
 End Class

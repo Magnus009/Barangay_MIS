@@ -50,9 +50,9 @@ Partial Class F_forgotPassword
         Me.picChangePass = New System.Windows.Forms.PictureBox()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.pnlTop = New System.Windows.Forms.Panel()
-        Me.chkShowHide_P = New System.Windows.Forms.CheckBox()
-        Me.chkShowHide_NP = New System.Windows.Forms.CheckBox()
         Me.chkShowHide_CNP = New System.Windows.Forms.CheckBox()
+        Me.chkShowHide_NP = New System.Windows.Forms.CheckBox()
+        Me.chkShowHide_P = New System.Windows.Forms.CheckBox()
         Me.pnlVerification.SuspendLayout()
         CType(Me.picChangePass, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlTop.SuspendLayout()
@@ -80,7 +80,7 @@ Partial Class F_forgotPassword
         '
         'btnVerify
         '
-        Me.btnVerify.BackColor = System.Drawing.Color.Teal
+        Me.btnVerify.BackColor = System.Drawing.Color.SteelBlue
         Me.btnVerify.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.btnVerify.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnVerify.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -136,9 +136,9 @@ Partial Class F_forgotPassword
         Me.pnlVerification.Controls.Add(Me.txtAnswer_1)
         Me.pnlVerification.Controls.Add(Me.lblSecurityFrame)
         Me.pnlVerification.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlVerification.Location = New System.Drawing.Point(0, 230)
+        Me.pnlVerification.Location = New System.Drawing.Point(0, 20)
         Me.pnlVerification.Name = "pnlVerification"
-        Me.pnlVerification.Size = New System.Drawing.Size(409, 21)
+        Me.pnlVerification.Size = New System.Drawing.Size(409, 231)
         Me.pnlVerification.TabIndex = 3
         '
         'lblAsterisk_2
@@ -384,7 +384,7 @@ Partial Class F_forgotPassword
         '
         'pnlTop
         '
-        Me.pnlTop.BackColor = System.Drawing.Color.Teal
+        Me.pnlTop.BackColor = System.Drawing.Color.SteelBlue
         Me.pnlTop.Controls.Add(Me.chkShowHide_CNP)
         Me.pnlTop.Controls.Add(Me.chkShowHide_NP)
         Me.pnlTop.Controls.Add(Me.chkShowHide_P)
@@ -400,21 +400,21 @@ Partial Class F_forgotPassword
         Me.pnlTop.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlTop.Location = New System.Drawing.Point(0, 0)
         Me.pnlTop.Name = "pnlTop"
-        Me.pnlTop.Size = New System.Drawing.Size(409, 230)
+        Me.pnlTop.Size = New System.Drawing.Size(409, 20)
         Me.pnlTop.TabIndex = 4
         '
-        'chkShowHide_P
+        'chkShowHide_CNP
         '
-        Me.chkShowHide_P.AutoSize = True
-        Me.chkShowHide_P.BackColor = System.Drawing.Color.White
-        Me.chkShowHide_P.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.chkShowHide_P.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkShowHide_P.Location = New System.Drawing.Point(336, 115)
-        Me.chkShowHide_P.Name = "chkShowHide_P"
-        Me.chkShowHide_P.Size = New System.Drawing.Size(48, 17)
-        Me.chkShowHide_P.TabIndex = 44
-        Me.chkShowHide_P.Text = "&Show"
-        Me.chkShowHide_P.UseVisualStyleBackColor = False
+        Me.chkShowHide_CNP.AutoSize = True
+        Me.chkShowHide_CNP.BackColor = System.Drawing.Color.White
+        Me.chkShowHide_CNP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.chkShowHide_CNP.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkShowHide_CNP.Location = New System.Drawing.Point(336, 167)
+        Me.chkShowHide_CNP.Name = "chkShowHide_CNP"
+        Me.chkShowHide_CNP.Size = New System.Drawing.Size(48, 17)
+        Me.chkShowHide_CNP.TabIndex = 46
+        Me.chkShowHide_CNP.Text = "&Show"
+        Me.chkShowHide_CNP.UseVisualStyleBackColor = False
         '
         'chkShowHide_NP
         '
@@ -429,18 +429,18 @@ Partial Class F_forgotPassword
         Me.chkShowHide_NP.Text = "&Show"
         Me.chkShowHide_NP.UseVisualStyleBackColor = False
         '
-        'chkShowHide_CNP
+        'chkShowHide_P
         '
-        Me.chkShowHide_CNP.AutoSize = True
-        Me.chkShowHide_CNP.BackColor = System.Drawing.Color.White
-        Me.chkShowHide_CNP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.chkShowHide_CNP.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkShowHide_CNP.Location = New System.Drawing.Point(336, 167)
-        Me.chkShowHide_CNP.Name = "chkShowHide_CNP"
-        Me.chkShowHide_CNP.Size = New System.Drawing.Size(48, 17)
-        Me.chkShowHide_CNP.TabIndex = 46
-        Me.chkShowHide_CNP.Text = "&Show"
-        Me.chkShowHide_CNP.UseVisualStyleBackColor = False
+        Me.chkShowHide_P.AutoSize = True
+        Me.chkShowHide_P.BackColor = System.Drawing.Color.White
+        Me.chkShowHide_P.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.chkShowHide_P.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkShowHide_P.Location = New System.Drawing.Point(336, 115)
+        Me.chkShowHide_P.Name = "chkShowHide_P"
+        Me.chkShowHide_P.Size = New System.Drawing.Size(48, 17)
+        Me.chkShowHide_P.TabIndex = 44
+        Me.chkShowHide_P.Text = "&Show"
+        Me.chkShowHide_P.UseVisualStyleBackColor = False
         '
         'F_forgotPassword
         '

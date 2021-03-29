@@ -11,7 +11,7 @@
 
             strQuery = "SELECT R.Code, R.FamilyName, R.GivenName, R.MiddleName, R.ExtensionName, R.BirthPlace, R.BirthDate," & vbCrLf
             strQuery &= "R.Gender, R.Citizenship, R.CivilStatus, R.ContactNo, R.Occupation, R.DateOfCaseStudy," & vbCrLf
-            strQuery &= "R.SamahanID, R.isVoter, R.inHabitant, R.Indigent, R.isPWD, R.Disabilities," & vbCrLf
+            strQuery &= "R.SamahanID, R.isVoter, R.inHabitant, R.Indigent, R.isPWD, R.Disabilities, H.ID," & vbCrLf
             strQuery &= "H.HouseholdNo, H.Barangay, H.Street, HM.Role, H.Municipality, H.Province, H.ContactNo, R.DeletedDate FROM Residents R" & vbCrLf
             strQuery &= "LEFT JOIN HouseholdMember HM ON R.Code = HM.ResidentCode" & vbCrLf
             strQuery &= "LEFT JOIN Household H ON HM.HouseholdNo = H.HouseholdNo" & vbCrLf
@@ -40,13 +40,14 @@
                 chkPWD.Checked = .Tables(0).Rows(0)(17)
                 txtDisability.Text = fn_checkNull(.Tables(0).Rows(0)(18))
                 'Household Info
-                txtHouseNo.Text = fn_checkNull(.Tables(0).Rows(0)(19))
-                txtBarangay.Text = fn_checkNull(.Tables(0).Rows(0)(20))
-                txtStreet.Text = fn_checkNull(.Tables(0).Rows(0)(21))
-                cboRole.SelectedIndex = fn_checkNull(.Tables(0).Rows(0)(22))
-                txtMunicipality.Text = fn_checkNull(.Tables(0).Rows(0)(23))
-                txtProvince.Text = fn_checkNull(.Tables(0).Rows(0)(24))
-                txtHouseContactNo.Text = fn_checkNull(.Tables(0).Rows(0)(25))
+                txtHouseholdNo.Text = fn_checkNull(.Tables(0).Rows(0)(19))
+                txtHouseNo.Text = fn_checkNull(.Tables(0).Rows(0)(20))
+                txtBarangay.Text = fn_checkNull(.Tables(0).Rows(0)(21))
+                txtStreet.Text = fn_checkNull(.Tables(0).Rows(0)(22))
+                cboRole.SelectedIndex = fn_checkNull(.Tables(0).Rows(0)(23))
+                txtMunicipality.Text = fn_checkNull(.Tables(0).Rows(0)(24))
+                txtProvince.Text = fn_checkNull(.Tables(0).Rows(0)(25))
+                txtHouseContactNo.Text = fn_checkNull(.Tables(0).Rows(0)(26))
 
                 If Not IsDBNull(.Tables(0).Rows(0)("DeletedDate")) Then
                     lblDeleted.Visible = True
@@ -240,6 +241,7 @@
 
             With dsHouseInfo
                 If .Tables(0).Rows.Count <> 0 Then
+                    txtHouseholdNo.Text = fn_checkNull(.Tables(0).Rows(0)(0))
                     txtBarangay.Text = fn_checkNull(.Tables(0).Rows(0)(2))
                     txtStreet.Text = fn_checkNull(.Tables(0).Rows(0)(3))
                     txtMunicipality.Text = fn_checkNull(.Tables(0).Rows(0)(4))
@@ -268,4 +270,5 @@
             txtCompleteAdd.Text = ""
         End If
     End Sub
+
 End Class
