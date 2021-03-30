@@ -289,10 +289,8 @@ Module M_Functions
                 Select Case row.Cells("colStatus").Value.ToString
                     Case "deleted"
                         row.DefaultCellStyle.BackColor = My.Settings.Deleted
-                        row.DefaultCellStyle.SelectionForeColor = My.Settings.Deleted
                     Case "deactivated"
                         row.DefaultCellStyle.BackColor = My.Settings.Deactivated
-                        row.DefaultCellStyle.SelectionForeColor = My.Settings.Deactivated
                 End Select
             Next
         End With
@@ -331,10 +329,49 @@ Module M_Functions
                         btn.BackColor = My.Settings.Primary
                     End If
                 Case GetType(Label)
-                    ctrl.Font = My.Settings.Font
+                    Select Case ctrl.Tag
+                        Case "Header-1"
+                            ctrl.Font = My.Settings.Header1
+                        Case "Header-2"
+                            ctrl.Font = My.Settings.Header2
+                        Case "Header-3"
+                            ctrl.Font = My.Settings.Header3
+                        Case "Header-4"
+                            ctrl.Font = My.Settings.Header4
+                        Case "Header-5"
+                            ctrl.Font = My.Settings.Header5
+                        Case Else
+                            ctrl.Font = My.Settings.Font
+                    End Select
                 Case GetType(TextBox)
                     ctrl.Font = My.Settings.Font
                     ctrl.BackColor = Color.White
+                Case GetType(MaskedTextBox)
+                    ctrl.Font = My.Settings.Font
+                    ctrl.BackColor = Color.White
+                Case GetType(ComboBox)
+                    Dim cbo As New ComboBox
+                    cbo = ctrl
+
+                    cbo.FlatStyle = FlatStyle.System
+                    cbo.DropDownStyle = ComboBoxStyle.DropDownList
+                    cbo.Font = My.Settings.Font
+                Case GetType(DateTimePicker)
+                    Dim dtp As New DateTimePicker
+                    dtp = ctrl
+
+                    dtp.Font = My.Settings.Font
+                    dtp.Format = DateTimePickerFormat.Custom
+                    dtp.CustomFormat = "yyyy/MM/dd"
+                Case GetType(CheckBox)
+                    Dim chk As New CheckBox
+                    chk = ctrl
+
+                    chk.Appearance = Appearance.Normal
+                    chk.CheckAlign = ContentAlignment.MiddleLeft
+                    chk.FlatStyle = FlatStyle.Flat
+                    chk.FlatAppearance.CheckedBackColor = Color.White
+                    chk.TextAlign = ContentAlignment.MiddleLeft
                 Case GetType(DataGridView)
                     Dim dgv As New DataGridView
                     dgv = ctrl
@@ -357,7 +394,7 @@ Module M_Functions
                         With .ColumnHeadersDefaultCellStyle
                             .BackColor = My.Settings.Primary
                             .ForeColor = Color.White
-                            .Font = My.Settings.HeaderFont
+                            .Font = My.Settings.TableHeader
                         End With
 
                         With .DefaultCellStyle
@@ -369,8 +406,6 @@ Module M_Functions
                             .Height = 40
                         End With
                     End With
-
-
 
                     For Each col As DataGridViewColumn In dgv.Columns
                         Select Case col.GetType

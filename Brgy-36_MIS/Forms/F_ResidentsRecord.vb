@@ -57,9 +57,6 @@
         If txtName.Text <> "" Then
             strFilter &= " R.FamilyName + ', ' + R.GivenName + ' ' + R.MiddleName LIKE '%" & txtName.Text & "%' OR"
         End If
-        If txtHouseNo.Text <> "" Then
-            strFilter &= " H.HouseholdNo = " & txtHouseNo.Text & " OR"
-        End If
         If strFilter <> "" Then
             strFilter = Strings.Left(strFilter, Len(strFilter) - 2)
         End If

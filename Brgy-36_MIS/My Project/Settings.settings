@@ -6,7 +6,7 @@
       <Value Profile="(Default)">55, 77, 112</Value>
     </Setting>
     <Setting Name="Secondary" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">169, 182, 207</Value>
+      <Value Profile="(Default)">235, 238, 245</Value>
     </Setting>
     <Setting Name="Deleted" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">255, 128, 128</Value>
@@ -14,7 +14,7 @@
     <Setting Name="Deactivated" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">255, 192, 128</Value>
     </Setting>
-    <Setting Name="HeaderFont" Type="System.Drawing.Font" Scope="User">
+    <Setting Name="TableHeader" Type="System.Drawing.Font" Scope="User">
       <Value Profile="(Default)">Century Gothic, 9.75pt, style=Bold</Value>
     </Setting>
     <Setting Name="Selected" Type="System.Drawing.Color" Scope="User">
@@ -25,6 +25,21 @@
     </Setting>
     <Setting Name="ButtonFont" Type="System.Drawing.Font" Scope="User">
       <Value Profile="(Default)">Century Gothic, 9.75pt, style=Bold</Value>
+    </Setting>
+    <Setting Name="Header1" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Century Gothic, 20.25pt, style=Bold</Value>
+    </Setting>
+    <Setting Name="Header2" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Century Gothic, 18pt, style=Bold</Value>
+    </Setting>
+    <Setting Name="Header3" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Century Gothic, 15.75pt, style=Bold</Value>
+    </Setting>
+    <Setting Name="Header4" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Century Gothic, 14.25pt, style=Bold</Value>
+    </Setting>
+    <Setting Name="Header5" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Century Gothic, 12pt, style=Bold</Value>
     </Setting>
   </Settings>
 </SettingsFile>
