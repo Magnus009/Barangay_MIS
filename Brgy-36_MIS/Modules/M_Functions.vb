@@ -284,13 +284,14 @@ Module M_Functions
     Public Sub subCellFormat(ByVal sender As Object, e As DataGridViewCellFormattingEventArgs)
         Dim dvgObj As New DataGridView
         dvgObj = sender
+
         With dvgObj
-            For Each row As DataGridViewRow In dvgObj.Rows
-                Select Case row.Cells("colStatus").Value.ToString
+            For i As Integer = 0 To .Rows.Count - 1
+                Select Case .Rows(i).Cells("colStatus").Value.ToString
                     Case "deleted"
-                        row.DefaultCellStyle.BackColor = My.Settings.Deleted
+                        .Rows(i).DefaultCellStyle.BackColor = My.Settings.Deleted
                     Case "deactivated"
-                        row.DefaultCellStyle.BackColor = My.Settings.Deactivated
+                        .Rows(i).DefaultCellStyle.BackColor = My.Settings.Deactivated
                 End Select
             Next
         End With
