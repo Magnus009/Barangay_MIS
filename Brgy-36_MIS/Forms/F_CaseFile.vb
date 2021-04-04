@@ -216,18 +216,8 @@
     End Sub
 
     Private Sub loadCaseStatus()
-        Try
-            Dim dtStatus As New DataTable("caseStatus")
-            strQuery = "SELECT ID, Description FROM M_CaseStatus WHERE DeletedDate IS NULL"
-            dtStatus = SQL_SELECT(strQuery).Tables(0)
-
-            cboStatus.Items.Clear()
-            cboStatus.DataSource = dtStatus
-            cboStatus.DisplayMember = "Description"
-            cboStatus.ValueMember = "ID"
-        Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
-        End Try
+        strQuery = "SELECT ID, Description FROM M_CaseStatus WHERE DeletedDate IS NULL"
+        cboDataBinding(cboStatus, strQuery, "--SELECT STATUS--")
     End Sub
 
     Private Sub datDocuments_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datDocuments.CellContentClick

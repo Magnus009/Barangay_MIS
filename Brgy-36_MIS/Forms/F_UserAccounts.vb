@@ -10,20 +10,9 @@
     End Sub
 
     Private Sub loadUserLevels()
-        Dim dtUserLevels As New DataTable("UserLevels")
-
         strQuery = "SELECT ID, Description FROM M_UserLevel"
-        dtUserLevels = SQL_SELECT(strQuery).Tables(0)
 
-        cboLevels.Items.Clear()
-        Dim dr As DataRow = dtUserLevels.NewRow
-        dr(0) = -1
-        dr(1) = "ALL"
-        dtUserLevels.Rows.InsertAt(dr, 0)
-
-        cboLevels.DataSource = dtUserLevels
-        cboLevels.DisplayMember = "Description"
-        cboLevels.ValueMember = "ID"
+        cboDataBinding(cboLevels, strQuery, "ALL")
     End Sub
 
     Private Sub loadAccounts()
@@ -35,7 +24,7 @@
             strQuery += "AND A.UserName LIKE '%" + txtSearch.Text + "%'" + vbCrLf
         End If
 
-        If cboLevels.Text <> "ALL" And cboLevels.Text <> "System.Data.DataRowView" Then
+        If cboLevels.SelectedValue = -1 Then
             strQuery += "AND A.UserLevel = " + cboLevels.SelectedValue.ToString
         End If
 

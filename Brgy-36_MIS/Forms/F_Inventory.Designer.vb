@@ -27,12 +27,8 @@ Partial Class F_Inventory
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(F_Inventory))
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lblHeader = New System.Windows.Forms.Label()
         Me.datItems = New System.Windows.Forms.DataGridView()
         Me.datBorrow = New System.Windows.Forms.DataGridView()
-        Me.lblItems = New System.Windows.Forms.Label()
-        Me.lblBorrow = New System.Windows.Forms.Label()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnBorrow = New System.Windows.Forms.Button()
         Me.lblSearch = New System.Windows.Forms.Label()
@@ -44,32 +40,15 @@ Partial Class F_Inventory
         Me.dtpTo = New System.Windows.Forms.DateTimePicker()
         Me.btnFilter = New System.Windows.Forms.Button()
         Me.lblDash = New System.Windows.Forms.Label()
-        Me.Panel1.SuspendLayout()
+        Me.pnlBorrow = New System.Windows.Forms.Panel()
+        Me.lblItems = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.datItems, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.datBorrow, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlBorrow.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel1.Controls.Add(Me.lblHeader)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1021, 74)
-        Me.Panel1.TabIndex = 0
-        '
-        'lblHeader
-        '
-        Me.lblHeader.AutoSize = True
-        Me.lblHeader.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHeader.ForeColor = System.Drawing.Color.White
-        Me.lblHeader.Location = New System.Drawing.Point(23, 23)
-        Me.lblHeader.Name = "lblHeader"
-        Me.lblHeader.Size = New System.Drawing.Size(128, 25)
-        Me.lblHeader.TabIndex = 0
-        Me.lblHeader.Text = "INVENTORY"
         '
         'datItems
         '
@@ -94,13 +73,13 @@ Partial Class F_Inventory
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.datItems.DefaultCellStyle = DataGridViewCellStyle2
-        Me.datItems.Location = New System.Drawing.Point(14, 156)
+        Me.datItems.Location = New System.Drawing.Point(14, 71)
         Me.datItems.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.datItems.MultiSelect = False
         Me.datItems.Name = "datItems"
         Me.datItems.RowHeadersVisible = False
         Me.datItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datItems.Size = New System.Drawing.Size(297, 469)
+        Me.datItems.Size = New System.Drawing.Size(375, 437)
         Me.datItems.TabIndex = 1
         '
         'datBorrow
@@ -126,68 +105,40 @@ Partial Class F_Inventory
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.datBorrow.DefaultCellStyle = DataGridViewCellStyle4
-        Me.datBorrow.Location = New System.Drawing.Point(318, 155)
+        Me.datBorrow.Location = New System.Drawing.Point(408, 71)
         Me.datBorrow.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.datBorrow.MultiSelect = False
         Me.datBorrow.Name = "datBorrow"
         Me.datBorrow.RowHeadersVisible = False
         Me.datBorrow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datBorrow.Size = New System.Drawing.Size(688, 474)
+        Me.datBorrow.Size = New System.Drawing.Size(753, 437)
         Me.datBorrow.TabIndex = 2
-        '
-        'lblItems
-        '
-        Me.lblItems.AutoSize = True
-        Me.lblItems.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblItems.Location = New System.Drawing.Point(14, 98)
-        Me.lblItems.Name = "lblItems"
-        Me.lblItems.Size = New System.Drawing.Size(50, 19)
-        Me.lblItems.TabIndex = 3
-        Me.lblItems.Text = "ITEMS"
-        '
-        'lblBorrow
-        '
-        Me.lblBorrow.AutoSize = True
-        Me.lblBorrow.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBorrow.Location = New System.Drawing.Point(322, 98)
-        Me.lblBorrow.Name = "lblBorrow"
-        Me.lblBorrow.Size = New System.Drawing.Size(171, 19)
-        Me.lblBorrow.TabIndex = 4
-        Me.lblBorrow.Text = "BORROWING HISTORY"
         '
         'btnAdd
         '
-        Me.btnAdd.BackColor = System.Drawing.Color.SteelBlue
-        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAdd.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.ForeColor = System.Drawing.Color.White
-        Me.btnAdd.Location = New System.Drawing.Point(203, 94)
+        Me.btnAdd.Location = New System.Drawing.Point(281, 512)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(108, 31)
         Me.btnAdd.TabIndex = 5
         Me.btnAdd.Text = "ADD ITEM"
-        Me.btnAdd.UseVisualStyleBackColor = False
         '
         'btnBorrow
         '
-        Me.btnBorrow.BackColor = System.Drawing.Color.SteelBlue
-        Me.btnBorrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBorrow.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBorrow.ForeColor = System.Drawing.Color.White
-        Me.btnBorrow.Location = New System.Drawing.Point(881, 91)
+        Me.btnBorrow.Location = New System.Drawing.Point(1035, 512)
         Me.btnBorrow.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnBorrow.Name = "btnBorrow"
         Me.btnBorrow.Size = New System.Drawing.Size(126, 31)
         Me.btnBorrow.TabIndex = 6
         Me.btnBorrow.Text = "BORROW ITEM"
-        Me.btnBorrow.UseVisualStyleBackColor = False
         '
         'lblSearch
         '
         Me.lblSearch.AutoSize = True
         Me.lblSearch.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSearch.Location = New System.Drawing.Point(15, 132)
+        Me.lblSearch.Location = New System.Drawing.Point(15, 48)
         Me.lblSearch.Name = "lblSearch"
         Me.lblSearch.Size = New System.Drawing.Size(57, 16)
         Me.lblSearch.TabIndex = 7
@@ -196,7 +147,7 @@ Partial Class F_Inventory
         'txtSearchItems
         '
         Me.txtSearchItems.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearchItems.Location = New System.Drawing.Point(83, 128)
+        Me.txtSearchItems.Location = New System.Drawing.Point(83, 44)
         Me.txtSearchItems.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtSearchItems.Name = "txtSearchItems"
         Me.txtSearchItems.Size = New System.Drawing.Size(228, 21)
@@ -205,7 +156,7 @@ Partial Class F_Inventory
         'txtSearchBorrow
         '
         Me.txtSearchBorrow.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearchBorrow.Location = New System.Drawing.Point(385, 126)
+        Me.txtSearchBorrow.Location = New System.Drawing.Point(462, 44)
         Me.txtSearchBorrow.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtSearchBorrow.Name = "txtSearchBorrow"
         Me.txtSearchBorrow.Size = New System.Drawing.Size(179, 21)
@@ -215,7 +166,7 @@ Partial Class F_Inventory
         '
         Me.lblSearch1.AutoSize = True
         Me.lblSearch1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSearch1.Location = New System.Drawing.Point(317, 129)
+        Me.lblSearch1.Location = New System.Drawing.Point(408, 46)
         Me.lblSearch1.Name = "lblSearch1"
         Me.lblSearch1.Size = New System.Drawing.Size(57, 16)
         Me.lblSearch1.TabIndex = 9
@@ -225,7 +176,7 @@ Partial Class F_Inventory
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(569, 129)
+        Me.Label1.Location = New System.Drawing.Point(669, 46)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(108, 16)
         Me.Label1.TabIndex = 11
@@ -237,7 +188,7 @@ Partial Class F_Inventory
         Me.dtpFrom.CustomFormat = "yyyy/MM/dd"
         Me.dtpFrom.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpFrom.Location = New System.Drawing.Point(695, 126)
+        Me.dtpFrom.Location = New System.Drawing.Point(779, 44)
         Me.dtpFrom.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.dtpFrom.Name = "dtpFrom"
         Me.dtpFrom.Size = New System.Drawing.Size(97, 21)
@@ -249,7 +200,7 @@ Partial Class F_Inventory
         Me.dtpTo.CustomFormat = "yyyy/MM/dd"
         Me.dtpTo.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpTo.Location = New System.Drawing.Point(814, 126)
+        Me.dtpTo.Location = New System.Drawing.Point(892, 44)
         Me.dtpTo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.dtpTo.Name = "dtpTo"
         Me.dtpTo.Size = New System.Drawing.Size(94, 21)
@@ -257,73 +208,116 @@ Partial Class F_Inventory
         '
         'btnFilter
         '
-        Me.btnFilter.BackColor = System.Drawing.Color.SteelBlue
-        Me.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnFilter.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFilter.ForeColor = System.Drawing.Color.White
-        Me.btnFilter.Location = New System.Drawing.Point(916, 123)
+        Me.btnFilter.Location = New System.Drawing.Point(1097, 39)
         Me.btnFilter.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnFilter.Name = "btnFilter"
         Me.btnFilter.Size = New System.Drawing.Size(64, 30)
         Me.btnFilter.TabIndex = 14
         Me.btnFilter.Text = "FILTER"
-        Me.btnFilter.UseVisualStyleBackColor = False
         '
         'lblDash
         '
         Me.lblDash.AutoSize = True
         Me.lblDash.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDash.Location = New System.Drawing.Point(797, 129)
+        Me.lblDash.Location = New System.Drawing.Point(879, 46)
         Me.lblDash.Name = "lblDash"
         Me.lblDash.Size = New System.Drawing.Size(12, 16)
         Me.lblDash.TabIndex = 15
         Me.lblDash.Text = "-"
         '
+        'pnlBorrow
+        '
+        Me.pnlBorrow.Controls.Add(Me.Label2)
+        Me.pnlBorrow.Controls.Add(Me.btnAdd)
+        Me.pnlBorrow.Controls.Add(Me.txtSearchItems)
+        Me.pnlBorrow.Controls.Add(Me.datItems)
+        Me.pnlBorrow.Controls.Add(Me.lblItems)
+        Me.pnlBorrow.Controls.Add(Me.lblSearch)
+        Me.pnlBorrow.Controls.Add(Me.Label10)
+        Me.pnlBorrow.Controls.Add(Me.txtSearchBorrow)
+        Me.pnlBorrow.Controls.Add(Me.datBorrow)
+        Me.pnlBorrow.Controls.Add(Me.lblDash)
+        Me.pnlBorrow.Controls.Add(Me.btnBorrow)
+        Me.pnlBorrow.Controls.Add(Me.btnFilter)
+        Me.pnlBorrow.Controls.Add(Me.lblSearch1)
+        Me.pnlBorrow.Controls.Add(Me.dtpTo)
+        Me.pnlBorrow.Controls.Add(Me.Label1)
+        Me.pnlBorrow.Controls.Add(Me.dtpFrom)
+        Me.pnlBorrow.Controls.Add(Me.Label3)
+        Me.pnlBorrow.Location = New System.Drawing.Point(6, 13)
+        Me.pnlBorrow.Name = "pnlBorrow"
+        Me.pnlBorrow.Size = New System.Drawing.Size(1172, 557)
+        Me.pnlBorrow.TabIndex = 17
+        Me.pnlBorrow.Tag = "Secondary"
+        '
+        'lblItems
+        '
+        Me.lblItems.AutoSize = True
+        Me.lblItems.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblItems.Location = New System.Drawing.Point(16, 13)
+        Me.lblItems.Name = "lblItems"
+        Me.lblItems.Size = New System.Drawing.Size(39, 16)
+        Me.lblItems.TabIndex = 66
+        Me.lblItems.Tag = "Header-5"
+        Me.lblItems.Text = "ITEMS"
+        '
+        'Label10
+        '
+        Me.Label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(6, 21)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(390, 528)
+        Me.Label10.TabIndex = 67
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(412, 13)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(108, 16)
+        Me.Label2.TabIndex = 68
+        Me.Label2.Tag = "Header-5"
+        Me.Label2.Text = "BORROW HISTORY"
+        '
+        'Label3
+        '
+        Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(402, 21)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(764, 528)
+        Me.Label3.TabIndex = 69
+        '
         'F_Inventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1021, 645)
-        Me.Controls.Add(Me.lblDash)
-        Me.Controls.Add(Me.btnFilter)
-        Me.Controls.Add(Me.dtpTo)
-        Me.Controls.Add(Me.dtpFrom)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtSearchBorrow)
-        Me.Controls.Add(Me.lblSearch1)
-        Me.Controls.Add(Me.txtSearchItems)
-        Me.Controls.Add(Me.lblSearch)
-        Me.Controls.Add(Me.btnBorrow)
-        Me.Controls.Add(Me.btnAdd)
-        Me.Controls.Add(Me.lblBorrow)
-        Me.Controls.Add(Me.lblItems)
-        Me.Controls.Add(Me.datBorrow)
-        Me.Controls.Add(Me.datItems)
-        Me.Controls.Add(Me.Panel1)
+        Me.ClientSize = New System.Drawing.Size(1184, 580)
+        Me.Controls.Add(Me.pnlBorrow)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "F_Inventory"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "F_Inventory"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.Tag = "Primary"
+        Me.Text = "INVENTORY"
         CType(Me.datItems, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.datBorrow, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlBorrow.ResumeLayout(False)
+        Me.pnlBorrow.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents lblHeader As System.Windows.Forms.Label
     Friend WithEvents datItems As System.Windows.Forms.DataGridView
     Friend WithEvents datBorrow As System.Windows.Forms.DataGridView
-    Friend WithEvents lblItems As System.Windows.Forms.Label
-    Friend WithEvents lblBorrow As System.Windows.Forms.Label
     Friend WithEvents btnAdd As System.Windows.Forms.Button
     Friend WithEvents btnBorrow As System.Windows.Forms.Button
     Friend WithEvents lblSearch As System.Windows.Forms.Label
@@ -335,4 +329,9 @@ Partial Class F_Inventory
     Friend WithEvents dtpTo As System.Windows.Forms.DateTimePicker
     Friend WithEvents btnFilter As System.Windows.Forms.Button
     Friend WithEvents lblDash As System.Windows.Forms.Label
+    Friend WithEvents pnlBorrow As System.Windows.Forms.Panel
+    Friend WithEvents lblItems As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class

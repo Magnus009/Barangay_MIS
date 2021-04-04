@@ -5,40 +5,18 @@
         Me.Hide()
     End Sub
     Private Sub getItems()
-        Try
-            Dim dtItems As New DataTable("Items")
+        strQuery = "SELECT I.ItemID, Description FROM M_Items I" & vbCrLf
+        strQuery += "INNER JOIN M_ItemsInventory IV ON I.ItemID = IV.ItemID" & vbCrLf
+        strQuery += "WHERE I.DeletedDate IS null and Stocks <> 0" & vbCrLf
 
-            strQuery = ""
-            strQuery += "SELECT I.ItemID, Description FROM M_Items I" & vbCrLf
-            strQuery += "INNER JOIN M_ItemsInventory IV ON I.ItemID = IV.ItemID" & vbCrLf
-            strQuery += "WHERE I.DeletedDate IS null and Stocks <> 0" & vbCrLf
-            dtItems = SQL_SELECT(strQuery).Tables(0)
-
-            cboItems.DataSource = dtItems
-            cboItems.DisplayMember = "Description"
-            cboItems.ValueMember = "ItemID"
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+        cboDataBinding(cboItems, strQuery)
     End Sub
 
     Private Sub getStatus()
-        Try
-            Dim dtStatus As New DataTable("Status")
-
-            strQuery = ""
-            strQuery += "SELECT ID, Description FROM M_BorrowStatus " & vbCrLf
+            strQuery = "SELECT ID, Description FROM M_BorrowStatus " & vbCrLf
             strQuery += "WHERE DeletedDate IS null" & vbCrLf
-            dtStatus = SQL_SELECT(strQuery).Tables(0)
 
-            cboStatus.DataSource = dtStatus
-            cboStatus.DisplayMember = "Description"
-            cboStatus.ValueMember = "ID"
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+            cboDataBinding(cboStatus, strQuery, "--STATUS--")
     End Sub
 
     Private Sub F_BorrowItems_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -145,7 +123,7 @@
                         End If
                     End If
                 End If
-                    
+
             End If
         Catch ex As Exception
             MsgBox(ex.Message)

@@ -1,77 +1,21 @@
 ﻿Public Class F_Resident
-    Public intTaskMode As Integer  '0->ReadOnly || 1->Create/Register || 2-> Modify/Update
+
     Dim strCompleteAddress(4) As String
     Private Sub chkPWD_CheckedChanged(sender As Object, e As EventArgs) Handles chkPWD.CheckedChanged
         Call subDisabled()
     End Sub
 
-    Public Sub loadResidentRecord(strResidentCode As String)
-        Try
-            Dim dsResidentInfo As New DataSet
-
-            strQuery = "SELECT R.Code, R.FamilyName, R.GivenName, R.MiddleName, R.ExtensionName, R.BirthPlace, R.BirthDate," & vbCrLf
-            strQuery &= "R.Gender, R.Citizenship, R.CivilStatus, R.ContactNo, R.Occupation, R.DateOfCaseStudy," & vbCrLf
-            strQuery &= "R.SamahanID, R.isVoter, R.inHabitant, R.Indigent, R.isPWD, R.Disabilities, H.ID," & vbCrLf
-            strQuery &= "H.HouseholdNo, H.Barangay, H.Street, HM.Role, H.Municipality, H.Province, H.ContactNo, R.DeletedDate FROM Residents R" & vbCrLf
-            strQuery &= "LEFT JOIN HouseholdMember HM ON R.Code = HM.ResidentCode" & vbCrLf
-            strQuery &= "LEFT JOIN Household H ON HM.HouseholdNo = H.HouseholdNo" & vbCrLf
-            strQuery &= "WHERE R.Code = '" & strResidentCode & "'"
-            dsResidentInfo = SQL_SELECT(strQuery)
-
-            With dsResidentInfo
-                'Personal Info
-                txtID.Text = .Tables(0).Rows(0)(0)
-                txtLName.Text = .Tables(0).Rows(0)(1)
-                txtFName.Text = .Tables(0).Rows(0)(2)
-                txtMName.Text = fn_checkNull(.Tables(0).Rows(0)(3))
-                txtEName.Text = fn_checkNull(.Tables(0).Rows(0)(4))
-                txtBirthPlace.Text = .Tables(0).Rows(0)(5)
-                dtpBirthdate.Value = .Tables(0).Rows(0)(6)
-                cboSex.SelectedIndex = IIf(.Tables(0).Rows(0)(7) = "M", 1, 0)
-                txtCitizenship.Text = .Tables(0).Rows(0)(8)
-                cboCivilStatus.SelectedIndex = .Tables(0).Rows(0)(9)
-                txtContactNo.Text = fn_checkNull(.Tables(0).Rows(0)(10))
-                txtOccupation.Text = fn_checkNull(.Tables(0).Rows(0)(11))
-                dtpCaseStudy.Value = .Tables(0).Rows(0)(12)
-                cboSamahan.SelectedIndex = .Tables(0).Rows(0)(13)
-                chkVoter.Checked = .Tables(0).Rows(0)(14)
-                chkInHabitant.Checked = .Tables(0).Rows(0)(15)
-                chkIndigent.Checked = .Tables(0).Rows(0)(16)
-                chkPWD.Checked = .Tables(0).Rows(0)(17)
-                txtDisability.Text = fn_checkNull(.Tables(0).Rows(0)(18))
-                'Household Info
-                txtHouseholdNo.Text = fn_checkNull(.Tables(0).Rows(0)(19))
-                txtHouseNo.Text = fn_checkNull(.Tables(0).Rows(0)(20))
-                txtBarangay.Text = fn_checkNull(.Tables(0).Rows(0)(21))
-                txtStreet.Text = fn_checkNull(.Tables(0).Rows(0)(22))
-                cboRole.SelectedIndex = fn_checkNull(.Tables(0).Rows(0)(23))
-                txtMunicipality.Text = fn_checkNull(.Tables(0).Rows(0)(24))
-                txtProvince.Text = fn_checkNull(.Tables(0).Rows(0)(25))
-                txtHouseContactNo.Text = fn_checkNull(.Tables(0).Rows(0)(26))
-
-                If Not IsDBNull(.Tables(0).Rows(0)("DeletedDate")) Then
-                    lblDeleted.Visible = True
-                End If
-            End With
-            Me.MdiParent = _mdi_MIS
-            Me.Show()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
     Private Sub F_Resident_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        formMode(intTaskMode, Me)
-
-        If intTaskMode <> 1 Then
-            btnHouseList.Visible = False
-            If UserLevel <> "0" Then
-                btnSave.Visible = False
-                btnClear.Visible = False
-            Else
-                btnClear.Text = IIf(lblDeleted.Visible, "&RETRIVE", "&DELETE")
-            End If
-        End If
+        formLoadSetup(Me)
+        'CIVIL STATUS
+        strQuery = "SELECT * FROM M_CivilStatus WHERE DeletedDate IS NULL"
+        cboDataBinding(cboCivilStatus, strQuery, "--STATUS--")
+        'SAMAHAN
+        strQuery = "SELECT * FROM M_Samahan WHERE DeletedDate IS NULL"
+        cboDataBinding(cboSamahan, strQuery, "--SELECT SAMAHAN--")
+        'HOUSEHOLD ROLE
+        strQuery = "SELECT * FROM M_HouseholdRole WHERE DeletedDate IS NULL"
+        cboDataBinding(cboRole, strQuery, "--CHOOSE ROLE--")
 
         Call subDisabled()
         strCompleteAddress(0) = txtHouseNo.Text & " "
@@ -93,37 +37,7 @@
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
-        If btnClear.Text = "&DELETE" Then
-            If MsgBox("Do you want to Delete this record?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "DELETE") Then
-                strQuery = "UPDATE Residents" + vbCrLf
-                strQuery += "SET DeletedDate = getdate()" + vbCrLf
-                strQuery += ", UpdatedDate = getdate()" + vbCrLf
-                strQuery += ", UpdatedBy = '" + UserName + "'" + vbCrLf
-                strQuery += "WHERE Code = '" + txtID.Text + "'" + vbCrLf
-
-                If SQL_EXECUTE(strQuery) Then
-                    MsgBox("Record Deleted Successfuly!", MsgBoxStyle.Information)
-                    Me.Close()
-                    F_ResidentsRecord.loadResidentRecords()
-                End If
-            End If
-        ElseIf btnClear.Text = "&RETRIVE" Then
-            If MsgBox("Do you want to Retrive this record?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "RETRIEVE") Then
-                strQuery = "UPDATE Residents" + vbCrLf
-                strQuery += "SET DeletedDate = NULL" + vbCrLf
-                strQuery += ", UpdatedDate = getdate()" + vbCrLf
-                strQuery += ", UpdatedBy = '" + UserName + "'" + vbCrLf
-                strQuery += "WHERE Code = '" + txtID.Text + "'" + vbCrLf
-
-                If SQL_EXECUTE(strQuery) Then
-                    MsgBox("Record Retrived Successfuly!", MsgBoxStyle.Information)
-                    Me.Close()
-                    F_ResidentsRecord.loadResidentRecords()
-                End If
-            End If
-        Else
-            Call fn_ClearField(Me)
-        End If
+        Call fn_ClearField(Me)
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
@@ -132,47 +46,84 @@
                 MsgBox("Please complete the required fields(*):" & vbCrLf & strRequire, MsgBoxStyle.Exclamation, "Required Items")
                 strRequire = ""
             Else
-                If intTaskMode = 1 Then
-                    strQuery = "EXECUTE sp_registerResident " & vbCrLf
-                    strQuery &= "'" & txtLName.Text & "'," & vbCrLf
-                    strQuery &= "'" & txtFName.Text & "'," & vbCrLf
-                    strQuery &= "'" & txtMName.Text & "'," & vbCrLf
-                    strQuery &= "'" & txtEName.Text & "'," & vbCrLf
-                    strQuery &= "'" & Strings.Left(UCase(cboSex.Text), 1) & "'," & vbCrLf
-                    strQuery &= "'" & Format(dtpBirthdate.Value, "Short Date") & "'," & vbCrLf
-                    strQuery &= "'" & txtBirthPlace.Text & "'," & vbCrLf
-                    strQuery &= "'" & txtCitizenship.Text & "'," & vbCrLf
-                    strQuery &= cboCivilStatus.SelectedIndex & "," & vbCrLf
-                    strQuery &= "'" & txtContactNo.Text & "'," & vbCrLf
-                    strQuery &= "'" & txtOccupation.Text & "'," & vbCrLf
-                    strQuery &= cboSamahan.SelectedIndex & "," & vbCrLf
-                    strQuery &= chkVoter.Checked & "," & vbCrLf
-                    strQuery &= chkInHabitant.Checked & "," & vbCrLf
-                    strQuery &= chkIndigent.Checked & "," & vbCrLf
-                    strQuery &= chkPWD.Checked & "," & vbCrLf
-                    strQuery &= "'" & txtDisability.Text & "'," & vbCrLf
-                    strQuery &= "'" & dtpCaseStudy.Value & "'," & vbCrLf
-                    strQuery &= "'" & txtHouseNo.Text & "'," & vbCrLf
-                    strQuery &= "'" & txtBarangay.Text & "'," & vbCrLf
-                    strQuery &= "'" & txtStreet.Text & "'," & vbCrLf
-                    strQuery &= "'" & txtMunicipality.Text & "'," & vbCrLf
-                    strQuery &= "'" & txtProvince.Text & "'," & vbCrLf
-                    strQuery &= "'" & txtHouseContactNo.Text & "'," & vbCrLf
-                    strQuery &= cboRole.SelectedIndex & "," & vbCrLf
-                    strQuery &= "'" & UserName & "'"
+                'Insert Resident Information
+                Dim strResidentCode As String
+                strQuery = "SELECT dbo.fn_colID ('R')"
+                strResidentCode = SQL_SELECT(strQuery).Tables(0).Rows(0)(0)
 
-                    If SQL_EXECUTE(strQuery) Then
-                        MsgBox("Resident Registered Successfully", MsgBoxStyle.Information, "Registration")
-                        Me.Close()
-                    Else
-                        MsgBox("Resident Registered Failed", MsgBoxStyle.Critical, "Registration")
+                strQuery = "INSERT INTO Residents (Code, FamilyName, GivenName, MiddleName, ExtensionName, Gender, BirthDate, BirthPlace, Citizenship, CivilStatus, ContactNo, Occupation, SamahanID, isVoter, inHabitant, Indigent, isPWD, Disabilities, isPregnant, DeliveryDate, DateOfCaseStudy, CreatedDate, UpdatedDate, UpdatedBy)" + vbCrLf
+                strQuery += "VALUES ('" + strResidentCode + "', " + vbCrLf
+                strQuery += "'" + txtLName.Text + "', " + vbCrLf
+                strQuery += "'" + txtFName.Text + "', " + vbCrLf
+                strQuery += "'" + txtMName.Text + "', " + vbCrLf
+                strQuery += "'" + txtEName.Text + "', " + vbCrLf
+                strQuery += "'" + Strings.Left(UCase(cboSex.Text), 1) + "', " + vbCrLf
+                strQuery += "'" + fn_Date(dtpBirthdate.Value) + "', " + vbCrLf
+                strQuery += "'" + txtBirthPlace.Text + "', " + vbCrLf
+                strQuery += "'" + txtCitizenship.Text + "', " + vbCrLf
+                strQuery += cboVal(cboCivilStatus) + ", " + vbCrLf
+                strQuery += "'" + txtContactNo.Text + "', " + vbCrLf
+                strQuery += "'" + txtOccupation.Text + "', " + vbCrLf
+                strQuery += cboVal(cboSamahan) + ", " + vbCrLf
+                strQuery += chkVal(chkVoter) + ", " + vbCrLf
+                strQuery += chkVal(chkInHabitant) + ", " + vbCrLf
+                strQuery += chkVal(chkIndigent) + ", " + vbCrLf
+                strQuery += chkVal(chkPWD) + ", " + vbCrLf
+                strQuery += "'" + txtDisability.Text + "', " + vbCrLf
+                strQuery += chkVal(chkPregnant) + ", " + vbCrLf
+                strQuery += IIf(chkPregnant.Checked, "'" + fn_Date(dtpDelivery.Value) + "'", "NULL") + ", " + vbCrLf
+                strQuery += "'" + fn_Date(dtpCaseStudy.Value) + "', " + vbCrLf
+                strQuery += "getdate(), " + vbCrLf
+                strQuery += "getdate(), " + vbCrLf
+                strQuery += "'" + UserName + "')"
+
+
+
+                If SQL_EXECUTE(strQuery) Then
+                    'Insert Household Information
+                    Dim intHouseHoldNo As Integer
+
+                    strQuery = "SELECT coalesce(max(HouseholdNo), 0) FROM Household WHERE HouseNo = " + txtHouseNo.Text
+                    intHouseHoldNo = SQL_SELECT(strQuery).Tables(0).Rows(0)(0)
+                    If intHouseHoldNo = 0 Or txtHouseholdNo.Text = "" Then
+                        intHouseHoldNo += 1
+
+                        strQuery = "INSERT INTO Household (HouseNo, HouseholdNo, Barangay, Street, Municipality, Province, ContactNo, CreatedDate, UpdatedDate, UpdatedBy)" + vbCrLf
+                        strQuery += "VALUES (" + txtHouseNo.Text + ", " + vbCrLf
+                        strQuery += intHouseHoldNo.ToString + ", " + vbCrLf
+                        strQuery += "'" + txtBarangay.Text + "', " + vbCrLf
+                        strQuery += "'" + txtStreet.Text + "', " + vbCrLf
+                        strQuery += "'" + txtMunicipality.Text + "', " + vbCrLf
+                        strQuery += "'" + txtProvince.Text + "', " + vbCrLf
+                        strQuery += "'" + txtHouseContactNo.Text + "', " + vbCrLf
+                        strQuery += "getdate(), " + vbCrLf
+                        strQuery += "getdate(), " + vbCrLf
+                        strQuery += "'" + UserName + "')"
+                        SQL_EXECUTE(strQuery)
                     End If
-                ElseIf intTaskMode = 2 Then
-                    strQuery = ""
+
+                    If txtHouseholdNo.Text <> "" Then
+                        intHouseHoldNo = txtHouseholdNo.Text
+                    End If
+
+                    strQuery = "INSERT INTO dbo.HouseholdMember (HouseNo, HouseholdNo, ResidentCode, Role, CreatedDate, UpdatedDate, UpdatedBy)" + vbCrLf
+                    strQuery += "VALUES (" + txtHouseNo.Text + ", " + vbCrLf
+                    strQuery += intHouseHoldNo.ToString + ", " + vbCrLf
+                    strQuery += "'" + strResidentCode + "', " + vbCrLf
+                    strQuery += cboVal(cboRole) + ", " + vbCrLf
+                    strQuery += "getdate(), " + vbCrLf
+                    strQuery += "getdate(), " + vbCrLf
+                    strQuery += "'" + UserName + "')"
+                    SQL_EXECUTE(strQuery)
+
+                    MsgBox("Resident Registered Successfully", MsgBoxStyle.Information, "Registration")
+                    Me.Close()
+                Else
+                    Throw New Exception("Resident Registered Failed")
                 End If
             End If
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "REGISTRATION")
         End Try
     End Sub
 
@@ -229,46 +180,87 @@
     End Sub
 
     Private Sub btnHouseList_Click(sender As Object, e As EventArgs) Handles btnHouseList.Click
-        F_HouseholdList.Show()
+        Dim frmHouseList As New F_HouseholdList
+
+        AddHandler frmHouseList.selectedHouseNo, AddressOf loadHouseholdDetails
+        frmHouseList.ShowDialog()
     End Sub
 
-    Public Sub getHouseInfo(strHouseNo As String)
-        Dim dsHouseInfo As New DataSet
+    Private Sub loadHouseholdDetails(ByVal strHouseNo As String, ByVal strHouseholdNo As String)
+        Try
 
-        If strHouseNo <> "" Then
-            strQuery = "SELECT * FROM Household WHERE HouseholdNo = " & strHouseNo
-            dsHouseInfo = SQL_SELECT(strQuery)
+            Dim dtHouse As New DataTable
+            cboRole.SelectedValue = -1
+            cboRole.Enabled = True
 
-            With dsHouseInfo
-                If .Tables(0).Rows.Count <> 0 Then
-                    txtHouseholdNo.Text = fn_checkNull(.Tables(0).Rows(0)(0))
-                    txtBarangay.Text = fn_checkNull(.Tables(0).Rows(0)(2))
-                    txtStreet.Text = fn_checkNull(.Tables(0).Rows(0)(3))
-                    txtMunicipality.Text = fn_checkNull(.Tables(0).Rows(0)(4))
-                    txtProvince.Text = fn_checkNull(.Tables(0).Rows(0)(5))
-                    txtHouseContactNo.Text = fn_checkNull(.Tables(0).Rows(0)(6))
+
+            strQuery = "SELECT HouseholdNo, HouseNo, Barangay, ContactNo, Street, Municipality, Province FROM Household" + vbCrLf
+            strQuery += "WHERE HouseNo = " + strHouseNo + vbCrLf
+            strQuery += "AND HouseholdNo = " + strHouseholdNo
+            dtHouse = SQL_SELECT(strQuery).Tables(0)
+
+            With dtHouse
+                If .Rows.Count <> 0 Then
+                    txtHouseNo.Text = .Rows(0)("HouseNo")
+                    txtHouseholdNo.Text = .Rows(0)("HouseholdNo")
+                    txtBarangay.Text = .Rows(0)("Barangay")
+                    txtHouseContactNo.Text = .Rows(0)("ContactNo")
+                    txtStreet.Text = .Rows(0)("Street")
+                    txtMunicipality.Text = .Rows(0)("Municipality")
+                    txtProvince.Text = .Rows(0)("Province")
 
                     strCompleteAddress(1) = txtStreet.Text & " Street , "
                     strCompleteAddress(2) = txtBarangay.Text & ", "
                     strCompleteAddress(3) = txtMunicipality.Text & ", "
                     strCompleteAddress(4) = txtProvince.Text
                     Call subCompleteAddress()
+
+                    Dim intHead As Integer
+                    strQuery = "SELECT count(*) FROM HouseholdMember" + vbCrLf
+                    strQuery += "WHERE HouseNo = " + strHouseNo + vbCrLf
+                    strQuery += "AND HouseholdNo = " + strHouseholdNo + vbCrLf
+                    strQuery += "AND Role = 1"
+                    intHead = SQL_SELECT(strQuery).Tables(0).Rows(0)(0)
+
+                    If intHead <> 0 Then
+                        cboRole.SelectedValue = 2
+                        cboRole.Enabled = False
+                    End If
                 End If
             End With
-        End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
     End Sub
 
     Private Sub txtHouseNo_TextChanged(sender As Object, e As EventArgs) Handles txtHouseNo.TextChanged
-        If txtHouseNo.Text = "" Then
-            txtBarangay.Text = ""
-            txtStreet.Text = ""
-            txtMunicipality.Text = ""
-            txtProvince.Text = ""
-            txtHouseContactNo.Text = ""
-            cboRole.SelectedIndex = 0
-            cboRole.Enabled = True
-            txtCompleteAdd.Text = ""
+        txtHouseholdNo.Text = ""
+        txtBarangay.Text = ""
+        txtStreet.Text = ""
+        txtMunicipality.Text = ""
+        txtProvince.Text = ""
+        txtHouseContactNo.Text = ""
+        cboRole.SelectedIndex = -1
+        cboRole.Enabled = True
+        txtCompleteAdd.Text = ""
+    End Sub
+
+    Private Sub cboSex_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSex.SelectedIndexChanged
+        If cboSex.Text = "FEMALE" Then
+            chkPregnant.Visible = True
+        Else
+            chkPregnant.Visible = False : chkPregnant.Checked = False
+            lblDelivery.Visible = False : dtpDelivery.Visible = False
         End If
     End Sub
 
+    Private Sub chkPregnant_CheckedChanged(sender As Object, e As EventArgs) Handles chkPregnant.CheckedChanged
+        If chkPregnant.Checked Then
+            lblDelivery.Visible = True
+            dtpDelivery.Visible = True
+        Else
+            lblDelivery.Visible = False
+            dtpDelivery.Visible = False
+        End If
+    End Sub
 End Class

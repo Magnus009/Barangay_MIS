@@ -1,34 +1,28 @@
 ﻿Public Class F_HouseholdList
+
+    Friend Event selectedHouseNo(ByVal strHouseNo As String, ByVal strHouseholdNo As String)
+
     Private Sub loadHouses()
         Try
             With datHouses
-                Dim dsHouses As New DataSet
+                Dim dtHouses As New DataTable
 
                 .Columns.Clear()
-                strQuery = ""
-                strQuery = "SELECT H.HouseholdNo 'HOUSE #'," & vbCrLf
-                strQuery &= "H.Barangay + ', ' + H.Street + ' Street, ' + H.Municipality  + ', ' +  H.Province 'ADDRESS'," & vbCrLf
-                strQuery &= "H.ContactNo 'CONTACT #', R.FamilyName 'FAMILY NAME' FROM Household H" & vbCrLf
-                strQuery &= "INNER JOIN HouseholdMember HM ON H.HouseholdNo = HM.HouseholdNo AND HM.Role = 1" & vbCrLf
+                strQuery = "SELECT H.HouseNo 'HOUSE No.', H.HouseholdNo '#', coalesce(R.FamilyName + ', ' + R.GivenName, '--') 'HOUSEHOLD HEAD' FROM Household H" & vbCrLf
+                strQuery &= "LEFT JOIN HouseholdMember HM ON H.HouseNo = HM.HouseNo" & vbCrLf
+                strQuery &= "AND H.HouseholdNo = HM.HouseholdNo" & vbCrLf
+                strQuery &= "AND HM.Role = 1" & vbCrLf
                 strQuery &= "LEFT JOIN Residents R ON HM.ResidentCode = R.Code" & vbCrLf
                 strQuery &= "WHERE H.DeletedDate IS NULL" & vbCrLf
                 If cboSearch.Text <> "" And txtSearch.Text <> "" Then
                     strQuery &= "AND " & IIf(cboSearch.SelectedIndex = 5, "R.", "H.") & cboSearch.Text & " LIKE '%" & txtSearch.Text & "%'"
                 End If
-                dsHouses = SQL_SELECT(strQuery)
-                .DataSource = dsHouses
-                .DataMember = "table"
+                dtHouses = SQL_SELECT(strQuery).Tables(0)
+                .DataSource = dtHouses
 
-                'add Button
-                Dim btnSelect As New DataGridViewButtonColumn
-
-                btnSelect.Text = "SELECT"
-                btnSelect.UseColumnTextForButtonValue = True
-                .Columns.Add(btnSelect)
-
-                .Columns(0).Width = .Width * 0.12
-                .Columns(2).Width = .Width * 0.2
-                .Columns(4).Width = .Width * 0.1
+                .Columns("#").Width = .Width * 0.08
+                .Columns("HOUSE No.").Width = .Width * 0.25
+                .Columns("HOUSEHOLD HEAD").Width = .Width * 0.65
             End With
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -36,26 +30,27 @@
     End Sub
 
     Private Sub F_HouseholdList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        formLoadSetup(Me)
         Call loadHouses()
     End Sub
 
-    Private Sub datHouses_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datHouses.CellContentClick
-        If e.ColumnIndex = 4 Then
-            Dim strHouseNo As String = datHouses.Rows(e.RowIndex).Cells(0).Value
-            If MsgBox("Do you want to select this house as your reference?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "SELECT HOUSE") = vbYes Then
-                Me.Close()
-
-                With F_Resident
-                    .txtHouseNo.Text = strHouseNo
-                    .getHouseInfo(strHouseNo)
-                    .cboRole.SelectedIndex = 2
-                    .cboRole.Enabled = False
-                End With
-            End If
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        If cboSearch.Text <> "" Then
+            loadHouses()
         End If
     End Sub
 
-    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-        Call loadHouses()
+    Private Sub btnSelect_Click(sender As Object, e As EventArgs) Handles btnSelect.Click
+        Try
+            If MsgBox("Select this Household?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "CHOOSE HOUSEHOLD") = vbYes Then
+                Dim strHouseNo As String = datHouses.CurrentRow.Cells("HOUSE No.").Value
+                Dim strHouseholdNo As String = datHouses.CurrentRow.Cells("#").Value
+
+                RaiseEvent selectedHouseNo(strHouseNo, strHouseholdNo)
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
     End Sub
 End Class

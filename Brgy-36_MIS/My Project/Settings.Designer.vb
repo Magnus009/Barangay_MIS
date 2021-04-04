@@ -66,50 +66,50 @@ Namespace My
             End Set
         End Property
         
-        <Global.System.Configuration.UserScopedSettingAttribute(), _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.Configuration.DefaultSettingValueAttribute("235, 238, 245")> _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("235, 238, 245")>  _
         Public Property Secondary() As Global.System.Drawing.Color
             Get
-                Return CType(Me("Secondary"), Global.System.Drawing.Color)
+                Return CType(Me("Secondary"),Global.System.Drawing.Color)
             End Get
-            Set(value As Global.System.Drawing.Color)
+            Set
                 Me("Secondary") = value
             End Set
         End Property
-
-        <Global.System.Configuration.UserScopedSettingAttribute(), _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.Configuration.DefaultSettingValueAttribute("255, 128, 128")> _
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("255, 128, 128")>  _
         Public Property Deleted() As Global.System.Drawing.Color
             Get
-                Return CType(Me("Deleted"), Global.System.Drawing.Color)
+                Return CType(Me("Deleted"),Global.System.Drawing.Color)
             End Get
-            Set(value As Global.System.Drawing.Color)
+            Set
                 Me("Deleted") = value
             End Set
         End Property
-
-        <Global.System.Configuration.UserScopedSettingAttribute(), _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.Configuration.DefaultSettingValueAttribute("255, 192, 128")> _
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("255, 192, 128")>  _
         Public Property Deactivated() As Global.System.Drawing.Color
             Get
-                Return CType(Me("Deactivated"), Global.System.Drawing.Color)
+                Return CType(Me("Deactivated"),Global.System.Drawing.Color)
             End Get
-            Set(value As Global.System.Drawing.Color)
+            Set
                 Me("Deactivated") = value
             End Set
         End Property
-
-        <Global.System.Configuration.UserScopedSettingAttribute(), _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.Configuration.DefaultSettingValueAttribute("Century Gothic, 9.75pt, style=Bold")> _
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Century Gothic, 9.75pt, style=Bold")>  _
         Public Property TableHeader() As Global.System.Drawing.Font
             Get
-                Return CType(Me("TableHeader"), Global.System.Drawing.Font)
+                Return CType(Me("TableHeader"),Global.System.Drawing.Font)
             End Get
-            Set(value As Global.System.Drawing.Font)
+            Set
                 Me("TableHeader") = value
             End Set
         End Property
@@ -207,6 +207,30 @@ Namespace My
             End Get
             Set
                 Me("Header5") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Century Gothic, 6.75pt")>  _
+        Public Property Substring() As Global.System.Drawing.Font
+            Get
+                Return CType(Me("Substring"),Global.System.Drawing.Font)
+            End Get
+            Set
+                Me("Substring") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("188, 222, 232")>  _
+        Public Property Editable() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("Editable"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("Editable") = value
             End Set
         End Property
     End Class

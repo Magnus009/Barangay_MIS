@@ -21,7 +21,7 @@ Brgy-36_MIS
 </summary>
 </member><member name="P:Brgy_36_MIS.My.Resources.Resources.ConnectionString">
 	<summary>
-  Looks up a localized string similar to Data Source=sd_sql_training;Persist Security Info=True;User ID=sa;Password=81at84;Initial Catalog=MIS.
+  Looks up a localized string similar to Data Source=ANDRE\BRGY_SQL;Integrated Security=SSPI;Initial Catalog=MIS.
 </summary>
 </member><member name="P:Brgy_36_MIS.My.Resources.Resources.ConnectionString_temp1">
 	<summary>
@@ -30,6 +30,10 @@ Brgy-36_MIS
 </member><member name="P:Brgy_36_MIS.My.Resources.Resources.ConnectionString_temp2">
 	<summary>
   Looks up a localized string similar to Data Source=LIGAYA\SQLEXPRESS;Initial Catalog=MIS;Integrated Security=True.
+</summary>
+</member><member name="P:Brgy_36_MIS.My.Resources.Resources.ConnectionString_temp3">
+	<summary>
+  Looks up a localized string similar to Data Source=ANDRE\BRGY_SQL;Integrated Security=SSPI;Initial Catalog=MIS.
 </summary>
 </member><member name="T:Brgy_36_MIS.My.Resources.Resources">
 	<summary>

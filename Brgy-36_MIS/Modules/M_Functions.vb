@@ -223,14 +223,15 @@ Module M_Functions
                                 Dim txt As TextBox
                                 txt = ctrl
                                 txt.ReadOnly = Not blnWrite
-                                txt.BackColor = Color.White
+                                txt.BackColor = IIf(blnWrite, My.Settings.Editable, Color.White)
                             ElseIf ctrl.GetType() = GetType(MaskedTextBox) Then
                                 Dim mtxt As MaskedTextBox
                                 mtxt = ctrl
                                 mtxt.ReadOnly = Not blnWrite
-                                mtxt.BackColor = Color.White
+                                mtxt.BackColor = IIf(blnWrite, My.Settings.Editable, Color.White)
                             Else
                                 ctrl.Enabled = blnWrite
+                                ctrl.BackColor = IIf(blnWrite, My.Settings.Editable, My.Settings.Secondary)
                             End If
                         ElseIf InStr(ctrl.Tag, "IN;") And intMode <> 1 Then
                             If ctrl.GetType() = GetType(TextBox) Then
@@ -266,6 +267,15 @@ Module M_Functions
                     fn_CheckRequire(ctrl)
                 Case GetType(Panel)
                     fn_CheckRequire(ctrl)
+                Case GetType(ComboBox)
+                    Dim cbo As New ComboBox
+                    cbo = ctrl
+
+                    If Right(cbo.Tag, 1) = "*" Then
+                        If cbo.SelectedValue = -1 Or cbo.Text = "" Then
+                            strRequire &= "- " & Mid(cbo.Tag, 4, Len(cbo.Tag) - 4) & vbCrLf
+                        End If
+                    End If
                 Case Else
                     If Right(ctrl.Tag, 1) = "*" Then
                         If ctrl.Text = "" Then
@@ -296,6 +306,12 @@ Module M_Functions
             Next
         End With
     End Sub
+
+    Public Function fn_Date(dateVal As Date) As String
+        Dim strDate As String
+        strDate = Format(dateVal, "yyyy/MM/dd")
+        Return strDate
+    End Function
 
     Public Sub formLoadSetup(container As Control)
 
@@ -341,6 +357,8 @@ Module M_Functions
                             ctrl.Font = My.Settings.Header4
                         Case "Header-5"
                             ctrl.Font = My.Settings.Header5
+                        Case "Substring"
+                            ctrl.Font = My.Settings.Substring
                         Case Else
                             ctrl.Font = My.Settings.Font
                     End Select
@@ -421,8 +439,58 @@ Module M_Functions
                         End Select
                     Next
             End Select
-
         Next
     End Sub
+
+    Public Sub cboDataBinding(cbo As ComboBox, strSQL As String, Optional header As String = "--CHOOSE ITEM--")
+        Try
+            Dim dt As New DataTable
+            Dim dr As DataRow
+
+            dt = SQL_SELECT(strSQL).Tables(0)
+            dt.Columns(0).ColumnName = "ID"
+            dt.Columns(1).ColumnName = "NAME"
+            dr = dt.NewRow
+
+            cbo.Items.Clear()
+            dr(0) = -1
+            dr(1) = header
+            dt.Rows.InsertAt(dr, 0)
+
+            cbo.DataSource = dt
+            cbo.DisplayMember = "NAME"
+            cbo.ValueMember = "ID"
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
+    Public Function cboVal(cbo As ComboBox) As String
+        Dim strVal As String = ""
+        Try
+            If cbo.SelectedValue = -1 Then
+                strVal = "NULL"
+            Else
+                strVal = cbo.SelectedValue
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+        Return strVal
+    End Function
+
+    Public Function chkVal(chk As CheckBox) As String
+        Dim strVal As String = ""
+        Try
+            If chk.Checked Then
+                strVal = "1"
+            Else
+                strVal = "0"
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+        Return strVal
+    End Function
 
 End Module

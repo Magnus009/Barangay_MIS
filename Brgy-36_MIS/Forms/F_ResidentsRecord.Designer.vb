@@ -22,10 +22,10 @@ Partial Class F_ResidentsRecord
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.datResidents = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtCode = New System.Windows.Forms.TextBox()
@@ -34,15 +34,29 @@ Partial Class F_ResidentsRecord
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.pnlSearch = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.Label18 = New System.Windows.Forms.Label()
+        Me.pnlInformations = New System.Windows.Forms.Panel()
+        Me.txtProvince = New System.Windows.Forms.TextBox()
+        Me.cboRole = New System.Windows.Forms.ComboBox()
+        Me.txtStreet = New System.Windows.Forms.TextBox()
+        Me.txtMunicipality = New System.Windows.Forms.TextBox()
+        Me.txtBarangay = New System.Windows.Forms.TextBox()
+        Me.txtHouseholdNo = New System.Windows.Forms.TextBox()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.txtHouseNo = New System.Windows.Forms.TextBox()
+        Me.Label47 = New System.Windows.Forms.Label()
+        Me.Label48 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label46 = New System.Windows.Forms.Label()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.txtHouseContactNo = New System.Windows.Forms.TextBox()
+        Me.Label43 = New System.Windows.Forms.Label()
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.dtpDelivery = New System.Windows.Forms.DateTimePicker()
+        Me.lblDelivery = New System.Windows.Forms.Label()
         Me.chkPregnant = New System.Windows.Forms.CheckBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtLName = New System.Windows.Forms.TextBox()
+        Me.txtFullName = New System.Windows.Forms.TextBox()
         Me.lblPersonalInfo = New System.Windows.Forms.Label()
         Me.cboSamahan = New System.Windows.Forms.ComboBox()
         Me.cboCivilStatus = New System.Windows.Forms.ComboBox()
@@ -72,10 +86,12 @@ Partial Class F_ResidentsRecord
         Me.lblID = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.btnClear = New System.Windows.Forms.Button()
         CType(Me.datResidents, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlSearch.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
+        Me.pnlInformations.SuspendLayout()
         Me.SuspendLayout()
         '
         'datResidents
@@ -84,43 +100,43 @@ Partial Class F_ResidentsRecord
         Me.datResidents.AllowUserToDeleteRows = False
         Me.datResidents.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.datResidents.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datResidents.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle25.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datResidents.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle25
         Me.datResidents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.datResidents.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle26.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.datResidents.DefaultCellStyle = DataGridViewCellStyle26
         Me.datResidents.Location = New System.Drawing.Point(11, 11)
         Me.datResidents.MultiSelect = False
         Me.datResidents.Name = "datResidents"
         Me.datResidents.ReadOnly = True
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datResidents.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle27.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datResidents.RowHeadersDefaultCellStyle = DataGridViewCellStyle27
         Me.datResidents.RowHeadersVisible = False
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.datResidents.RowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.datResidents.RowsDefaultCellStyle = DataGridViewCellStyle28
         Me.datResidents.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.datResidents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datResidents.Size = New System.Drawing.Size(345, 327)
+        Me.datResidents.Size = New System.Drawing.Size(345, 347)
         Me.datResidents.StandardTab = True
-        Me.datResidents.TabIndex = 5
+        Me.datResidents.TabIndex = 1
         '
         'Label1
         '
@@ -169,16 +185,17 @@ Partial Class F_ResidentsRecord
         Me.btnSearch.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSearch.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearch.Location = New System.Drawing.Point(243, 57)
+        Me.btnSearch.Location = New System.Drawing.Point(268, 57)
         Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(114, 30)
-        Me.btnSearch.TabIndex = 4
+        Me.btnSearch.Size = New System.Drawing.Size(89, 30)
+        Me.btnSearch.TabIndex = 3
         Me.btnSearch.Tag = "Primary"
         Me.btnSearch.Text = "&SEARCH"
         Me.btnSearch.UseVisualStyleBackColor = False
         '
         'pnlSearch
         '
+        Me.pnlSearch.Controls.Add(Me.btnClear)
         Me.pnlSearch.Controls.Add(Me.txtName)
         Me.pnlSearch.Controls.Add(Me.btnSearch)
         Me.pnlSearch.Controls.Add(Me.Label1)
@@ -187,107 +204,289 @@ Partial Class F_ResidentsRecord
         Me.pnlSearch.Location = New System.Drawing.Point(13, 12)
         Me.pnlSearch.Name = "pnlSearch"
         Me.pnlSearch.Size = New System.Drawing.Size(366, 95)
-        Me.pnlSearch.TabIndex = 6
+        Me.pnlSearch.TabIndex = 1
         Me.pnlSearch.Tag = "Secondary"
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Label16)
-        Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.datResidents)
         Me.Panel1.Location = New System.Drawing.Point(13, 113)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(366, 366)
-        Me.Panel1.TabIndex = 7
+        Me.Panel1.Size = New System.Drawing.Size(366, 411)
+        Me.Panel1.TabIndex = 2
         Me.Panel1.Tag = "Secondary"
         '
-        'Label16
+        'pnlInformations
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(11, 342)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(57, 16)
-        Me.Label16.TabIndex = 66
-        Me.Label16.Text = "LEGEND :"
-        Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.pnlInformations.Controls.Add(Me.dtpBirthdate)
+        Me.pnlInformations.Controls.Add(Me.dtpDelivery)
+        Me.pnlInformations.Controls.Add(Me.btnUpdate)
+        Me.pnlInformations.Controls.Add(Me.txtProvince)
+        Me.pnlInformations.Controls.Add(Me.cboRole)
+        Me.pnlInformations.Controls.Add(Me.txtStreet)
+        Me.pnlInformations.Controls.Add(Me.txtMunicipality)
+        Me.pnlInformations.Controls.Add(Me.txtBarangay)
+        Me.pnlInformations.Controls.Add(Me.txtHouseholdNo)
+        Me.pnlInformations.Controls.Add(Me.Label36)
+        Me.pnlInformations.Controls.Add(Me.txtHouseNo)
+        Me.pnlInformations.Controls.Add(Me.Label47)
+        Me.pnlInformations.Controls.Add(Me.Label48)
+        Me.pnlInformations.Controls.Add(Me.Label27)
+        Me.pnlInformations.Controls.Add(Me.Label46)
+        Me.pnlInformations.Controls.Add(Me.Label40)
+        Me.pnlInformations.Controls.Add(Me.txtHouseContactNo)
+        Me.pnlInformations.Controls.Add(Me.Label43)
+        Me.pnlInformations.Controls.Add(Me.Label45)
+        Me.pnlInformations.Controls.Add(Me.lblDelivery)
+        Me.pnlInformations.Controls.Add(Me.chkPregnant)
+        Me.pnlInformations.Controls.Add(Me.Label6)
+        Me.pnlInformations.Controls.Add(Me.Label7)
+        Me.pnlInformations.Controls.Add(Me.txtFullName)
+        Me.pnlInformations.Controls.Add(Me.lblPersonalInfo)
+        Me.pnlInformations.Controls.Add(Me.cboSamahan)
+        Me.pnlInformations.Controls.Add(Me.cboCivilStatus)
+        Me.pnlInformations.Controls.Add(Me.cboSex)
+        Me.pnlInformations.Controls.Add(Me.txtContactNo)
+        Me.pnlInformations.Controls.Add(Me.txtDisability)
+        Me.pnlInformations.Controls.Add(Me.txtOccupation)
+        Me.pnlInformations.Controls.Add(Me.txtCitizenship)
+        Me.pnlInformations.Controls.Add(Me.txtAge)
+        Me.pnlInformations.Controls.Add(Me.txtBirthPlace)
+        Me.pnlInformations.Controls.Add(Me.chkPWD)
+        Me.pnlInformations.Controls.Add(Me.chkIndigent)
+        Me.pnlInformations.Controls.Add(Me.chkInHabitant)
+        Me.pnlInformations.Controls.Add(Me.chkVoter)
+        Me.pnlInformations.Controls.Add(Me.lblDiasability)
+        Me.pnlInformations.Controls.Add(Me.Label13)
+        Me.pnlInformations.Controls.Add(Me.Label12)
+        Me.pnlInformations.Controls.Add(Me.Label17)
+        Me.pnlInformations.Controls.Add(Me.Label15)
+        Me.pnlInformations.Controls.Add(Me.Label14)
+        Me.pnlInformations.Controls.Add(Me.Label9)
+        Me.pnlInformations.Controls.Add(Me.Label8)
+        Me.pnlInformations.Controls.Add(Me.Label3)
+        Me.pnlInformations.Controls.Add(Me.Label11)
+        Me.pnlInformations.Controls.Add(Me.txtID)
+        Me.pnlInformations.Controls.Add(Me.lblID)
+        Me.pnlInformations.Controls.Add(Me.Label4)
+        Me.pnlInformations.Controls.Add(Me.Label5)
+        Me.pnlInformations.Location = New System.Drawing.Point(385, 12)
+        Me.pnlInformations.Name = "pnlInformations"
+        Me.pnlInformations.Size = New System.Drawing.Size(587, 512)
+        Me.pnlInformations.TabIndex = 3
+        Me.pnlInformations.Tag = "Secondary"
         '
-        'Label10
+        'txtProvince
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(74, 341)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(54, 18)
-        Me.Label10.TabIndex = 6
-        Me.Label10.Text = "DELETED"
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.txtProvince.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtProvince.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtProvince.Location = New System.Drawing.Point(341, 416)
+        Me.txtProvince.MaxLength = 20
+        Me.txtProvince.Multiline = True
+        Me.txtProvince.Name = "txtProvince"
+        Me.txtProvince.Size = New System.Drawing.Size(216, 21)
+        Me.txtProvince.TabIndex = 26
+        Me.txtProvince.Tag = "IN;"
+        Me.txtProvince.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Panel2
+        'cboRole
         '
-        Me.Panel2.Controls.Add(Me.DateTimePicker1)
-        Me.Panel2.Controls.Add(Me.Label18)
-        Me.Panel2.Controls.Add(Me.chkPregnant)
-        Me.Panel2.Controls.Add(Me.Label6)
-        Me.Panel2.Controls.Add(Me.Label7)
-        Me.Panel2.Controls.Add(Me.txtLName)
-        Me.Panel2.Controls.Add(Me.lblPersonalInfo)
-        Me.Panel2.Controls.Add(Me.cboSamahan)
-        Me.Panel2.Controls.Add(Me.cboCivilStatus)
-        Me.Panel2.Controls.Add(Me.cboSex)
-        Me.Panel2.Controls.Add(Me.dtpBirthdate)
-        Me.Panel2.Controls.Add(Me.txtContactNo)
-        Me.Panel2.Controls.Add(Me.txtDisability)
-        Me.Panel2.Controls.Add(Me.txtOccupation)
-        Me.Panel2.Controls.Add(Me.txtCitizenship)
-        Me.Panel2.Controls.Add(Me.txtAge)
-        Me.Panel2.Controls.Add(Me.txtBirthPlace)
-        Me.Panel2.Controls.Add(Me.chkPWD)
-        Me.Panel2.Controls.Add(Me.chkIndigent)
-        Me.Panel2.Controls.Add(Me.chkInHabitant)
-        Me.Panel2.Controls.Add(Me.chkVoter)
-        Me.Panel2.Controls.Add(Me.lblDiasability)
-        Me.Panel2.Controls.Add(Me.Label13)
-        Me.Panel2.Controls.Add(Me.Label12)
-        Me.Panel2.Controls.Add(Me.Label17)
-        Me.Panel2.Controls.Add(Me.Label15)
-        Me.Panel2.Controls.Add(Me.Label14)
-        Me.Panel2.Controls.Add(Me.Label9)
-        Me.Panel2.Controls.Add(Me.Label8)
-        Me.Panel2.Controls.Add(Me.Label3)
-        Me.Panel2.Controls.Add(Me.Label11)
-        Me.Panel2.Controls.Add(Me.txtID)
-        Me.Panel2.Controls.Add(Me.lblID)
-        Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Controls.Add(Me.Label5)
-        Me.Panel2.Location = New System.Drawing.Point(385, 12)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(587, 467)
-        Me.Panel2.TabIndex = 8
-        Me.Panel2.Tag = "Secondary"
+        Me.cboRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboRole.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cboRole.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboRole.FormattingEnabled = True
+        Me.cboRole.Items.AddRange(New Object() {"", "HEAD", "MEMBER"})
+        Me.cboRole.Location = New System.Drawing.Point(341, 321)
+        Me.cboRole.Name = "cboRole"
+        Me.cboRole.Size = New System.Drawing.Size(117, 24)
+        Me.cboRole.TabIndex = 20
+        Me.cboRole.Tag = "IN;"
         '
-        'DateTimePicker1
+        'txtStreet
         '
-        Me.DateTimePicker1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(472, 124)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(85, 21)
-        Me.DateTimePicker1.TabIndex = 67
-        Me.DateTimePicker1.Tag = "IN:"
+        Me.txtStreet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtStreet.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtStreet.Location = New System.Drawing.Point(341, 354)
+        Me.txtStreet.MaxLength = 100
+        Me.txtStreet.Multiline = True
+        Me.txtStreet.Name = "txtStreet"
+        Me.txtStreet.Size = New System.Drawing.Size(216, 21)
+        Me.txtStreet.TabIndex = 22
+        Me.txtStreet.Tag = "IN;"
+        Me.txtStreet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label18
+        'txtMunicipality
         '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(384, 126)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(90, 16)
-        Me.Label18.TabIndex = 68
-        Me.Label18.Text = "DATE OF BIRTH :"
+        Me.txtMunicipality.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtMunicipality.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMunicipality.Location = New System.Drawing.Point(341, 385)
+        Me.txtMunicipality.MaxLength = 20
+        Me.txtMunicipality.Multiline = True
+        Me.txtMunicipality.Name = "txtMunicipality"
+        Me.txtMunicipality.Size = New System.Drawing.Size(216, 21)
+        Me.txtMunicipality.TabIndex = 24
+        Me.txtMunicipality.Tag = "IN;"
+        Me.txtMunicipality.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txtBarangay
+        '
+        Me.txtBarangay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtBarangay.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBarangay.Location = New System.Drawing.Point(117, 385)
+        Me.txtBarangay.MaxLength = 50
+        Me.txtBarangay.Multiline = True
+        Me.txtBarangay.Name = "txtBarangay"
+        Me.txtBarangay.Size = New System.Drawing.Size(127, 21)
+        Me.txtBarangay.TabIndex = 23
+        Me.txtBarangay.Tag = "IN;"
+        Me.txtBarangay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txtHouseholdNo
+        '
+        Me.txtHouseholdNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtHouseholdNo.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtHouseholdNo.Location = New System.Drawing.Point(117, 323)
+        Me.txtHouseholdNo.MaxLength = 10
+        Me.txtHouseholdNo.Multiline = True
+        Me.txtHouseholdNo.Name = "txtHouseholdNo"
+        Me.txtHouseholdNo.ReadOnly = True
+        Me.txtHouseholdNo.Size = New System.Drawing.Size(76, 21)
+        Me.txtHouseholdNo.TabIndex = 19
+        Me.txtHouseholdNo.Tag = "IN;"
+        Me.txtHouseholdNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label36.Location = New System.Drawing.Point(15, 325)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(104, 16)
+        Me.Label36.TabIndex = 84
+        Me.Label36.Text = "HOUSEHOLD No. :"
+        Me.Label36.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'txtHouseNo
+        '
+        Me.txtHouseNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtHouseNo.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtHouseNo.Location = New System.Drawing.Point(117, 354)
+        Me.txtHouseNo.MaxLength = 10
+        Me.txtHouseNo.Multiline = True
+        Me.txtHouseNo.Name = "txtHouseNo"
+        Me.txtHouseNo.ReadOnly = True
+        Me.txtHouseNo.Size = New System.Drawing.Size(99, 21)
+        Me.txtHouseNo.TabIndex = 21
+        Me.txtHouseNo.Tag = "IN;"
+        Me.txtHouseNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label47
+        '
+        Me.Label47.AutoSize = True
+        Me.Label47.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label47.Location = New System.Drawing.Point(46, 387)
+        Me.Label47.Name = "Label47"
+        Me.Label47.Size = New System.Drawing.Size(73, 16)
+        Me.Label47.TabIndex = 70
+        Me.Label47.Text = "BARANGAY :"
+        Me.Label47.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label48
+        '
+        Me.Label48.AutoSize = True
+        Me.Label48.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label48.Location = New System.Drawing.Point(46, 356)
+        Me.Label48.Name = "Label48"
+        Me.Label48.Size = New System.Drawing.Size(73, 16)
+        Me.Label48.TabIndex = 69
+        Me.Label48.Text = "HOUSE No. :"
+        Me.Label48.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.Location = New System.Drawing.Point(272, 418)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(71, 16)
+        Me.Label27.TabIndex = 83
+        Me.Label27.Text = "PROVINCE :"
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label46.Location = New System.Drawing.Point(294, 356)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(49, 16)
+        Me.Label46.TabIndex = 71
+        Me.Label46.Text = "STREET :"
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label40.Location = New System.Drawing.Point(301, 325)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(42, 16)
+        Me.Label40.TabIndex = 75
+        Me.Label40.Text = "ROLE :"
+        '
+        'txtHouseContactNo
+        '
+        Me.txtHouseContactNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtHouseContactNo.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtHouseContactNo.Location = New System.Drawing.Point(117, 416)
+        Me.txtHouseContactNo.MaxLength = 100
+        Me.txtHouseContactNo.Multiline = True
+        Me.txtHouseContactNo.Name = "txtHouseContactNo"
+        Me.txtHouseContactNo.Size = New System.Drawing.Size(127, 21)
+        Me.txtHouseContactNo.TabIndex = 25
+        Me.txtHouseContactNo.Tag = "IN:"
+        Me.txtHouseContactNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label43
+        '
+        Me.Label43.AutoSize = True
+        Me.Label43.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label43.Location = New System.Drawing.Point(31, 418)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(88, 16)
+        Me.Label43.TabIndex = 73
+        Me.Label43.Text = "CONTACT No. :"
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label45.Location = New System.Drawing.Point(253, 387)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(90, 16)
+        Me.Label45.TabIndex = 72
+        Me.Label45.Text = "MUNICIPALITY :"
+        '
+        'dtpDelivery
+        '
+        Me.dtpDelivery.Cursor = System.Windows.Forms.Cursors.Default
+        Me.dtpDelivery.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpDelivery.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpDelivery.Location = New System.Drawing.Point(472, 124)
+        Me.dtpDelivery.Name = "dtpDelivery"
+        Me.dtpDelivery.Size = New System.Drawing.Size(85, 21)
+        Me.dtpDelivery.TabIndex = 8
+        Me.dtpDelivery.Tag = "IN:"
+        Me.dtpDelivery.Visible = False
+        '
+        'lblDelivery
+        '
+        Me.lblDelivery.AutoSize = True
+        Me.lblDelivery.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDelivery.Location = New System.Drawing.Point(384, 126)
+        Me.lblDelivery.Name = "lblDelivery"
+        Me.lblDelivery.Size = New System.Drawing.Size(92, 16)
+        Me.lblDelivery.TabIndex = 68
+        Me.lblDelivery.Text = "DELIVERY DATE :"
+        Me.lblDelivery.Visible = False
         '
         'chkPregnant
         '
@@ -298,10 +497,11 @@ Partial Class F_ResidentsRecord
         Me.chkPregnant.Location = New System.Drawing.Point(268, 124)
         Me.chkPregnant.Name = "chkPregnant"
         Me.chkPregnant.Size = New System.Drawing.Size(82, 20)
-        Me.chkPregnant.TabIndex = 66
-        Me.chkPregnant.Tag = ""
+        Me.chkPregnant.TabIndex = 7
+        Me.chkPregnant.Tag = "IN:"
         Me.chkPregnant.Text = "PREGNANT"
         Me.chkPregnant.UseVisualStyleBackColor = True
+        Me.chkPregnant.Visible = False
         '
         'Label6
         '
@@ -322,17 +522,18 @@ Partial Class F_ResidentsRecord
         Me.Label7.Size = New System.Drawing.Size(566, 165)
         Me.Label7.TabIndex = 65
         '
-        'txtLName
+        'txtFullName
         '
-        Me.txtLName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtLName.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLName.Location = New System.Drawing.Point(313, 64)
-        Me.txtLName.MaxLength = 150
-        Me.txtLName.Name = "txtLName"
-        Me.txtLName.Size = New System.Drawing.Size(244, 21)
-        Me.txtLName.TabIndex = 2
-        Me.txtLName.Tag = "IN;Last Name*"
-        Me.txtLName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtFullName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtFullName.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFullName.Location = New System.Drawing.Point(313, 64)
+        Me.txtFullName.MaxLength = 150
+        Me.txtFullName.Name = "txtFullName"
+        Me.txtFullName.ReadOnly = True
+        Me.txtFullName.Size = New System.Drawing.Size(244, 21)
+        Me.txtFullName.TabIndex = 2
+        Me.txtFullName.Tag = ""
+        Me.txtFullName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblPersonalInfo
         '
@@ -355,8 +556,8 @@ Partial Class F_ResidentsRecord
         Me.cboSamahan.Name = "cboSamahan"
         Me.cboSamahan.Size = New System.Drawing.Size(145, 24)
         Me.cboSamahan.Sorted = True
-        Me.cboSamahan.TabIndex = 12
-        Me.cboSamahan.Tag = ""
+        Me.cboSamahan.TabIndex = 14
+        Me.cboSamahan.Tag = "IN:"
         '
         'cboCivilStatus
         '
@@ -368,8 +569,8 @@ Partial Class F_ResidentsRecord
         Me.cboCivilStatus.Location = New System.Drawing.Point(356, 152)
         Me.cboCivilStatus.Name = "cboCivilStatus"
         Me.cboCivilStatus.Size = New System.Drawing.Size(114, 24)
-        Me.cboCivilStatus.TabIndex = 7
-        Me.cboCivilStatus.Tag = ""
+        Me.cboCivilStatus.TabIndex = 10
+        Me.cboCivilStatus.Tag = "IN:"
         '
         'cboSex
         '
@@ -381,8 +582,8 @@ Partial Class F_ResidentsRecord
         Me.cboSex.Location = New System.Drawing.Point(104, 122)
         Me.cboSex.Name = "cboSex"
         Me.cboSex.Size = New System.Drawing.Size(118, 24)
-        Me.cboSex.TabIndex = 8
-        Me.cboSex.Tag = ""
+        Me.cboSex.TabIndex = 6
+        Me.cboSex.Tag = "IN;"
         '
         'dtpBirthdate
         '
@@ -404,8 +605,8 @@ Partial Class F_ResidentsRecord
         Me.txtContactNo.Mask = "(+63)000-000-0000"
         Me.txtContactNo.Name = "txtContactNo"
         Me.txtContactNo.Size = New System.Drawing.Size(124, 21)
-        Me.txtContactNo.TabIndex = 15
-        Me.txtContactNo.Tag = ""
+        Me.txtContactNo.TabIndex = 17
+        Me.txtContactNo.Tag = "IN:"
         Me.txtContactNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtDisability
@@ -416,9 +617,10 @@ Partial Class F_ResidentsRecord
         Me.txtDisability.MaxLength = 150
         Me.txtDisability.Name = "txtDisability"
         Me.txtDisability.Size = New System.Drawing.Size(216, 21)
-        Me.txtDisability.TabIndex = 16
-        Me.txtDisability.Tag = ""
+        Me.txtDisability.TabIndex = 18
+        Me.txtDisability.Tag = "IN:"
         Me.txtDisability.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtDisability.Visible = False
         '
         'txtOccupation
         '
@@ -428,8 +630,8 @@ Partial Class F_ResidentsRecord
         Me.txtOccupation.MaxLength = 150
         Me.txtOccupation.Name = "txtOccupation"
         Me.txtOccupation.Size = New System.Drawing.Size(144, 21)
-        Me.txtOccupation.TabIndex = 9
-        Me.txtOccupation.Tag = ""
+        Me.txtOccupation.TabIndex = 11
+        Me.txtOccupation.Tag = "IN:"
         Me.txtOccupation.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtCitizenship
@@ -440,8 +642,8 @@ Partial Class F_ResidentsRecord
         Me.txtCitizenship.MaxLength = 150
         Me.txtCitizenship.Name = "txtCitizenship"
         Me.txtCitizenship.Size = New System.Drawing.Size(144, 21)
-        Me.txtCitizenship.TabIndex = 6
-        Me.txtCitizenship.Tag = ""
+        Me.txtCitizenship.TabIndex = 9
+        Me.txtCitizenship.Tag = "IN:"
         Me.txtCitizenship.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtAge
@@ -454,7 +656,7 @@ Partial Class F_ResidentsRecord
         Me.txtAge.ReadOnly = True
         Me.txtAge.Size = New System.Drawing.Size(54, 21)
         Me.txtAge.TabIndex = 5
-        Me.txtAge.Tag = ""
+        Me.txtAge.Tag = "IN;"
         Me.txtAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtBirthPlace
@@ -466,7 +668,7 @@ Partial Class F_ResidentsRecord
         Me.txtBirthPlace.Name = "txtBirthPlace"
         Me.txtBirthPlace.Size = New System.Drawing.Size(144, 21)
         Me.txtBirthPlace.TabIndex = 3
-        Me.txtBirthPlace.Tag = ""
+        Me.txtBirthPlace.Tag = "IN:"
         Me.txtBirthPlace.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'chkPWD
@@ -478,8 +680,8 @@ Partial Class F_ResidentsRecord
         Me.chkPWD.Location = New System.Drawing.Point(313, 214)
         Me.chkPWD.Name = "chkPWD"
         Me.chkPWD.Size = New System.Drawing.Size(144, 20)
-        Me.chkPWD.TabIndex = 13
-        Me.chkPWD.Tag = ""
+        Me.chkPWD.TabIndex = 15
+        Me.chkPWD.Tag = "IN:"
         Me.chkPWD.Text = "PERSON w\ DISABILITY"
         Me.chkPWD.UseVisualStyleBackColor = True
         '
@@ -493,8 +695,8 @@ Partial Class F_ResidentsRecord
         Me.chkIndigent.Location = New System.Drawing.Point(482, 214)
         Me.chkIndigent.Name = "chkIndigent"
         Me.chkIndigent.Size = New System.Drawing.Size(75, 20)
-        Me.chkIndigent.TabIndex = 14
-        Me.chkIndigent.Tag = ""
+        Me.chkIndigent.TabIndex = 16
+        Me.chkIndigent.Tag = "IN:"
         Me.chkIndigent.Text = "INDIGENT"
         Me.chkIndigent.UseVisualStyleBackColor = True
         '
@@ -509,8 +711,8 @@ Partial Class F_ResidentsRecord
         Me.chkInHabitant.Location = New System.Drawing.Point(469, 184)
         Me.chkInHabitant.Name = "chkInHabitant"
         Me.chkInHabitant.Size = New System.Drawing.Size(88, 20)
-        Me.chkInHabitant.TabIndex = 11
-        Me.chkInHabitant.Tag = ""
+        Me.chkInHabitant.TabIndex = 13
+        Me.chkInHabitant.Tag = "IN:"
         Me.chkInHabitant.Text = "IN-HABITANT"
         Me.chkInHabitant.UseVisualStyleBackColor = True
         '
@@ -523,8 +725,8 @@ Partial Class F_ResidentsRecord
         Me.chkVoter.Location = New System.Drawing.Point(313, 184)
         Me.chkVoter.Name = "chkVoter"
         Me.chkVoter.Size = New System.Drawing.Size(59, 20)
-        Me.chkVoter.TabIndex = 10
-        Me.chkVoter.Tag = ""
+        Me.chkVoter.TabIndex = 12
+        Me.chkVoter.Tag = "IN:"
         Me.chkVoter.Text = "VOTER"
         Me.chkVoter.UseVisualStyleBackColor = True
         '
@@ -537,6 +739,7 @@ Partial Class F_ResidentsRecord
         Me.lblDiasability.Size = New System.Drawing.Size(75, 16)
         Me.lblDiasability.TabIndex = 48
         Me.lblDiasability.Text = "DISABILITIES :"
+        Me.lblDiasability.Visible = False
         '
         'Label13
         '
@@ -673,13 +876,39 @@ Partial Class F_ResidentsRecord
         Me.Label5.Size = New System.Drawing.Size(566, 248)
         Me.Label5.TabIndex = 63
         '
+        'btnUpdate
+        '
+        Me.btnUpdate.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUpdate.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdate.Location = New System.Drawing.Point(462, 462)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(114, 45)
+        Me.btnUpdate.TabIndex = 85
+        Me.btnUpdate.Tag = "Primary"
+        Me.btnUpdate.Text = "UPDATE"
+        Me.btnUpdate.UseVisualStyleBackColor = False
+        '
+        'btnClear
+        '
+        Me.btnClear.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClear.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.Location = New System.Drawing.Point(175, 57)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(89, 30)
+        Me.btnClear.TabIndex = 4
+        Me.btnClear.Tag = "Primary"
+        Me.btnClear.Text = "&CLEAR"
+        Me.btnClear.UseVisualStyleBackColor = False
+        '
         'F_ResidentsRecord
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(984, 485)
-        Me.Controls.Add(Me.Panel2)
+        Me.ClientSize = New System.Drawing.Size(984, 536)
+        Me.Controls.Add(Me.pnlInformations)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.pnlSearch)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -696,9 +925,8 @@ Partial Class F_ResidentsRecord
         Me.pnlSearch.ResumeLayout(False)
         Me.pnlSearch.PerformLayout()
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
+        Me.pnlInformations.ResumeLayout(False)
+        Me.pnlInformations.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -710,11 +938,11 @@ Partial Class F_ResidentsRecord
     Friend WithEvents btnSearch As System.Windows.Forms.Button
     Friend WithEvents pnlSearch As System.Windows.Forms.Panel
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents pnlInformations As System.Windows.Forms.Panel
     Friend WithEvents txtID As System.Windows.Forms.TextBox
     Friend WithEvents lblID As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents txtLName As System.Windows.Forms.TextBox
+    Friend WithEvents txtFullName As System.Windows.Forms.TextBox
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Label14 As System.Windows.Forms.Label
@@ -743,9 +971,25 @@ Partial Class F_ResidentsRecord
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents dtpDelivery As System.Windows.Forms.DateTimePicker
+    Friend WithEvents lblDelivery As System.Windows.Forms.Label
     Friend WithEvents chkPregnant As System.Windows.Forms.CheckBox
+    Friend WithEvents txtProvince As System.Windows.Forms.TextBox
+    Friend WithEvents cboRole As System.Windows.Forms.ComboBox
+    Friend WithEvents txtStreet As System.Windows.Forms.TextBox
+    Friend WithEvents txtMunicipality As System.Windows.Forms.TextBox
+    Friend WithEvents txtBarangay As System.Windows.Forms.TextBox
+    Friend WithEvents txtHouseholdNo As System.Windows.Forms.TextBox
+    Friend WithEvents Label36 As System.Windows.Forms.Label
+    Friend WithEvents txtHouseNo As System.Windows.Forms.TextBox
+    Friend WithEvents Label47 As System.Windows.Forms.Label
+    Friend WithEvents Label48 As System.Windows.Forms.Label
+    Friend WithEvents Label27 As System.Windows.Forms.Label
+    Friend WithEvents Label46 As System.Windows.Forms.Label
+    Friend WithEvents Label40 As System.Windows.Forms.Label
+    Friend WithEvents txtHouseContactNo As System.Windows.Forms.TextBox
+    Friend WithEvents Label43 As System.Windows.Forms.Label
+    Friend WithEvents Label45 As System.Windows.Forms.Label
+    Friend WithEvents btnUpdate As System.Windows.Forms.Button
+    Friend WithEvents btnClear As System.Windows.Forms.Button
 End Class

@@ -41,5 +41,11 @@
     <Setting Name="Header5" Type="System.Drawing.Font" Scope="User">
       <Value Profile="(Default)">Century Gothic, 12pt, style=Bold</Value>
     </Setting>
+    <Setting Name="Substring" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Century Gothic, 6.75pt</Value>
+    </Setting>
+    <Setting Name="Editable" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">188, 222, 232</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
