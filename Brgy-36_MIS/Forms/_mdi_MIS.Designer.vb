@@ -30,7 +30,7 @@ Partial Class _mdi_MIS
         Me.AddResidentToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuOfficials = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewOfficialsRecordsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UpdateOfficialsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AddOfficialsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuCases = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComplaintsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewComplaintsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -95,7 +95,7 @@ Partial Class _mdi_MIS
         '
         'mnuOfficials
         '
-        Me.mnuOfficials.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewOfficialsRecordsToolStripMenuItem, Me.UpdateOfficialsToolStripMenuItem})
+        Me.mnuOfficials.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewOfficialsRecordsToolStripMenuItem, Me.AddOfficialsToolStripMenuItem})
         Me.mnuOfficials.Name = "mnuOfficials"
         Me.mnuOfficials.Size = New System.Drawing.Size(74, 20)
         Me.mnuOfficials.Text = "&OFFICIALS"
@@ -106,11 +106,11 @@ Partial Class _mdi_MIS
         Me.ViewOfficialsRecordsToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
         Me.ViewOfficialsRecordsToolStripMenuItem.Text = "View Official's Records"
         '
-        'UpdateOfficialsToolStripMenuItem
+        'AddOfficialsToolStripMenuItem
         '
-        Me.UpdateOfficialsToolStripMenuItem.Name = "UpdateOfficialsToolStripMenuItem"
-        Me.UpdateOfficialsToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.UpdateOfficialsToolStripMenuItem.Text = "Update Officials"
+        Me.AddOfficialsToolStripMenuItem.Name = "AddOfficialsToolStripMenuItem"
+        Me.AddOfficialsToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
+        Me.AddOfficialsToolStripMenuItem.Text = "Add Officials"
         '
         'mnuCases
         '
@@ -334,7 +334,7 @@ Partial Class _mdi_MIS
     Friend WithEvents ViewResidentToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AddResidentToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ViewOfficialsRecordsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents UpdateOfficialsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AddOfficialsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ComplaintsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ViewComplaintsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents FileComplaintsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

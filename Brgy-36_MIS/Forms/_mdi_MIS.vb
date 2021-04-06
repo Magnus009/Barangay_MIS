@@ -104,8 +104,7 @@ Public Class _mdi_MIS
     End Sub
 
     Private Sub ViewOfficialsRecordsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewOfficialsRecordsToolStripMenuItem.Click
-        F_Officials.MdiParent = Me
-        F_Officials.Show()
+        
     End Sub
 
     Private Sub ViewComplaintsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewComplaintsToolStripMenuItem.Click
@@ -160,5 +159,10 @@ Public Class _mdi_MIS
     Private Sub ViewToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ViewToolStripMenuItem1.Click
         F_UserAccounts.MdiParent = Me
         F_UserAccounts.Show()
+    End Sub
+
+    Private Sub AddOfficialsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddOfficialsToolStripMenuItem.Click
+        F_Officials.MdiParent = Me
+        F_Officials.Show()
     End Sub
 End Class

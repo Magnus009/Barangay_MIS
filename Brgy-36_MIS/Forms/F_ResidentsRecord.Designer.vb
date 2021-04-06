@@ -22,10 +22,10 @@ Partial Class F_ResidentsRecord
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.datResidents = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtCode = New System.Windows.Forms.TextBox()
@@ -33,8 +33,12 @@ Partial Class F_ResidentsRecord
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.pnlSearch = New System.Windows.Forms.Panel()
+        Me.btnClear = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.pnlInformations = New System.Windows.Forms.Panel()
+        Me.dtpBirthdate = New System.Windows.Forms.DateTimePicker()
+        Me.dtpDelivery = New System.Windows.Forms.DateTimePicker()
+        Me.btnUpdate = New System.Windows.Forms.Button()
         Me.txtProvince = New System.Windows.Forms.TextBox()
         Me.cboRole = New System.Windows.Forms.ComboBox()
         Me.txtStreet = New System.Windows.Forms.TextBox()
@@ -51,7 +55,6 @@ Partial Class F_ResidentsRecord
         Me.txtHouseContactNo = New System.Windows.Forms.TextBox()
         Me.Label43 = New System.Windows.Forms.Label()
         Me.Label45 = New System.Windows.Forms.Label()
-        Me.dtpDelivery = New System.Windows.Forms.DateTimePicker()
         Me.lblDelivery = New System.Windows.Forms.Label()
         Me.chkPregnant = New System.Windows.Forms.CheckBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -61,7 +64,6 @@ Partial Class F_ResidentsRecord
         Me.cboSamahan = New System.Windows.Forms.ComboBox()
         Me.cboCivilStatus = New System.Windows.Forms.ComboBox()
         Me.cboSex = New System.Windows.Forms.ComboBox()
-        Me.dtpBirthdate = New System.Windows.Forms.DateTimePicker()
         Me.txtContactNo = New System.Windows.Forms.MaskedTextBox()
         Me.txtDisability = New System.Windows.Forms.TextBox()
         Me.txtOccupation = New System.Windows.Forms.TextBox()
@@ -86,8 +88,6 @@ Partial Class F_ResidentsRecord
         Me.lblID = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.btnUpdate = New System.Windows.Forms.Button()
-        Me.btnClear = New System.Windows.Forms.Button()
         CType(Me.datResidents, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlSearch.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -100,38 +100,38 @@ Partial Class F_ResidentsRecord
         Me.datResidents.AllowUserToDeleteRows = False
         Me.datResidents.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.datResidents.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
-        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle25.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datResidents.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle25
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datResidents.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.datResidents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle26.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.datResidents.DefaultCellStyle = DataGridViewCellStyle26
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.datResidents.DefaultCellStyle = DataGridViewCellStyle2
         Me.datResidents.Location = New System.Drawing.Point(11, 11)
         Me.datResidents.MultiSelect = False
         Me.datResidents.Name = "datResidents"
         Me.datResidents.ReadOnly = True
-        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle27.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datResidents.RowHeadersDefaultCellStyle = DataGridViewCellStyle27
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datResidents.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.datResidents.RowHeadersVisible = False
-        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.datResidents.RowsDefaultCellStyle = DataGridViewCellStyle28
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.datResidents.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.datResidents.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.datResidents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.datResidents.Size = New System.Drawing.Size(345, 347)
@@ -207,6 +207,19 @@ Partial Class F_ResidentsRecord
         Me.pnlSearch.TabIndex = 1
         Me.pnlSearch.Tag = "Secondary"
         '
+        'btnClear
+        '
+        Me.btnClear.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClear.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.Location = New System.Drawing.Point(175, 57)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(89, 30)
+        Me.btnClear.TabIndex = 4
+        Me.btnClear.Tag = "Primary"
+        Me.btnClear.Text = "&CLEAR"
+        Me.btnClear.UseVisualStyleBackColor = False
+        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.datResidents)
@@ -275,6 +288,42 @@ Partial Class F_ResidentsRecord
         Me.pnlInformations.Size = New System.Drawing.Size(587, 512)
         Me.pnlInformations.TabIndex = 3
         Me.pnlInformations.Tag = "Secondary"
+        '
+        'dtpBirthdate
+        '
+        Me.dtpBirthdate.Cursor = System.Windows.Forms.Cursors.Default
+        Me.dtpBirthdate.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpBirthdate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpBirthdate.Location = New System.Drawing.Point(356, 94)
+        Me.dtpBirthdate.Name = "dtpBirthdate"
+        Me.dtpBirthdate.Size = New System.Drawing.Size(85, 21)
+        Me.dtpBirthdate.TabIndex = 4
+        Me.dtpBirthdate.Tag = "IN:"
+        '
+        'dtpDelivery
+        '
+        Me.dtpDelivery.Cursor = System.Windows.Forms.Cursors.Default
+        Me.dtpDelivery.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpDelivery.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpDelivery.Location = New System.Drawing.Point(472, 124)
+        Me.dtpDelivery.Name = "dtpDelivery"
+        Me.dtpDelivery.Size = New System.Drawing.Size(85, 21)
+        Me.dtpDelivery.TabIndex = 8
+        Me.dtpDelivery.Tag = "IN:"
+        Me.dtpDelivery.Visible = False
+        '
+        'btnUpdate
+        '
+        Me.btnUpdate.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUpdate.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdate.Location = New System.Drawing.Point(462, 462)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(114, 45)
+        Me.btnUpdate.TabIndex = 85
+        Me.btnUpdate.Tag = "Primary"
+        Me.btnUpdate.Text = "UPDATE"
+        Me.btnUpdate.UseVisualStyleBackColor = False
         '
         'txtProvince
         '
@@ -465,18 +514,6 @@ Partial Class F_ResidentsRecord
         Me.Label45.TabIndex = 72
         Me.Label45.Text = "MUNICIPALITY :"
         '
-        'dtpDelivery
-        '
-        Me.dtpDelivery.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dtpDelivery.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpDelivery.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDelivery.Location = New System.Drawing.Point(472, 124)
-        Me.dtpDelivery.Name = "dtpDelivery"
-        Me.dtpDelivery.Size = New System.Drawing.Size(85, 21)
-        Me.dtpDelivery.TabIndex = 8
-        Me.dtpDelivery.Tag = "IN:"
-        Me.dtpDelivery.Visible = False
-        '
         'lblDelivery
         '
         Me.lblDelivery.AutoSize = True
@@ -584,17 +621,6 @@ Partial Class F_ResidentsRecord
         Me.cboSex.Size = New System.Drawing.Size(118, 24)
         Me.cboSex.TabIndex = 6
         Me.cboSex.Tag = "IN;"
-        '
-        'dtpBirthdate
-        '
-        Me.dtpBirthdate.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dtpBirthdate.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpBirthdate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpBirthdate.Location = New System.Drawing.Point(356, 94)
-        Me.dtpBirthdate.Name = "dtpBirthdate"
-        Me.dtpBirthdate.Size = New System.Drawing.Size(85, 21)
-        Me.dtpBirthdate.TabIndex = 4
-        Me.dtpBirthdate.Tag = "IN:"
         '
         'txtContactNo
         '
@@ -875,32 +901,6 @@ Partial Class F_ResidentsRecord
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(566, 248)
         Me.Label5.TabIndex = 63
-        '
-        'btnUpdate
-        '
-        Me.btnUpdate.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUpdate.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdate.Location = New System.Drawing.Point(462, 462)
-        Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(114, 45)
-        Me.btnUpdate.TabIndex = 85
-        Me.btnUpdate.Tag = "Primary"
-        Me.btnUpdate.Text = "UPDATE"
-        Me.btnUpdate.UseVisualStyleBackColor = False
-        '
-        'btnClear
-        '
-        Me.btnClear.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClear.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClear.Location = New System.Drawing.Point(175, 57)
-        Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(89, 30)
-        Me.btnClear.TabIndex = 4
-        Me.btnClear.Tag = "Primary"
-        Me.btnClear.Text = "&CLEAR"
-        Me.btnClear.UseVisualStyleBackColor = False
         '
         'F_ResidentsRecord
         '

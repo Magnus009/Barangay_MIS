@@ -180,10 +180,10 @@
     End Sub
 
     Private Sub btnHouseList_Click(sender As Object, e As EventArgs) Handles btnHouseList.Click
-        Dim frmHouseList As New F_HouseholdList
+        Dim frmHouseList As New F_SelectionList
 
         AddHandler frmHouseList.selectedHouseNo, AddressOf loadHouseholdDetails
-        frmHouseList.ShowDialog()
+        frmHouseList.loadSelection(0)
     End Sub
 
     Private Sub loadHouseholdDetails(ByVal strHouseNo As String, ByVal strHouseholdNo As String)
