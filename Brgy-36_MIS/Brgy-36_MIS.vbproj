@@ -145,6 +145,12 @@
     <Compile Include="Forms\F_ForgotPassword.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\F_OfficialsRecord.Designer.vb">
+      <DependentUpon>F_OfficialsRecord.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_OfficialsRecord.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\F_SelectionList.Designer.vb">
       <DependentUpon>F_SelectionList.vb</DependentUpon>
     </Compile>
@@ -260,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_ForgotPassword.resx">
       <DependentUpon>F_ForgotPassword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_OfficialsRecord.resx">
+      <DependentUpon>F_OfficialsRecord.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_SelectionList.resx">
       <DependentUpon>F_SelectionList.vb</DependentUpon>

@@ -70,6 +70,11 @@ Partial Class F_Officials
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.Label37 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.pnlInfos.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -77,6 +82,11 @@ Partial Class F_Officials
         '
         Me.pnlInfos.BackColor = System.Drawing.Color.White
         Me.pnlInfos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlInfos.Controls.Add(Me.Label8)
+        Me.pnlInfos.Controls.Add(Me.Label7)
+        Me.pnlInfos.Controls.Add(Me.Label5)
+        Me.pnlInfos.Controls.Add(Me.Label1)
+        Me.pnlInfos.Controls.Add(Me.Label20)
         Me.pnlInfos.Controls.Add(Me.txtID)
         Me.pnlInfos.Controls.Add(Me.btnResidentList)
         Me.pnlInfos.Controls.Add(Me.txtContactNo)
@@ -124,9 +134,9 @@ Partial Class F_Officials
         Me.pnlInfos.Controls.Add(Me.Label35)
         Me.pnlInfos.Controls.Add(Me.Label37)
         Me.pnlInfos.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pnlInfos.Location = New System.Drawing.Point(7, 7)
+        Me.pnlInfos.Location = New System.Drawing.Point(7, 5)
         Me.pnlInfos.Name = "pnlInfos"
-        Me.pnlInfos.Size = New System.Drawing.Size(682, 432)
+        Me.pnlInfos.Size = New System.Drawing.Size(682, 427)
         Me.pnlInfos.TabIndex = 1
         Me.pnlInfos.Tag = "Secondary"
         '
@@ -141,7 +151,7 @@ Partial Class F_Officials
         Me.txtID.ReadOnly = True
         Me.txtID.Size = New System.Drawing.Size(118, 25)
         Me.txtID.TabIndex = 1
-        Me.txtID.Tag = "SG"
+        Me.txtID.Tag = "IN;RESIDENT ID*"
         Me.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btnResidentList
@@ -256,7 +266,7 @@ Partial Class F_Officials
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnSave.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(817, 529)
+        Me.btnSave.Location = New System.Drawing.Point(573, 382)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(99, 40)
         Me.btnSave.TabIndex = 33
@@ -269,7 +279,7 @@ Partial Class F_Officials
         Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnClear.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClear.ForeColor = System.Drawing.Color.White
-        Me.btnClear.Location = New System.Drawing.Point(712, 529)
+        Me.btnClear.Location = New System.Drawing.Point(467, 382)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(99, 40)
         Me.btnClear.TabIndex = 34
@@ -290,7 +300,7 @@ Partial Class F_Officials
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(474, 47)
+        Me.Label12.Location = New System.Drawing.Point(474, 43)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(66, 16)
         Me.Label12.TabIndex = 26
@@ -339,6 +349,7 @@ Partial Class F_Officials
         Me.txtHouseNo.MaxLength = 10
         Me.txtHouseNo.Multiline = True
         Me.txtHouseNo.Name = "txtHouseNo"
+        Me.txtHouseNo.ReadOnly = True
         Me.txtHouseNo.Size = New System.Drawing.Size(99, 25)
         Me.txtHouseNo.TabIndex = 15
         Me.txtHouseNo.Tag = "IN;House No."
@@ -415,6 +426,7 @@ Partial Class F_Officials
         Me.txtProvince.MaxLength = 20
         Me.txtProvince.Multiline = True
         Me.txtProvince.Name = "txtProvince"
+        Me.txtProvince.ReadOnly = True
         Me.txtProvince.Size = New System.Drawing.Size(193, 25)
         Me.txtProvince.TabIndex = 20
         Me.txtProvince.Tag = "IN;Province"
@@ -428,6 +440,7 @@ Partial Class F_Officials
         Me.txtBarangay.MaxLength = 50
         Me.txtBarangay.Multiline = True
         Me.txtBarangay.Name = "txtBarangay"
+        Me.txtBarangay.ReadOnly = True
         Me.txtBarangay.Size = New System.Drawing.Size(182, 25)
         Me.txtBarangay.TabIndex = 17
         Me.txtBarangay.Tag = "IN;Barangay"
@@ -461,6 +474,7 @@ Partial Class F_Officials
         Me.txtMName.MaxLength = 50
         Me.txtMName.Multiline = True
         Me.txtMName.Name = "txtMName"
+        Me.txtMName.ReadOnly = True
         Me.txtMName.Size = New System.Drawing.Size(188, 25)
         Me.txtMName.TabIndex = 6
         Me.txtMName.Tag = "IN:"
@@ -479,6 +493,7 @@ Partial Class F_Officials
         'cboRole
         '
         Me.cboRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboRole.Enabled = False
         Me.cboRole.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cboRole.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboRole.FormattingEnabled = True
@@ -496,6 +511,7 @@ Partial Class F_Officials
         Me.txtStreet.MaxLength = 100
         Me.txtStreet.Multiline = True
         Me.txtStreet.Name = "txtStreet"
+        Me.txtStreet.ReadOnly = True
         Me.txtStreet.Size = New System.Drawing.Size(193, 25)
         Me.txtStreet.TabIndex = 16
         Me.txtStreet.Tag = "IN;Street"
@@ -509,6 +525,7 @@ Partial Class F_Officials
         Me.txtHouseContactNo.MaxLength = 100
         Me.txtHouseContactNo.Multiline = True
         Me.txtHouseContactNo.Name = "txtHouseContactNo"
+        Me.txtHouseContactNo.ReadOnly = True
         Me.txtHouseContactNo.Size = New System.Drawing.Size(127, 25)
         Me.txtHouseContactNo.TabIndex = 19
         Me.txtHouseContactNo.Tag = "IN:"
@@ -544,6 +561,7 @@ Partial Class F_Officials
         Me.txtMunicipality.MaxLength = 20
         Me.txtMunicipality.Multiline = True
         Me.txtMunicipality.Name = "txtMunicipality"
+        Me.txtMunicipality.ReadOnly = True
         Me.txtMunicipality.Size = New System.Drawing.Size(193, 25)
         Me.txtMunicipality.TabIndex = 18
         Me.txtMunicipality.Tag = "IN;Municipality"
@@ -602,9 +620,10 @@ Partial Class F_Officials
         Me.txtLName.MaxLength = 50
         Me.txtLName.Multiline = True
         Me.txtLName.Name = "txtLName"
+        Me.txtLName.ReadOnly = True
         Me.txtLName.Size = New System.Drawing.Size(188, 25)
         Me.txtLName.TabIndex = 4
-        Me.txtLName.Tag = "IN;Last Name*"
+        Me.txtLName.Tag = "IN;Last Name"
         Me.txtLName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtFName
@@ -615,9 +634,10 @@ Partial Class F_Officials
         Me.txtFName.MaxLength = 50
         Me.txtFName.Multiline = True
         Me.txtFName.Name = "txtFName"
+        Me.txtFName.ReadOnly = True
         Me.txtFName.Size = New System.Drawing.Size(188, 25)
         Me.txtFName.TabIndex = 5
-        Me.txtFName.Tag = "IN;First Name*"
+        Me.txtFName.Tag = "IN;First Name"
         Me.txtFName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblPersonalInfo
@@ -626,10 +646,10 @@ Partial Class F_Officials
         Me.lblPersonalInfo.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPersonalInfo.Location = New System.Drawing.Point(18, 10)
         Me.lblPersonalInfo.Name = "lblPersonalInfo"
-        Me.lblPersonalInfo.Size = New System.Drawing.Size(144, 16)
+        Me.lblPersonalInfo.Size = New System.Drawing.Size(141, 16)
         Me.lblPersonalInfo.TabIndex = 64
         Me.lblPersonalInfo.Tag = "Header-5"
-        Me.lblPersonalInfo.Text = "PERSONAL INFORMATION"
+        Me.lblPersonalInfo.Text = "OFFICER'S INFORMATION"
         '
         'Label10
         '
@@ -662,11 +682,76 @@ Partial Class F_Officials
         Me.Label37.Size = New System.Drawing.Size(664, 143)
         Me.Label37.TabIndex = 67
         '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.Color.Red
+        Me.Label20.Location = New System.Drawing.Point(19, 43)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(14, 16)
+        Me.Label20.TabIndex = 70
+        Me.Label20.Tag = "reqSign"
+        Me.Label20.Text = "*"
+        Me.Label20.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Red
+        Me.Label1.Location = New System.Drawing.Point(61, 180)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(14, 16)
+        Me.Label1.TabIndex = 71
+        Me.Label1.Tag = "reqSign"
+        Me.Label1.Text = "*"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Red
+        Me.Label5.Location = New System.Drawing.Point(35, 151)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(14, 16)
+        Me.Label5.TabIndex = 72
+        Me.Label5.Tag = "reqSign"
+        Me.Label5.Text = "*"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Red
+        Me.Label7.Location = New System.Drawing.Point(461, 43)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(14, 16)
+        Me.Label7.TabIndex = 73
+        Me.Label7.Tag = "reqSign"
+        Me.Label7.Text = "*"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Red
+        Me.Label8.Location = New System.Drawing.Point(382, 151)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(14, 16)
+        Me.Label8.TabIndex = 74
+        Me.Label8.Tag = "reqSign"
+        Me.Label8.Text = "*"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'F_Officials
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(696, 446)
+        Me.ClientSize = New System.Drawing.Size(696, 437)
         Me.Controls.Add(Me.pnlInfos)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -731,4 +816,9 @@ Partial Class F_Officials
     Friend WithEvents txtContactNo As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents btnResidentList As System.Windows.Forms.Button
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label20 As System.Windows.Forms.Label
 End Class

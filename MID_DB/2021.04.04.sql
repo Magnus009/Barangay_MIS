@@ -20,3 +20,6 @@ CREATE TABLE dbo.Officials
 	)
 GO
 
+
+ALTER TABLE Officials
+ALTER COLUMN CommitteeID INT
