@@ -30,7 +30,8 @@
     Public Sub loadOfficialsRecords(Optional strFilter As String = "")
         Try
             With datOfficials
-                .Columns.Clear()
+                Dim dtOfficials As New DataTable
+
                 strQuery = "SELECT O.Code 'ID', R.FamilyName + ', ' + R.GivenName + ' ' + R.MiddleName 'NAME',P.Description 'POSITION', " + vbCrLf
                 strQuery += "CAST(year(O.TermStart) AS NVARCHAR(4)) +' - ' + CAST(year(O.TermEnd) AS NVARCHAR(4)) 'TERM'," + vbCrLf
                 strQuery += "CASE WHEN R.DeletedDate IS NOT NULL THEN 'deleted' END AS 'colStatus' FROM Officials O" + vbCrLf
@@ -38,16 +39,17 @@
                 strQuery += "INNER JOIN M_OfficialPosition P ON O.Position = P.ID"
 
                 If strFilter <> "" Then
-                    strQuery &= "WHERE" & strFilter
+                    strQuery += "WHERE " & strFilter
                 End If
 
-                .DataSource = SQL_SELECT(strQuery)
-                .DataMember = "Table"
+                dtOfficials = SQL_SELECT(strQuery).Tables(0)
+                .Columns.Clear()
+                .DataSource = dtOfficials
 
                 .Columns(0).Width = .Width * 0.2
-                .Columns(1).Width = .Width * 0.4
+                .Columns(1).Width = .Width * 0.3
                 .Columns(2).Width = .Width * 0.3
-                .Columns(4).Width = .Width * 0.1
+                .Columns(4).Width = .Width * 0.2
                 .Columns("colStatus").Visible = False
             End With
         Catch ex As Exception
@@ -55,55 +57,41 @@
         End Try
     End Sub
 
-    Private Sub btnSearch_Click(sender As Object, e As EventArgs)
-        Dim strFilter As String = ""
-
-        If txtCode.Text <> "" Then
-            strFilter = " R.Code = '" & txtCode.Text & "' OR"
-        End If
-        If txtName.Text <> "" Then
-            strFilter &= " R.FamilyName + ', ' + R.GivenName + ' ' + R.MiddleName LIKE '%" & txtName.Text & "%' OR"
-        End If
-        If strFilter <> "" Then
-            strFilter = Strings.Left(strFilter, Len(strFilter) - 2)
-        End If
-        Call loadOfficialsRecords(strFilter)
-    End Sub
-
     Private Sub datResidents_RowEnter(sender As Object, e As DataGridViewCellEventArgs) Handles datOfficials.RowEnter
         Try
-            Dim strResidentCode As String
-            strResidentCode = datOfficials.Rows(e.RowIndex).Cells("ID").Value
+            Dim strOfficialCode As String
+            strOfficialCode = datOfficials.Rows(e.RowIndex).Cells("ID").Value
 
             formMode(0, pnlInformations)
             btnUpdate.Text = "UPDATE"
             btnUpdate.BackColor = My.Settings.Primary
-            loadOfficialsDetails(strResidentCode)
-            loadResidentHousehold(strResidentCode)
+            loadOfficialsDetails(strOfficialCode)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 
-    Private Sub loadOfficialsDetails(strResidentCode As String)
-        Dim dtResident As New DataTable
+    Private Sub loadOfficialsDetails(strOfficialCode As String)
+        Dim dtOfficial As New DataTable
 
-        strQuery = "SELECT Code, FamilyName + ', ' + GivenName + ' ' + MiddleName + ' ' + ExtensionName 'Name'," + vbCrLf
-        strQuery += "BirthPlace, BirthDate, Gender, isPregnant, coalesce(DeliveryDate,getdate()) 'DeliveryDate'," + vbCrLf
-        strQuery += "Citizenship, CivilStatus, Occupation, isVoter, inHabitant," + vbCrLf
-        strQuery += "SamahanID, isPWD, Indigent, ContactNo, Disabilities FROM Residents" + vbCrLf
-        strQuery += "WHERE Code = '" + strResidentCode + "'"
-        dtResident = SQL_SELECT(strQuery).Tables(0)
+        strQuery = "SELECT O.Code 'OfficialID', R.Code 'ResidentID',R.FamilyName + ', ' + R.GivenName + ' ' + R.MiddleName 'NAME'," + vbCrLf
+        strQuery += "O.Position, O.RankID, O.CommitteeID, O.TermStart, O.TermEnd, O.StatusID, O.ContactNo FROM Officials O" + vbCrLf
+        strQuery += "INNER JOIN Residents R ON O.ResidentCode = R.Code" + vbCrLf
+        strQuery += "WHERE O.Code = '" + strOfficialCode + "'"
+        dtOfficial = SQL_SELECT(strQuery).Tables(0)
 
-        With dtResident
+        With dtOfficial
             If .Rows.Count <> 0 Then
-                txtID.Text = .Rows(0)("Code")
-                txtFullName.Text = .Rows(0)("Name")
+                txtOfficialID.Text = .Rows(0)("")
+                txtResidentID.Text = .Rows(0)("")
+                txtFullName.Text = .Rows(0)("")
+                cboPosition.SelectedValue = .Rows(0)("")
+                cboRank.SelectedValue = .Rows(0)("")
             End If
         End With
     End Sub
 
-    Private Sub loadResidentHousehold(strResidentCode As String)
+    Private Sub loadOfficialHousehold(strResidentCode As String)
         Dim dtHouse As New DataTable
 
         strQuery = "SELECT H.HouseholdNo, HM.Role, H.HouseNo, H.Street, H.Barangay," + vbCrLf
@@ -155,24 +143,24 @@
     Private Sub updateInfos()
         Try
             'Update Resident's Info
-            strQuery = "UPDATE Residents" + vbCrLf
-            strQuery += "SET BirthPlace = '" + txtBirthPlace.Text + "'" + vbCrLf
-            strQuery += ", BirthDate = '" + fn_Date(dtpBirthdate.Value) + "'" + vbCrLf
-            strQuery += ", isPregnant = " + chkVal(chkPregnant) + vbCrLf
-            strQuery += ", DeliveryDate = " + IIf(chkPregnant.Checked, "'" + fn_Date(dtpDelivery.Value) + "'", "NULL") + vbCrLf
-            strQuery += ", Citizenship = '" + txtCitizenship.Text + "'" + vbCrLf
-            strQuery += ", CivilStatus = " + cboVal(cboCivilStatus) + vbCrLf
-            strQuery += ", Occupation = '" + txtOccupation.Text + "'" + vbCrLf
-            strQuery += ", isVoter = " + chkVal(chkVoter) + vbCrLf
-            strQuery += ", inHabitant = " + chkVal(chkInHabitant) + vbCrLf
-            strQuery += ", SamahanID = " + cboVal(cboSamahan) + vbCrLf
-            strQuery += ", isPWD = " + chkVal(chkPWD) + vbCrLf
-            strQuery += ", Indigent = " + chkVal(chkIndigent) + vbCrLf
-            strQuery += ", ContactNo = '" + txtContactNo.Text + "'" + vbCrLf
-            strQuery += ", Disabilities = '" + txtDisability.Text + "'" + vbCrLf
-            strQuery += ", UpdatedDate = getdate()" + vbCrLf
-            strQuery += ", UpdatedBy = '" + UserName + "'" + vbCrLf
-            strQuery += "WHERE Code = '" + txtID.Text + "'" + vbCrLf
+            'strQuery = "UPDATE Residents" + vbCrLf
+            'strQuery += "SET BirthPlace = '" + txtBirthPlace.Text + "'" + vbCrLf
+            'strQuery += ", BirthDate = '" + fn_Date(dtpBirthdate.Value) + "'" + vbCrLf
+            'strQuery += ", isPregnant = " + chkVal(chkPregnant) + vbCrLf
+            'strQuery += ", DeliveryDate = " + IIf(chkPregnant.Checked, "'" + fn_Date(dtpDelivery.Value) + "'", "NULL") + vbCrLf
+            'strQuery += ", Citizenship = '" + txtCitizenship.Text + "'" + vbCrLf
+            'strQuery += ", CivilStatus = " + cboVal(cboCivilStatus) + vbCrLf
+            'strQuery += ", Occupation = '" + txtOccupation.Text + "'" + vbCrLf
+            'strQuery += ", isVoter = " + chkVal(chkVoter) + vbCrLf
+            'strQuery += ", inHabitant = " + chkVal(chkInHabitant) + vbCrLf
+            'strQuery += ", SamahanID = " + cboVal(cboSamahan) + vbCrLf
+            'strQuery += ", isPWD = " + chkVal(chkPWD) + vbCrLf
+            'strQuery += ", Indigent = " + chkVal(chkIndigent) + vbCrLf
+            'strQuery += ", ContactNo = '" + txtContactNo.Text + "'" + vbCrLf
+            'strQuery += ", Disabilities = '" + txtDisability.Text + "'" + vbCrLf
+            'strQuery += ", UpdatedDate = getdate()" + vbCrLf
+            'strQuery += ", UpdatedBy = '" + UserName + "'" + vbCrLf
+            'strQuery += "WHERE Code = '" + txtID.Text + "'" + vbCrLf
 
             If SQL_EXECUTE(strQuery) Then
                 MsgBox("Officer's Information Updated!", MsgBoxStyle.Information, "UPDATED")
@@ -183,5 +171,29 @@
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
+    End Sub
+
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        Dim strFilter As String = ""
+
+        If txtSearch.Text <> "" Then
+            strFilter = "O.Code LIKE '%%'" + vbCrLf
+            strFilter = "OR R.FamilyName LIKE '%" + txtSearch.Text + "%'" + vbCrLf
+            strFilter = "OR R.FamilyName LIKE '%" + txtSearch.Text + "%'" + vbCrLf
+            strFilter = "OR R.GivenName LIKE '%" + txtSearch.Text + "%'" + vbCrLf
+            strFilter = "OR R.MiddleName LIKE '%" + txtSearch.Text + "%'" + vbCrLf
+        End If
+
+        If dtpTermFrom.Checked Then
+            If txtSearch.Text <> "" Then strFilter += "AND "
+            strFilter += "O.TermStart >= '" + fn_Date(dtpTermFrom.Value) + "'" + vbCrLf
+        End If
+
+        If dtpTermTo.Checked Then
+            If txtSearch.Text <> "" Or dtpTermFrom.Checked Then strFilter += "AND "
+            strFilter += "AND O.TermStart >= '" + fn_Date(dtpTermTo.Value) + "'" + vbCrLf
+        End If
+
+        Call loadOfficialsRecords(strFilter)
     End Sub
 End Class
