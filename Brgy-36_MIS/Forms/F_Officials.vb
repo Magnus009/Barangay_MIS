@@ -13,7 +13,7 @@
         cboDataBinding(cboRank, strQuery, "---")
 
         'COMMITTEE
-        strQuery = "SELECT * FROM M_OfficialsRank WHERE DeletedDate IS NULL"
+        strQuery = "SELECT * FROM M_Committee WHERE DeletedDate IS NULL"
         cboDataBinding(cboCommittee, strQuery, "---")
 
         'STATUS
@@ -83,7 +83,7 @@
                 strQuery = "INSERT INTO Officials (" + vbCrLf
                 strQuery += "Code, " + vbCrLf
                 strQuery += "ResidentCode, " + vbCrLf
-                strQuery += "Position, " + vbCrLf
+                strQuery += "PositionID, " + vbCrLf
                 strQuery += "RankID, " + vbCrLf
                 strQuery += "CommitteeID, " + vbCrLf
                 strQuery += "TermStart, " + vbCrLf

@@ -118,28 +118,28 @@ Partial Class F_forgotPassword
         '
         'pnlVerification
         '
-        Me.pnlVerification.BackColor = System.Drawing.Color.White
-        Me.pnlVerification.Controls.Add(Me.lblAsterisk_2)
-        Me.pnlVerification.Controls.Add(Me.lblAsterisk_1)
+        Me.pnlVerification.Controls.Add(Me.txtUserName)
         Me.pnlVerification.Controls.Add(Me.txtQuestion_2)
         Me.pnlVerification.Controls.Add(Me.txtQuestion_1)
+        Me.pnlVerification.Controls.Add(Me.txtAnswer_2)
+        Me.pnlVerification.Controls.Add(Me.txtAnswer_1)
+        Me.pnlVerification.Controls.Add(Me.lblAsterisk_2)
+        Me.pnlVerification.Controls.Add(Me.lblAsterisk_1)
         Me.pnlVerification.Controls.Add(Me.btnVerify)
         Me.pnlVerification.Controls.Add(Me.btnSubmit)
         Me.pnlVerification.Controls.Add(Me.lblUserName)
-        Me.pnlVerification.Controls.Add(Me.txtUserName)
         Me.pnlVerification.Controls.Add(Me.Label1)
         Me.pnlVerification.Controls.Add(Me.lblQ2)
         Me.pnlVerification.Controls.Add(Me.lblQ1)
         Me.pnlVerification.Controls.Add(Me.lblA2)
-        Me.pnlVerification.Controls.Add(Me.txtAnswer_2)
         Me.pnlVerification.Controls.Add(Me.lblA1)
-        Me.pnlVerification.Controls.Add(Me.txtAnswer_1)
         Me.pnlVerification.Controls.Add(Me.lblSecurityFrame)
         Me.pnlVerification.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlVerification.Location = New System.Drawing.Point(0, 20)
+        Me.pnlVerification.Location = New System.Drawing.Point(0, 239)
         Me.pnlVerification.Name = "pnlVerification"
-        Me.pnlVerification.Size = New System.Drawing.Size(409, 231)
+        Me.pnlVerification.Size = New System.Drawing.Size(409, 12)
         Me.pnlVerification.TabIndex = 3
+        Me.pnlVerification.Tag = "Secondary"
         '
         'lblAsterisk_2
         '
@@ -264,14 +264,12 @@ Partial Class F_forgotPassword
         'btnConfirm
         '
         Me.btnConfirm.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnConfirm.BackColor = System.Drawing.Color.Green
+        Me.btnConfirm.BackColor = System.Drawing.SystemColors.Control
         Me.btnConfirm.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnConfirm.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnConfirm.ForeColor = System.Drawing.Color.White
-        Me.btnConfirm.Location = New System.Drawing.Point(302, 192)
+        Me.btnConfirm.Location = New System.Drawing.Point(302, 188)
         Me.btnConfirm.Name = "btnConfirm"
-        Me.btnConfirm.Size = New System.Drawing.Size(83, 31)
+        Me.btnConfirm.Size = New System.Drawing.Size(83, 34)
         Me.btnConfirm.TabIndex = 4
         Me.btnConfirm.Text = "&CONFIRM"
         Me.btnConfirm.UseVisualStyleBackColor = False
@@ -372,19 +370,17 @@ Partial Class F_forgotPassword
         Me.btnBack.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnBack.BackColor = System.Drawing.SystemColors.Control
         Me.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBack.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBack.ForeColor = System.Drawing.Color.Black
-        Me.btnBack.Location = New System.Drawing.Point(188, 192)
+        Me.btnBack.Location = New System.Drawing.Point(188, 188)
         Me.btnBack.Name = "btnBack"
-        Me.btnBack.Size = New System.Drawing.Size(83, 31)
+        Me.btnBack.Size = New System.Drawing.Size(83, 34)
         Me.btnBack.TabIndex = 5
         Me.btnBack.Text = "&BACK"
         Me.btnBack.UseVisualStyleBackColor = False
         '
         'pnlTop
         '
-        Me.pnlTop.BackColor = System.Drawing.Color.SteelBlue
         Me.pnlTop.Controls.Add(Me.chkShowHide_CNP)
         Me.pnlTop.Controls.Add(Me.chkShowHide_NP)
         Me.pnlTop.Controls.Add(Me.chkShowHide_P)
@@ -400,8 +396,9 @@ Partial Class F_forgotPassword
         Me.pnlTop.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlTop.Location = New System.Drawing.Point(0, 0)
         Me.pnlTop.Name = "pnlTop"
-        Me.pnlTop.Size = New System.Drawing.Size(409, 20)
+        Me.pnlTop.Size = New System.Drawing.Size(409, 239)
         Me.pnlTop.TabIndex = 4
+        Me.pnlTop.Tag = "Primary"
         '
         'chkShowHide_CNP
         '
@@ -413,6 +410,7 @@ Partial Class F_forgotPassword
         Me.chkShowHide_CNP.Name = "chkShowHide_CNP"
         Me.chkShowHide_CNP.Size = New System.Drawing.Size(48, 17)
         Me.chkShowHide_CNP.TabIndex = 46
+        Me.chkShowHide_CNP.Tag = "Substring"
         Me.chkShowHide_CNP.Text = "&Show"
         Me.chkShowHide_CNP.UseVisualStyleBackColor = False
         '
@@ -426,6 +424,7 @@ Partial Class F_forgotPassword
         Me.chkShowHide_NP.Name = "chkShowHide_NP"
         Me.chkShowHide_NP.Size = New System.Drawing.Size(48, 17)
         Me.chkShowHide_NP.TabIndex = 45
+        Me.chkShowHide_NP.Tag = "Substring"
         Me.chkShowHide_NP.Text = "&Show"
         Me.chkShowHide_NP.UseVisualStyleBackColor = False
         '
@@ -439,6 +438,7 @@ Partial Class F_forgotPassword
         Me.chkShowHide_P.Name = "chkShowHide_P"
         Me.chkShowHide_P.Size = New System.Drawing.Size(48, 17)
         Me.chkShowHide_P.TabIndex = 44
+        Me.chkShowHide_P.Tag = "Substring"
         Me.chkShowHide_P.Text = "&Show"
         Me.chkShowHide_P.UseVisualStyleBackColor = False
         '
@@ -458,6 +458,7 @@ Partial Class F_forgotPassword
         Me.Name = "F_forgotPassword"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Tag = "Primary"
         Me.Text = "FORGOT PASSWORD"
         Me.pnlVerification.ResumeLayout(False)
         Me.pnlVerification.PerformLayout()

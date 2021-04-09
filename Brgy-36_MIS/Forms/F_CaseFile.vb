@@ -116,6 +116,7 @@
         'TaskMode:: [0]=>Read only  || [1]=>Create    || [2]=>Modify
 
         Try
+            formLoadSetup(Me)
             intFormTask = intTaskMode
             'Case Type
             Select Case intCaseType

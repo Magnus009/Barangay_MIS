@@ -43,6 +43,9 @@
                 strQuery += "floor(datediff(day, BirthDate, getdate()) /365.25) 'AGE' FROM Residents" + vbCrLf
                 strQuery += "WHERE DeletedDate IS NULL" + vbCrLf
                 strQuery += "AND isVoter = 1" + vbCrLf
+                strQuery += "AND Code NOT IN (" + vbCrLf
+                strQuery += "SELECT ResidentCode FROM Officials" + vbCrLf
+                strQuery += "WHERE getdate() BETWEEN TermStart AND TermEnd)" + vbCrLf
                 If txtSearch.Text <> "" Then
                     strQuery += "AND( " + vbCrLf
                     strQuery += "Code LIKE '%" + txtSearch.Text + "%'" + vbCrLf
@@ -105,5 +108,4 @@
         End Select
         Me.ShowDialog()
     End Sub
-
 End Class

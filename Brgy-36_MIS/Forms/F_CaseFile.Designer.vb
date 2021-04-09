@@ -22,9 +22,9 @@ Partial Class F_CaseFile
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtCode = New System.Windows.Forms.TextBox()
         Me.lblCaseCode = New System.Windows.Forms.Label()
         Me.txtIncharge = New System.Windows.Forms.TextBox()
@@ -62,14 +62,16 @@ Partial Class F_CaseFile
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         CType(Me.datPeopleInvolved, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.datDocuments, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtCode
         '
         Me.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCode.Location = New System.Drawing.Point(148, 12)
+        Me.txtCode.Location = New System.Drawing.Point(161, 14)
         Me.txtCode.MaxLength = 10
         Me.txtCode.Name = "txtCode"
         Me.txtCode.ReadOnly = True
@@ -81,7 +83,7 @@ Partial Class F_CaseFile
         '
         Me.lblCaseCode.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblCaseCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblCaseCode.Location = New System.Drawing.Point(16, 14)
+        Me.lblCaseCode.Location = New System.Drawing.Point(33, 16)
         Me.lblCaseCode.Name = "lblCaseCode"
         Me.lblCaseCode.Size = New System.Drawing.Size(126, 16)
         Me.lblCaseCode.TabIndex = 8
@@ -91,7 +93,7 @@ Partial Class F_CaseFile
         'txtIncharge
         '
         Me.txtIncharge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtIncharge.Location = New System.Drawing.Point(148, 66)
+        Me.txtIncharge.Location = New System.Drawing.Point(161, 68)
         Me.txtIncharge.MaxLength = 20
         Me.txtIncharge.Name = "txtIncharge"
         Me.txtIncharge.Size = New System.Drawing.Size(213, 21)
@@ -103,7 +105,7 @@ Partial Class F_CaseFile
         '
         Me.Label2.AutoSize = True
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label2.Location = New System.Drawing.Point(16, 68)
+        Me.Label2.Location = New System.Drawing.Point(33, 70)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(126, 16)
         Me.Label2.TabIndex = 10
@@ -113,7 +115,7 @@ Partial Class F_CaseFile
         'txtReportedBy
         '
         Me.txtReportedBy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtReportedBy.Location = New System.Drawing.Point(148, 39)
+        Me.txtReportedBy.Location = New System.Drawing.Point(161, 41)
         Me.txtReportedBy.MaxLength = 20
         Me.txtReportedBy.Name = "txtReportedBy"
         Me.txtReportedBy.Size = New System.Drawing.Size(213, 21)
@@ -125,7 +127,7 @@ Partial Class F_CaseFile
         '
         Me.Label3.AutoSize = True
         Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label3.Location = New System.Drawing.Point(56, 41)
+        Me.Label3.Location = New System.Drawing.Point(73, 43)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(86, 16)
         Me.Label3.TabIndex = 12
@@ -136,7 +138,7 @@ Partial Class F_CaseFile
         '
         Me.Label4.AutoSize = True
         Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label4.Location = New System.Drawing.Point(454, 14)
+        Me.Label4.Location = New System.Drawing.Point(524, 16)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(51, 16)
         Me.Label4.TabIndex = 14
@@ -147,7 +149,7 @@ Partial Class F_CaseFile
         '
         Me.dtpReportedDate.CustomFormat = "yyyy/MM/dd"
         Me.dtpReportedDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpReportedDate.Location = New System.Drawing.Point(509, 39)
+        Me.dtpReportedDate.Location = New System.Drawing.Point(578, 41)
         Me.dtpReportedDate.Name = "dtpReportedDate"
         Me.dtpReportedDate.Size = New System.Drawing.Size(118, 21)
         Me.dtpReportedDate.TabIndex = 3
@@ -157,7 +159,7 @@ Partial Class F_CaseFile
         '
         Me.dtpIncidentDate.CustomFormat = "yyyy/MM/dd"
         Me.dtpIncidentDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpIncidentDate.Location = New System.Drawing.Point(509, 66)
+        Me.dtpIncidentDate.Location = New System.Drawing.Point(578, 68)
         Me.dtpIncidentDate.Name = "dtpIncidentDate"
         Me.dtpIncidentDate.Size = New System.Drawing.Size(118, 21)
         Me.dtpIncidentDate.TabIndex = 5
@@ -167,7 +169,7 @@ Partial Class F_CaseFile
         '
         Me.Label5.AutoSize = True
         Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label5.Location = New System.Drawing.Point(406, 41)
+        Me.Label5.Location = New System.Drawing.Point(476, 43)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(99, 16)
         Me.Label5.TabIndex = 16
@@ -178,7 +180,7 @@ Partial Class F_CaseFile
         '
         Me.Label6.AutoSize = True
         Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label6.Location = New System.Drawing.Point(394, 68)
+        Me.Label6.Location = New System.Drawing.Point(464, 70)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(111, 16)
         Me.Label6.TabIndex = 15
@@ -188,11 +190,11 @@ Partial Class F_CaseFile
         'txtCaseReport
         '
         Me.txtCaseReport.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCaseReport.Location = New System.Drawing.Point(20, 125)
+        Me.txtCaseReport.Location = New System.Drawing.Point(28, 123)
         Me.txtCaseReport.MaxLength = 1000
         Me.txtCaseReport.Multiline = True
         Me.txtCaseReport.Name = "txtCaseReport"
-        Me.txtCaseReport.Size = New System.Drawing.Size(419, 98)
+        Me.txtCaseReport.Size = New System.Drawing.Size(450, 98)
         Me.txtCaseReport.TabIndex = 6
         Me.txtCaseReport.Tag = "IN:Case Report*"
         '
@@ -200,7 +202,7 @@ Partial Class F_CaseFile
         '
         Me.lblCaseReport.AutoSize = True
         Me.lblCaseReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblCaseReport.Location = New System.Drawing.Point(17, 106)
+        Me.lblCaseReport.Location = New System.Drawing.Point(25, 104)
         Me.lblCaseReport.Name = "lblCaseReport"
         Me.lblCaseReport.Size = New System.Drawing.Size(87, 16)
         Me.lblCaseReport.TabIndex = 20
@@ -211,7 +213,7 @@ Partial Class F_CaseFile
         '
         Me.Label8.AutoSize = True
         Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label8.Location = New System.Drawing.Point(20, 234)
+        Me.Label8.Location = New System.Drawing.Point(28, 232)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(112, 16)
         Me.Label8.TabIndex = 21
@@ -224,24 +226,24 @@ Partial Class F_CaseFile
         Me.datPeopleInvolved.AllowUserToDeleteRows = False
         Me.datPeopleInvolved.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.datPeopleInvolved.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datPeopleInvolved.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datPeopleInvolved.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.datPeopleInvolved.ColumnHeadersHeight = 30
         Me.datPeopleInvolved.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.datPeopleInvolved.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.colName, Me.colInvolvement, Me.colResident, Me.colContactNo, Me.colView, Me.colStatement})
-        Me.datPeopleInvolved.Location = New System.Drawing.Point(20, 253)
+        Me.datPeopleInvolved.Location = New System.Drawing.Point(28, 251)
         Me.datPeopleInvolved.Name = "datPeopleInvolved"
         Me.datPeopleInvolved.ReadOnly = True
         Me.datPeopleInvolved.RowHeadersVisible = False
         Me.datPeopleInvolved.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.datPeopleInvolved.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datPeopleInvolved.Size = New System.Drawing.Size(419, 107)
+        Me.datPeopleInvolved.Size = New System.Drawing.Size(450, 107)
         Me.datPeopleInvolved.TabIndex = 7
         '
         'colID
@@ -307,24 +309,24 @@ Partial Class F_CaseFile
         Me.datDocuments.AllowUserToDeleteRows = False
         Me.datDocuments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.datDocuments.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datDocuments.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datDocuments.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.datDocuments.ColumnHeadersHeight = 30
         Me.datDocuments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.datDocuments.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colPresenterID, Me.colFileName, Me.colDateSubmitted, Me.colSourceFile, Me.colOpen, Me.colDelete})
-        Me.datDocuments.Location = New System.Drawing.Point(445, 125)
+        Me.datDocuments.Location = New System.Drawing.Point(483, 123)
         Me.datDocuments.Name = "datDocuments"
         Me.datDocuments.ReadOnly = True
         Me.datDocuments.RowHeadersVisible = False
         Me.datDocuments.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.datDocuments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datDocuments.Size = New System.Drawing.Size(183, 235)
+        Me.datDocuments.Size = New System.Drawing.Size(213, 235)
         Me.datDocuments.TabIndex = 9
         '
         'colPresenterID
@@ -368,13 +370,13 @@ Partial Class F_CaseFile
         '
         'colDelete
         '
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
-        Me.colDelete.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        Me.colDelete.DefaultCellStyle = DataGridViewCellStyle3
         Me.colDelete.FillWeight = 68.60507!
         Me.colDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.colDelete.HeaderText = ""
@@ -385,7 +387,7 @@ Partial Class F_CaseFile
         '
         Me.Label9.AutoSize = True
         Me.Label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label9.Location = New System.Drawing.Point(445, 106)
+        Me.Label9.Location = New System.Drawing.Point(483, 104)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(159, 16)
         Me.Label9.TabIndex = 24
@@ -395,7 +397,7 @@ Partial Class F_CaseFile
         'btnAdd
         '
         Me.btnAdd.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(377, 361)
+        Me.btnAdd.Location = New System.Drawing.Point(416, 359)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(62, 27)
         Me.btnAdd.TabIndex = 8
@@ -405,7 +407,7 @@ Partial Class F_CaseFile
         'btnAttach
         '
         Me.btnAttach.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAttach.Location = New System.Drawing.Point(514, 361)
+        Me.btnAttach.Location = New System.Drawing.Point(582, 359)
         Me.btnAttach.Name = "btnAttach"
         Me.btnAttach.Size = New System.Drawing.Size(114, 27)
         Me.btnAttach.TabIndex = 10
@@ -415,7 +417,7 @@ Partial Class F_CaseFile
         'btnSave
         '
         Me.btnSave.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.Location = New System.Drawing.Point(514, 399)
+        Me.btnSave.Location = New System.Drawing.Point(582, 392)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(114, 52)
         Me.btnSave.TabIndex = 11
@@ -426,7 +428,7 @@ Partial Class F_CaseFile
         '
         Me.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboStatus.FormattingEnabled = True
-        Me.cboStatus.Location = New System.Drawing.Point(509, 10)
+        Me.cboStatus.Location = New System.Drawing.Point(578, 12)
         Me.cboStatus.Name = "cboStatus"
         Me.cboStatus.Size = New System.Drawing.Size(118, 24)
         Me.cboStatus.TabIndex = 1
@@ -437,7 +439,7 @@ Partial Class F_CaseFile
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.Red
-        Me.Label19.Location = New System.Drawing.Point(46, 41)
+        Me.Label19.Location = New System.Drawing.Point(63, 43)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(11, 13)
         Me.Label19.TabIndex = 40
@@ -450,7 +452,7 @@ Partial Class F_CaseFile
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Red
-        Me.Label1.Location = New System.Drawing.Point(6, 68)
+        Me.Label1.Location = New System.Drawing.Point(23, 70)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(11, 13)
         Me.Label1.TabIndex = 41
@@ -463,7 +465,7 @@ Partial Class F_CaseFile
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Red
-        Me.Label7.Location = New System.Drawing.Point(8, 106)
+        Me.Label7.Location = New System.Drawing.Point(16, 104)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(11, 13)
         Me.Label7.TabIndex = 42
@@ -471,35 +473,44 @@ Partial Class F_CaseFile
         Me.Label7.Text = "*"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.txtReportedBy)
+        Me.Panel1.Controls.Add(Me.btnSave)
+        Me.Panel1.Controls.Add(Me.btnAttach)
+        Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Controls.Add(Me.lblCaseCode)
+        Me.Panel1.Controls.Add(Me.btnAdd)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.datPeopleInvolved)
+        Me.Panel1.Controls.Add(Me.Label8)
+        Me.Panel1.Controls.Add(Me.txtCode)
+        Me.Panel1.Controls.Add(Me.Label19)
+        Me.Panel1.Controls.Add(Me.Label9)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.datDocuments)
+        Me.Panel1.Controls.Add(Me.cboStatus)
+        Me.Panel1.Controls.Add(Me.txtIncharge)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.txtCaseReport)
+        Me.Panel1.Controls.Add(Me.lblCaseReport)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.dtpIncidentDate)
+        Me.Panel1.Controls.Add(Me.dtpReportedDate)
+        Me.Panel1.Location = New System.Drawing.Point(8, 6)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(712, 450)
+        Me.Panel1.TabIndex = 43
+        Me.Panel1.Tag = "Secondary"
+        '
         'F_CaseFile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(644, 461)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Label19)
-        Me.Controls.Add(Me.cboStatus)
-        Me.Controls.Add(Me.btnSave)
-        Me.Controls.Add(Me.btnAttach)
-        Me.Controls.Add(Me.btnAdd)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.datDocuments)
-        Me.Controls.Add(Me.datPeopleInvolved)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.txtCaseReport)
-        Me.Controls.Add(Me.lblCaseReport)
-        Me.Controls.Add(Me.dtpReportedDate)
-        Me.Controls.Add(Me.dtpIncidentDate)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.txtReportedBy)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.txtIncharge)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.txtCode)
-        Me.Controls.Add(Me.lblCaseCode)
+        Me.ClientSize = New System.Drawing.Size(727, 461)
+        Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -508,11 +519,13 @@ Partial Class F_CaseFile
         Me.Name = "F_CaseFile"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Tag = "Primary"
         Me.Text = "FILE CASE"
         CType(Me.datPeopleInvolved, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.datDocuments, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents txtCode As System.Windows.Forms.TextBox
@@ -552,4 +565,5 @@ Partial Class F_CaseFile
     Friend WithEvents colSourceFile As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colOpen As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents colDelete As System.Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
 End Class

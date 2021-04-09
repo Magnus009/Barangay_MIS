@@ -29,13 +29,15 @@ Partial Class F_AddSamahan
         Me.btnSave = New System.Windows.Forms.Button()
         Me.txtCreatedDate = New System.Windows.Forms.TextBox()
         Me.lblCreatedDate = New System.Windows.Forms.Label()
+        Me.pnlSamahan = New System.Windows.Forms.Panel()
+        Me.pnlSamahan.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtTitle
         '
         Me.txtTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTitle.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTitle.Location = New System.Drawing.Point(115, 14)
+        Me.txtTitle.Location = New System.Drawing.Point(109, 17)
         Me.txtTitle.MaxLength = 50
         Me.txtTitle.Multiline = True
         Me.txtTitle.Name = "txtTitle"
@@ -48,7 +50,7 @@ Partial Class F_AddSamahan
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(71, 14)
+        Me.Label2.Location = New System.Drawing.Point(65, 17)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(38, 16)
         Me.Label2.TabIndex = 6
@@ -59,7 +61,7 @@ Partial Class F_AddSamahan
         '
         Me.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDescription.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDescription.Location = New System.Drawing.Point(21, 59)
+        Me.txtDescription.Location = New System.Drawing.Point(15, 62)
         Me.txtDescription.MaxLength = 250
         Me.txtDescription.Multiline = True
         Me.txtDescription.Name = "txtDescription"
@@ -71,7 +73,7 @@ Partial Class F_AddSamahan
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(23, 40)
+        Me.Label1.Location = New System.Drawing.Point(17, 43)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(86, 16)
         Me.Label1.TabIndex = 8
@@ -81,7 +83,7 @@ Partial Class F_AddSamahan
         'btnSave
         '
         Me.btnSave.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.Location = New System.Drawing.Point(288, 117)
+        Me.btnSave.Location = New System.Drawing.Point(282, 120)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 32)
         Me.btnSave.TabIndex = 3
@@ -93,7 +95,7 @@ Partial Class F_AddSamahan
         Me.txtCreatedDate.BackColor = System.Drawing.Color.White
         Me.txtCreatedDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCreatedDate.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCreatedDate.Location = New System.Drawing.Point(115, 120)
+        Me.txtCreatedDate.Location = New System.Drawing.Point(109, 123)
         Me.txtCreatedDate.MaxLength = 50
         Me.txtCreatedDate.Multiline = True
         Me.txtCreatedDate.Name = "txtCreatedDate"
@@ -108,7 +110,7 @@ Partial Class F_AddSamahan
         '
         Me.lblCreatedDate.AutoSize = True
         Me.lblCreatedDate.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCreatedDate.Location = New System.Drawing.Point(18, 122)
+        Me.lblCreatedDate.Location = New System.Drawing.Point(12, 125)
         Me.lblCreatedDate.Name = "lblCreatedDate"
         Me.lblCreatedDate.Size = New System.Drawing.Size(91, 16)
         Me.lblCreatedDate.TabIndex = 10
@@ -116,18 +118,27 @@ Partial Class F_AddSamahan
         Me.lblCreatedDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.lblCreatedDate.Visible = False
         '
+        'pnlSamahan
+        '
+        Me.pnlSamahan.Controls.Add(Me.txtTitle)
+        Me.pnlSamahan.Controls.Add(Me.lblCreatedDate)
+        Me.pnlSamahan.Controls.Add(Me.Label2)
+        Me.pnlSamahan.Controls.Add(Me.txtCreatedDate)
+        Me.pnlSamahan.Controls.Add(Me.Label1)
+        Me.pnlSamahan.Controls.Add(Me.btnSave)
+        Me.pnlSamahan.Controls.Add(Me.txtDescription)
+        Me.pnlSamahan.Location = New System.Drawing.Point(4, 6)
+        Me.pnlSamahan.Name = "pnlSamahan"
+        Me.pnlSamahan.Size = New System.Drawing.Size(374, 159)
+        Me.pnlSamahan.TabIndex = 1
+        Me.pnlSamahan.Tag = "Secondary"
+        '
         'F_AddSamahan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(384, 152)
-        Me.Controls.Add(Me.lblCreatedDate)
-        Me.Controls.Add(Me.txtCreatedDate)
-        Me.Controls.Add(Me.btnSave)
-        Me.Controls.Add(Me.txtDescription)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtTitle)
-        Me.Controls.Add(Me.Label2)
+        Me.ClientSize = New System.Drawing.Size(384, 171)
+        Me.Controls.Add(Me.pnlSamahan)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -136,9 +147,11 @@ Partial Class F_AddSamahan
         Me.Name = "F_AddSamahan"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Tag = "Primary"
         Me.Text = "SAMAHAN INFORMATION"
+        Me.pnlSamahan.ResumeLayout(False)
+        Me.pnlSamahan.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents txtTitle As System.Windows.Forms.TextBox
@@ -148,4 +161,5 @@ Partial Class F_AddSamahan
     Friend WithEvents btnSave As System.Windows.Forms.Button
     Friend WithEvents txtCreatedDate As System.Windows.Forms.TextBox
     Friend WithEvents lblCreatedDate As System.Windows.Forms.Label
+    Friend WithEvents pnlSamahan As System.Windows.Forms.Panel
 End Class

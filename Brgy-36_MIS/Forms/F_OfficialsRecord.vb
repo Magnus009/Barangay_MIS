@@ -12,7 +12,7 @@
         cboDataBinding(cboRank, strQuery, "---")
 
         'COMMITTEE
-        strQuery = "SELECT * FROM M_OfficialsRank WHERE DeletedDate IS NULL"
+        strQuery = "SELECT * FROM M_Committee WHERE DeletedDate IS NULL"
         cboDataBinding(cboCommittee, strQuery, "---")
 
         'STATUS
@@ -36,7 +36,7 @@
                 strQuery += "CAST(year(O.TermStart) AS NVARCHAR(4)) +' - ' + CAST(year(O.TermEnd) AS NVARCHAR(4)) 'TERM'," + vbCrLf
                 strQuery += "CASE WHEN R.DeletedDate IS NOT NULL THEN 'deleted' END AS 'colStatus' FROM Officials O" + vbCrLf
                 strQuery += "INNER JOIN Residents R ON O.ResidentCode = R.Code" + vbCrLf
-                strQuery += "INNER JOIN M_OfficialPosition P ON O.Position = P.ID"
+                strQuery += "INNER JOIN M_OfficialPosition P ON O.PositionID = P.ID" + vbCrLf
 
                 If strFilter <> "" Then
                     strQuery += "WHERE " & strFilter
@@ -74,19 +74,25 @@
     Private Sub loadOfficialsDetails(strOfficialCode As String)
         Dim dtOfficial As New DataTable
 
-        strQuery = "SELECT O.Code 'OfficialID', R.Code 'ResidentID',R.FamilyName + ', ' + R.GivenName + ' ' + R.MiddleName 'NAME'," + vbCrLf
-        strQuery += "O.Position, O.RankID, O.CommitteeID, O.TermStart, O.TermEnd, O.StatusID, O.ContactNo FROM Officials O" + vbCrLf
+        strQuery = "SELECT O.Code 'OfficialID', R.Code 'ResidentID', R.FamilyName + ', ' + R.GivenName + ' ' + R.MiddleName 'NAME'," + vbCrLf
+        strQuery += "O.PositionID, O.RankID, O.CommitteeID, O.TermStart, O.TermEnd, O.StatusID, O.ContactNo FROM Officials O" + vbCrLf
         strQuery += "INNER JOIN Residents R ON O.ResidentCode = R.Code" + vbCrLf
         strQuery += "WHERE O.Code = '" + strOfficialCode + "'"
         dtOfficial = SQL_SELECT(strQuery).Tables(0)
 
         With dtOfficial
             If .Rows.Count <> 0 Then
-                txtOfficialID.Text = .Rows(0)("")
-                txtResidentID.Text = .Rows(0)("")
-                txtFullName.Text = .Rows(0)("")
-                cboPosition.SelectedValue = .Rows(0)("")
-                cboRank.SelectedValue = .Rows(0)("")
+                txtResidentID.Text = .Rows(0)("ResidentID")
+                txtOfficialID.Text = .Rows(0)("OfficialID")
+                txtFullName.Text = .Rows(0)("NAME")
+                cboPosition.SelectedValue = .Rows(0)("PositionID")
+                cboRank.SelectedValue = .Rows(0)("RankID")
+                cboCommittee.SelectedValue = IIf(IsDBNull(.Rows(0)("CommitteeID")), -1, .Rows(0)("CommitteeID"))
+                dtpTermStart.Value = .Rows(0)("TermStart")
+                dtpTermEnd.Value = .Rows(0)("TermEnd")
+                cboStatus.SelectedValue = .Rows(0)("StatusID")
+                txtContactNo.Text = .Rows(0)("ContactNo")
+                loadOfficialHousehold(.Rows(0)("ResidentID"))
             End If
         End With
     End Sub
@@ -177,11 +183,11 @@
         Dim strFilter As String = ""
 
         If txtSearch.Text <> "" Then
-            strFilter = "O.Code LIKE '%%'" + vbCrLf
-            strFilter = "OR R.FamilyName LIKE '%" + txtSearch.Text + "%'" + vbCrLf
-            strFilter = "OR R.FamilyName LIKE '%" + txtSearch.Text + "%'" + vbCrLf
-            strFilter = "OR R.GivenName LIKE '%" + txtSearch.Text + "%'" + vbCrLf
-            strFilter = "OR R.MiddleName LIKE '%" + txtSearch.Text + "%'" + vbCrLf
+            strFilter += "O.Code LIKE '%" + txtSearch.Text + "%'" + vbCrLf
+            strFilter += "OR R.FamilyName LIKE '%" + txtSearch.Text + "%'" + vbCrLf
+            strFilter += "OR R.FamilyName LIKE '%" + txtSearch.Text + "%'" + vbCrLf
+            strFilter += "OR R.GivenName LIKE '%" + txtSearch.Text + "%'" + vbCrLf
+            strFilter += "OR R.MiddleName LIKE '%" + txtSearch.Text + "%'" + vbCrLf
         End If
 
         If dtpTermFrom.Checked Then
@@ -191,7 +197,7 @@
 
         If dtpTermTo.Checked Then
             If txtSearch.Text <> "" Or dtpTermFrom.Checked Then strFilter += "AND "
-            strFilter += "AND O.TermStart >= '" + fn_Date(dtpTermTo.Value) + "'" + vbCrLf
+            strFilter += "O.TermEnd <= '" + fn_Date(dtpTermTo.Value) + "'" + vbCrLf
         End If
 
         Call loadOfficialsRecords(strFilter)

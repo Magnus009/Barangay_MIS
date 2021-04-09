@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0EC876DB-F647-4C97-BDB9-18FEA3BE6258}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Brgy_36_MIS.F_OfficialsRecord</StartupObject>
+    <StartupObject>Brgy_36_MIS.F_Login</StartupObject>
     <RootNamespace>Brgy_36_MIS</RootNamespace>
     <AssemblyName>Brgy-36_MIS</AssemblyName>
     <FileAlignment>512</FileAlignment>

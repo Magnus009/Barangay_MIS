@@ -20,20 +20,20 @@
             btnView.Resizable = DataGridViewTriState.False
             btnView.AutoSizeMode = DataGridViewAutoSizeColumnMode.None
             btnView.Text = "•••"
+            btnView.Name = "VIEW"
             btnView.UseColumnTextForButtonValue = True
             datCases.Columns.Add(btnView)
             Me.Show()
+            formLoadSetup(Me)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 
     Private Sub datCases_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datCases.CellContentClick
-        If e.ColumnIndex = 0 Then
+        If datCases.Columns(e.ColumnIndex).Name.Equals("VIEW") Then
             F_CaseFile.txtCode.Text = datCases.Rows(e.RowIndex).Cells(1).Value
             F_CaseFile.openCase(intCaseType, IIf(UserLevel = "0", 2, 0))
         End If
     End Sub
-
-
 End Class

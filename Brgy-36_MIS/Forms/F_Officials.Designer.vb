@@ -24,6 +24,11 @@ Partial Class F_Officials
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(F_Officials))
         Me.pnlInfos = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.btnResidentList = New System.Windows.Forms.Button()
         Me.txtContactNo = New System.Windows.Forms.MaskedTextBox()
@@ -70,11 +75,7 @@ Partial Class F_Officials
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.Label37 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.pnlInfos.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -82,6 +83,7 @@ Partial Class F_Officials
         '
         Me.pnlInfos.BackColor = System.Drawing.Color.White
         Me.pnlInfos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlInfos.Controls.Add(Me.Label13)
         Me.pnlInfos.Controls.Add(Me.Label8)
         Me.pnlInfos.Controls.Add(Me.Label7)
         Me.pnlInfos.Controls.Add(Me.Label5)
@@ -139,6 +141,71 @@ Partial Class F_Officials
         Me.pnlInfos.Size = New System.Drawing.Size(682, 427)
         Me.pnlInfos.TabIndex = 1
         Me.pnlInfos.Tag = "Secondary"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Red
+        Me.Label8.Location = New System.Drawing.Point(382, 151)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(14, 16)
+        Me.Label8.TabIndex = 74
+        Me.Label8.Tag = "reqSign"
+        Me.Label8.Text = "*"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Red
+        Me.Label7.Location = New System.Drawing.Point(461, 43)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(14, 16)
+        Me.Label7.TabIndex = 73
+        Me.Label7.Tag = "reqSign"
+        Me.Label7.Text = "*"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Red
+        Me.Label5.Location = New System.Drawing.Point(35, 151)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(14, 16)
+        Me.Label5.TabIndex = 72
+        Me.Label5.Tag = "reqSign"
+        Me.Label5.Text = "*"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Red
+        Me.Label1.Location = New System.Drawing.Point(61, 180)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(14, 16)
+        Me.Label1.TabIndex = 71
+        Me.Label1.Tag = "reqSign"
+        Me.Label1.Text = "*"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.Color.Red
+        Me.Label20.Location = New System.Drawing.Point(19, 43)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(14, 16)
+        Me.Label20.TabIndex = 70
+        Me.Label20.Tag = "reqSign"
+        Me.Label20.Text = "*"
+        Me.Label20.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'txtID
         '
@@ -682,70 +749,18 @@ Partial Class F_Officials
         Me.Label37.Size = New System.Drawing.Size(664, 143)
         Me.Label37.TabIndex = 67
         '
-        'Label20
+        'Label13
         '
-        Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.ForeColor = System.Drawing.Color.Red
-        Me.Label20.Location = New System.Drawing.Point(19, 43)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(14, 16)
-        Me.Label20.TabIndex = 70
-        Me.Label20.Tag = "reqSign"
-        Me.Label20.Text = "*"
-        Me.Label20.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Red
-        Me.Label1.Location = New System.Drawing.Point(61, 180)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(14, 16)
-        Me.Label1.TabIndex = 71
-        Me.Label1.Tag = "reqSign"
-        Me.Label1.Text = "*"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Red
-        Me.Label5.Location = New System.Drawing.Point(35, 151)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(14, 16)
-        Me.Label5.TabIndex = 72
-        Me.Label5.Tag = "reqSign"
-        Me.Label5.Text = "*"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Red
-        Me.Label7.Location = New System.Drawing.Point(461, 43)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(14, 16)
-        Me.Label7.TabIndex = 73
-        Me.Label7.Tag = "reqSign"
-        Me.Label7.Text = "*"
-        Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.Red
-        Me.Label8.Location = New System.Drawing.Point(382, 151)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(14, 16)
-        Me.Label8.TabIndex = 74
-        Me.Label8.Tag = "reqSign"
-        Me.Label8.Text = "*"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.Red
+        Me.Label13.Location = New System.Drawing.Point(69, 123)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(14, 16)
+        Me.Label13.TabIndex = 75
+        Me.Label13.Tag = "reqSign"
+        Me.Label13.Text = "*"
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'F_Officials
         '
@@ -821,4 +836,5 @@ Partial Class F_Officials
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents Label13 As System.Windows.Forms.Label
 End Class

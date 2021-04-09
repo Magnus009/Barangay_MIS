@@ -314,6 +314,7 @@ Partial Class _mdi_MIS
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "_mdi_MIS"
         Me.Text = "MANAGEMENT INFORMATION SYSTEM  of BARANGAY 36-A  (SAP-SAP)"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.mnuMIS.ResumeLayout(False)
         Me.mnuMIS.PerformLayout()
         Me.ResumeLayout(False)

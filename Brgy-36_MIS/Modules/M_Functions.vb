@@ -16,7 +16,7 @@ Module M_Functions
             .Title = "Select Supporting Documents"
             .Multiselect = False
             .InitialDirectory = My.Computer.FileSystem.SpecialDirectories.Desktop
-            .Filter = "All Files(*.*)|*.*"
+            .Filter = "All Files(*.jpeg, *.jpg, *.png)|*.*"
 
             If .ShowDialog = DialogResult.OK Then
                 strFileName = .FileName
@@ -316,19 +316,39 @@ Module M_Functions
     Public Sub formLoadSetup(container As Control)
 
         If container.Tag = "Primary" Then
-            Dim frm As New Form
-            frm = container
+            If container.GetType = GetType(Form) Then
+                Dim frm As New Form
+                frm = container
 
-            frm.FormBorderStyle = FormBorderStyle.FixedSingle
-            frm.MinimizeBox = False
-            frm.MaximizeBox = False
-            frm.StartPosition = FormStartPosition.CenterScreen
-            frm.BackColor = My.Settings.Primary
+                frm.FormBorderStyle = FormBorderStyle.FixedSingle
+                frm.MinimizeBox = False
+                frm.MaximizeBox = False
+                frm.StartPosition = FormStartPosition.CenterScreen
+                frm.BackColor = My.Settings.Primary
+            Else
+                container.BackColor = My.Settings.Primary
+            End If
         End If
 
         For Each ctrl As Control In container.Controls
-            Select Case ctrl.GetType
+            Select Case ctrl.Tag
+                Case "Header-1"
+                    ctrl.Font = My.Settings.Header1
+                Case "Header-2"
+                    ctrl.Font = My.Settings.Header2
+                Case "Header-3"
+                    ctrl.Font = My.Settings.Header3
+                Case "Header-4"
+                    ctrl.Font = My.Settings.Header4
+                Case "Header-5"
+                    ctrl.Font = My.Settings.Header5
+                Case "Substring"
+                    ctrl.Font = My.Settings.Substring
+                Case Else
+                    ctrl.Font = My.Settings.Font
+            End Select
 
+            Select Case ctrl.GetType
                 Case GetType(Panel)
                     If ctrl.Tag = "Secondary" Then
                         ctrl.BackColor = My.Settings.Secondary
@@ -345,23 +365,6 @@ Module M_Functions
                     Else
                         btn.BackColor = My.Settings.Primary
                     End If
-                Case GetType(Label)
-                    Select Case ctrl.Tag
-                        Case "Header-1"
-                            ctrl.Font = My.Settings.Header1
-                        Case "Header-2"
-                            ctrl.Font = My.Settings.Header2
-                        Case "Header-3"
-                            ctrl.Font = My.Settings.Header3
-                        Case "Header-4"
-                            ctrl.Font = My.Settings.Header4
-                        Case "Header-5"
-                            ctrl.Font = My.Settings.Header5
-                        Case "Substring"
-                            ctrl.Font = My.Settings.Substring
-                        Case Else
-                            ctrl.Font = My.Settings.Font
-                    End Select
                 Case GetType(TextBox)
                     ctrl.Font = My.Settings.Font
                     ctrl.BackColor = Color.White

@@ -20,6 +20,7 @@
     End Sub
 
     Private Sub F_BorrowItems_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        formLoadSetup(Me)
         Call getItems()
         Call getStatus()
     End Sub

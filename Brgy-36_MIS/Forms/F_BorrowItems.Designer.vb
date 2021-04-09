@@ -22,8 +22,6 @@ Partial Class F_BorrowItems
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lblHeader = New System.Windows.Forms.Label()
         Me.lblCode = New System.Windows.Forms.Label()
         Me.txtBorrower = New System.Windows.Forms.TextBox()
         Me.lblBorrower = New System.Windows.Forms.Label()
@@ -43,36 +41,15 @@ Partial Class F_BorrowItems
         Me.cboStatus = New System.Windows.Forms.ComboBox()
         Me.lblStatus = New System.Windows.Forms.Label()
         Me.chkisResident = New System.Windows.Forms.CheckBox()
-        Me.Panel1.SuspendLayout()
+        Me.pnlBorrow = New System.Windows.Forms.Panel()
+        Me.pnlBorrow.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel1.Controls.Add(Me.lblHeader)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(525, 59)
-        Me.Panel1.TabIndex = 0
-        '
-        'lblHeader
-        '
-        Me.lblHeader.AutoSize = True
-        Me.lblHeader.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHeader.ForeColor = System.Drawing.Color.White
-        Me.lblHeader.Location = New System.Drawing.Point(12, 18)
-        Me.lblHeader.Name = "lblHeader"
-        Me.lblHeader.Size = New System.Drawing.Size(137, 23)
-        Me.lblHeader.TabIndex = 0
-        Me.lblHeader.Text = "BORROW ITEM"
         '
         'lblCode
         '
         Me.lblCode.AutoSize = True
         Me.lblCode.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCode.Location = New System.Drawing.Point(78, 79)
+        Me.lblCode.Location = New System.Drawing.Point(75, 24)
         Me.lblCode.Name = "lblCode"
         Me.lblCode.Size = New System.Drawing.Size(48, 17)
         Me.lblCode.TabIndex = 1
@@ -81,7 +58,7 @@ Partial Class F_BorrowItems
         'txtBorrower
         '
         Me.txtBorrower.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBorrower.Location = New System.Drawing.Point(129, 105)
+        Me.txtBorrower.Location = New System.Drawing.Point(126, 50)
         Me.txtBorrower.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtBorrower.Name = "txtBorrower"
         Me.txtBorrower.Size = New System.Drawing.Size(380, 22)
@@ -91,7 +68,7 @@ Partial Class F_BorrowItems
         '
         Me.lblBorrower.AutoSize = True
         Me.lblBorrower.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBorrower.Location = New System.Drawing.Point(42, 108)
+        Me.lblBorrower.Location = New System.Drawing.Point(39, 53)
         Me.lblBorrower.Name = "lblBorrower"
         Me.lblBorrower.Size = New System.Drawing.Size(84, 17)
         Me.lblBorrower.TabIndex = 3
@@ -101,7 +78,7 @@ Partial Class F_BorrowItems
         '
         Me.lblIncharge.AutoSize = True
         Me.lblIncharge.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIncharge.Location = New System.Drawing.Point(44, 143)
+        Me.lblIncharge.Location = New System.Drawing.Point(41, 88)
         Me.lblIncharge.Name = "lblIncharge"
         Me.lblIncharge.Size = New System.Drawing.Size(82, 17)
         Me.lblIncharge.TabIndex = 9
@@ -110,7 +87,7 @@ Partial Class F_BorrowItems
         'txtIncharge
         '
         Me.txtIncharge.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIncharge.Location = New System.Drawing.Point(129, 137)
+        Me.txtIncharge.Location = New System.Drawing.Point(126, 82)
         Me.txtIncharge.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtIncharge.Name = "txtIncharge"
         Me.txtIncharge.Size = New System.Drawing.Size(380, 22)
@@ -120,7 +97,7 @@ Partial Class F_BorrowItems
         '
         Me.lblItem.AutoSize = True
         Me.lblItem.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblItem.Location = New System.Drawing.Point(84, 172)
+        Me.lblItem.Location = New System.Drawing.Point(81, 117)
         Me.lblItem.Name = "lblItem"
         Me.lblItem.Size = New System.Drawing.Size(42, 17)
         Me.lblItem.TabIndex = 10
@@ -130,7 +107,7 @@ Partial Class F_BorrowItems
         '
         Me.cboItems.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboItems.FormattingEnabled = True
-        Me.cboItems.Location = New System.Drawing.Point(129, 169)
+        Me.cboItems.Location = New System.Drawing.Point(126, 114)
         Me.cboItems.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cboItems.Name = "cboItems"
         Me.cboItems.Size = New System.Drawing.Size(228, 24)
@@ -140,7 +117,7 @@ Partial Class F_BorrowItems
         '
         Me.lblQTY.AutoSize = True
         Me.lblQTY.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblQTY.Location = New System.Drawing.Point(361, 172)
+        Me.lblQTY.Location = New System.Drawing.Point(358, 117)
         Me.lblQTY.Name = "lblQTY"
         Me.lblQTY.Size = New System.Drawing.Size(39, 17)
         Me.lblQTY.TabIndex = 12
@@ -149,7 +126,7 @@ Partial Class F_BorrowItems
         'txtCode
         '
         Me.txtCode.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCode.Location = New System.Drawing.Point(129, 76)
+        Me.txtCode.Location = New System.Drawing.Point(126, 21)
         Me.txtCode.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtCode.Name = "txtCode"
         Me.txtCode.ReadOnly = True
@@ -161,7 +138,7 @@ Partial Class F_BorrowItems
         'txtQTY
         '
         Me.txtQTY.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtQTY.Location = New System.Drawing.Point(402, 171)
+        Me.txtQTY.Location = New System.Drawing.Point(399, 116)
         Me.txtQTY.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtQTY.Name = "txtQTY"
         Me.txtQTY.Size = New System.Drawing.Size(107, 22)
@@ -171,7 +148,7 @@ Partial Class F_BorrowItems
         '
         Me.lblBorrowDate.AutoSize = True
         Me.lblBorrowDate.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBorrowDate.Location = New System.Drawing.Point(11, 205)
+        Me.lblBorrowDate.Location = New System.Drawing.Point(8, 150)
         Me.lblBorrowDate.Name = "lblBorrowDate"
         Me.lblBorrowDate.Size = New System.Drawing.Size(118, 17)
         Me.lblBorrowDate.TabIndex = 14
@@ -182,7 +159,7 @@ Partial Class F_BorrowItems
         Me.dtpBorrowedDate.CustomFormat = "yyyy/MM/dd"
         Me.dtpBorrowedDate.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpBorrowedDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpBorrowedDate.Location = New System.Drawing.Point(129, 201)
+        Me.dtpBorrowedDate.Location = New System.Drawing.Point(126, 146)
         Me.dtpBorrowedDate.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.dtpBorrowedDate.Name = "dtpBorrowedDate"
         Me.dtpBorrowedDate.Size = New System.Drawing.Size(137, 22)
@@ -193,7 +170,7 @@ Partial Class F_BorrowItems
         Me.dtpReturnDate.CustomFormat = "yyyy/MM/dd"
         Me.dtpReturnDate.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpReturnDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpReturnDate.Location = New System.Drawing.Point(372, 201)
+        Me.dtpReturnDate.Location = New System.Drawing.Point(369, 146)
         Me.dtpReturnDate.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.dtpReturnDate.Name = "dtpReturnDate"
         Me.dtpReturnDate.Size = New System.Drawing.Size(137, 22)
@@ -203,7 +180,7 @@ Partial Class F_BorrowItems
         '
         Me.lblReturnDate.AutoSize = True
         Me.lblReturnDate.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblReturnDate.Location = New System.Drawing.Point(280, 204)
+        Me.lblReturnDate.Location = New System.Drawing.Point(277, 149)
         Me.lblReturnDate.Name = "lblReturnDate"
         Me.lblReturnDate.Size = New System.Drawing.Size(91, 17)
         Me.lblReturnDate.TabIndex = 16
@@ -211,11 +188,8 @@ Partial Class F_BorrowItems
         '
         'btnSave
         '
-        Me.btnSave.BackColor = System.Drawing.Color.SteelBlue
-        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(301, 252)
+        Me.btnSave.Location = New System.Drawing.Point(298, 208)
         Me.btnSave.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(101, 50)
@@ -225,11 +199,8 @@ Partial Class F_BorrowItems
         '
         'btnCancel
         '
-        Me.btnCancel.BackColor = System.Drawing.Color.Red
-        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.ForeColor = System.Drawing.Color.White
-        Me.btnCancel.Location = New System.Drawing.Point(408, 252)
+        Me.btnCancel.Location = New System.Drawing.Point(405, 208)
         Me.btnCancel.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(101, 50)
@@ -241,7 +212,7 @@ Partial Class F_BorrowItems
         '
         Me.cboStatus.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboStatus.FormattingEnabled = True
-        Me.cboStatus.Location = New System.Drawing.Point(129, 231)
+        Me.cboStatus.Location = New System.Drawing.Point(126, 176)
         Me.cboStatus.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cboStatus.Name = "cboStatus"
         Me.cboStatus.Size = New System.Drawing.Size(119, 24)
@@ -251,7 +222,7 @@ Partial Class F_BorrowItems
         '
         Me.lblStatus.AutoSize = True
         Me.lblStatus.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblStatus.Location = New System.Drawing.Point(71, 231)
+        Me.lblStatus.Location = New System.Drawing.Point(68, 176)
         Me.lblStatus.Name = "lblStatus"
         Me.lblStatus.Size = New System.Drawing.Size(58, 17)
         Me.lblStatus.TabIndex = 20
@@ -261,7 +232,7 @@ Partial Class F_BorrowItems
         '
         Me.chkisResident.AutoSize = True
         Me.chkisResident.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkisResident.Location = New System.Drawing.Point(309, 76)
+        Me.chkisResident.Location = New System.Drawing.Point(306, 21)
         Me.chkisResident.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chkisResident.Name = "chkisResident"
         Me.chkisResident.Size = New System.Drawing.Size(76, 20)
@@ -269,48 +240,53 @@ Partial Class F_BorrowItems
         Me.chkisResident.Text = "RESIDENT"
         Me.chkisResident.UseVisualStyleBackColor = True
         '
+        'pnlBorrow
+        '
+        Me.pnlBorrow.Controls.Add(Me.txtCode)
+        Me.pnlBorrow.Controls.Add(Me.chkisResident)
+        Me.pnlBorrow.Controls.Add(Me.lblCode)
+        Me.pnlBorrow.Controls.Add(Me.cboStatus)
+        Me.pnlBorrow.Controls.Add(Me.lblBorrower)
+        Me.pnlBorrow.Controls.Add(Me.lblStatus)
+        Me.pnlBorrow.Controls.Add(Me.txtBorrower)
+        Me.pnlBorrow.Controls.Add(Me.btnCancel)
+        Me.pnlBorrow.Controls.Add(Me.txtIncharge)
+        Me.pnlBorrow.Controls.Add(Me.btnSave)
+        Me.pnlBorrow.Controls.Add(Me.lblIncharge)
+        Me.pnlBorrow.Controls.Add(Me.dtpReturnDate)
+        Me.pnlBorrow.Controls.Add(Me.lblItem)
+        Me.pnlBorrow.Controls.Add(Me.lblReturnDate)
+        Me.pnlBorrow.Controls.Add(Me.cboItems)
+        Me.pnlBorrow.Controls.Add(Me.dtpBorrowedDate)
+        Me.pnlBorrow.Controls.Add(Me.lblQTY)
+        Me.pnlBorrow.Controls.Add(Me.lblBorrowDate)
+        Me.pnlBorrow.Controls.Add(Me.txtQTY)
+        Me.pnlBorrow.Location = New System.Drawing.Point(4, 5)
+        Me.pnlBorrow.Name = "pnlBorrow"
+        Me.pnlBorrow.Size = New System.Drawing.Size(515, 265)
+        Me.pnlBorrow.TabIndex = 1
+        '
         'F_BorrowItems
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(525, 314)
-        Me.Controls.Add(Me.chkisResident)
-        Me.Controls.Add(Me.cboStatus)
-        Me.Controls.Add(Me.lblStatus)
-        Me.Controls.Add(Me.btnCancel)
-        Me.Controls.Add(Me.btnSave)
-        Me.Controls.Add(Me.dtpReturnDate)
-        Me.Controls.Add(Me.lblReturnDate)
-        Me.Controls.Add(Me.dtpBorrowedDate)
-        Me.Controls.Add(Me.lblBorrowDate)
-        Me.Controls.Add(Me.txtQTY)
-        Me.Controls.Add(Me.lblQTY)
-        Me.Controls.Add(Me.cboItems)
-        Me.Controls.Add(Me.lblItem)
-        Me.Controls.Add(Me.lblIncharge)
-        Me.Controls.Add(Me.txtIncharge)
-        Me.Controls.Add(Me.txtBorrower)
-        Me.Controls.Add(Me.lblBorrower)
-        Me.Controls.Add(Me.txtCode)
-        Me.Controls.Add(Me.lblCode)
-        Me.Controls.Add(Me.Panel1)
+        Me.ClientSize = New System.Drawing.Size(525, 276)
+        Me.Controls.Add(Me.pnlBorrow)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "F_BorrowItems"
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "F_BorrowItems"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.Tag = "Primary"
+        Me.Text = "BORROW ITEMS"
+        Me.pnlBorrow.ResumeLayout(False)
+        Me.pnlBorrow.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents lblHeader As System.Windows.Forms.Label
     Friend WithEvents lblCode As System.Windows.Forms.Label
     Friend WithEvents txtBorrower As System.Windows.Forms.TextBox
     Friend WithEvents lblBorrower As System.Windows.Forms.Label
@@ -330,4 +306,5 @@ Partial Class F_BorrowItems
     Friend WithEvents cboStatus As System.Windows.Forms.ComboBox
     Friend WithEvents lblStatus As System.Windows.Forms.Label
     Friend WithEvents chkisResident As System.Windows.Forms.CheckBox
+    Friend WithEvents pnlBorrow As System.Windows.Forms.Panel
 End Class

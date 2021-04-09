@@ -42,6 +42,7 @@
 
     Public Sub loadSamahan(strSamahanID As String)
         Try
+            formLoadSetup(Me)
             formMode(2, Me)
             Dim dtSamahan As DataTable
             strID = strSamahanID

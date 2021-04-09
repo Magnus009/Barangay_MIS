@@ -72,6 +72,9 @@
     End Sub
 
     Private Sub F_forgotPassword_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        formLoadSetup(Me)
+        btnSubmit.BackColor = Color.Green
+        btnConfirm.BackColor = Color.Green
         pnlTop.Height = 20
     End Sub
 
