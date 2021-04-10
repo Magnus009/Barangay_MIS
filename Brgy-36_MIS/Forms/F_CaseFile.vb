@@ -151,7 +151,7 @@
                 Dim dtHeader As New DataTable
                 strQuery = "SELECT * FROM CasesHeader" + vbCrLf
                 strQuery += "WHERE Code = '" + txtCode.Text + "'" + vbCrLf
-                strQuery += "AND DeletedDate IS NOT NULL"
+                strQuery += "AND DeletedDate IS NULL"
                 dtHeader = SQL_SELECT(strQuery).Tables(0)
 
                 txtReportedBy.Text = dtHeader.Rows(0)("ReportedBy")
@@ -165,7 +165,7 @@
                 Dim dtPeople As New DataTable
                 strQuery = "SELECT * FROM CasesDetails" + vbCrLf
                 strQuery += "WHERE Code = '" + txtCode.Text + "'" + vbCrLf
-                strQuery += "AND DeletedDate IS NOT NULL"
+                strQuery += "AND DeletedDate IS NULL"
                 dtPeople = SQL_SELECT(strQuery).Tables(0)
                 Dim rowPeople As String()
 
@@ -179,7 +179,7 @@
                 Dim dtDocuments As New DataTable
                 strQuery = "SELECT * FROM CasesDocuments" + vbCrLf
                 strQuery += "WHERE Code = '" + txtCode.Text + "'" + vbCrLf
-                strQuery += "AND DeletedDate IS NOT NULL"
+                strQuery += "AND DeletedDate IS NULL"
                 dtDocuments = SQL_SELECT(strQuery).Tables(0)
                 Dim rowDocs As String()
 

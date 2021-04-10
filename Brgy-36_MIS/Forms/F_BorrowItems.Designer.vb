@@ -265,6 +265,7 @@ Partial Class F_BorrowItems
         Me.pnlBorrow.Name = "pnlBorrow"
         Me.pnlBorrow.Size = New System.Drawing.Size(515, 265)
         Me.pnlBorrow.TabIndex = 1
+        Me.pnlBorrow.Tag = "Secondary"
         '
         'F_BorrowItems
         '

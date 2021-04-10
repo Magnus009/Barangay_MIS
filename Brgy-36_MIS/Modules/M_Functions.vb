@@ -463,6 +463,7 @@ Module M_Functions
             cbo.DataSource = dt
             cbo.DisplayMember = "NAME"
             cbo.ValueMember = "ID"
+            cbo.SelectedValue = -1
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try

@@ -28,6 +28,7 @@ Partial Class F_OfficialsRecord
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.datOfficials = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnSearch = New System.Windows.Forms.Button()
         Me.dtpTermTo = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dtpTermFrom = New System.Windows.Forms.DateTimePicker()
@@ -35,6 +36,8 @@ Partial Class F_OfficialsRecord
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.pnlInformations = New System.Windows.Forms.Panel()
+        Me.txtOfficialID = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.cboPosition = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txtContactNo = New System.Windows.Forms.MaskedTextBox()
@@ -74,9 +77,6 @@ Partial Class F_OfficialsRecord
         Me.lblID = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.btnSearch = New System.Windows.Forms.Button()
-        Me.txtOfficialID = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
         CType(Me.datOfficials, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.pnlInformations.SuspendLayout()
@@ -141,6 +141,15 @@ Partial Class F_OfficialsRecord
         Me.Panel1.Size = New System.Drawing.Size(453, 461)
         Me.Panel1.TabIndex = 2
         Me.Panel1.Tag = "Secondary"
+        '
+        'btnSearch
+        '
+        Me.btnSearch.Location = New System.Drawing.Point(354, 8)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(92, 48)
+        Me.btnSearch.TabIndex = 100
+        Me.btnSearch.Text = "SEARCH"
+        Me.btnSearch.UseVisualStyleBackColor = True
         '
         'dtpTermTo
         '
@@ -260,6 +269,31 @@ Partial Class F_OfficialsRecord
         Me.pnlInformations.Size = New System.Drawing.Size(512, 461)
         Me.pnlInformations.TabIndex = 3
         Me.pnlInformations.Tag = "Secondary"
+        '
+        'txtOfficialID
+        '
+        Me.txtOfficialID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtOfficialID.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtOfficialID.Location = New System.Drawing.Point(348, 64)
+        Me.txtOfficialID.MaxLength = 10
+        Me.txtOfficialID.Multiline = True
+        Me.txtOfficialID.Name = "txtOfficialID"
+        Me.txtOfficialID.ReadOnly = True
+        Me.txtOfficialID.Size = New System.Drawing.Size(118, 21)
+        Me.txtOfficialID.TabIndex = 100
+        Me.txtOfficialID.Tag = "SG"
+        Me.txtOfficialID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(270, 66)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(75, 16)
+        Me.Label8.TabIndex = 101
+        Me.Label8.Text = "OFFICIAL ID :"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'cboPosition
         '
@@ -704,45 +738,10 @@ Partial Class F_OfficialsRecord
         Me.Label5.Size = New System.Drawing.Size(494, 188)
         Me.Label5.TabIndex = 63
         '
-        'btnSearch
-        '
-        Me.btnSearch.Location = New System.Drawing.Point(354, 8)
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(92, 48)
-        Me.btnSearch.TabIndex = 100
-        Me.btnSearch.Text = "SEARCH"
-        Me.btnSearch.UseVisualStyleBackColor = True
-        '
-        'txtOfficialID
-        '
-        Me.txtOfficialID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtOfficialID.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtOfficialID.Location = New System.Drawing.Point(348, 64)
-        Me.txtOfficialID.MaxLength = 10
-        Me.txtOfficialID.Multiline = True
-        Me.txtOfficialID.Name = "txtOfficialID"
-        Me.txtOfficialID.ReadOnly = True
-        Me.txtOfficialID.Size = New System.Drawing.Size(118, 21)
-        Me.txtOfficialID.TabIndex = 100
-        Me.txtOfficialID.Tag = "SG"
-        Me.txtOfficialID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(270, 66)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(75, 16)
-        Me.Label8.TabIndex = 101
-        Me.Label8.Text = "OFFICIAL ID :"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
         'F_OfficialsRecord
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(984, 476)
         Me.Controls.Add(Me.pnlInformations)
         Me.Controls.Add(Me.Panel1)

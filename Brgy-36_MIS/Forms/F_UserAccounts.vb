@@ -2,6 +2,7 @@
 
     Private Sub F_UserAccounts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            formLoadSetup(Me)
             loadUserLevels()
             loadAccounts()
         Catch ex As Exception
@@ -10,9 +11,9 @@
     End Sub
 
     Private Sub loadUserLevels()
-        strQuery = "SELECT ID, Description FROM M_UserLevel"
-
+        strQuery = "SELECT ID, Description FROM M_UserLevel WHERE DeletedDate IS NULL"
         cboDataBinding(cboLevels, strQuery, "ALL")
+        AddHandler cboLevels.SelectedValueChanged, AddressOf levelFilter
     End Sub
 
     Private Sub loadAccounts()
@@ -24,7 +25,7 @@
             strQuery += "AND A.UserName LIKE '%" + txtSearch.Text + "%'" + vbCrLf
         End If
 
-        If cboLevels.SelectedValue = -1 Then
+        If Not cboLevels.SelectedValue = -1 Then
             strQuery += "AND A.UserLevel = " + cboLevels.SelectedValue.ToString
         End If
 
@@ -52,7 +53,7 @@
         loadAccounts()
     End Sub
 
-    Private Sub cboLevels_SelectedValueChanged(sender As Object, e As EventArgs) Handles cboLevels.SelectedValueChanged
+    Private Sub levelFilter(sender As Object, e As EventArgs)
         loadAccounts()
     End Sub
 End Class

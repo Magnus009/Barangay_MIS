@@ -5,6 +5,7 @@
         'CaseType:: [0]=>Complaints || [1]=>Incidents || [2]=>Blotters
         Try
             intCaseType = caseType
+            Me.Text = Choose(caseType + 1, "COMPLAINTS", "INCIDENTS", "BLOTTERS") & " RECORDS"
             Dim dtCases As New DataTable
             strQuery = "SELECT C.CODE, C.ReportedBy AS 'REPORTED BY', convert(VARCHAR, C.IncidentDate, 111) AS 'INCIDENT DATE', S.Description AS STATUS FROM CasesHeader C" + vbCrLf
             strQuery += "INNER JOIN M_CaseStatus S ON C.StatusID = S.ID" + vbCrLf

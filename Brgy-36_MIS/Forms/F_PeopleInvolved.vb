@@ -154,4 +154,7 @@
         Me.ShowDialog()
     End Sub
 
+    Private Sub F_PeopleInvolved_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        formLoadSetup(Me)
+    End Sub
 End Class

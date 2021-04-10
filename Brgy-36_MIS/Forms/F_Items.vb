@@ -104,12 +104,6 @@
     End Sub
 
     Private Sub F_Items_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        txtName.Focus()
-    End Sub
-
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        Call fn_ClearField(Me)
-        blnIsUpdate = False
-        Me.Hide()
+        formLoadSetup(Me)
     End Sub
 End Class

@@ -22,11 +22,7 @@ Partial Class F_UserRegistration
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
-        Me.pnlHeader = New System.Windows.Forms.Panel()
-        Me.lblHeader = New System.Windows.Forms.Label()
-        Me.grpUserInfo = New System.Windows.Forms.GroupBox()
         Me.cboUserLevel = New System.Windows.Forms.ComboBox()
         Me.lblUserLevel = New System.Windows.Forms.Label()
         Me.txtConfirmPass = New System.Windows.Forms.TextBox()
@@ -37,7 +33,6 @@ Partial Class F_UserRegistration
         Me.lblUserName = New System.Windows.Forms.Label()
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.lblID = New System.Windows.Forms.Label()
-        Me.grpSecurityQuestion = New System.Windows.Forms.GroupBox()
         Me.txtAns2 = New System.Windows.Forms.TextBox()
         Me.lblAns2 = New System.Windows.Forms.Label()
         Me.cboQuestion2 = New System.Windows.Forms.ComboBox()
@@ -46,83 +41,28 @@ Partial Class F_UserRegistration
         Me.lblAnswer1 = New System.Windows.Forms.Label()
         Me.cboQuestion1 = New System.Windows.Forms.ComboBox()
         Me.lblQ1 = New System.Windows.Forms.Label()
-        Me.pnlHeader.SuspendLayout()
-        Me.grpUserInfo.SuspendLayout()
-        Me.grpSecurityQuestion.SuspendLayout()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblItems = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'btnCancel
-        '
-        Me.btnCancel.BackColor = System.Drawing.Color.Red
-        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancel.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.ForeColor = System.Drawing.Color.White
-        Me.btnCancel.Location = New System.Drawing.Point(307, 459)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(111, 39)
-        Me.btnCancel.TabIndex = 2
-        Me.btnCancel.Text = "CANCEL"
-        Me.btnCancel.UseVisualStyleBackColor = False
         '
         'btnSave
         '
-        Me.btnSave.BackColor = System.Drawing.Color.SteelBlue
-        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSave.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(190, 459)
+        Me.btnSave.Location = New System.Drawing.Point(292, 354)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(111, 39)
         Me.btnSave.TabIndex = 3
         Me.btnSave.Text = "SAVE"
         Me.btnSave.UseVisualStyleBackColor = False
         '
-        'pnlHeader
-        '
-        Me.pnlHeader.BackColor = System.Drawing.Color.SteelBlue
-        Me.pnlHeader.Controls.Add(Me.lblHeader)
-        Me.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pnlHeader.Location = New System.Drawing.Point(0, 0)
-        Me.pnlHeader.Name = "pnlHeader"
-        Me.pnlHeader.Size = New System.Drawing.Size(435, 57)
-        Me.pnlHeader.TabIndex = 4
-        '
-        'lblHeader
-        '
-        Me.lblHeader.AutoSize = True
-        Me.lblHeader.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHeader.ForeColor = System.Drawing.Color.White
-        Me.lblHeader.Location = New System.Drawing.Point(15, 15)
-        Me.lblHeader.Name = "lblHeader"
-        Me.lblHeader.Size = New System.Drawing.Size(192, 26)
-        Me.lblHeader.TabIndex = 0
-        Me.lblHeader.Text = "Account Registration"
-        '
-        'grpUserInfo
-        '
-        Me.grpUserInfo.Controls.Add(Me.cboUserLevel)
-        Me.grpUserInfo.Controls.Add(Me.lblUserLevel)
-        Me.grpUserInfo.Controls.Add(Me.txtConfirmPass)
-        Me.grpUserInfo.Controls.Add(Me.lblConfirmPass)
-        Me.grpUserInfo.Controls.Add(Me.txtPassword)
-        Me.grpUserInfo.Controls.Add(Me.lblPassword)
-        Me.grpUserInfo.Controls.Add(Me.txtUserName)
-        Me.grpUserInfo.Controls.Add(Me.lblUserName)
-        Me.grpUserInfo.Controls.Add(Me.txtID)
-        Me.grpUserInfo.Controls.Add(Me.lblID)
-        Me.grpUserInfo.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grpUserInfo.Location = New System.Drawing.Point(12, 67)
-        Me.grpUserInfo.Name = "grpUserInfo"
-        Me.grpUserInfo.Size = New System.Drawing.Size(411, 198)
-        Me.grpUserInfo.TabIndex = 5
-        Me.grpUserInfo.TabStop = False
-        Me.grpUserInfo.Text = "USER INFO"
-        '
         'cboUserLevel
         '
         Me.cboUserLevel.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboUserLevel.FormattingEnabled = True
-        Me.cboUserLevel.Location = New System.Drawing.Point(135, 147)
+        Me.cboUserLevel.Location = New System.Drawing.Point(140, 156)
         Me.cboUserLevel.Name = "cboUserLevel"
         Me.cboUserLevel.Size = New System.Drawing.Size(121, 22)
         Me.cboUserLevel.TabIndex = 9
@@ -132,7 +72,7 @@ Partial Class F_UserRegistration
         '
         Me.lblUserLevel.AutoSize = True
         Me.lblUserLevel.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUserLevel.Location = New System.Drawing.Point(58, 147)
+        Me.lblUserLevel.Location = New System.Drawing.Point(63, 160)
         Me.lblUserLevel.Name = "lblUserLevel"
         Me.lblUserLevel.Size = New System.Drawing.Size(69, 14)
         Me.lblUserLevel.TabIndex = 8
@@ -141,7 +81,7 @@ Partial Class F_UserRegistration
         'txtConfirmPass
         '
         Me.txtConfirmPass.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtConfirmPass.Location = New System.Drawing.Point(135, 117)
+        Me.txtConfirmPass.Location = New System.Drawing.Point(140, 131)
         Me.txtConfirmPass.Name = "txtConfirmPass"
         Me.txtConfirmPass.Size = New System.Drawing.Size(257, 22)
         Me.txtConfirmPass.TabIndex = 7
@@ -152,7 +92,7 @@ Partial Class F_UserRegistration
         '
         Me.lblConfirmPass.AutoSize = True
         Me.lblConfirmPass.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblConfirmPass.Location = New System.Drawing.Point(7, 122)
+        Me.lblConfirmPass.Location = New System.Drawing.Point(12, 135)
         Me.lblConfirmPass.Name = "lblConfirmPass"
         Me.lblConfirmPass.Size = New System.Drawing.Size(120, 14)
         Me.lblConfirmPass.TabIndex = 6
@@ -161,7 +101,7 @@ Partial Class F_UserRegistration
         'txtPassword
         '
         Me.txtPassword.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassword.Location = New System.Drawing.Point(136, 88)
+        Me.txtPassword.Location = New System.Drawing.Point(140, 102)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(257, 22)
         Me.txtPassword.TabIndex = 5
@@ -172,7 +112,7 @@ Partial Class F_UserRegistration
         '
         Me.lblPassword.AutoSize = True
         Me.lblPassword.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPassword.Location = New System.Drawing.Point(59, 93)
+        Me.lblPassword.Location = New System.Drawing.Point(64, 106)
         Me.lblPassword.Name = "lblPassword"
         Me.lblPassword.Size = New System.Drawing.Size(68, 14)
         Me.lblPassword.TabIndex = 4
@@ -181,7 +121,7 @@ Partial Class F_UserRegistration
         'txtUserName
         '
         Me.txtUserName.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUserName.Location = New System.Drawing.Point(135, 58)
+        Me.txtUserName.Location = New System.Drawing.Point(140, 72)
         Me.txtUserName.Name = "txtUserName"
         Me.txtUserName.Size = New System.Drawing.Size(257, 22)
         Me.txtUserName.TabIndex = 3
@@ -191,7 +131,7 @@ Partial Class F_UserRegistration
         '
         Me.lblUserName.AutoSize = True
         Me.lblUserName.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUserName.Location = New System.Drawing.Point(53, 63)
+        Me.lblUserName.Location = New System.Drawing.Point(58, 76)
         Me.lblUserName.Name = "lblUserName"
         Me.lblUserName.Size = New System.Drawing.Size(74, 14)
         Me.lblUserName.TabIndex = 2
@@ -200,7 +140,7 @@ Partial Class F_UserRegistration
         'txtID
         '
         Me.txtID.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtID.Location = New System.Drawing.Point(135, 29)
+        Me.txtID.Location = New System.Drawing.Point(140, 43)
         Me.txtID.Name = "txtID"
         Me.txtID.ReadOnly = True
         Me.txtID.Size = New System.Drawing.Size(121, 22)
@@ -210,34 +150,16 @@ Partial Class F_UserRegistration
         '
         Me.lblID.AutoSize = True
         Me.lblID.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblID.Location = New System.Drawing.Point(102, 34)
+        Me.lblID.Location = New System.Drawing.Point(107, 47)
         Me.lblID.Name = "lblID"
         Me.lblID.Size = New System.Drawing.Size(25, 14)
         Me.lblID.TabIndex = 0
         Me.lblID.Text = "ID :"
         '
-        'grpSecurityQuestion
-        '
-        Me.grpSecurityQuestion.Controls.Add(Me.txtAns2)
-        Me.grpSecurityQuestion.Controls.Add(Me.lblAns2)
-        Me.grpSecurityQuestion.Controls.Add(Me.cboQuestion2)
-        Me.grpSecurityQuestion.Controls.Add(Me.lblQ2)
-        Me.grpSecurityQuestion.Controls.Add(Me.txtAns1)
-        Me.grpSecurityQuestion.Controls.Add(Me.lblAnswer1)
-        Me.grpSecurityQuestion.Controls.Add(Me.cboQuestion1)
-        Me.grpSecurityQuestion.Controls.Add(Me.lblQ1)
-        Me.grpSecurityQuestion.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grpSecurityQuestion.Location = New System.Drawing.Point(12, 271)
-        Me.grpSecurityQuestion.Name = "grpSecurityQuestion"
-        Me.grpSecurityQuestion.Size = New System.Drawing.Size(411, 179)
-        Me.grpSecurityQuestion.TabIndex = 6
-        Me.grpSecurityQuestion.TabStop = False
-        Me.grpSecurityQuestion.Text = "SECURITY QUESTION"
-        '
         'txtAns2
         '
         Me.txtAns2.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAns2.Location = New System.Drawing.Point(125, 122)
+        Me.txtAns2.Location = New System.Drawing.Point(140, 322)
         Me.txtAns2.Name = "txtAns2"
         Me.txtAns2.Size = New System.Drawing.Size(257, 22)
         Me.txtAns2.TabIndex = 16
@@ -247,7 +169,7 @@ Partial Class F_UserRegistration
         '
         Me.lblAns2.AutoSize = True
         Me.lblAns2.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAns2.Location = New System.Drawing.Point(43, 126)
+        Me.lblAns2.Location = New System.Drawing.Point(68, 326)
         Me.lblAns2.Name = "lblAns2"
         Me.lblAns2.Size = New System.Drawing.Size(64, 14)
         Me.lblAns2.TabIndex = 15
@@ -257,7 +179,7 @@ Partial Class F_UserRegistration
         '
         Me.cboQuestion2.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboQuestion2.FormattingEnabled = True
-        Me.cboQuestion2.Location = New System.Drawing.Point(126, 94)
+        Me.cboQuestion2.Location = New System.Drawing.Point(140, 294)
         Me.cboQuestion2.Name = "cboQuestion2"
         Me.cboQuestion2.Size = New System.Drawing.Size(256, 22)
         Me.cboQuestion2.TabIndex = 14
@@ -267,7 +189,7 @@ Partial Class F_UserRegistration
         '
         Me.lblQ2.AutoSize = True
         Me.lblQ2.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblQ2.Location = New System.Drawing.Point(44, 97)
+        Me.lblQ2.Location = New System.Drawing.Point(59, 297)
         Me.lblQ2.Name = "lblQ2"
         Me.lblQ2.Size = New System.Drawing.Size(73, 14)
         Me.lblQ2.TabIndex = 13
@@ -276,7 +198,7 @@ Partial Class F_UserRegistration
         'txtAns1
         '
         Me.txtAns1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAns1.Location = New System.Drawing.Point(125, 65)
+        Me.txtAns1.Location = New System.Drawing.Point(140, 265)
         Me.txtAns1.Name = "txtAns1"
         Me.txtAns1.Size = New System.Drawing.Size(257, 22)
         Me.txtAns1.TabIndex = 12
@@ -286,7 +208,7 @@ Partial Class F_UserRegistration
         '
         Me.lblAnswer1.AutoSize = True
         Me.lblAnswer1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAnswer1.Location = New System.Drawing.Point(43, 69)
+        Me.lblAnswer1.Location = New System.Drawing.Point(68, 269)
         Me.lblAnswer1.Name = "lblAnswer1"
         Me.lblAnswer1.Size = New System.Drawing.Size(64, 14)
         Me.lblAnswer1.TabIndex = 11
@@ -296,7 +218,7 @@ Partial Class F_UserRegistration
         '
         Me.cboQuestion1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboQuestion1.FormattingEnabled = True
-        Me.cboQuestion1.Location = New System.Drawing.Point(126, 37)
+        Me.cboQuestion1.Location = New System.Drawing.Point(140, 237)
         Me.cboQuestion1.Name = "cboQuestion1"
         Me.cboQuestion1.Size = New System.Drawing.Size(256, 22)
         Me.cboQuestion1.TabIndex = 10
@@ -306,44 +228,105 @@ Partial Class F_UserRegistration
         '
         Me.lblQ1.AutoSize = True
         Me.lblQ1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblQ1.Location = New System.Drawing.Point(44, 40)
+        Me.lblQ1.Location = New System.Drawing.Point(59, 240)
         Me.lblQ1.Name = "lblQ1"
         Me.lblQ1.Size = New System.Drawing.Size(73, 14)
         Me.lblQ1.TabIndex = 9
         Me.lblQ1.Text = "QUESTION 1:"
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.txtAns2)
+        Me.Panel1.Controls.Add(Me.btnSave)
+        Me.Panel1.Controls.Add(Me.cboUserLevel)
+        Me.Panel1.Controls.Add(Me.lblAns2)
+        Me.Panel1.Controls.Add(Me.txtID)
+        Me.Panel1.Controls.Add(Me.cboQuestion2)
+        Me.Panel1.Controls.Add(Me.lblUserLevel)
+        Me.Panel1.Controls.Add(Me.lblQ2)
+        Me.Panel1.Controls.Add(Me.lblID)
+        Me.Panel1.Controls.Add(Me.txtAns1)
+        Me.Panel1.Controls.Add(Me.txtConfirmPass)
+        Me.Panel1.Controls.Add(Me.lblAnswer1)
+        Me.Panel1.Controls.Add(Me.lblUserName)
+        Me.Panel1.Controls.Add(Me.cboQuestion1)
+        Me.Panel1.Controls.Add(Me.lblQ1)
+        Me.Panel1.Controls.Add(Me.lblConfirmPass)
+        Me.Panel1.Controls.Add(Me.txtUserName)
+        Me.Panel1.Controls.Add(Me.txtPassword)
+        Me.Panel1.Controls.Add(Me.lblPassword)
+        Me.Panel1.Controls.Add(Me.lblItems)
+        Me.Panel1.Controls.Add(Me.Label10)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Location = New System.Drawing.Point(5, 7)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(411, 396)
+        Me.Panel1.TabIndex = 1
+        Me.Panel1.Tag = "Secondary"
+        '
+        'lblItems
+        '
+        Me.lblItems.AutoSize = True
+        Me.lblItems.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblItems.Location = New System.Drawing.Point(20, 13)
+        Me.lblItems.Name = "lblItems"
+        Me.lblItems.Size = New System.Drawing.Size(115, 16)
+        Me.lblItems.TabIndex = 68
+        Me.lblItems.Tag = "Header-5"
+        Me.lblItems.Text = "USER INFORMATION"
+        '
+        'Label10
+        '
+        Me.Label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(8, 21)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(395, 169)
+        Me.Label10.TabIndex = 69
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(20, 200)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(118, 16)
+        Me.Label1.TabIndex = 70
+        Me.Label1.Tag = "Header-5"
+        Me.Label1.Text = "SECURITY QUESTION"
+        '
+        'Label2
+        '
+        Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(8, 208)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(395, 143)
+        Me.Label2.TabIndex = 71
+        '
         'F_UserRegistration
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(435, 516)
-        Me.Controls.Add(Me.grpSecurityQuestion)
-        Me.Controls.Add(Me.grpUserInfo)
-        Me.Controls.Add(Me.pnlHeader)
-        Me.Controls.Add(Me.btnSave)
-        Me.Controls.Add(Me.btnCancel)
+        Me.ClientSize = New System.Drawing.Size(422, 407)
+        Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "F_UserRegistration"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Tag = "Primary"
         Me.Text = "USER REGISTRATION"
-        Me.pnlHeader.ResumeLayout(False)
-        Me.pnlHeader.PerformLayout()
-        Me.grpUserInfo.ResumeLayout(False)
-        Me.grpUserInfo.PerformLayout()
-        Me.grpSecurityQuestion.ResumeLayout(False)
-        Me.grpSecurityQuestion.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents btnCancel As System.Windows.Forms.Button
     Friend WithEvents btnSave As System.Windows.Forms.Button
-    Friend WithEvents pnlHeader As System.Windows.Forms.Panel
-    Friend WithEvents lblHeader As System.Windows.Forms.Label
-    Friend WithEvents grpUserInfo As System.Windows.Forms.GroupBox
     Friend WithEvents cboUserLevel As System.Windows.Forms.ComboBox
     Friend WithEvents lblUserLevel As System.Windows.Forms.Label
     Friend WithEvents txtConfirmPass As System.Windows.Forms.TextBox
@@ -354,7 +337,6 @@ Partial Class F_UserRegistration
     Friend WithEvents lblUserName As System.Windows.Forms.Label
     Friend WithEvents txtID As System.Windows.Forms.TextBox
     Friend WithEvents lblID As System.Windows.Forms.Label
-    Friend WithEvents grpSecurityQuestion As System.Windows.Forms.GroupBox
     Friend WithEvents txtAns2 As System.Windows.Forms.TextBox
     Friend WithEvents lblAns2 As System.Windows.Forms.Label
     Friend WithEvents cboQuestion2 As System.Windows.Forms.ComboBox
@@ -363,4 +345,9 @@ Partial Class F_UserRegistration
     Friend WithEvents lblAnswer1 As System.Windows.Forms.Label
     Friend WithEvents cboQuestion1 As System.Windows.Forms.ComboBox
     Friend WithEvents lblQ1 As System.Windows.Forms.Label
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents lblItems As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class

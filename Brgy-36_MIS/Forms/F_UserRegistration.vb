@@ -1,6 +1,7 @@
 ﻿Public Class F_UserRegistration
 
     Private Sub F_UserResitration_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        formLoadSetup(Me)
         Call getQuestions()
         Call getUserLevel()
     End Sub
@@ -122,9 +123,5 @@
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
-    End Sub
-
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        Me.Hide()
     End Sub
 End Class

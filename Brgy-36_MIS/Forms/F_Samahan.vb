@@ -6,6 +6,7 @@
 
     Private Sub F_Samahan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            formLoadSetup(Me)
             loadSamahanData()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)

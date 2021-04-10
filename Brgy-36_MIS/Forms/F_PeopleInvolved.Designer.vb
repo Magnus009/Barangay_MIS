@@ -46,13 +46,15 @@ Partial Class F_PeopleInvolved
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         CType(Me.datDocuments, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtName
         '
         Me.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtName.Location = New System.Drawing.Point(106, 12)
+        Me.txtName.Location = New System.Drawing.Point(108, 11)
         Me.txtName.MaxLength = 50
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(189, 21)
@@ -64,7 +66,7 @@ Partial Class F_PeopleInvolved
         '
         Me.Label1.AutoSize = True
         Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label1.Location = New System.Drawing.Point(54, 14)
+        Me.Label1.Location = New System.Drawing.Point(56, 13)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(46, 16)
         Me.Label1.TabIndex = 10
@@ -74,7 +76,7 @@ Partial Class F_PeopleInvolved
         'txtInvolvement
         '
         Me.txtInvolvement.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtInvolvement.Location = New System.Drawing.Point(106, 39)
+        Me.txtInvolvement.Location = New System.Drawing.Point(108, 38)
         Me.txtInvolvement.MaxLength = 50
         Me.txtInvolvement.Name = "txtInvolvement"
         Me.txtInvolvement.Size = New System.Drawing.Size(189, 21)
@@ -86,7 +88,7 @@ Partial Class F_PeopleInvolved
         '
         Me.Label2.AutoSize = True
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label2.Location = New System.Drawing.Point(10, 41)
+        Me.Label2.Location = New System.Drawing.Point(12, 40)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(90, 16)
         Me.Label2.TabIndex = 12
@@ -96,7 +98,7 @@ Partial Class F_PeopleInvolved
         'txtContactNo
         '
         Me.txtContactNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtContactNo.Location = New System.Drawing.Point(106, 66)
+        Me.txtContactNo.Location = New System.Drawing.Point(108, 65)
         Me.txtContactNo.MaxLength = 20
         Me.txtContactNo.Name = "txtContactNo"
         Me.txtContactNo.Size = New System.Drawing.Size(118, 21)
@@ -108,7 +110,7 @@ Partial Class F_PeopleInvolved
         '
         Me.Label3.AutoSize = True
         Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label3.Location = New System.Drawing.Point(15, 68)
+        Me.Label3.Location = New System.Drawing.Point(17, 67)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(85, 16)
         Me.Label3.TabIndex = 14
@@ -118,7 +120,7 @@ Partial Class F_PeopleInvolved
         'txtStatement
         '
         Me.txtStatement.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtStatement.Location = New System.Drawing.Point(12, 121)
+        Me.txtStatement.Location = New System.Drawing.Point(14, 120)
         Me.txtStatement.MaxLength = 1000
         Me.txtStatement.Multiline = True
         Me.txtStatement.Name = "txtStatement"
@@ -130,7 +132,7 @@ Partial Class F_PeopleInvolved
         '
         Me.Label4.AutoSize = True
         Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label4.Location = New System.Drawing.Point(12, 102)
+        Me.Label4.Location = New System.Drawing.Point(14, 101)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(73, 16)
         Me.Label4.TabIndex = 16
@@ -140,7 +142,7 @@ Partial Class F_PeopleInvolved
         'btnAttach
         '
         Me.btnAttach.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAttach.Location = New System.Drawing.Point(12, 367)
+        Me.btnAttach.Location = New System.Drawing.Point(14, 366)
         Me.btnAttach.Name = "btnAttach"
         Me.btnAttach.Size = New System.Drawing.Size(114, 27)
         Me.btnAttach.TabIndex = 6
@@ -151,7 +153,7 @@ Partial Class F_PeopleInvolved
         '
         Me.Label9.AutoSize = True
         Me.Label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label9.Location = New System.Drawing.Point(12, 240)
+        Me.Label9.Location = New System.Drawing.Point(14, 239)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(129, 16)
         Me.Label9.TabIndex = 28
@@ -177,7 +179,7 @@ Partial Class F_PeopleInvolved
         Me.datDocuments.ColumnHeadersHeight = 30
         Me.datDocuments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.datDocuments.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.colFileName, Me.colDateSubmitted, Me.colTempFile, Me.colView, Me.colDelete})
-        Me.datDocuments.Location = New System.Drawing.Point(12, 259)
+        Me.datDocuments.Location = New System.Drawing.Point(14, 258)
         Me.datDocuments.MultiSelect = False
         Me.datDocuments.Name = "datDocuments"
         Me.datDocuments.ReadOnly = True
@@ -248,7 +250,7 @@ Partial Class F_PeopleInvolved
         'btnSave
         '
         Me.btnSave.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.Location = New System.Drawing.Point(258, 400)
+        Me.btnSave.Location = New System.Drawing.Point(260, 399)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(114, 35)
         Me.btnSave.TabIndex = 7
@@ -258,7 +260,7 @@ Partial Class F_PeopleInvolved
         'chkResident
         '
         Me.chkResident.AutoSize = True
-        Me.chkResident.Location = New System.Drawing.Point(301, 12)
+        Me.chkResident.Location = New System.Drawing.Point(303, 11)
         Me.chkResident.Name = "chkResident"
         Me.chkResident.Size = New System.Drawing.Size(76, 20)
         Me.chkResident.TabIndex = 2
@@ -270,7 +272,7 @@ Partial Class F_PeopleInvolved
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.Red
-        Me.Label19.Location = New System.Drawing.Point(47, 13)
+        Me.Label19.Location = New System.Drawing.Point(49, 12)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(11, 13)
         Me.Label19.TabIndex = 41
@@ -283,7 +285,7 @@ Partial Class F_PeopleInvolved
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Red
-        Me.Label5.Location = New System.Drawing.Point(3, 41)
+        Me.Label5.Location = New System.Drawing.Point(2, 40)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(11, 13)
         Me.Label5.TabIndex = 42
@@ -296,7 +298,7 @@ Partial Class F_PeopleInvolved
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Red
-        Me.Label6.Location = New System.Drawing.Point(5, 102)
+        Me.Label6.Location = New System.Drawing.Point(5, 101)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(11, 13)
         Me.Label6.TabIndex = 43
@@ -304,27 +306,36 @@ Partial Class F_PeopleInvolved
         Me.Label6.Text = "*"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.chkResident)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.btnSave)
+        Me.Panel1.Controls.Add(Me.Label19)
+        Me.Panel1.Controls.Add(Me.btnAttach)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.Label9)
+        Me.Panel1.Controls.Add(Me.txtName)
+        Me.Panel1.Controls.Add(Me.datDocuments)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.txtStatement)
+        Me.Panel1.Controls.Add(Me.txtInvolvement)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.txtContactNo)
+        Me.Panel1.Location = New System.Drawing.Point(5, 6)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(380, 439)
+        Me.Panel1.TabIndex = 44
+        Me.Panel1.Tag = "Secondary"
+        '
         'F_PeopleInvolved
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(384, 439)
-        Me.Controls.Add(Me.chkResident)
-        Me.Controls.Add(Me.btnSave)
-        Me.Controls.Add(Me.btnAttach)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.datDocuments)
-        Me.Controls.Add(Me.txtStatement)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.txtContactNo)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.txtInvolvement)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.txtName)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label19)
-        Me.Controls.Add(Me.Label6)
+        Me.ClientSize = New System.Drawing.Size(392, 450)
+        Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -334,10 +345,12 @@ Partial Class F_PeopleInvolved
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.Tag = "Primary"
         Me.Text = "PEOPLE INVOLVED"
         CType(Me.datDocuments, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents txtName As System.Windows.Forms.TextBox
@@ -362,4 +375,5 @@ Partial Class F_PeopleInvolved
     Friend WithEvents colTempFile As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colView As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents colDelete As System.Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
 End Class
