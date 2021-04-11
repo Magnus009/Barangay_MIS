@@ -60,6 +60,7 @@ Partial Class _mdi_MIS
         Me.RegisterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BackupDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuLogout = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BorrowHistoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuMIS.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -216,7 +217,7 @@ Partial Class _mdi_MIS
         '
         'mnuInventories
         '
-        Me.mnuInventories.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EquipmentsPropertiesToolStripMenuItem})
+        Me.mnuInventories.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BorrowHistoryToolStripMenuItem, Me.EquipmentsPropertiesToolStripMenuItem})
         Me.mnuInventories.Name = "mnuInventories"
         Me.mnuInventories.Size = New System.Drawing.Size(89, 20)
         Me.mnuInventories.Text = "&INVENTORIES"
@@ -224,7 +225,7 @@ Partial Class _mdi_MIS
         'EquipmentsPropertiesToolStripMenuItem
         '
         Me.EquipmentsPropertiesToolStripMenuItem.Name = "EquipmentsPropertiesToolStripMenuItem"
-        Me.EquipmentsPropertiesToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
+        Me.EquipmentsPropertiesToolStripMenuItem.Size = New System.Drawing.Size(223, 22)
         Me.EquipmentsPropertiesToolStripMenuItem.Text = "Equipments/Properties"
         '
         'mnuReports
@@ -297,6 +298,12 @@ Partial Class _mdi_MIS
         Me.mnuLogout.Size = New System.Drawing.Size(65, 20)
         Me.mnuLogout.Text = "&LOGOUT"
         '
+        'BorrowHistoryToolStripMenuItem
+        '
+        Me.BorrowHistoryToolStripMenuItem.Name = "BorrowHistoryToolStripMenuItem"
+        Me.BorrowHistoryToolStripMenuItem.Size = New System.Drawing.Size(223, 22)
+        Me.BorrowHistoryToolStripMenuItem.Text = "Borrow Equipment/Property"
+        '
         '_mdi_MIS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
@@ -357,5 +364,6 @@ Partial Class _mdi_MIS
     Friend WithEvents BackupDataToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ViewToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RegisterToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BorrowHistoryToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

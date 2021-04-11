@@ -414,6 +414,7 @@ Module M_Functions
                         .ScrollBars = ScrollBars.Vertical
 
                         With .ColumnHeadersDefaultCellStyle
+                            .Alignment = DataGridViewContentAlignment.MiddleCenter
                             .BackColor = My.Settings.Primary
                             .ForeColor = Color.White
                             .Font = My.Settings.TableHeader
