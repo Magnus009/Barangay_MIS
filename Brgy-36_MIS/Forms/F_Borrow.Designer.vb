@@ -38,19 +38,27 @@ Partial Class F_Borrow
         Me.chkResident = New System.Windows.Forms.CheckBox()
         Me.txtBorrower = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.colItemID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colItemName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colQTY = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colReturnedQTY = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colReturnStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lblBorrow = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.datItems = New System.Windows.Forms.DataGridView()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnBorrow = New System.Windows.Forms.Button()
         Me.pnlBorrow.SuspendLayout()
         CType(Me.datBorrowItems, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.datItems, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlBorrow
         '
-        Me.pnlBorrow.Controls.Add(Me.btnSave)
+        Me.pnlBorrow.Controls.Add(Me.btnBorrow)
+        Me.pnlBorrow.Controls.Add(Me.btnCancel)
+        Me.pnlBorrow.Controls.Add(Me.TextBox1)
+        Me.pnlBorrow.Controls.Add(Me.datItems)
+        Me.pnlBorrow.Controls.Add(Me.Label4)
         Me.pnlBorrow.Controls.Add(Me.datBorrowItems)
+        Me.pnlBorrow.Controls.Add(Me.lblBorrow)
+        Me.pnlBorrow.Controls.Add(Me.btnSave)
         Me.pnlBorrow.Controls.Add(Me.Label2)
         Me.pnlBorrow.Controls.Add(Me.dtpReturn)
         Me.pnlBorrow.Controls.Add(Me.lblBorrowDate)
@@ -67,13 +75,14 @@ Partial Class F_Borrow
         Me.pnlBorrow.Location = New System.Drawing.Point(7, 6)
         Me.pnlBorrow.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.pnlBorrow.Name = "pnlBorrow"
-        Me.pnlBorrow.Size = New System.Drawing.Size(593, 380)
+        Me.pnlBorrow.Size = New System.Drawing.Size(738, 419)
         Me.pnlBorrow.TabIndex = 0
         Me.pnlBorrow.Tag = "Secondary"
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(487, 329)
+        Me.btnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSave.Location = New System.Drawing.Point(632, 352)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(95, 47)
         Me.btnSave.TabIndex = 0
@@ -84,20 +93,22 @@ Partial Class F_Borrow
         '
         Me.datBorrowItems.AllowUserToAddRows = False
         Me.datBorrowItems.AllowUserToDeleteRows = False
+        Me.datBorrowItems.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.datBorrowItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.datBorrowItems.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colItemID, Me.colItemName, Me.colQTY, Me.colReturnedQTY, Me.colReturnStatus})
-        Me.datBorrowItems.Location = New System.Drawing.Point(10, 93)
+        Me.datBorrowItems.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.datBorrowItems.Location = New System.Drawing.Point(408, 123)
         Me.datBorrowItems.Name = "datBorrowItems"
         Me.datBorrowItems.ReadOnly = True
         Me.datBorrowItems.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.datBorrowItems.Size = New System.Drawing.Size(572, 233)
+        Me.datBorrowItems.Size = New System.Drawing.Size(319, 223)
         Me.datBorrowItems.TabIndex = 14
         '
         'Label2
         '
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(378, 67)
+        Me.Label2.Location = New System.Drawing.Point(523, 67)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(84, 16)
         Me.Label2.TabIndex = 12
@@ -105,10 +116,11 @@ Partial Class F_Borrow
         '
         'dtpReturn
         '
+        Me.dtpReturn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtpReturn.Cursor = System.Windows.Forms.Cursors.Default
         Me.dtpReturn.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpReturn.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpReturn.Location = New System.Drawing.Point(465, 65)
+        Me.dtpReturn.Location = New System.Drawing.Point(610, 65)
         Me.dtpReturn.Name = "dtpReturn"
         Me.dtpReturn.Size = New System.Drawing.Size(117, 21)
         Me.dtpReturn.TabIndex = 13
@@ -116,9 +128,10 @@ Partial Class F_Borrow
         '
         'lblBorrowDate
         '
+        Me.lblBorrowDate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblBorrowDate.AutoSize = True
         Me.lblBorrowDate.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBorrowDate.Location = New System.Drawing.Point(368, 40)
+        Me.lblBorrowDate.Location = New System.Drawing.Point(513, 40)
         Me.lblBorrowDate.Name = "lblBorrowDate"
         Me.lblBorrowDate.Size = New System.Drawing.Size(94, 16)
         Me.lblBorrowDate.TabIndex = 10
@@ -126,10 +139,11 @@ Partial Class F_Borrow
         '
         'dtpBorrowDate
         '
+        Me.dtpBorrowDate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtpBorrowDate.Cursor = System.Windows.Forms.Cursors.Default
         Me.dtpBorrowDate.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpBorrowDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpBorrowDate.Location = New System.Drawing.Point(465, 38)
+        Me.dtpBorrowDate.Location = New System.Drawing.Point(610, 38)
         Me.dtpBorrowDate.Name = "dtpBorrowDate"
         Me.dtpBorrowDate.Size = New System.Drawing.Size(117, 21)
         Me.dtpBorrowDate.TabIndex = 11
@@ -137,9 +151,10 @@ Partial Class F_Borrow
         '
         'Label14
         '
+        Me.Label14.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(411, 13)
+        Me.Label14.Location = New System.Drawing.Point(556, 13)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(51, 16)
         Me.Label14.TabIndex = 8
@@ -147,12 +162,13 @@ Partial Class F_Borrow
         '
         'cboStatus
         '
+        Me.cboStatus.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboStatus.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cboStatus.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboStatus.FormattingEnabled = True
         Me.cboStatus.Items.AddRange(New Object() {"Single", "Married", "Separated", "Widowed"})
-        Me.cboStatus.Location = New System.Drawing.Point(465, 9)
+        Me.cboStatus.Location = New System.Drawing.Point(610, 9)
         Me.cboStatus.Name = "cboStatus"
         Me.cboStatus.Size = New System.Drawing.Size(117, 24)
         Me.cboStatus.TabIndex = 9
@@ -229,41 +245,73 @@ Partial Class F_Borrow
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "BORROWER NAME :"
         '
-        'colItemID
+        'lblBorrow
         '
-        Me.colItemID.HeaderText = "ITEM ID"
-        Me.colItemID.Name = "colItemID"
-        Me.colItemID.ReadOnly = True
+        Me.lblBorrow.AutoSize = True
+        Me.lblBorrow.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBorrow.Location = New System.Drawing.Point(408, 102)
+        Me.lblBorrow.Name = "lblBorrow"
+        Me.lblBorrow.Size = New System.Drawing.Size(112, 16)
+        Me.lblBorrow.TabIndex = 66
+        Me.lblBorrow.Tag = "Header-6"
+        Me.lblBorrow.Text = "TO BE BORROWED :"
         '
-        'colItemName
+        'Label4
         '
-        Me.colItemName.HeaderText = "ITEM NAME"
-        Me.colItemName.Name = "colItemName"
-        Me.colItemName.ReadOnly = True
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(10, 102)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(57, 16)
+        Me.Label4.TabIndex = 67
+        Me.Label4.Tag = "Header-6"
+        Me.Label4.Text = "SEARCH :"
         '
-        'colQTY
+        'datItems
         '
-        Me.colQTY.HeaderText = "QTY"
-        Me.colQTY.Name = "colQTY"
-        Me.colQTY.ReadOnly = True
+        Me.datItems.AllowUserToAddRows = False
+        Me.datItems.AllowUserToDeleteRows = False
+        Me.datItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.datItems.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.datItems.Location = New System.Drawing.Point(10, 123)
+        Me.datItems.Name = "datItems"
+        Me.datItems.ReadOnly = True
+        Me.datItems.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.datItems.Size = New System.Drawing.Size(319, 223)
+        Me.datItems.TabIndex = 68
         '
-        'colReturnedQTY
+        'TextBox1
         '
-        Me.colReturnedQTY.HeaderText = "RETURNED QTY"
-        Me.colReturnedQTY.Name = "colReturnedQTY"
-        Me.colReturnedQTY.ReadOnly = True
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox1.Location = New System.Drawing.Point(69, 100)
+        Me.TextBox1.MaxLength = 50
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(260, 21)
+        Me.TextBox1.TabIndex = 69
         '
-        'colReturnStatus
+        'btnCancel
         '
-        Me.colReturnStatus.HeaderText = "STATUS"
-        Me.colReturnStatus.Name = "colReturnStatus"
-        Me.colReturnStatus.ReadOnly = True
+        Me.btnCancel.Location = New System.Drawing.Point(335, 236)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(67, 32)
+        Me.btnCancel.TabIndex = 70
+        Me.btnCancel.Text = "<<"
+        Me.btnCancel.UseVisualStyleBackColor = True
+        '
+        'btnBorrow
+        '
+        Me.btnBorrow.Location = New System.Drawing.Point(335, 200)
+        Me.btnBorrow.Name = "btnBorrow"
+        Me.btnBorrow.Size = New System.Drawing.Size(67, 32)
+        Me.btnBorrow.TabIndex = 71
+        Me.btnBorrow.Text = ">>"
+        Me.btnBorrow.UseVisualStyleBackColor = True
         '
         'F_Borrow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(607, 392)
+        Me.ClientSize = New System.Drawing.Size(753, 430)
         Me.Controls.Add(Me.pnlBorrow)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
@@ -279,6 +327,7 @@ Partial Class F_Borrow
         Me.pnlBorrow.ResumeLayout(False)
         Me.pnlBorrow.PerformLayout()
         CType(Me.datBorrowItems, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.datItems, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -298,9 +347,10 @@ Partial Class F_Borrow
     Friend WithEvents pnlBorrow As System.Windows.Forms.Panel
     Friend WithEvents btnSave As System.Windows.Forms.Button
     Friend WithEvents datBorrowItems As System.Windows.Forms.DataGridView
-    Friend WithEvents colItemID As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colItemName As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colQTY As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colReturnedQTY As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colReturnStatus As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents lblBorrow As System.Windows.Forms.Label
+    Friend WithEvents datItems As System.Windows.Forms.DataGridView
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents btnBorrow As System.Windows.Forms.Button
+    Friend WithEvents btnCancel As System.Windows.Forms.Button
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
 End Class

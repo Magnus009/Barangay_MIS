@@ -5,9 +5,12 @@
 
     Public strQuery As String
 
+    ''' <summary>
+    ''' Returns DataSet
+    ''' </summary>
+    ''' <param name="strQuery"><i>string</i> SQL SELECT Statement</param>
     Public Function SQL_SELECT(strQuery As String) As DataSet
         Dim dsData As New DataSet
-
         Try
             Dim sqlConn As New SqlClient.SqlConnection(My.Resources.ConnectionString)
             Dim sqlAdapter As New SqlClient.SqlDataAdapter(strQuery, sqlConn)

@@ -60,3 +60,5 @@ C:\Users\63997\Desktop\GIT\Barangay_MIS\Brgy-36_MIS\obj\Debug\Brgy_36_MIS.Resour
 C:\Users\63997\Desktop\GIT\Barangay_MIS\Brgy-36_MIS\obj\Debug\Brgy-36_MIS.vbproj.GenerateResource.Cache
 C:\Users\63997\Desktop\GIT\Barangay_MIS\Brgy-36_MIS\obj\Debug\Brgy-36_MIS.vbprojResolveAssemblyReference.cache
 C:\Users\63997\Desktop\GIT\Barangay_MIS\Brgy-36_MIS\obj\Debug\Brgy_36_MIS.F_Borrow.resources
+C:\Users\smd147\Desktop\GIT\Barangay_MIS\Brgy-36_MIS\obj\Debug\Brgy-36_MIS.vbprojResolveAssemblyReference.cache
+C:\Users\smd147\Desktop\GIT\Barangay_MIS\Brgy-36_MIS\obj\Debug\Brgy_36_MIS.F_Borrow.resources
