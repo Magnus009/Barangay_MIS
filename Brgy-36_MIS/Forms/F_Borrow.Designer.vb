@@ -23,8 +23,14 @@ Partial Class F_Borrow
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.pnlBorrow = New System.Windows.Forms.Panel()
-        Me.btnSave = New System.Windows.Forms.Button()
+        Me.btnBorrow = New System.Windows.Forms.Button()
+        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.datItems = New System.Windows.Forms.DataGridView()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.datBorrowItems = New System.Windows.Forms.DataGridView()
+        Me.lblBorrow = New System.Windows.Forms.Label()
+        Me.btnSave = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dtpReturn = New System.Windows.Forms.DateTimePicker()
         Me.lblBorrowDate = New System.Windows.Forms.Label()
@@ -38,15 +44,9 @@ Partial Class F_Borrow
         Me.chkResident = New System.Windows.Forms.CheckBox()
         Me.txtBorrower = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.lblBorrow = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.datItems = New System.Windows.Forms.DataGridView()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.btnCancel = New System.Windows.Forms.Button()
-        Me.btnBorrow = New System.Windows.Forms.Button()
         Me.pnlBorrow.SuspendLayout()
-        CType(Me.datBorrowItems, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.datItems, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.datBorrowItems, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlBorrow
@@ -79,15 +79,56 @@ Partial Class F_Borrow
         Me.pnlBorrow.TabIndex = 0
         Me.pnlBorrow.Tag = "Secondary"
         '
-        'btnSave
+        'btnBorrow
         '
-        Me.btnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSave.Location = New System.Drawing.Point(632, 352)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(95, 47)
-        Me.btnSave.TabIndex = 0
-        Me.btnSave.Text = "SAVE"
-        Me.btnSave.UseVisualStyleBackColor = True
+        Me.btnBorrow.Location = New System.Drawing.Point(335, 200)
+        Me.btnBorrow.Name = "btnBorrow"
+        Me.btnBorrow.Size = New System.Drawing.Size(67, 32)
+        Me.btnBorrow.TabIndex = 71
+        Me.btnBorrow.Text = "►"
+        Me.btnBorrow.UseVisualStyleBackColor = True
+        '
+        'btnCancel
+        '
+        Me.btnCancel.Location = New System.Drawing.Point(335, 236)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(67, 32)
+        Me.btnCancel.TabIndex = 70
+        Me.btnCancel.Text = "◄"
+        Me.btnCancel.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox1.Location = New System.Drawing.Point(69, 100)
+        Me.TextBox1.MaxLength = 50
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(260, 21)
+        Me.TextBox1.TabIndex = 69
+        '
+        'datItems
+        '
+        Me.datItems.AllowUserToAddRows = False
+        Me.datItems.AllowUserToDeleteRows = False
+        Me.datItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.datItems.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.datItems.Location = New System.Drawing.Point(10, 123)
+        Me.datItems.Name = "datItems"
+        Me.datItems.ReadOnly = True
+        Me.datItems.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.datItems.Size = New System.Drawing.Size(319, 223)
+        Me.datItems.TabIndex = 68
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(10, 102)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(57, 16)
+        Me.Label4.TabIndex = 67
+        Me.Label4.Tag = "Header-6"
+        Me.Label4.Text = "SEARCH :"
         '
         'datBorrowItems
         '
@@ -102,6 +143,27 @@ Partial Class F_Borrow
         Me.datBorrowItems.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.datBorrowItems.Size = New System.Drawing.Size(319, 223)
         Me.datBorrowItems.TabIndex = 14
+        '
+        'lblBorrow
+        '
+        Me.lblBorrow.AutoSize = True
+        Me.lblBorrow.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBorrow.Location = New System.Drawing.Point(408, 102)
+        Me.lblBorrow.Name = "lblBorrow"
+        Me.lblBorrow.Size = New System.Drawing.Size(112, 16)
+        Me.lblBorrow.TabIndex = 66
+        Me.lblBorrow.Tag = "Header-6"
+        Me.lblBorrow.Text = "TO BE BORROWED :"
+        '
+        'btnSave
+        '
+        Me.btnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSave.Location = New System.Drawing.Point(632, 352)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(95, 47)
+        Me.btnSave.TabIndex = 0
+        Me.btnSave.Text = "SAVE"
+        Me.btnSave.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -245,68 +307,6 @@ Partial Class F_Borrow
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "BORROWER NAME :"
         '
-        'lblBorrow
-        '
-        Me.lblBorrow.AutoSize = True
-        Me.lblBorrow.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBorrow.Location = New System.Drawing.Point(408, 102)
-        Me.lblBorrow.Name = "lblBorrow"
-        Me.lblBorrow.Size = New System.Drawing.Size(112, 16)
-        Me.lblBorrow.TabIndex = 66
-        Me.lblBorrow.Tag = "Header-6"
-        Me.lblBorrow.Text = "TO BE BORROWED :"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(10, 102)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(57, 16)
-        Me.Label4.TabIndex = 67
-        Me.Label4.Tag = "Header-6"
-        Me.Label4.Text = "SEARCH :"
-        '
-        'datItems
-        '
-        Me.datItems.AllowUserToAddRows = False
-        Me.datItems.AllowUserToDeleteRows = False
-        Me.datItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.datItems.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.datItems.Location = New System.Drawing.Point(10, 123)
-        Me.datItems.Name = "datItems"
-        Me.datItems.ReadOnly = True
-        Me.datItems.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.datItems.Size = New System.Drawing.Size(319, 223)
-        Me.datItems.TabIndex = 68
-        '
-        'TextBox1
-        '
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Location = New System.Drawing.Point(69, 100)
-        Me.TextBox1.MaxLength = 50
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(260, 21)
-        Me.TextBox1.TabIndex = 69
-        '
-        'btnCancel
-        '
-        Me.btnCancel.Location = New System.Drawing.Point(335, 236)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(67, 32)
-        Me.btnCancel.TabIndex = 70
-        Me.btnCancel.Text = "<<"
-        Me.btnCancel.UseVisualStyleBackColor = True
-        '
-        'btnBorrow
-        '
-        Me.btnBorrow.Location = New System.Drawing.Point(335, 200)
-        Me.btnBorrow.Name = "btnBorrow"
-        Me.btnBorrow.Size = New System.Drawing.Size(67, 32)
-        Me.btnBorrow.TabIndex = 71
-        Me.btnBorrow.Text = ">>"
-        Me.btnBorrow.UseVisualStyleBackColor = True
-        '
         'F_Borrow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
@@ -326,8 +326,8 @@ Partial Class F_Borrow
         Me.Text = "BORROW EQUIPMENT/PROPERTY"
         Me.pnlBorrow.ResumeLayout(False)
         Me.pnlBorrow.PerformLayout()
-        CType(Me.datBorrowItems, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.datItems, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.datBorrowItems, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
