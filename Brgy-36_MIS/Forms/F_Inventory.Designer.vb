@@ -41,9 +41,9 @@ Partial Class F_Inventory
         Me.btnFilter = New System.Windows.Forms.Button()
         Me.lblDash = New System.Windows.Forms.Label()
         Me.pnlBorrow = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.lblItems = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.datItems, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.datBorrow, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -251,6 +251,17 @@ Partial Class F_Inventory
         Me.pnlBorrow.TabIndex = 17
         Me.pnlBorrow.Tag = "Secondary"
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(412, 13)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(108, 16)
+        Me.Label2.TabIndex = 68
+        Me.Label2.Tag = "Header-5"
+        Me.Label2.Text = "BORROW HISTORY"
+        '
         'lblItems
         '
         Me.lblItems.AutoSize = True
@@ -272,17 +283,6 @@ Partial Class F_Inventory
         Me.Label10.Size = New System.Drawing.Size(390, 528)
         Me.Label10.TabIndex = 67
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(412, 13)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(108, 16)
-        Me.Label2.TabIndex = 68
-        Me.Label2.Tag = "Header-5"
-        Me.Label2.Text = "BORROW HISTORY"
-        '
         'Label3
         '
         Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -297,7 +297,7 @@ Partial Class F_Inventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1184, 580)
+        Me.ClientSize = New System.Drawing.Size(1028, 580)
         Me.Controls.Add(Me.pnlBorrow)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle

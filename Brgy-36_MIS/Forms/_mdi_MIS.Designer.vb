@@ -48,6 +48,7 @@ Partial Class _mdi_MIS
         Me.FireIncidentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.COVID19RelatedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuInventories = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BorrowHistoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EquipmentsPropertiesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuReports = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuMapping = New System.Windows.Forms.ToolStripMenuItem()
@@ -60,7 +61,6 @@ Partial Class _mdi_MIS
         Me.RegisterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BackupDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuLogout = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BorrowHistoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuMIS.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -222,6 +222,12 @@ Partial Class _mdi_MIS
         Me.mnuInventories.Size = New System.Drawing.Size(89, 20)
         Me.mnuInventories.Text = "&INVENTORIES"
         '
+        'BorrowHistoryToolStripMenuItem
+        '
+        Me.BorrowHistoryToolStripMenuItem.Name = "BorrowHistoryToolStripMenuItem"
+        Me.BorrowHistoryToolStripMenuItem.Size = New System.Drawing.Size(223, 22)
+        Me.BorrowHistoryToolStripMenuItem.Text = "Borrow Equipment/Property"
+        '
         'EquipmentsPropertiesToolStripMenuItem
         '
         Me.EquipmentsPropertiesToolStripMenuItem.Name = "EquipmentsPropertiesToolStripMenuItem"
@@ -297,12 +303,6 @@ Partial Class _mdi_MIS
         Me.mnuLogout.Name = "mnuLogout"
         Me.mnuLogout.Size = New System.Drawing.Size(65, 20)
         Me.mnuLogout.Text = "&LOGOUT"
-        '
-        'BorrowHistoryToolStripMenuItem
-        '
-        Me.BorrowHistoryToolStripMenuItem.Name = "BorrowHistoryToolStripMenuItem"
-        Me.BorrowHistoryToolStripMenuItem.Size = New System.Drawing.Size(223, 22)
-        Me.BorrowHistoryToolStripMenuItem.Text = "Borrow Equipment/Property"
         '
         '_mdi_MIS
         '

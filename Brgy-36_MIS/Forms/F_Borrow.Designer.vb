@@ -23,9 +23,13 @@ Partial Class F_Borrow
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.pnlBorrow = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtQTY = New System.Windows.Forms.TextBox()
         Me.btnBorrow = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.datItems = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.datBorrowItems = New System.Windows.Forms.DataGridView()
@@ -39,7 +43,7 @@ Partial Class F_Borrow
         Me.cboStatus = New System.Windows.Forms.ComboBox()
         Me.txtContactNo = New System.Windows.Forms.MaskedTextBox()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.tctIncharge = New System.Windows.Forms.TextBox()
+        Me.txtIncharge = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.chkResident = New System.Windows.Forms.CheckBox()
         Me.txtBorrower = New System.Windows.Forms.TextBox()
@@ -51,9 +55,13 @@ Partial Class F_Borrow
         '
         'pnlBorrow
         '
+        Me.pnlBorrow.Controls.Add(Me.Label7)
+        Me.pnlBorrow.Controls.Add(Me.Label19)
+        Me.pnlBorrow.Controls.Add(Me.Label5)
+        Me.pnlBorrow.Controls.Add(Me.txtQTY)
         Me.pnlBorrow.Controls.Add(Me.btnBorrow)
         Me.pnlBorrow.Controls.Add(Me.btnCancel)
-        Me.pnlBorrow.Controls.Add(Me.TextBox1)
+        Me.pnlBorrow.Controls.Add(Me.txtSearch)
         Me.pnlBorrow.Controls.Add(Me.datItems)
         Me.pnlBorrow.Controls.Add(Me.Label4)
         Me.pnlBorrow.Controls.Add(Me.datBorrowItems)
@@ -67,7 +75,7 @@ Partial Class F_Borrow
         Me.pnlBorrow.Controls.Add(Me.cboStatus)
         Me.pnlBorrow.Controls.Add(Me.txtContactNo)
         Me.pnlBorrow.Controls.Add(Me.Label15)
-        Me.pnlBorrow.Controls.Add(Me.tctIncharge)
+        Me.pnlBorrow.Controls.Add(Me.txtIncharge)
         Me.pnlBorrow.Controls.Add(Me.Label3)
         Me.pnlBorrow.Controls.Add(Me.chkResident)
         Me.pnlBorrow.Controls.Add(Me.txtBorrower)
@@ -75,16 +83,65 @@ Partial Class F_Borrow
         Me.pnlBorrow.Location = New System.Drawing.Point(7, 6)
         Me.pnlBorrow.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.pnlBorrow.Name = "pnlBorrow"
-        Me.pnlBorrow.Size = New System.Drawing.Size(738, 419)
+        Me.pnlBorrow.Size = New System.Drawing.Size(738, 411)
         Me.pnlBorrow.TabIndex = 0
         Me.pnlBorrow.Tag = "Secondary"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Red
+        Me.Label7.Location = New System.Drawing.Point(5, 66)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(14, 16)
+        Me.Label7.TabIndex = 42
+        Me.Label7.Tag = "reqSign"
+        Me.Label7.Text = "*"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.Color.Red
+        Me.Label19.Location = New System.Drawing.Point(15, 12)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(14, 16)
+        Me.Label19.TabIndex = 40
+        Me.Label19.Tag = "reqSign"
+        Me.Label19.Text = "*"
+        Me.Label19.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(352, 152)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(33, 16)
+        Me.Label5.TabIndex = 14
+        Me.Label5.Tag = "Header-6"
+        Me.Label5.Text = "QTY"
+        '
+        'txtQTY
+        '
+        Me.txtQTY.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtQTY.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtQTY.Location = New System.Drawing.Point(335, 172)
+        Me.txtQTY.MaxLength = 3
+        Me.txtQTY.Name = "txtQTY"
+        Me.txtQTY.Size = New System.Drawing.Size(67, 23)
+        Me.txtQTY.TabIndex = 15
+        Me.txtQTY.Text = "1"
+        Me.txtQTY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btnBorrow
         '
         Me.btnBorrow.Location = New System.Drawing.Point(335, 200)
         Me.btnBorrow.Name = "btnBorrow"
         Me.btnBorrow.Size = New System.Drawing.Size(67, 32)
-        Me.btnBorrow.TabIndex = 71
+        Me.btnBorrow.TabIndex = 16
         Me.btnBorrow.Text = "►"
         Me.btnBorrow.UseVisualStyleBackColor = True
         '
@@ -93,18 +150,18 @@ Partial Class F_Borrow
         Me.btnCancel.Location = New System.Drawing.Point(335, 236)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(67, 32)
-        Me.btnCancel.TabIndex = 70
+        Me.btnCancel.TabIndex = 17
         Me.btnCancel.Text = "◄"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'txtSearch
         '
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Location = New System.Drawing.Point(69, 100)
-        Me.TextBox1.MaxLength = 50
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(260, 21)
-        Me.TextBox1.TabIndex = 69
+        Me.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtSearch.Location = New System.Drawing.Point(69, 100)
+        Me.txtSearch.MaxLength = 50
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(260, 21)
+        Me.txtSearch.TabIndex = 21
         '
         'datItems
         '
@@ -117,7 +174,7 @@ Partial Class F_Borrow
         Me.datItems.ReadOnly = True
         Me.datItems.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.datItems.Size = New System.Drawing.Size(319, 223)
-        Me.datItems.TabIndex = 68
+        Me.datItems.TabIndex = 18
         '
         'Label4
         '
@@ -126,7 +183,7 @@ Partial Class F_Borrow
         Me.Label4.Location = New System.Drawing.Point(10, 102)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(57, 16)
-        Me.Label4.TabIndex = 67
+        Me.Label4.TabIndex = 20
         Me.Label4.Tag = "Header-6"
         Me.Label4.Text = "SEARCH :"
         '
@@ -136,13 +193,12 @@ Partial Class F_Borrow
         Me.datBorrowItems.AllowUserToDeleteRows = False
         Me.datBorrowItems.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.datBorrowItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.datBorrowItems.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.datBorrowItems.Location = New System.Drawing.Point(408, 123)
         Me.datBorrowItems.Name = "datBorrowItems"
         Me.datBorrowItems.ReadOnly = True
         Me.datBorrowItems.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.datBorrowItems.Size = New System.Drawing.Size(319, 223)
-        Me.datBorrowItems.TabIndex = 14
+        Me.datBorrowItems.TabIndex = 19
         '
         'lblBorrow
         '
@@ -151,7 +207,7 @@ Partial Class F_Borrow
         Me.lblBorrow.Location = New System.Drawing.Point(408, 102)
         Me.lblBorrow.Name = "lblBorrow"
         Me.lblBorrow.Size = New System.Drawing.Size(112, 16)
-        Me.lblBorrow.TabIndex = 66
+        Me.lblBorrow.TabIndex = 22
         Me.lblBorrow.Tag = "Header-6"
         Me.lblBorrow.Text = "TO BE BORROWED :"
         '
@@ -245,34 +301,35 @@ Partial Class F_Borrow
         Me.txtContactNo.Mask = "(+63)000-000-0000"
         Me.txtContactNo.Name = "txtContactNo"
         Me.txtContactNo.Size = New System.Drawing.Size(121, 21)
-        Me.txtContactNo.TabIndex = 5
-        Me.txtContactNo.Tag = "IN:"
+        Me.txtContactNo.TabIndex = 4
+        Me.txtContactNo.Tag = "IN:ContactNo *"
         Me.txtContactNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label15
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(46, 40)
+        Me.Label15.Location = New System.Drawing.Point(51, 40)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(88, 16)
-        Me.Label15.TabIndex = 4
+        Me.Label15.TabIndex = 3
         Me.Label15.Text = "CONTACT No. :"
         '
-        'tctIncharge
+        'txtIncharge
         '
-        Me.tctIncharge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tctIncharge.Location = New System.Drawing.Point(137, 65)
-        Me.tctIncharge.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.tctIncharge.MaxLength = 200
-        Me.tctIncharge.Name = "tctIncharge"
-        Me.tctIncharge.Size = New System.Drawing.Size(212, 21)
-        Me.tctIncharge.TabIndex = 7
+        Me.txtIncharge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtIncharge.Location = New System.Drawing.Point(137, 65)
+        Me.txtIncharge.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtIncharge.MaxLength = 200
+        Me.txtIncharge.Name = "txtIncharge"
+        Me.txtIncharge.Size = New System.Drawing.Size(212, 21)
+        Me.txtIncharge.TabIndex = 7
+        Me.txtIncharge.Tag = "IN:Officer Incharge*"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(10, 67)
+        Me.Label3.Location = New System.Drawing.Point(15, 67)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(124, 16)
         Me.Label3.TabIndex = 6
@@ -284,7 +341,7 @@ Partial Class F_Borrow
         Me.chkResident.Location = New System.Drawing.Point(273, 38)
         Me.chkResident.Name = "chkResident"
         Me.chkResident.Size = New System.Drawing.Size(76, 20)
-        Me.chkResident.TabIndex = 3
+        Me.chkResident.TabIndex = 5
         Me.chkResident.Text = "RESIDENT"
         Me.chkResident.UseVisualStyleBackColor = True
         '
@@ -297,11 +354,12 @@ Partial Class F_Borrow
         Me.txtBorrower.Name = "txtBorrower"
         Me.txtBorrower.Size = New System.Drawing.Size(212, 21)
         Me.txtBorrower.TabIndex = 2
+        Me.txtBorrower.Tag = "IN:Borrower Name*"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(21, 13)
+        Me.Label1.Location = New System.Drawing.Point(26, 13)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(113, 16)
         Me.Label1.TabIndex = 1
@@ -311,7 +369,7 @@ Partial Class F_Borrow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(753, 430)
+        Me.ClientSize = New System.Drawing.Size(753, 423)
         Me.Controls.Add(Me.pnlBorrow)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
@@ -333,7 +391,7 @@ Partial Class F_Borrow
     End Sub
     Friend WithEvents txtBorrower As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents tctIncharge As System.Windows.Forms.TextBox
+    Friend WithEvents txtIncharge As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents chkResident As System.Windows.Forms.CheckBox
     Friend WithEvents txtContactNo As System.Windows.Forms.MaskedTextBox
@@ -352,5 +410,9 @@ Partial Class F_Borrow
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents btnBorrow As System.Windows.Forms.Button
     Friend WithEvents btnCancel As System.Windows.Forms.Button
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtSearch As System.Windows.Forms.TextBox
+    Friend WithEvents txtQTY As System.Windows.Forms.TextBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label19 As System.Windows.Forms.Label
 End Class
