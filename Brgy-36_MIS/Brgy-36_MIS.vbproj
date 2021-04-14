@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0EC876DB-F647-4C97-BDB9-18FEA3BE6258}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Brgy_36_MIS._mdi_MIS</StartupObject>
+    <StartupObject>Brgy_36_MIS.F_PrintIndigency</StartupObject>
     <RootNamespace>Brgy_36_MIS</RootNamespace>
     <AssemblyName>Brgy-36_MIS</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -100,6 +100,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="DataSources\dsResidentInfo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsResidentInfo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\F_AddSamahan.Designer.vb">
       <DependentUpon>F_AddSamahan.vb</DependentUpon>
     </Compile>
@@ -154,10 +159,22 @@
     <Compile Include="Forms\F_ForgotPassword.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\F_IndigencyReport.Designer.vb">
+      <DependentUpon>F_IndigencyReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_IndigencyReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\F_OfficialsRecord.Designer.vb">
       <DependentUpon>F_OfficialsRecord.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\F_OfficialsRecord.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\F_PrintIndigency.Designer.vb">
+      <DependentUpon>F_PrintIndigency.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_PrintIndigency.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\F_SelectionList.Designer.vb">
@@ -279,8 +296,14 @@
     <EmbeddedResource Include="Forms\F_ForgotPassword.resx">
       <DependentUpon>F_ForgotPassword.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_IndigencyReport.resx">
+      <DependentUpon>F_IndigencyReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_OfficialsRecord.resx">
       <DependentUpon>F_OfficialsRecord.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_PrintIndigency.resx">
+      <DependentUpon>F_PrintIndigency.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_SelectionList.resx">
       <DependentUpon>F_SelectionList.vb</DependentUpon>
@@ -324,8 +347,20 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpIndigency.rdlc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSources\dsResidentInfo.xsc">
+      <DependentUpon>dsResidentInfo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dsResidentInfo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsResidentInfo.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSources\dsResidentInfo.xss">
+      <DependentUpon>dsResidentInfo.xsd</DependentUpon>
+    </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -360,6 +395,7 @@
     <Content Include="BarangayLogo.ico" />
     <None Include="Resources\Brgy-36.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
