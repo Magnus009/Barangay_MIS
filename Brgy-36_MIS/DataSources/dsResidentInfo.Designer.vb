@@ -289,7 +289,7 @@ Partial Public Class dsResidentInfo
 
         Private columnAge As Global.System.Data.DataColumn
 
-        Private columnBirthdate As Global.System.Data.DataColumn
+        Private columnBirthDate As Global.System.Data.DataColumn
 
         Private columnCivilStatus As Global.System.Data.DataColumn
 
@@ -358,9 +358,9 @@ Partial Public Class dsResidentInfo
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public ReadOnly Property BirthdateColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property BirthDateColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnBirthdate
+                Return Me.columnBirthDate
             End Get
         End Property
 
@@ -425,9 +425,9 @@ Partial Public Class dsResidentInfo
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AdddtResidentInfoRow(ByVal Code As String, ByVal ResName As String, ByVal Age As String, ByVal Birthdate As String, ByVal CivilStatus As String, ByVal Address As String, ByVal Purpose As String) As dtResidentInfoRow
+        Public Overloads Function AdddtResidentInfoRow(ByVal Code As String, ByVal ResName As String, ByVal Age As String, ByVal BirthDate As String, ByVal CivilStatus As String, ByVal Address As String, ByVal Purpose As String) As dtResidentInfoRow
             Dim rowdtResidentInfoRow As dtResidentInfoRow = CType(Me.NewRow, dtResidentInfoRow)
-            Dim columnValuesArray() As Object = New Object() {Code, ResName, Age, Birthdate, CivilStatus, Address, Purpose}
+            Dim columnValuesArray() As Object = New Object() {Code, ResName, Age, BirthDate, CivilStatus, Address, Purpose}
             rowdtResidentInfoRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowdtResidentInfoRow)
             Return rowdtResidentInfoRow
@@ -453,7 +453,7 @@ Partial Public Class dsResidentInfo
             Me.columnCode = MyBase.Columns("Code")
             Me.columnResName = MyBase.Columns("ResName")
             Me.columnAge = MyBase.Columns("Age")
-            Me.columnBirthdate = MyBase.Columns("Birthdate")
+            Me.columnBirthDate = MyBase.Columns("BirthDate")
             Me.columnCivilStatus = MyBase.Columns("CivilStatus")
             Me.columnAddress = MyBase.Columns("Address")
             Me.columnPurpose = MyBase.Columns("Purpose")
@@ -468,8 +468,8 @@ Partial Public Class dsResidentInfo
             MyBase.Columns.Add(Me.columnResName)
             Me.columnAge = New Global.System.Data.DataColumn("Age", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnAge)
-            Me.columnBirthdate = New Global.System.Data.DataColumn("Birthdate", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnBirthdate)
+            Me.columnBirthDate = New Global.System.Data.DataColumn("BirthDate", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBirthDate)
             Me.columnCivilStatus = New Global.System.Data.DataColumn("CivilStatus", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCivilStatus)
             Me.columnAddress = New Global.System.Data.DataColumn("Address", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -667,16 +667,16 @@ Partial Public Class dsResidentInfo
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property Birthdate() As String
+        Public Property BirthDate() As String
             Get
                 Try
-                    Return CType(Me(Me.tabledtResidentInfo.BirthdateColumn), String)
+                    Return CType(Me(Me.tabledtResidentInfo.BirthDateColumn), String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Birthdate' in table 'dtResidentInfo' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'BirthDate' in table 'dtResidentInfo' is DBNull.", e)
                 End Try
             End Get
             Set(value As String)
-                Me(Me.tabledtResidentInfo.BirthdateColumn) = value
+                Me(Me.tabledtResidentInfo.BirthDateColumn) = value
             End Set
         End Property
 
@@ -763,14 +763,14 @@ Partial Public Class dsResidentInfo
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Function IsBirthdateNull() As Boolean
-            Return Me.IsNull(Me.tabledtResidentInfo.BirthdateColumn)
+        Public Function IsBirthDateNull() As Boolean
+            Return Me.IsNull(Me.tabledtResidentInfo.BirthDateColumn)
         End Function
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Sub SetBirthdateNull()
-            Me(Me.tabledtResidentInfo.BirthdateColumn) = Global.System.Convert.DBNull
+        Public Sub SetBirthDateNull()
+            Me(Me.tabledtResidentInfo.BirthDateColumn) = Global.System.Convert.DBNull
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _

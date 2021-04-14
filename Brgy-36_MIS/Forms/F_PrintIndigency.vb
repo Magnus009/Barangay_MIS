@@ -10,7 +10,7 @@ Public Class F_PrintIndigency
             With F_IndigencyReport.rpvIndigency
                 .RefreshReport()
                 .LocalReport.DataSources.Clear()
-                .LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("dsResidentInfo", dtResidentInfo))
+                .LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("dsResInfo", dtResidentInfo))
                 .SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
                 .ZoomMode = ZoomMode.Percent
                 .ZoomPercent = 100
@@ -35,6 +35,7 @@ Public Class F_PrintIndigency
             strQuery += "INNER JOIN M_CivilStatus CS ON R.CivilStatus = CS.ID " & vbCrLf
             strQuery += "INNER JOIN HouseholdMember HM ON R.Code = HM.ResidentCode" & vbCrLf
             strQuery += "INNER JOIN Household HH ON HM.HouseNo = HH.HouseNo" & vbCrLf
+            strQuery += "AND HM.HouseholdNo = HH.HouseholdNo" & vbCrLf
             strQuery += "WHERE R.Code = '" + strResidentID + "'"
             dtResidentInfo = SQL_SELECT(strQuery).Tables(0)
 
