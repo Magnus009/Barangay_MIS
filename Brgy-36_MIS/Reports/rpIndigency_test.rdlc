@@ -42,7 +42,8 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Has been found belong to an indigent family after interview and case study has made </Value>
+                <Value>=string.Concat("         Has been found belong to an indigent family after interview and case study has made record of the case study dated ","&lt;b&gt;&lt;u&gt;" + CDate(Today()).ToString("MMM dd,yyyy") + "&lt;/u&gt;&lt;/b&gt;", " are in the file of the barangay 36-A SAP SAP office Caridad, Cavite City.")</Value>
+                <MarkupType>HTML</MarkupType>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Cambria</FontFamily>
@@ -56,9 +57,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>2.25347in</Top>
+        <Top>1.69791in</Top>
         <Left>2.18625in</Left>
-        <Height>0.25in</Height>
+        <Height>0.88889in</Height>
         <Width>5.60417in</Width>
         <ZIndex>1</ZIndex>
         <Style>
@@ -71,183 +72,12 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox11">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>This certification is being issued upon request of the interested  party for</Value>
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontFamily>Cambria</FontFamily>
-                  <FontSize>11pt</FontSize>
-                  <FontWeight>Normal</FontWeight>
-                  <TextDecoration>None</TextDecoration>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontFamily>Cambria</FontFamily>
-                  <FontSize>11pt</FontSize>
-                  <FontWeight>Normal</FontWeight>
-                  <TextDecoration>None</TextDecoration>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox11</rd:DefaultName>
-        <Top>3.2118in</Top>
-        <Left>2.19667in</Left>
-        <Height>0.25in</Height>
-        <Width>4.84375in</Width>
-        <ZIndex>2</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox12">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>record of the case study dated</Value>
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontFamily>Cambria</FontFamily>
-                  <FontSize>11pt</FontSize>
-                  <FontWeight>Normal</FontWeight>
-                  <TextDecoration>None</TextDecoration>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>2.51389in</Top>
-        <Left>1.46292in</Left>
-        <Height>0.25in</Height>
-        <Width>2.03125in</Width>
-        <ZIndex>3</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Line Name="Line3">
-        <Top>2.7743in</Top>
-        <Left>3.55083in</Left>
-        <Height>0in</Height>
-        <Width>1.66035in</Width>
-        <ZIndex>4</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Line>
-      <Textbox Name="Textbox13">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>are in the file of the barangay 36- A </Value>
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontFamily>Cambria</FontFamily>
-                  <FontSize>11pt</FontSize>
-                  <FontWeight>Normal</FontWeight>
-                  <TextDecoration>None</TextDecoration>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>2.51389in</Top>
-        <Left>5.19667in</Left>
-        <Height>0.25in</Height>
-        <Width>2.46875in</Width>
-        <ZIndex>5</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox14">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>SAP SAP office Caridad, Cavite City.</Value>
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontFamily>Cambria</FontFamily>
-                  <FontSize>11pt</FontSize>
-                  <FontWeight>Normal</FontWeight>
-                  <TextDecoration>None</TextDecoration>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox14</rd:DefaultName>
-        <Top>2.76389in</Top>
-        <Left>1.46292in</Left>
-        <Height>0.25in</Height>
-        <Width>2.39583in</Width>
-        <ZIndex>6</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Line Name="Line4">
-        <Top>4.8993in</Top>
+        <Top>4.1493in</Top>
         <Left>5.5925in</Left>
         <Height>0in</Height>
         <Width>2.32292in</Width>
-        <ZIndex>7</ZIndex>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -275,11 +105,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox21</rd:DefaultName>
-        <Top>4.95139in</Top>
+        <Top>4.20139in</Top>
         <Left>6.08208in</Left>
         <Height>0.25in</Height>
         <Width>1.42708in</Width>
-        <ZIndex>8</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -295,7 +125,7 @@
         <Left>3.16542in</Left>
         <Height>0in</Height>
         <Width>2.89993in</Width>
-        <ZIndex>9</ZIndex>
+        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -330,7 +160,7 @@
         <Left>3.22507in</Left>
         <Height>0.25in</Height>
         <Width>2.77667in</Width>
-        <ZIndex>10</ZIndex>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -427,7 +257,7 @@
         <Left>2.08792in</Left>
         <Height>0.85417in</Height>
         <Width>2.04167in</Width>
-        <ZIndex>11</ZIndex>
+        <ZIndex>6</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -475,37 +305,7 @@
         <Left>1.86333in</Left>
         <Height>0.25in</Height>
         <Width>2.8125in</Width>
-        <ZIndex>12</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Code">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!Code.Value, "dsResInfo")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Code</rd:DefaultName>
-        <Top>3.99305in</Top>
-        <Left>1.44667in</Left>
-        <Height>0.25in</Height>
-        <Width>1in</Width>
-        <ZIndex>13</ZIndex>
+        <ZIndex>7</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -523,7 +323,8 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=String.Concat("I hereby certificate that Mr/Ms. " ,First(Fields!ResName.Value, "dsResInfo"), " of legal age ", First(Fields!Age.Value, "dsResInfo"), " yrs. old, ", First(Fields!CivilStatus.Value, "dsResInfo"), ", born on ", format(First(Fields!BirthDate.Value, "dsResInfo"), "MMMM dd, yyyy"))</Value>
+                <Value>=String.Concat("       I hereby certificate that Mr/Ms. " ,"&lt;b&gt;&lt;u&gt;" + First(Fields!ResName.Value, "dsResInfo") + "&lt;/u&gt;&lt;/b&gt;", " of legal age ",First(Fields!Age.Value, "dsResInfo"), " yrs. old, ", First(Fields!CivilStatus.Value, "dsResInfo"), ", born on ","&lt;b&gt;" + format(First(Fields!BirthDate.Value, "dsResInfo"), "MMMM dd, yyyy") + "&lt;/b&gt;", ". Resident of ",  "&lt;b&gt;&lt;u&gt;" + First(Fields!Address.Value, "dsResInfo") + "&lt;/u&gt;&lt;/b&gt;", " is duly registered and accredited memeber of this Barangay.")</Value>
+                <MarkupType>HTML</MarkupType>
                 <Style>
                   <FontFamily>Cambria</FontFamily>
                   <FontSize>11pt</FontSize>
@@ -532,124 +333,16 @@
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Center</TextAlign>
+              <TextAlign>Left</TextAlign>
             </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>ResName</rd:DefaultName>
         <Top>0.70361in</Top>
-        <Left>2.51958in</Left>
+        <Left>2.19667in</Left>
         <Height>0.96652in</Height>
-        <Width>5.27084in</Width>
-        <ZIndex>14</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Age">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!Age.Value, "dsResInfo")</Value>
-                <Style>
-                  <FontFamily>Cambria</FontFamily>
-                  <FontSize>11pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                  <TextDecoration>Underline</TextDecoration>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Age</rd:DefaultName>
-        <Top>4.53347in</Top>
-        <Left>1.77653in</Left>
-        <Height>0.25in</Height>
-        <Width>0.53125in</Width>
-        <ZIndex>15</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="BirthDate">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!BirthDate.Value, "dsResInfo")</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                  <Format>MMMM dd, yyyy</Format>
-                  <TextDecoration>Underline</TextDecoration>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>BirthDate</rd:DefaultName>
-        <Top>4.53472in</Top>
-        <Left>4.21403in</Left>
-        <Height>0.25in</Height>
-        <Width>1.47917in</Width>
-        <ZIndex>16</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="CivilStatus">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!CivilStatus.Value, "dsResInfo")</Value>
-                <Style>
-                  <FontFamily>Cambria</FontFamily>
-                  <FontSize>11pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>CivilStatus</rd:DefaultName>
-        <Top>4.53347in</Top>
-        <Left>2.88243in</Left>
-        <Height>0.25in</Height>
-        <Width>0.77951in</Width>
-        <ZIndex>17</ZIndex>
+        <Width>5.59375in</Width>
+        <ZIndex>8</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -667,7 +360,8 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!Purpose.Value, "dsResInfo")</Value>
+                <Value>=String.Concat("This certification is being issued upon request of the interested party for ", "&lt;b&gt;&lt;u&gt;" + First(Fields!Purpose.Value, "dsResInfo") + "&lt;/u&gt;&lt;/b&gt;", " purpose only.")</Value>
+                <MarkupType>HTML</MarkupType>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -675,11 +369,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Purpose</rd:DefaultName>
-        <Top>3.80555in</Top>
-        <Left>5.74875in</Left>
+        <Top>2.59722in</Top>
+        <Left>2.18625in</Left>
         <Height>0.25in</Height>
-        <Width>1in</Width>
-        <ZIndex>18</ZIndex>
+        <Width>5.60417in</Width>
+        <ZIndex>9</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -690,142 +384,15 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox39">
+      <Textbox Name="Textbox4">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>I hereby certificate that Mr/Ms.</Value>
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontFamily>Cambria</FontFamily>
-                  <FontSize>11pt</FontSize>
-                  <FontWeight>Normal</FontWeight>
-                  <TextDecoration>None</TextDecoration>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox39</rd:DefaultName>
-        <Top>3.80555in</Top>
-        <Left>3.04799in</Left>
-        <Height>0.25in</Height>
-        <Width>2.2541in</Width>
-        <ZIndex>19</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox40">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>of legal age</Value>
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontFamily>Cambria</FontFamily>
-                  <FontSize>11pt</FontSize>
-                  <FontWeight>Normal</FontWeight>
-                  <TextDecoration>None</TextDecoration>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox40</rd:DefaultName>
-        <Top>4.27083in</Top>
-        <Left>4.47792in</Left>
-        <Height>0.25in</Height>
-        <Width>0.90278in</Width>
-        <ZIndex>20</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox42">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>yrs.o</Value>
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontFamily>Cambria</FontFamily>
-                  <FontSize>11pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                  <TextDecoration>Underline</TextDecoration>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value>ld</Value>
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontFamily>Cambria</FontFamily>
-                  <FontSize>11pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                  <TextDecoration>None</TextDecoration>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value>,</Value>
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontFamily>Cambria</FontFamily>
-                  <FontSize>11pt</FontSize>
-                  <FontWeight>Normal</FontWeight>
-                  <TextDecoration>None</TextDecoration>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox42</rd:DefaultName>
-        <Top>4.53347in</Top>
-        <Left>2.30778in</Left>
-        <Height>0.25in</Height>
-        <Width>0.59375in</Width>
-        <ZIndex>21</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox43">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>, born on</Value>
+                <Value>=String.Concat("Issued this ","&lt;b&gt;&lt;u&gt;" + CDate(Today()).ToString("dd") + "th" + "&lt;/u&gt;&lt;/b&gt;", " day of " , "&lt;b&gt;&lt;u&gt;"+ CDate(Today()).ToString("MMMM yyyy") + "&lt;/u&gt;&lt;/b&gt;", ".")</Value>
+                <MarkupType>HTML</MarkupType>
                 <Style>
                   <FontFamily>Cambria</FontFamily>
                   <FontSize>11pt</FontSize>
@@ -835,157 +402,12 @@
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox43</rd:DefaultName>
-        <Top>4.53347in</Top>
-        <Left>3.55083in</Left>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>3.17014in</Top>
+        <Left>2.51958in</Left>
         <Height>0.25in</Height>
-        <Width>0.72569in</Width>
-        <ZIndex>22</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox44">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>. Resident of</Value>
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontFamily>Cambria</FontFamily>
-                  <FontSize>11pt</FontSize>
-                  <FontWeight>Normal</FontWeight>
-                  <TextDecoration>None</TextDecoration>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox44</rd:DefaultName>
-        <Top>4.53472in</Top>
-        <Left>5.69319in</Left>
-        <Height>0.25in</Height>
-        <Width>1in</Width>
-        <ZIndex>23</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Address">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=trim(First(Fields!Address.Value, "dsResInfo"))</Value>
-                <Style>
-                  <FontFamily>Cambria</FontFamily>
-                  <FontSize>11pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                  <TextDecoration>Underline</TextDecoration>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Address</rd:DefaultName>
-        <Top>4.78347in</Top>
-        <Left>1.77653in</Left>
-        <Height>0.25in</Height>
-        <Width>3.13653in</Width>
-        <ZIndex>24</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox46">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>is duly registered and accredited</Value>
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontFamily>Cambria</FontFamily>
-                  <FontSize>11pt</FontSize>
-                  <FontWeight>Normal</FontWeight>
-                  <TextDecoration>None</TextDecoration>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox46</rd:DefaultName>
-        <Top>4.78472in</Top>
-        <Left>4.9825in</Left>
-        <Height>0.25in</Height>
-        <Width>2.76042in</Width>
-        <ZIndex>25</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox48">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>  member of this Barangay.</Value>
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontFamily>Cambria</FontFamily>
-                  <FontSize>11pt</FontSize>
-                  <FontWeight>Normal</FontWeight>
-                  <TextDecoration>None</TextDecoration>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox48</rd:DefaultName>
-        <Top>5.06125in</Top>
-        <Left>1.77653in</Left>
-        <Height>0.25in</Height>
-        <Width>2.33333in</Width>
-        <ZIndex>26</ZIndex>
+        <Width>3.01042in</Width>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>

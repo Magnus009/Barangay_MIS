@@ -17,17 +17,17 @@
                 Else
                     Select Case Strings.Right(Me.Text, 4)
                         Case "(CP)"
-                            strCaseID = "CP"
+                            strCaseID = "0"
                         Case "(IN)"
-                            strCaseID = "IN"
+                            strCaseID = "1"
                         Case "(BL)"
-                            strCaseID = "BL"
+                            strCaseID = "2"
                     End Select
-                    strQuery = "SELECT dbo.fn_colID (" + strCaseID + ")"
+                    strQuery = "SELECT dbo.fn_caseID (" + strCaseID + ")"
                     strCaseCode = SQL_SELECT(strQuery).Tables(0).Rows(0)(0)
 
                     'Create Case Header Record
-                    strQuery = "INSERT INTO CasesHeader (Code, TypeID, StatusID, CaseReport, InCharge, ReportedBy, ReportedDate, IncidentDate, CreatedDate, UpdatedDate, UpdatedBy)" + vbCrLf
+                    strQuery = "INSERT INTO dbo.CasesHeader (Code, TypeID, StatusID, CaseReport, InCharge, ReportedBy, ReportedDate, IncidentDate, CreatedDate, UpdatedDate, UpdatedBy)" + vbCrLf
                     strQuery += "VALUES ('" + strCaseCode + "', "
                     strQuery += strCaseID + ", "
                     strQuery += cboStatus.SelectedIndex.ToString + ", "
@@ -204,6 +204,7 @@
         End With
     End Sub
 
+
     Private Sub F_CaseFile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadCaseStatus()
         With datPeopleInvolved
@@ -227,6 +228,7 @@
 
         End If
     End Sub
+
     Private Sub deleteDocs(intPresenterID As Integer, strSourceFile As String)
         'TaskMode:: [0]=>Read only  || [1]=>Create    || [2]=>Modify
         Try
@@ -243,6 +245,7 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+
     Private Sub btnAttach_Click(sender As Object, e As EventArgs) Handles btnAttach.Click
         Try
             Dim strSourceFile, strFileName, strTempFile As String
@@ -278,6 +281,7 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+
     Private Sub datPeopleInvolved_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datPeopleInvolved.CellContentClick
         If e.ColumnIndex = 5 Then
             With F_PeopleInvolved
@@ -313,5 +317,6 @@
             saveFiledCase(intFormTask)
             Me.Close()
         End If
+
     End Sub
 End Class
