@@ -169,6 +169,8 @@ Public Class _mdi_MIS
 
     Private Sub BorrowHistoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BorrowHistoryToolStripMenuItem.Click
         Dim formBorrow As New F_Borrow
-        formBorrow.ShowDialog()
+        formBorrow.MdiParent = Me
+        formBorrow.Show()
     End Sub
+
 End Class

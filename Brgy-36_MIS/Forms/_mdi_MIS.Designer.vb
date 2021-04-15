@@ -41,6 +41,7 @@ Partial Class _mdi_MIS
         Me.BlotterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewBlotterrsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FileBlotterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ViolationAgainstWomenChildrenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuCertificates = New System.Windows.Forms.ToolStripMenuItem()
         Me.BarangayClearanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BarangayIndigencyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -60,6 +61,7 @@ Partial Class _mdi_MIS
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegisterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BackupDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OfficersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuLogout = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuMIS.SuspendLayout()
         Me.SuspendLayout()
@@ -115,7 +117,7 @@ Partial Class _mdi_MIS
         '
         'mnuCases
         '
-        Me.mnuCases.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ComplaintsToolStripMenuItem, Me.IncidentsToolStripMenuItem, Me.BlotterToolStripMenuItem})
+        Me.mnuCases.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ComplaintsToolStripMenuItem, Me.IncidentsToolStripMenuItem, Me.BlotterToolStripMenuItem, Me.ViolationAgainstWomenChildrenToolStripMenuItem})
         Me.mnuCases.Name = "mnuCases"
         Me.mnuCases.Size = New System.Drawing.Size(53, 20)
         Me.mnuCases.Text = "&CASES"
@@ -124,7 +126,7 @@ Partial Class _mdi_MIS
         '
         Me.ComplaintsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewComplaintsToolStripMenuItem, Me.FileComplaintsToolStripMenuItem})
         Me.ComplaintsToolStripMenuItem.Name = "ComplaintsToolStripMenuItem"
-        Me.ComplaintsToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.ComplaintsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ComplaintsToolStripMenuItem.Text = "Complaints"
         '
         'ViewComplaintsToolStripMenuItem
@@ -143,7 +145,7 @@ Partial Class _mdi_MIS
         '
         Me.IncidentsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewIncidentsToolStripMenuItem, Me.ReportIncidentToolStripMenuItem})
         Me.IncidentsToolStripMenuItem.Name = "IncidentsToolStripMenuItem"
-        Me.IncidentsToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.IncidentsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.IncidentsToolStripMenuItem.Text = "Incidents"
         '
         'ViewIncidentsToolStripMenuItem
@@ -162,20 +164,26 @@ Partial Class _mdi_MIS
         '
         Me.BlotterToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewBlotterrsToolStripMenuItem, Me.FileBlotterToolStripMenuItem})
         Me.BlotterToolStripMenuItem.Name = "BlotterToolStripMenuItem"
-        Me.BlotterToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.BlotterToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.BlotterToolStripMenuItem.Text = "Blotters"
         '
         'ViewBlotterrsToolStripMenuItem
         '
         Me.ViewBlotterrsToolStripMenuItem.Name = "ViewBlotterrsToolStripMenuItem"
-        Me.ViewBlotterrsToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
+        Me.ViewBlotterrsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ViewBlotterrsToolStripMenuItem.Text = "View Blotterrs"
         '
         'FileBlotterToolStripMenuItem
         '
         Me.FileBlotterToolStripMenuItem.Name = "FileBlotterToolStripMenuItem"
-        Me.FileBlotterToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
+        Me.FileBlotterToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.FileBlotterToolStripMenuItem.Text = "File Blotter"
+        '
+        'ViolationAgainstWomenChildrenToolStripMenuItem
+        '
+        Me.ViolationAgainstWomenChildrenToolStripMenuItem.Name = "ViolationAgainstWomenChildrenToolStripMenuItem"
+        Me.ViolationAgainstWomenChildrenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ViolationAgainstWomenChildrenToolStripMenuItem.Text = "VAWC"
         '
         'mnuCertificates
         '
@@ -248,7 +256,7 @@ Partial Class _mdi_MIS
         '
         'mnuMaintenance
         '
-        Me.mnuMaintenance.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SamahanToolStripMenuItem, Me.SamahanToolStripMenuItem1, Me.BackupDataToolStripMenuItem})
+        Me.mnuMaintenance.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SamahanToolStripMenuItem, Me.SamahanToolStripMenuItem1, Me.BackupDataToolStripMenuItem, Me.OfficersToolStripMenuItem})
         Me.mnuMaintenance.Name = "mnuMaintenance"
         Me.mnuMaintenance.Size = New System.Drawing.Size(102, 20)
         Me.mnuMaintenance.Text = "M&AINTENANCE"
@@ -297,6 +305,12 @@ Partial Class _mdi_MIS
         Me.BackupDataToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.BackupDataToolStripMenuItem.Text = "Back-up Data"
         '
+        'OfficersToolStripMenuItem
+        '
+        Me.OfficersToolStripMenuItem.Name = "OfficersToolStripMenuItem"
+        Me.OfficersToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
+        Me.OfficersToolStripMenuItem.Text = "Officers"
+        '
         'mnuLogout
         '
         Me.mnuLogout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
@@ -321,7 +335,6 @@ Partial Class _mdi_MIS
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "_mdi_MIS"
         Me.Text = "MANAGEMENT INFORMATION SYSTEM  of BARANGAY 36-A  (SAP-SAP)"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.mnuMIS.ResumeLayout(False)
         Me.mnuMIS.PerformLayout()
         Me.ResumeLayout(False)
@@ -365,5 +378,7 @@ Partial Class _mdi_MIS
     Friend WithEvents ViewToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RegisterToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BorrowHistoryToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ViolationAgainstWomenChildrenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents OfficersToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

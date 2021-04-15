@@ -37,7 +37,7 @@ Represents a strongly typed in-memory cache of data.
 </summary>
 </member><member name="P:Brgy_36_MIS.My.Resources.Resources.ConnectionString">
 	<summary>
-  Looks up a localized string similar to Data Source=ROLLAMAS\SQL_ROLLAMAS;Initial Catalog=MIS;Integrated Security=True.
+  Looks up a localized string similar to Data Source=sd_sql_training;Persist Security Info=True;User ID=sa;Password=81at84;Initial Catalog=MIS.
 </summary>
 </member><member name="P:Brgy_36_MIS.My.Resources.Resources.ConnectionString_temp1">
 	<summary>
