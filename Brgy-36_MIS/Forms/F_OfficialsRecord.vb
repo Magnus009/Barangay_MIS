@@ -130,16 +130,19 @@
             formMode(2, pnlInformations)
             btnUpdate.Text = "SAVE"
             btnUpdate.BackColor = Color.Green
+            btnAdd.Visible = False
         Else
             Dim msgDialog As DialogResult
             msgDialog = MsgBox("Save changes?", MsgBoxStyle.Question + MsgBoxStyle.YesNoCancel, "SAVE")
 
             If msgDialog = Windows.Forms.DialogResult.Yes Then
                 updateInfos()
+                btnAdd.Visible = True
             ElseIf msgDialog = Windows.Forms.DialogResult.No Then
                 formMode(0, pnlInformations)
                 btnUpdate.Text = "UPDATE"
                 btnUpdate.BackColor = My.Settings.Primary
+                btnAdd.Visible = True
             Else
                 'NO EVENT FOR CANCEL
             End If
@@ -201,5 +204,16 @@
         End If
 
         Call loadOfficialsRecords(strFilter)
+    End Sub
+
+    Private Sub dtpTermStart_ValueChanged(sender As Object, e As EventArgs) Handles dtpTermStart.ValueChanged
+        dtpTermEnd.Value = DateAdd(DateInterval.Year, 3, dtpTermStart.Value)
+    End Sub
+
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        Dim frmOfficial As New F_Officials
+
+        frmOfficial.ShowDialog()
+        loadOfficialsRecords()
     End Sub
 End Class

@@ -77,6 +77,7 @@ Partial Class F_OfficialsRecord
         Me.lblID = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.btnAdd = New System.Windows.Forms.Button()
         CType(Me.datOfficials, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.pnlInformations.SuspendLayout()
@@ -124,7 +125,7 @@ Partial Class F_OfficialsRecord
         Me.datOfficials.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.datOfficials.Size = New System.Drawing.Size(439, 392)
         Me.datOfficials.StandardTab = True
-        Me.datOfficials.TabIndex = 4
+        Me.datOfficials.TabIndex = 7
         '
         'Panel1
         '
@@ -139,7 +140,7 @@ Partial Class F_OfficialsRecord
         Me.Panel1.Location = New System.Drawing.Point(7, 7)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(453, 461)
-        Me.Panel1.TabIndex = 2
+        Me.Panel1.TabIndex = 0
         Me.Panel1.Tag = "Secondary"
         '
         'btnSearch
@@ -147,7 +148,7 @@ Partial Class F_OfficialsRecord
         Me.btnSearch.Location = New System.Drawing.Point(354, 8)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(92, 48)
-        Me.btnSearch.TabIndex = 100
+        Me.btnSearch.TabIndex = 6
         Me.btnSearch.Text = "SEARCH"
         Me.btnSearch.UseVisualStyleBackColor = True
         '
@@ -161,7 +162,7 @@ Partial Class F_OfficialsRecord
         Me.dtpTermTo.Name = "dtpTermTo"
         Me.dtpTermTo.ShowCheckBox = True
         Me.dtpTermTo.Size = New System.Drawing.Size(105, 21)
-        Me.dtpTermTo.TabIndex = 2
+        Me.dtpTermTo.TabIndex = 3
         Me.dtpTermTo.Tag = ""
         '
         'Label3
@@ -171,7 +172,7 @@ Partial Class F_OfficialsRecord
         Me.Label3.Location = New System.Drawing.Point(176, 10)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(18, 16)
-        Me.Label3.TabIndex = 99
+        Me.Label3.TabIndex = 2
         Me.Label3.Text = " - "
         '
         'dtpTermFrom
@@ -194,7 +195,7 @@ Partial Class F_OfficialsRecord
         Me.Label2.Location = New System.Drawing.Point(21, 10)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(43, 16)
-        Me.Label2.TabIndex = 93
+        Me.Label2.TabIndex = 0
         Me.Label2.Text = "TERM :"
         '
         'txtSearch
@@ -206,7 +207,7 @@ Partial Class F_OfficialsRecord
         Me.txtSearch.Multiline = True
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(282, 21)
-        Me.txtSearch.TabIndex = 3
+        Me.txtSearch.TabIndex = 5
         Me.txtSearch.Tag = ""
         Me.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -217,12 +218,13 @@ Partial Class F_OfficialsRecord
         Me.Label1.Location = New System.Drawing.Point(7, 37)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(57, 16)
-        Me.Label1.TabIndex = 72
+        Me.Label1.TabIndex = 4
         Me.Label1.Text = "SEARCH :"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'pnlInformations
         '
+        Me.pnlInformations.Controls.Add(Me.btnAdd)
         Me.pnlInformations.Controls.Add(Me.txtOfficialID)
         Me.pnlInformations.Controls.Add(Me.Label8)
         Me.pnlInformations.Controls.Add(Me.cboPosition)
@@ -267,7 +269,7 @@ Partial Class F_OfficialsRecord
         Me.pnlInformations.Location = New System.Drawing.Point(466, 7)
         Me.pnlInformations.Name = "pnlInformations"
         Me.pnlInformations.Size = New System.Drawing.Size(512, 461)
-        Me.pnlInformations.TabIndex = 3
+        Me.pnlInformations.TabIndex = 1
         Me.pnlInformations.Tag = "Secondary"
         '
         'txtOfficialID
@@ -280,7 +282,7 @@ Partial Class F_OfficialsRecord
         Me.txtOfficialID.Name = "txtOfficialID"
         Me.txtOfficialID.ReadOnly = True
         Me.txtOfficialID.Size = New System.Drawing.Size(118, 21)
-        Me.txtOfficialID.TabIndex = 100
+        Me.txtOfficialID.TabIndex = 5
         Me.txtOfficialID.Tag = "SG"
         Me.txtOfficialID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -291,7 +293,7 @@ Partial Class F_OfficialsRecord
         Me.Label8.Location = New System.Drawing.Point(270, 66)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(75, 16)
-        Me.Label8.TabIndex = 101
+        Me.Label8.TabIndex = 4
         Me.Label8.Text = "OFFICIAL ID :"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -304,7 +306,7 @@ Partial Class F_OfficialsRecord
         Me.cboPosition.Location = New System.Drawing.Point(348, 90)
         Me.cboPosition.Name = "cboPosition"
         Me.cboPosition.Size = New System.Drawing.Size(117, 24)
-        Me.cboPosition.TabIndex = 27
+        Me.cboPosition.TabIndex = 9
         Me.cboPosition.Tag = "IN:Position*"
         '
         'Label12
@@ -314,7 +316,7 @@ Partial Class F_OfficialsRecord
         Me.Label12.Location = New System.Drawing.Point(279, 94)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(66, 16)
-        Me.Label12.TabIndex = 28
+        Me.Label12.TabIndex = 8
         Me.Label12.Text = "POSITION :"
         '
         'txtContactNo
@@ -326,7 +328,7 @@ Partial Class F_OfficialsRecord
         Me.txtContactNo.Mask = "(+63)000-000-0000"
         Me.txtContactNo.Name = "txtContactNo"
         Me.txtContactNo.Size = New System.Drawing.Size(124, 21)
-        Me.txtContactNo.TabIndex = 96
+        Me.txtContactNo.TabIndex = 21
         Me.txtContactNo.Tag = "IN:"
         Me.txtContactNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -340,7 +342,7 @@ Partial Class F_OfficialsRecord
         Me.cboCommittee.Name = "cboCommittee"
         Me.cboCommittee.Size = New System.Drawing.Size(145, 24)
         Me.cboCommittee.Sorted = True
-        Me.cboCommittee.TabIndex = 94
+        Me.cboCommittee.TabIndex = 13
         Me.cboCommittee.Tag = "IN:Committee"
         '
         'dtpTermEnd
@@ -351,7 +353,7 @@ Partial Class F_OfficialsRecord
         Me.dtpTermEnd.Location = New System.Drawing.Point(348, 151)
         Me.dtpTermEnd.Name = "dtpTermEnd"
         Me.dtpTermEnd.Size = New System.Drawing.Size(88, 21)
-        Me.dtpTermEnd.TabIndex = 95
+        Me.dtpTermEnd.TabIndex = 17
         Me.dtpTermEnd.Tag = "IN:Term End*"
         '
         'Label15
@@ -361,7 +363,7 @@ Partial Class F_OfficialsRecord
         Me.Label15.Location = New System.Drawing.Point(257, 183)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(88, 16)
-        Me.Label15.TabIndex = 99
+        Me.Label15.TabIndex = 20
         Me.Label15.Text = "CONTACT No. :"
         '
         'Label17
@@ -371,7 +373,7 @@ Partial Class F_OfficialsRecord
         Me.Label17.Location = New System.Drawing.Point(265, 124)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(80, 16)
-        Me.Label17.TabIndex = 98
+        Me.Label17.TabIndex = 12
         Me.Label17.Text = "COMMITTEE :"
         '
         'Label16
@@ -381,7 +383,7 @@ Partial Class F_OfficialsRecord
         Me.Label16.Location = New System.Drawing.Point(277, 153)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(68, 16)
-        Me.Label16.TabIndex = 97
+        Me.Label16.TabIndex = 16
         Me.Label16.Text = "TERM END :"
         '
         'dtpTermStart
@@ -392,7 +394,7 @@ Partial Class F_OfficialsRecord
         Me.dtpTermStart.Location = New System.Drawing.Point(91, 151)
         Me.dtpTermStart.Name = "dtpTermStart"
         Me.dtpTermStart.Size = New System.Drawing.Size(88, 21)
-        Me.dtpTermStart.TabIndex = 87
+        Me.dtpTermStart.TabIndex = 15
         Me.dtpTermStart.Tag = "IN:Term Start*"
         '
         'cboRank
@@ -404,7 +406,7 @@ Partial Class F_OfficialsRecord
         Me.cboRank.Location = New System.Drawing.Point(91, 120)
         Me.cboRank.Name = "cboRank"
         Me.cboRank.Size = New System.Drawing.Size(145, 24)
-        Me.cboRank.TabIndex = 86
+        Me.cboRank.TabIndex = 11
         Me.cboRank.Tag = "IN:Rank*"
         '
         'cboStatus
@@ -416,7 +418,7 @@ Partial Class F_OfficialsRecord
         Me.cboStatus.Location = New System.Drawing.Point(91, 179)
         Me.cboStatus.Name = "cboStatus"
         Me.cboStatus.Size = New System.Drawing.Size(145, 24)
-        Me.cboStatus.TabIndex = 88
+        Me.cboStatus.TabIndex = 19
         Me.cboStatus.Tag = "IN:Status"
         '
         'Label9
@@ -426,7 +428,7 @@ Partial Class F_OfficialsRecord
         Me.Label9.Location = New System.Drawing.Point(45, 124)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(43, 16)
-        Me.Label9.TabIndex = 89
+        Me.Label9.TabIndex = 10
         Me.Label9.Text = "RANK :"
         '
         'Label14
@@ -436,7 +438,7 @@ Partial Class F_OfficialsRecord
         Me.Label14.Location = New System.Drawing.Point(37, 183)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(51, 16)
-        Me.Label14.TabIndex = 90
+        Me.Label14.TabIndex = 18
         Me.Label14.Text = "STATUS :"
         '
         'Label11
@@ -446,7 +448,7 @@ Partial Class F_OfficialsRecord
         Me.Label11.Location = New System.Drawing.Point(12, 153)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(76, 16)
-        Me.Label11.TabIndex = 91
+        Me.Label11.TabIndex = 14
         Me.Label11.Text = "TERM START :"
         '
         'btnUpdate
@@ -457,7 +459,7 @@ Partial Class F_OfficialsRecord
         Me.btnUpdate.Location = New System.Drawing.Point(389, 409)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(114, 45)
-        Me.btnUpdate.TabIndex = 85
+        Me.btnUpdate.TabIndex = 40
         Me.btnUpdate.Tag = "Primary"
         Me.btnUpdate.Text = "UPDATE"
         Me.btnUpdate.UseVisualStyleBackColor = False
@@ -471,7 +473,7 @@ Partial Class F_OfficialsRecord
         Me.txtProvince.Multiline = True
         Me.txtProvince.Name = "txtProvince"
         Me.txtProvince.Size = New System.Drawing.Size(158, 21)
-        Me.txtProvince.TabIndex = 26
+        Me.txtProvince.TabIndex = 39
         Me.txtProvince.Tag = "IN;"
         Me.txtProvince.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -485,7 +487,7 @@ Partial Class F_OfficialsRecord
         Me.cboRole.Location = New System.Drawing.Point(340, 268)
         Me.cboRole.Name = "cboRole"
         Me.cboRole.Size = New System.Drawing.Size(117, 24)
-        Me.cboRole.TabIndex = 20
+        Me.cboRole.TabIndex = 27
         Me.cboRole.Tag = "IN;"
         '
         'txtStreet
@@ -497,7 +499,7 @@ Partial Class F_OfficialsRecord
         Me.txtStreet.Multiline = True
         Me.txtStreet.Name = "txtStreet"
         Me.txtStreet.Size = New System.Drawing.Size(158, 21)
-        Me.txtStreet.TabIndex = 22
+        Me.txtStreet.TabIndex = 31
         Me.txtStreet.Tag = "IN;"
         Me.txtStreet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -510,7 +512,7 @@ Partial Class F_OfficialsRecord
         Me.txtMunicipality.Multiline = True
         Me.txtMunicipality.Name = "txtMunicipality"
         Me.txtMunicipality.Size = New System.Drawing.Size(158, 21)
-        Me.txtMunicipality.TabIndex = 24
+        Me.txtMunicipality.TabIndex = 35
         Me.txtMunicipality.Tag = "IN;"
         Me.txtMunicipality.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -523,7 +525,7 @@ Partial Class F_OfficialsRecord
         Me.txtBarangay.Multiline = True
         Me.txtBarangay.Name = "txtBarangay"
         Me.txtBarangay.Size = New System.Drawing.Size(120, 21)
-        Me.txtBarangay.TabIndex = 23
+        Me.txtBarangay.TabIndex = 33
         Me.txtBarangay.Tag = "IN;"
         Me.txtBarangay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -537,7 +539,7 @@ Partial Class F_OfficialsRecord
         Me.txtHouseholdNo.Name = "txtHouseholdNo"
         Me.txtHouseholdNo.ReadOnly = True
         Me.txtHouseholdNo.Size = New System.Drawing.Size(76, 21)
-        Me.txtHouseholdNo.TabIndex = 19
+        Me.txtHouseholdNo.TabIndex = 25
         Me.txtHouseholdNo.Tag = "IN;"
         Me.txtHouseholdNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -548,7 +550,7 @@ Partial Class F_OfficialsRecord
         Me.Label36.Location = New System.Drawing.Point(14, 272)
         Me.Label36.Name = "Label36"
         Me.Label36.Size = New System.Drawing.Size(104, 16)
-        Me.Label36.TabIndex = 84
+        Me.Label36.TabIndex = 24
         Me.Label36.Text = "HOUSEHOLD No. :"
         Me.Label36.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -562,7 +564,7 @@ Partial Class F_OfficialsRecord
         Me.txtHouseNo.Name = "txtHouseNo"
         Me.txtHouseNo.ReadOnly = True
         Me.txtHouseNo.Size = New System.Drawing.Size(99, 21)
-        Me.txtHouseNo.TabIndex = 21
+        Me.txtHouseNo.TabIndex = 29
         Me.txtHouseNo.Tag = "IN;"
         Me.txtHouseNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -573,7 +575,7 @@ Partial Class F_OfficialsRecord
         Me.Label47.Location = New System.Drawing.Point(45, 334)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(73, 16)
-        Me.Label47.TabIndex = 70
+        Me.Label47.TabIndex = 32
         Me.Label47.Text = "BARANGAY :"
         Me.Label47.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -584,7 +586,7 @@ Partial Class F_OfficialsRecord
         Me.Label48.Location = New System.Drawing.Point(45, 303)
         Me.Label48.Name = "Label48"
         Me.Label48.Size = New System.Drawing.Size(73, 16)
-        Me.Label48.TabIndex = 69
+        Me.Label48.TabIndex = 28
         Me.Label48.Text = "HOUSE No. :"
         Me.Label48.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -595,7 +597,7 @@ Partial Class F_OfficialsRecord
         Me.Label27.Location = New System.Drawing.Point(262, 365)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(71, 16)
-        Me.Label27.TabIndex = 83
+        Me.Label27.TabIndex = 38
         Me.Label27.Text = "PROVINCE :"
         '
         'Label46
@@ -605,7 +607,7 @@ Partial Class F_OfficialsRecord
         Me.Label46.Location = New System.Drawing.Point(284, 303)
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(49, 16)
-        Me.Label46.TabIndex = 71
+        Me.Label46.TabIndex = 30
         Me.Label46.Text = "STREET :"
         '
         'Label40
@@ -615,7 +617,7 @@ Partial Class F_OfficialsRecord
         Me.Label40.Location = New System.Drawing.Point(300, 272)
         Me.Label40.Name = "Label40"
         Me.Label40.Size = New System.Drawing.Size(42, 16)
-        Me.Label40.TabIndex = 75
+        Me.Label40.TabIndex = 26
         Me.Label40.Text = "ROLE :"
         '
         'txtHouseContactNo
@@ -627,7 +629,7 @@ Partial Class F_OfficialsRecord
         Me.txtHouseContactNo.Multiline = True
         Me.txtHouseContactNo.Name = "txtHouseContactNo"
         Me.txtHouseContactNo.Size = New System.Drawing.Size(120, 21)
-        Me.txtHouseContactNo.TabIndex = 25
+        Me.txtHouseContactNo.TabIndex = 37
         Me.txtHouseContactNo.Tag = "IN:"
         Me.txtHouseContactNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -638,7 +640,7 @@ Partial Class F_OfficialsRecord
         Me.Label43.Location = New System.Drawing.Point(30, 365)
         Me.Label43.Name = "Label43"
         Me.Label43.Size = New System.Drawing.Size(88, 16)
-        Me.Label43.TabIndex = 73
+        Me.Label43.TabIndex = 36
         Me.Label43.Text = "CONTACT No. :"
         '
         'Label45
@@ -648,7 +650,7 @@ Partial Class F_OfficialsRecord
         Me.Label45.Location = New System.Drawing.Point(243, 334)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(90, 16)
-        Me.Label45.TabIndex = 72
+        Me.Label45.TabIndex = 34
         Me.Label45.Text = "MUNICIPALITY :"
         '
         'Label6
@@ -657,7 +659,7 @@ Partial Class F_OfficialsRecord
         Me.Label6.Location = New System.Drawing.Point(15, 233)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(157, 16)
-        Me.Label6.TabIndex = 64
+        Me.Label6.TabIndex = 22
         Me.Label6.Tag = "Header-5"
         Me.Label6.Text = "HOUSEHOLD INFORMATION"
         '
@@ -668,7 +670,7 @@ Partial Class F_OfficialsRecord
         Me.Label7.Location = New System.Drawing.Point(9, 241)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(494, 165)
-        Me.Label7.TabIndex = 65
+        Me.Label7.TabIndex = 23
         '
         'txtFullName
         '
@@ -679,7 +681,7 @@ Partial Class F_OfficialsRecord
         Me.txtFullName.Name = "txtFullName"
         Me.txtFullName.ReadOnly = True
         Me.txtFullName.Size = New System.Drawing.Size(173, 21)
-        Me.txtFullName.TabIndex = 2
+        Me.txtFullName.TabIndex = 7
         Me.txtFullName.Tag = ""
         Me.txtFullName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -689,7 +691,7 @@ Partial Class F_OfficialsRecord
         Me.lblPersonalInfo.Location = New System.Drawing.Point(15, 22)
         Me.lblPersonalInfo.Name = "lblPersonalInfo"
         Me.lblPersonalInfo.Size = New System.Drawing.Size(141, 16)
-        Me.lblPersonalInfo.TabIndex = 62
+        Me.lblPersonalInfo.TabIndex = 0
         Me.lblPersonalInfo.Tag = "Header-5"
         Me.lblPersonalInfo.Text = "OFFICER'S INFORMATION"
         '
@@ -703,7 +705,7 @@ Partial Class F_OfficialsRecord
         Me.txtResidentID.Name = "txtResidentID"
         Me.txtResidentID.ReadOnly = True
         Me.txtResidentID.Size = New System.Drawing.Size(118, 21)
-        Me.txtResidentID.TabIndex = 1
+        Me.txtResidentID.TabIndex = 3
         Me.txtResidentID.Tag = "SG"
         Me.txtResidentID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -714,7 +716,7 @@ Partial Class F_OfficialsRecord
         Me.lblID.Location = New System.Drawing.Point(15, 66)
         Me.lblID.Name = "lblID"
         Me.lblID.Size = New System.Drawing.Size(77, 16)
-        Me.lblID.TabIndex = 3
+        Me.lblID.TabIndex = 2
         Me.lblID.Text = "RESIDENT ID :"
         Me.lblID.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -725,7 +727,7 @@ Partial Class F_OfficialsRecord
         Me.Label4.Location = New System.Drawing.Point(46, 95)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(46, 16)
-        Me.Label4.TabIndex = 5
+        Me.Label4.TabIndex = 6
         Me.Label4.Text = "NAME :"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -736,7 +738,20 @@ Partial Class F_OfficialsRecord
         Me.Label5.Location = New System.Drawing.Point(9, 30)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(494, 188)
-        Me.Label5.TabIndex = 63
+        Me.Label5.TabIndex = 1
+        '
+        'btnAdd
+        '
+        Me.btnAdd.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAdd.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.Location = New System.Drawing.Point(269, 409)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(114, 45)
+        Me.btnAdd.TabIndex = 41
+        Me.btnAdd.Tag = "Primary"
+        Me.btnAdd.Text = "ADD"
+        Me.btnAdd.UseVisualStyleBackColor = False
         '
         'F_OfficialsRecord
         '
@@ -814,4 +829,5 @@ Partial Class F_OfficialsRecord
     Friend WithEvents btnSearch As System.Windows.Forms.Button
     Friend WithEvents txtOfficialID As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents btnAdd As System.Windows.Forms.Button
 End Class
