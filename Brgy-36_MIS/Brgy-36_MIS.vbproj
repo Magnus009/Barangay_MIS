@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0EC876DB-F647-4C97-BDB9-18FEA3BE6258}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Brgy_36_MIS.F_PrintHealthCert</StartupObject>
+    <StartupObject>Brgy_36_MIS.F_PrintFireReport</StartupObject>
     <RootNamespace>Brgy_36_MIS</RootNamespace>
     <AssemblyName>Brgy-36_MIS</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -100,11 +100,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="DataSources\dsComplaints.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsComplaints.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DataSources\dsOfficials.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -181,12 +176,6 @@
     <Compile Include="Forms\F_ForgotPassword.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_HealthCertReport.Designer.vb">
-      <DependentUpon>F_HealthCertReport.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\F_HealthCertReport.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\F_IndigencyReport.Designer.vb">
       <DependentUpon>F_IndigencyReport.vb</DependentUpon>
     </Compile>
@@ -203,12 +192,6 @@
       <DependentUpon>F_PrintFireReport.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\F_PrintFireReport.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\F_PrintHealthCert.Designer.vb">
-      <DependentUpon>F_PrintHealthCert.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\F_PrintHealthCert.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\F_PrintIndigency.Designer.vb">
@@ -342,9 +325,6 @@
     <EmbeddedResource Include="Forms\F_ForgotPassword.resx">
       <DependentUpon>F_ForgotPassword.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_HealthCertReport.resx">
-      <DependentUpon>F_HealthCertReport.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_IndigencyReport.resx">
       <DependentUpon>F_IndigencyReport.vb</DependentUpon>
     </EmbeddedResource>
@@ -353,9 +333,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_PrintFireReport.resx">
       <DependentUpon>F_PrintFireReport.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_PrintHealthCert.resx">
-      <DependentUpon>F_PrintHealthCert.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_PrintIndigency.resx">
       <DependentUpon>F_PrintIndigency.vb</DependentUpon>
@@ -402,24 +379,11 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\rpHealthCertificate.rdlc" />
     <EmbeddedResource Include="Reports\rpFireCertificate.rdlc" />
     <EmbeddedResource Include="Reports\rpClearance.rdlc" />
     <EmbeddedResource Include="Reports\rpIndigency.rdlc" />
-    <EmbeddedResource Include="Reports\rpKPForm.rdlc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DataSources\dsComplaints.xsc">
-      <DependentUpon>dsComplaints.xsd</DependentUpon>
-    </None>
-    <None Include="DataSources\dsComplaints.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsComplaints.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="DataSources\dsComplaints.xss">
-      <DependentUpon>dsComplaints.xsd</DependentUpon>
-    </None>
     <None Include="DataSources\dsOfficials.xsc">
       <DependentUpon>dsOfficials.xsd</DependentUpon>
     </None>

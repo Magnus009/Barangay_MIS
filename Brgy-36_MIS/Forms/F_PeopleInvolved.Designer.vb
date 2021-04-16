@@ -146,6 +146,7 @@ Partial Class F_PeopleInvolved
         Me.btnAttach.Name = "btnAttach"
         Me.btnAttach.Size = New System.Drawing.Size(114, 27)
         Me.btnAttach.TabIndex = 6
+        Me.btnAttach.Tag = "Header-6"
         Me.btnAttach.Text = "A&TTACH FILE"
         Me.btnAttach.UseVisualStyleBackColor = True
         '
@@ -250,7 +251,7 @@ Partial Class F_PeopleInvolved
         'btnSave
         '
         Me.btnSave.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.Location = New System.Drawing.Point(260, 399)
+        Me.btnSave.Location = New System.Drawing.Point(260, 371)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(114, 35)
         Me.btnSave.TabIndex = 7
@@ -326,7 +327,7 @@ Partial Class F_PeopleInvolved
         Me.Panel1.Controls.Add(Me.txtContactNo)
         Me.Panel1.Location = New System.Drawing.Point(5, 6)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(380, 439)
+        Me.Panel1.Size = New System.Drawing.Size(380, 410)
         Me.Panel1.TabIndex = 44
         Me.Panel1.Tag = "Secondary"
         '
@@ -334,7 +335,7 @@ Partial Class F_PeopleInvolved
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(392, 450)
+        Me.ClientSize = New System.Drawing.Size(392, 422)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog

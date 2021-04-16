@@ -111,13 +111,13 @@
         End Try
     End Sub
 
-    Public Sub openCase(intCaseType As Integer, intTaskMode As Integer)
-        'CaseType:: [0]=>Complaints || [1]=>Incidents || [2]=>Blotters
-        'TaskMode:: [0]=>Read only  || [1]=>Create    || [2]=>Modify
-
+    ''' <summary>
+    ''' Open Case form <b>CaseType::</b> [0]=>Complaints || [1]=>Incidents || [2]=>Blotters
+    ''' </summary>
+    ''' <param name="intCaseType">Case Type (<i>Integer</i>) </param>
+    Public Sub openCase(intCaseType As Integer)
         Try
             formLoadSetup(Me)
-            intFormTask = intTaskMode
             'Case Type
             Select Case intCaseType
                 Case 0
@@ -136,62 +136,17 @@
                     lblCaseReport.Text = "BLOTTER REPORT :"
                     txtCaseReport.Tag = "IN:Blotter Report*"
             End Select
-            'Task Mode
-            formMode(intTaskMode, Me)
-            If intTaskMode = 1 Then
-                cboStatus.SelectedValue = 0
-            ElseIf intTaskMode = 0 Then
-                btnSave.Visible = False
-                btnAdd.Visible = False
-                btnAttach.Visible = False
-            End If
-
-            If intTaskMode <> 1 Then
-                'load Case Header
-                Dim dtHeader As New DataTable
-                strQuery = "SELECT * FROM CasesHeader" + vbCrLf
-                strQuery += "WHERE Code = '" + txtCode.Text + "'" + vbCrLf
-                strQuery += "AND DeletedDate IS NULL"
-                dtHeader = SQL_SELECT(strQuery).Tables(0)
-
-                txtReportedBy.Text = dtHeader.Rows(0)("ReportedBy")
-                txtIncharge.Text = dtHeader.Rows(0)("InCharge")
-                cboStatus.SelectedValue = dtHeader.Rows(0)("StatusID")
-                dtpReportedDate.Value = dtHeader.Rows(0)("ReportedDate")
-                dtpIncidentDate.Value = dtHeader.Rows(0)("IncidentDate")
-                txtCaseReport.Text = dtHeader.Rows(0)("StatusID")
-
-                'load People Involved
-                Dim dtPeople As New DataTable
-                strQuery = "SELECT * FROM CasesDetails" + vbCrLf
-                strQuery += "WHERE Code = '" + txtCode.Text + "'" + vbCrLf
-                strQuery += "AND DeletedDate IS NULL"
-                dtPeople = SQL_SELECT(strQuery).Tables(0)
-                Dim rowPeople As String()
-
-                datPeopleInvolved.Rows.Clear()
-                For Each row As DataRow In dtPeople.Rows
-                    rowPeople = New String() {row(1), row(2), row(4), row(3), row(5), "•••", row(6)}
-                    datPeopleInvolved.Rows.Add(rowPeople)
-                Next
-
-                'load Case Documents
-                Dim dtDocuments As New DataTable
-                strQuery = "SELECT * FROM CasesDocuments" + vbCrLf
-                strQuery += "WHERE Code = '" + txtCode.Text + "'" + vbCrLf
-                strQuery += "AND DeletedDate IS NULL"
-                dtDocuments = SQL_SELECT(strQuery).Tables(0)
-                Dim rowDocs As String()
-
-                datDocuments.Rows.Clear()
-                For Each row As DataRow In dtDocuments.Rows
-                    rowDocs = New String() {row(1), getFileName(row(3)), row(4), row(3), "•••", "X"}
-                    datDocuments.Rows.Add(rowDocs)
-                Next
-            End If
-
             Me.MdiParent = _mdi_MIS
             Me.Show()
+
+            loadCaseStatus(intCaseType)
+            With datPeopleInvolved
+                .Columns(1).Width = .Width * 0.3
+                .Columns(2).Width = .Width * 0.22
+                .Columns(3).Width = .Width * 0.15
+                .Columns(4).Width = .Width * 0.22
+                .Columns(5).Width = .Width * 0.1
+            End With
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -204,21 +159,9 @@
         End With
     End Sub
 
-
-    Private Sub F_CaseFile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        loadCaseStatus()
-        With datPeopleInvolved
-            .Columns(1).Width = .Width * 0.3
-            .Columns(2).Width = .Width * 0.22
-            .Columns(3).Width = .Width * 0.15
-            .Columns(4).Width = .Width * 0.22
-            .Columns(5).Width = .Width * 0.1
-        End With
-    End Sub
-
-    Private Sub loadCaseStatus()
-        strQuery = "SELECT ID, Description FROM M_CaseStatus WHERE DeletedDate IS NULL"
-        cboDataBinding(cboStatus, strQuery, "--SELECT STATUS--")
+    Private Sub loadCaseStatus(intCaseType As Integer)
+        strQuery = "SELECT StatusID, Description FROM M_CaseStatus WHERE DeletedDate IS NULL AND TypeID = " + intCaseType.ToString
+        cboDataBinding(cboStatus, strQuery, "--STATUS--")
     End Sub
 
     Private Sub datDocuments_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datDocuments.CellContentClick
@@ -317,6 +260,5 @@
             saveFiledCase(intFormTask)
             Me.Close()
         End If
-
     End Sub
 End Class

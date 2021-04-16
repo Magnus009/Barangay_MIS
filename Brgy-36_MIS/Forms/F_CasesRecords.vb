@@ -34,7 +34,7 @@
     Private Sub datCases_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datCases.CellContentClick
         If datCases.Columns(e.ColumnIndex).Name.Equals("VIEW") Then
             F_CaseFile.txtCode.Text = datCases.Rows(e.RowIndex).Cells(1).Value
-            F_CaseFile.openCase(intCaseType, IIf(UserLevel = "0", 2, 0))
+            F_CaseFile.openCase(intCaseType)
         End If
     End Sub
 End Class

@@ -136,20 +136,20 @@
     End Sub
 
     Public Sub loadDetails(intTaskMode As Integer)
-        formMode(intTaskMode, Me)
-        intFormMode = intTaskMode
+        'formMode(intTaskMode, Me)
+        'intFormMode = intTaskMode
 
-        If intTaskMode = 0 Then
-            btnAttach.Visible = False
-            btnSave.Visible = False
-            Me.Height = Me.Height - (btnAttach.Height + btnSave.Height)
-            datDocuments.Columns("colDelete").Visible = False
-        ElseIf intTaskMode = 1 Then
-            fn_ClearField(Me)
-            btnSave.Text = "&SAVE"
-        Else
-            btnSave.Text = "&UPDATE"
-        End If
+        'If intTaskMode = 0 Then
+        '    btnAttach.Visible = False
+        '    btnSave.Visible = False
+        '    Me.Height = Me.Height - (btnAttach.Height + btnSave.Height)
+        '    datDocuments.Columns("colDelete").Visible = False
+        'ElseIf intTaskMode = 1 Then
+        '    fn_ClearField(Me)
+        '    btnSave.Text = "&SAVE"
+        'Else
+        '    btnSave.Text = "&UPDATE"
+        'End If
 
         Me.ShowDialog()
     End Sub
