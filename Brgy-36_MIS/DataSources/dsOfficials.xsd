@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsOfficials" targetNamespace="http://tempuri.org/dsOfficials.xsd" xmlns:mstns="http://tempuri.org/dsOfficials.xsd" xmlns="http://tempuri.org/dsOfficials.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsOfficials" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsOfficials" msprop:Generator_UserDSName="dsOfficials">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtOfficials" msprop:Generator_TableClassName="dtOfficialsDataTable" msprop:Generator_TableVarName="tabledtOfficials" msprop:Generator_TablePropName="dtOfficials" msprop:Generator_RowDeletingName="dtOfficialsRowDeleting" msprop:Generator_RowChangingName="dtOfficialsRowChanging" msprop:Generator_RowEvHandlerName="dtOfficialsRowChangeEventHandler" msprop:Generator_RowDeletedName="dtOfficialsRowDeleted" msprop:Generator_UserTableName="dtOfficials" msprop:Generator_RowChangedName="dtOfficialsRowChanged" msprop:Generator_RowEvArgName="dtOfficialsRowChangeEvent" msprop:Generator_RowClassName="dtOfficialsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BarangayChairman" msprop:Generator_ColumnVarNameInTable="columnBarangayChairman" msprop:Generator_ColumnPropNameInRow="BarangayChairman" msprop:Generator_ColumnPropNameInTable="BarangayChairmanColumn" msprop:Generator_UserColumnName="BarangayChairman" type="xs:string" minOccurs="0" />
+              <xs:element name="SKChairman" msprop:Generator_ColumnVarNameInTable="columnSKChairman" msprop:Generator_ColumnPropNameInRow="SKChairman" msprop:Generator_ColumnPropNameInTable="SKChairmanColumn" msprop:Generator_UserColumnName="SKChairman" type="xs:string" minOccurs="0" />
+              <xs:element name="Fishery" msprop:Generator_ColumnVarNameInTable="columnFishery" msprop:Generator_ColumnPropNameInRow="Fishery" msprop:Generator_ColumnPropNameInTable="FisheryColumn" msprop:Generator_UserColumnName="Fishery" type="xs:string" minOccurs="0" />
+              <xs:element name="Finance" msprop:Generator_ColumnVarNameInTable="columnFinance" msprop:Generator_ColumnPropNameInRow="Finance" msprop:Generator_ColumnPropNameInTable="FinanceColumn" msprop:Generator_UserColumnName="Finance" type="xs:string" minOccurs="0" />
+              <xs:element name="Disaster" msprop:Generator_ColumnVarNameInTable="columnDisaster" msprop:Generator_ColumnPropNameInRow="Disaster" msprop:Generator_ColumnPropNameInTable="DisasterColumn" msprop:Generator_UserColumnName="Disaster" type="xs:string" minOccurs="0" />
+              <xs:element name="Health" msprop:Generator_ColumnVarNameInTable="columnHealth" msprop:Generator_ColumnPropNameInRow="Health" msprop:Generator_ColumnPropNameInTable="HealthColumn" msprop:Generator_UserColumnName="Health" type="xs:string" minOccurs="0" />
+              <xs:element name="Peace" msprop:Generator_ColumnVarNameInTable="columnPeace" msprop:Generator_ColumnPropNameInRow="Peace" msprop:Generator_ColumnPropNameInTable="PeaceColumn" msprop:Generator_UserColumnName="Peace" type="xs:string" minOccurs="0" />
+              <xs:element name="Cleanliness" msprop:Generator_ColumnVarNameInTable="columnCleanliness" msprop:Generator_ColumnPropNameInRow="Cleanliness" msprop:Generator_ColumnPropNameInTable="CleanlinessColumn" msprop:Generator_UserColumnName="Cleanliness" type="xs:string" minOccurs="0" />
+              <xs:element name="PublicWork" msprop:Generator_ColumnVarNameInTable="columnPublicWork" msprop:Generator_ColumnPropNameInRow="PublicWork" msprop:Generator_ColumnPropNameInTable="PublicWorkColumn" msprop:Generator_UserColumnName="PublicWork" type="xs:string" minOccurs="0" />
+              <xs:element name="Secretary" msprop:Generator_ColumnVarNameInTable="columnSecretary" msprop:Generator_ColumnPropNameInRow="Secretary" msprop:Generator_ColumnPropNameInTable="SecretaryColumn" msprop:Generator_UserColumnName="Secretary" type="xs:string" minOccurs="0" />
+              <xs:element name="Treasurer" msprop:Generator_ColumnVarNameInTable="columnTreasurer" msprop:Generator_ColumnPropNameInRow="Treasurer" msprop:Generator_ColumnPropNameInTable="TreasurerColumn" msprop:Generator_UserColumnName="Treasurer" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

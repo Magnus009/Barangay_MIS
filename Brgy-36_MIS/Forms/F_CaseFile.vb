@@ -1,12 +1,11 @@
 ﻿Public Class F_CaseFile
-    Dim CaseType As Integer
     Dim intFormTask As Integer
     Private Sub saveFiledCase(intTaskMode As Integer)
         'CaseType:: [0]=>Complaints || [1]=>Incidents || [2]=>Blotters
         'TaskMode:: [0]=>Read only  || [1]=>Create    || [2]=>Modify
 
         Try
-            Dim strCaseID As String
+            Dim strCaseID As String = ""
             Dim strCaseCode As String
             Dim strFile As String
             Dim intDocNo As Integer
@@ -16,15 +15,21 @@
                 If fn_CheckRequire(Me) Then
                     Throw New Exception("Please input on the following field(s):" + vbCrLf + strRequire)
                 Else
-
-                    strCaseID = Choose(CaseType + 1, "CP", "IN", "BL", "WC")
-                    strQuery = "SELECT dbo.fn_colID (" + strCaseID + ")"
+                    Select Case Strings.Right(Me.Text, 4)
+                        Case "(CP)"
+                            strCaseID = "0"
+                        Case "(IN)"
+                            strCaseID = "1"
+                        Case "(BL)"
+                            strCaseID = "2"
+                    End Select
+                    strQuery = "SELECT dbo.fn_caseID (" + strCaseID + ")"
                     strCaseCode = SQL_SELECT(strQuery).Tables(0).Rows(0)(0)
 
                     'Create Case Header Record
                     strQuery = "INSERT INTO dbo.CasesHeader (Code, TypeID, StatusID, CaseReport, InCharge, ReportedBy, ReportedDate, IncidentDate, CreatedDate, UpdatedDate, UpdatedBy)" + vbCrLf
                     strQuery += "VALUES ('" + strCaseCode + "', "
-                    strQuery += CaseType + ", "
+                    strQuery += strCaseID + ", "
                     strQuery += cboStatus.SelectedIndex.ToString + ", "
                     strQuery += "'" + txtCaseReport.Text + "', "
                     strQuery += "'" + txtIncharge.Text + "', "
@@ -113,7 +118,6 @@
         Try
             formLoadSetup(Me)
             intFormTask = intTaskMode
-            CaseType = intCaseType
             'Case Type
             Select Case intCaseType
                 Case 0
@@ -213,7 +217,7 @@
     End Sub
 
     Private Sub loadCaseStatus()
-        strQuery = "SELECT StatusID, Description FROM M_CaseStatus WHERE DeletedDate IS NULL AND TypeID = " + CaseType.ToString
+        strQuery = "SELECT ID, Description FROM M_CaseStatus WHERE DeletedDate IS NULL"
         cboDataBinding(cboStatus, strQuery, "--SELECT STATUS--")
     End Sub
 

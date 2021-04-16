@@ -2,21 +2,43 @@
 
 Public Class F_PrintIndigency
     Dim dtResidentInfo As New DataTable
+    Dim dtOfficials As New DataTable
+    Dim intReportType As Integer
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         Try
+            intReportType = 2
+            dtOfficials = loadOfficials()
+
             dtResidentInfo.Columns.Add("Purpose")
             dtResidentInfo.Rows(0)("Purpose") = txtPurpose.Text
 
-            With F_IndigencyReport.rpvIndigency
-                .RefreshReport()
-                .LocalReport.DataSources.Clear()
-                .LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("dsResInfo", dtResidentInfo))
-                .SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
-                .ZoomMode = ZoomMode.Percent
-                .ZoomPercent = 100
 
-            End With
-            F_IndigencyReport.ShowDialog()
+            If intReportType = 1 Then
+                With F_IndigencyReport.rpvIndigency
+                    .RefreshReport()
+                    .LocalReport.DataSources.Clear()
+                    .LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("dsOfficials", dtOfficials))
+                    .LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("dsResInfo", dtResidentInfo))
+                    .SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+                    .ZoomMode = ZoomMode.Percent
+                    .ZoomPercent = 100
+
+                End With
+                F_IndigencyReport.ShowDialog()
+            ElseIf intReportType = 2 Then
+                With F_ClearnceReport.rpvClearance
+                    .RefreshReport()
+                    .LocalReport.DataSources.Clear()
+                    .LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("dsOfficials", dtOfficials))
+                    .LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("dsResInfo", dtResidentInfo))
+                    .SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+                    .ZoomMode = ZoomMode.Percent
+                    .ZoomPercent = 100
+
+                End With
+                F_ClearnceReport.ShowDialog()
+            End If
+            
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -44,11 +66,13 @@ Public Class F_PrintIndigency
             MsgBox(ex.Message)
         End Try
     End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    
+   
+    Private Sub btnResidentList_Click(sender As Object, e As EventArgs) Handles btnResidentList.Click
         Dim frmResidentList As New F_SelectionList
 
         AddHandler frmResidentList.selectedResident, AddressOf loadResidentsInfo
         frmResidentList.loadSelection(1)
+
     End Sub
 End Class

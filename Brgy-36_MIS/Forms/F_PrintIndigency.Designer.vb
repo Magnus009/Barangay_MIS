@@ -28,7 +28,7 @@ Partial Class F_PrintIndigency
         Me.txtPurpose = New System.Windows.Forms.TextBox()
         Me.btnPrint = New System.Windows.Forms.Button()
         Me.txtResident = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnResidentList = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lblName
@@ -74,20 +74,20 @@ Partial Class F_PrintIndigency
         Me.txtResident.Size = New System.Drawing.Size(232, 21)
         Me.txtResident.TabIndex = 5
         '
-        'Button1
+        'btnResidentList
         '
-        Me.Button1.Location = New System.Drawing.Point(358, 42)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(34, 23)
-        Me.Button1.TabIndex = 6
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnResidentList.Location = New System.Drawing.Point(358, 42)
+        Me.btnResidentList.Name = "btnResidentList"
+        Me.btnResidentList.Size = New System.Drawing.Size(34, 23)
+        Me.btnResidentList.TabIndex = 6
+        Me.btnResidentList.UseVisualStyleBackColor = True
         '
         'F_PrintIndigency
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(418, 244)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnResidentList)
         Me.Controls.Add(Me.txtResident)
         Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.txtPurpose)
@@ -110,5 +110,5 @@ Partial Class F_PrintIndigency
     Friend WithEvents txtPurpose As System.Windows.Forms.TextBox
     Friend WithEvents btnPrint As System.Windows.Forms.Button
     Friend WithEvents txtResident As System.Windows.Forms.TextBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btnResidentList As System.Windows.Forms.Button
 End Class

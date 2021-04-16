@@ -42,7 +42,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=string.Concat("         Has been found belong to an indigent family after interview and case study has made record of the case study dated ","&lt;b&gt;&lt;u&gt;" + CDate(Today()).ToString("MMM dd,yyyy") + "&lt;/u&gt;&lt;/b&gt;", " are in the file of the barangay 36-A SAP SAP office Caridad, Cavite City.")</Value>
+                <Value>=string.Concat("This certification is being issued this day of ","&lt;b&gt;&lt;u&gt;" + CDate(Today()).ToString("MMM dd,yyyy") + "&lt;/u&gt;&lt;/b&gt;", " at BARANGAY 36-A SAP SAP, Cavite City Philippines upon the request of afforementioned to support his/her ","&lt;b&gt;&lt;u&gt;" + First(Fields!Purpose.Value, "dsResInfo") + "&lt;/u&gt;&lt;/b&gt;", " requirement purposes only")</Value>
                 <MarkupType>HTML</MarkupType>
                 <Style>
                   <FontStyle>Normal</FontStyle>
@@ -323,7 +323,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=String.Concat("I hereby certificate that Mr/Ms. " ,"&lt;b&gt;&lt;u&gt;" + First(Fields!ResName.Value, "dsResInfo") + "&lt;/u&gt;&lt;/b&gt;", " of legal age ",First(Fields!Age.Value, "dsResInfo"), " yrs. old, ", First(Fields!CivilStatus.Value, "dsResInfo"), ", born on ","&lt;b&gt;" + format(First(Fields!BirthDate.Value, "dsResInfo"), "MMMM dd, yyyy") + "&lt;/b&gt;", ". Resident of ",  "&lt;b&gt;&lt;u&gt;" + First(Fields!Address.Value, "dsResInfo") + "&lt;/u&gt;&lt;/b&gt;", " is duly registered and accredited memeber of this Barangay.")</Value>
+                <Value>=String.Concat("This is to certify " ,"&lt;b&gt;&lt;u&gt;" + First(Fields!ResName.Value, "dsResInfo") + "&lt;/u&gt;&lt;/b&gt;", " of legal age ",First(Fields!Age.Value, "dsResInfo"), " yrs. old, ", First(Fields!CivilStatus.Value, "dsResInfo"), ", born on ","&lt;b&gt;" + format(First(Fields!BirthDate.Value, "dsResInfo"), "MMMM dd, yyyy") + "&lt;/b&gt;", ". Resident of ",  "&lt;b&gt;&lt;u&gt;" + First(Fields!Address.Value, "dsResInfo") + "&lt;/u&gt;&lt;/b&gt;", " is duly registered and accredited memeber of this Barangay. He/She is known to me with a Good Moral character, law abiding citizen in the community.")</Value>
                 <MarkupType>HTML</MarkupType>
                 <Style>
                   <FontFamily>Cambria</FontFamily>
@@ -343,71 +343,6 @@
         <Height>0.96652in</Height>
         <Width>4.71875in</Width>
         <ZIndex>8</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Purpose">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=String.Concat("This certification is being issued upon request of the interested party for ", "&lt;b&gt;&lt;u&gt;" + First(Fields!Purpose.Value, "dsResInfo") + "&lt;/u&gt;&lt;/b&gt;", " purpose only.")</Value>
-                <MarkupType>HTML</MarkupType>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Purpose</rd:DefaultName>
-        <Top>2.59722in</Top>
-        <Left>2.43625in</Left>
-        <Height>0.25in</Height>
-        <Width>4.32291in</Width>
-        <ZIndex>9</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox4">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=String.Concat("Issued this ","&lt;b&gt;&lt;u&gt;" + CDate(Today()).ToString("dd") + "th" + "&lt;/u&gt;&lt;/b&gt;", " day of " , "&lt;b&gt;&lt;u&gt;"+ CDate(Today()).ToString("MMMM yyyy") + "&lt;/u&gt;&lt;/b&gt;", ".")</Value>
-                <MarkupType>HTML</MarkupType>
-                <Style>
-                  <FontFamily>Cambria</FontFamily>
-                  <FontSize>11pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>3.17014in</Top>
-        <Left>2.76958in</Left>
-        <Height>0.25in</Height>
-        <Width>3.01042in</Width>
-        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1220,7 +1155,7 @@
         <Left>0.12723in</Left>
         <Height>9.68181in</Height>
         <Width>2.25583in</Width>
-        <ZIndex>11</ZIndex>
+        <ZIndex>9</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1252,7 +1187,7 @@
         <Left>3.22507in</Left>
         <Height>0.25in</Height>
         <Width>2.77667in</Width>
-        <ZIndex>12</ZIndex>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1288,7 +1223,7 @@
         <Left>4.8425in</Left>
         <Height>0.25in</Height>
         <Width>2.32292in</Width>
-        <ZIndex>13</ZIndex>
+        <ZIndex>11</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1323,7 +1258,7 @@
         <Left>5.0925in</Left>
         <Height>0.97111in</Height>
         <Width>2.21876in</Width>
-        <ZIndex>14</ZIndex>
+        <ZIndex>12</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1462,7 +1397,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>BARANGAY INDIGENCY</Value>
+                  <Value>BARANGAY CLEARANCE</Value>
                   <Style>
                     <FontFamily>Times New Roman</FontFamily>
                     <FontSize>28pt</FontSize>

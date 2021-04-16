@@ -506,4 +506,43 @@ Module M_Functions
         Return strVal
     End Function
 
+    Public Function loadOfficials() As DataTable
+        Dim dtOfficials As New DataTable
+        Try
+
+            strQuery = ""
+            strQuery += "SELECT [BarangayChairman], [SKChairman], [Fishery], [Finance], [Disaster], [Health], [Peace], [Cleanliness], [PublicWork], [Secretary], [Treasurer] FROM (" & vbCrLf
+            strQuery += "SELECT R.FamilyName + ', ' + R.GivenName + ' ' + LEFT(R.MiddleName, 1) [Name], BRGY.Position FROM (" & vbCrLf
+            strQuery += "SELECT O.Code, O.ResidentCode , P.Description [Position] FROM Officials O" & vbCrLf
+            strQuery += "INNER JOIN  M_OfficialPosition P ON O.PositionID = P.ID" & vbCrLf
+            strQuery += "WHERE P.ID = 1" & vbCrLf
+            strQuery += "UNION " & vbCrLf
+            strQuery += "SELECT O.Code, O.ResidentCode , P.Description [Position] FROM Officials O" & vbCrLf
+            strQuery += "INNER JOIN  M_OfficialPosition P ON O.PositionID = P.ID" & vbCrLf
+            strQuery += "WHERE P.ID = 3" & vbCrLf
+            strQuery += "UNION" & vbCrLf
+            strQuery += "SELECT O.Code, O.ResidentCode, C.Description [Position] FROM Officials O" & vbCrLf
+            strQuery += "RIGHT JOIN M_Committee C ON O.CommitteeID = C.ID" & vbCrLf
+            strQuery += "UNION" & vbCrLf
+            strQuery += "SELECT O.Code, O.ResidentCode, P.Description [Position] FROM Officials O" & vbCrLf
+            strQuery += "RIGHT JOIN  M_OfficialPosition P ON O.PositionID = P.ID" & vbCrLf
+            strQuery += "WHERE P.ID = 5" & vbCrLf
+            strQuery += "UNION" & vbCrLf
+            strQuery += "SELECT O.Code, O.ResidentCode, P.Description [Position] FROM Officials O" & vbCrLf
+            strQuery += "RIGHT JOIN  M_OfficialPosition P ON O.PositionID = P.ID" & vbCrLf
+            strQuery += "WHERE P.ID = 9" & vbCrLf
+            strQuery += ") BRGY" & vbCrLf
+            strQuery += "LEFT JOIN Residents R ON BRGY.ResidentCode = R.Code" & vbCrLf
+            strQuery += ") p" & vbCrLf
+            strQuery += "PIVOT(" & vbCrLf
+            strQuery += "max(p.NAME)" & vbCrLf
+            strQuery += "FOR p.Position" & vbCrLf
+            strQuery += "IN ([BarangayChairman], [SKChairman], [Fishery], [Finance], [Disaster], [Health], [Peace], [Cleanliness], [PublicWork], [Secretary], [Treasurer])" & vbCrLf
+            strQuery += ")pvt" & vbCrLf
+            dtOfficials = SQL_SELECT(strQuery).Tables(0)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        Return dtOfficials
+    End Function
 End Module

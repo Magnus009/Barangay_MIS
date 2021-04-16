@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0EC876DB-F647-4C97-BDB9-18FEA3BE6258}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Brgy_36_MIS._mdi_MIS</StartupObject>
+    <StartupObject>Brgy_36_MIS.F_PrintFireReport</StartupObject>
     <RootNamespace>Brgy_36_MIS</RootNamespace>
     <AssemblyName>Brgy-36_MIS</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -100,6 +100,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="DataSources\dsOfficials.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsOfficials.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSources\dsResidentInfo.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -141,6 +146,12 @@
     <Compile Include="Forms\F_CasesRecords.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\F_ClearnceReport.Designer.vb">
+      <DependentUpon>F_ClearnceReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_ClearnceReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\F_CurrentOfficials.Designer.vb">
       <DependentUpon>F_CurrentOfficials.vb</DependentUpon>
     </Compile>
@@ -151,6 +162,12 @@
       <DependentUpon>F_Dashboard.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\F_Dashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\F_FireAccidentReport.Designer.vb">
+      <DependentUpon>F_FireAccidentReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_FireAccidentReport.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\F_ForgotPassword.Designer.vb">
@@ -169,6 +186,12 @@
       <DependentUpon>F_OfficialsRecord.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\F_OfficialsRecord.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\F_PrintFireReport.Designer.vb">
+      <DependentUpon>F_PrintFireReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_PrintFireReport.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\F_PrintIndigency.Designer.vb">
@@ -287,11 +310,17 @@
     <EmbeddedResource Include="Forms\F_CasesRecords.resx">
       <DependentUpon>F_CasesRecords.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_ClearnceReport.resx">
+      <DependentUpon>F_ClearnceReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_CurrentOfficials.resx">
       <DependentUpon>F_CurrentOfficials.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_Dashboard.resx">
       <DependentUpon>F_Dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_FireAccidentReport.resx">
+      <DependentUpon>F_FireAccidentReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_ForgotPassword.resx">
       <DependentUpon>F_ForgotPassword.vb</DependentUpon>
@@ -301,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_OfficialsRecord.resx">
       <DependentUpon>F_OfficialsRecord.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_PrintFireReport.resx">
+      <DependentUpon>F_PrintFireReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_PrintIndigency.resx">
       <DependentUpon>F_PrintIndigency.vb</DependentUpon>
@@ -347,10 +379,22 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\rpIndigency_test.rdlc" />
+    <EmbeddedResource Include="Reports\rpFireCertificate.rdlc" />
+    <EmbeddedResource Include="Reports\rpClearance.rdlc" />
     <EmbeddedResource Include="Reports\rpIndigency.rdlc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSources\dsOfficials.xsc">
+      <DependentUpon>dsOfficials.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dsOfficials.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsOfficials.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSources\dsOfficials.xss">
+      <DependentUpon>dsOfficials.xsd</DependentUpon>
+    </None>
     <None Include="DataSources\dsResidentInfo.xsc">
       <DependentUpon>dsResidentInfo.xsd</DependentUpon>
     </None>
