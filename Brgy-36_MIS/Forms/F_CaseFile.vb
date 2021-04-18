@@ -156,7 +156,7 @@
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         With F_PeopleInvolved
             .strInvolveID = datPeopleInvolved.Rows.Count
-            .loadDetails(intFormTask)
+            .loadDetails(intFormTask, Me)
         End With
     End Sub
 
@@ -169,7 +169,10 @@
         If e.ColumnIndex = 4 Then
             openFile(datDocuments.Rows(e.RowIndex).Cells("colSourceFile").Value)
         ElseIf e.ColumnIndex = 5 Then
-
+            MsgBox("Do you want to remove this file?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "REMOVE FILE")
+            If vbYes Then
+                datDocuments.Rows.RemoveAt(e.RowIndex)
+            End If
         End If
     End Sub
 
@@ -250,7 +253,7 @@
                         .datDocuments.Rows.Add(row)
                     End If
                 Next
-                .loadDetails(2)
+                .loadDetails(2, Me)
             End With
         End If
     End Sub

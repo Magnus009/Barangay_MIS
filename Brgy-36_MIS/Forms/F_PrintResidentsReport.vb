@@ -5,6 +5,7 @@ Public Class F_PrintResidentsReport
         formLoadSetup(Me)
         setCivilStatus()
         setGender()
+        getSamahan()
         getResidents()
     End Sub
     Private Sub setCivilStatus()
@@ -59,6 +60,9 @@ Public Class F_PrintResidentsReport
             If cboCivilStatus.SelectedValue <> -1 Then
                 strQuery += "AND R.CivilStatus =" + cboCivilStatus.SelectedValue.ToString & vbCrLf
             End If
+            If cboSamahan.SelectedValue <> -1 Then
+                strQuery += "AND R.SamahanID =" + cboSamahan.SelectedValue.ToString & vbCrLf
+            End If
             dsResidents = SQL_SELECT(strQuery)
 
             With datResidents
@@ -89,24 +93,6 @@ Public Class F_PrintResidentsReport
             MsgBox(ex.Message)
         End Try
     End Sub
-  
-
-    Private Sub chkVoters_CheckedChanged(sender As Object, e As EventArgs)
-        getResidents()
-    End Sub
-
-    Private Sub chkInHabitant_CheckedChanged(sender As Object, e As EventArgs)
-        getResidents()
-    End Sub
-
-    Private Sub chkPWD_CheckedChanged(sender As Object, e As EventArgs)
-        getResidents()
-    End Sub
-
-    Private Sub chkIndigent_CheckedChanged(sender As Object, e As EventArgs)
-        getResidents()
-    End Sub
-
 
     Private Sub cboChanged()
         getResidents()
@@ -146,6 +132,9 @@ Public Class F_PrintResidentsReport
             If cboCivilStatus.SelectedValue <> -1 Then
                 strQuery += "AND R.CivilStatus =" + cboCivilStatus.SelectedValue.ToString & vbCrLf
             End If
+            If cboSamahan.SelectedValue <> -1 Then
+                strQuery += "AND R.SamahanID =" + cboSamahan.SelectedValue.ToString & vbCrLf
+            End If
             dtResidentPrint = SQL_SELECT(strQuery).Tables(0)
 
             With F_ResidentsReport.rpvResidentsList
@@ -161,4 +150,36 @@ Public Class F_PrintResidentsReport
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Public Sub getSamahan()
+        Try
+            strQuery = "SELECT * FROM M_Samahan WHERE DeletedDate IS NULL"
+            cboDataBinding(cboSamahan, strQuery, "--SAMAHAN--")
+
+            AddHandler cboSamahan.SelectedIndexChanged, AddressOf cboChanged
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub chkIndigent_CheckedChanged(sender As Object, e As EventArgs) Handles chkIndigent.CheckedChanged
+        getResidents()
+    End Sub
+
+    Private Sub chkPWD_CheckedChanged(sender As Object, e As EventArgs) Handles chkPWD.CheckedChanged
+        getResidents()
+    End Sub
+
+    Private Sub chkInHabitant_CheckedChanged(sender As Object, e As EventArgs) Handles chkInHabitant.CheckedChanged
+        getResidents()
+    End Sub
+
+    Private Sub cboSamahan_SelectedIndexChanged(sender As Object, e As EventArgs)
+        getResidents()
+    End Sub
+
+    Private Sub chkVoters_CheckedChanged(sender As Object, e As EventArgs) Handles chkVoters.CheckedChanged
+        getResidents()
+    End Sub
+
 End Class

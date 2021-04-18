@@ -52,6 +52,8 @@ Partial Class _mdi_MIS
         Me.BorrowHistoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EquipmentsPropertiesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuReports = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RESIDENTSLISTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OFFICIALSLISTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuMapping = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuMaintenance = New System.Windows.Forms.ToolStripMenuItem()
         Me.SamahanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -63,7 +65,7 @@ Partial Class _mdi_MIS
         Me.BackupDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OfficersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuLogout = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RESIDENTSLISTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CASESTATUSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuMIS.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -245,10 +247,22 @@ Partial Class _mdi_MIS
         '
         'mnuReports
         '
-        Me.mnuReports.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RESIDENTSLISTToolStripMenuItem})
+        Me.mnuReports.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RESIDENTSLISTToolStripMenuItem, Me.OFFICIALSLISTToolStripMenuItem, Me.CASESTATUSToolStripMenuItem})
         Me.mnuReports.Name = "mnuReports"
         Me.mnuReports.Size = New System.Drawing.Size(66, 20)
         Me.mnuReports.Text = "&REPORTS"
+        '
+        'RESIDENTSLISTToolStripMenuItem
+        '
+        Me.RESIDENTSLISTToolStripMenuItem.Name = "RESIDENTSLISTToolStripMenuItem"
+        Me.RESIDENTSLISTToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.RESIDENTSLISTToolStripMenuItem.Text = "RESIDENT'S LIST"
+        '
+        'OFFICIALSLISTToolStripMenuItem
+        '
+        Me.OFFICIALSLISTToolStripMenuItem.Name = "OFFICIALSLISTToolStripMenuItem"
+        Me.OFFICIALSLISTToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.OFFICIALSLISTToolStripMenuItem.Text = "OFFICIAL'S LIST"
         '
         'mnuMapping
         '
@@ -311,7 +325,7 @@ Partial Class _mdi_MIS
         '
         Me.OfficersToolStripMenuItem.Name = "OfficersToolStripMenuItem"
         Me.OfficersToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
-        Me.OfficersToolStripMenuItem.Text = "Officers"
+        Me.OfficersToolStripMenuItem.Text = "Committee"
         '
         'mnuLogout
         '
@@ -320,11 +334,11 @@ Partial Class _mdi_MIS
         Me.mnuLogout.Size = New System.Drawing.Size(65, 20)
         Me.mnuLogout.Text = "&LOGOUT"
         '
-        'RESIDENTSLISTToolStripMenuItem
+        'CASESTATUSToolStripMenuItem
         '
-        Me.RESIDENTSLISTToolStripMenuItem.Name = "RESIDENTSLISTToolStripMenuItem"
-        Me.RESIDENTSLISTToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
-        Me.RESIDENTSLISTToolStripMenuItem.Text = "RESIDENT'S LIST"
+        Me.CASESTATUSToolStripMenuItem.Name = "CASESTATUSToolStripMenuItem"
+        Me.CASESTATUSToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.CASESTATUSToolStripMenuItem.Text = "CASE STATUS"
         '
         '_mdi_MIS
         '
@@ -343,6 +357,7 @@ Partial Class _mdi_MIS
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "_mdi_MIS"
         Me.Text = "MANAGEMENT INFORMATION SYSTEM  of BARANGAY 36-A  (SAP-SAP)"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.mnuMIS.ResumeLayout(False)
         Me.mnuMIS.PerformLayout()
         Me.ResumeLayout(False)
@@ -389,5 +404,7 @@ Partial Class _mdi_MIS
     Friend WithEvents ViolationAgainstWomenChildrenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents OfficersToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RESIDENTSLISTToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents OFFICIALSLISTToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CASESTATUSToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

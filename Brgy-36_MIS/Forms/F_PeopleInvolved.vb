@@ -2,6 +2,7 @@
     Public strInvolveID As String
 
     Dim intFormMode As Integer
+    Dim caseForm As New Form
 
     Private Sub btnAttach_Click(sender As Object, e As EventArgs) Handles btnAttach.Click
         Try
@@ -45,8 +46,10 @@
             strFile = datDocuments.Rows(e.RowIndex).Cells(3).Value
             openFile(strFile)
         ElseIf e.ColumnIndex = 5 Then
-            MsgBox("Do you want to remove this file?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "REMOVE FILE")
-            If vbYes Then
+            Dim msgDialog As DialogResult
+            msgDialog = MsgBox("Do you want to remove this file?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "REMOVE FILE")
+
+            If msgDialog = Windows.Forms.DialogResult.Yes Then
                 datDocuments.Rows.RemoveAt(e.RowIndex)
             End If
         End If
@@ -59,20 +62,24 @@
                 strRequire = "" : blnRequired = False
             Else
                 If btnSave.Text = "&UPDATE" Then
+                    Dim frmCases As New F_CasesRecords
+                    frmCases = caseForm
                     'Reload Documents-----------------------------------
-                    With F_CaseFile.datDocuments
+                    With frmCases.datDocuments
                         Dim strRows As String = ""
                         For Each dr As DataGridViewRow In .Rows
                             If dr.Cells(0).Value = strInvolveID Then
                                 strRows += dr.Index.ToString + ","
                             End If
                         Next
-                        strRows = Strings.Left(strRows, Len(strRows) - 1)
-                        For Each row As String In strRows.Split(",").Reverse
-                            Dim intRow As Integer
-                            intRow = Convert.ToInt32(row)
-                            .Rows.RemoveAt(intRow)
-                        Next
+                        If strRows <> "" Then
+                            strRows = Strings.Left(strRows, Len(strRows) - 1)
+                            For Each row As String In strRows.Split(",").Reverse
+                                Dim intRow As Integer
+                                intRow = Convert.ToInt32(row)
+                                .Rows.RemoveAt(intRow)
+                            Next
+                        End If
 
                         For Each dgr As DataGridViewRow In datDocuments.Rows
                             Dim row As String()
@@ -87,7 +94,7 @@
                     End With
                     '---------------------------------------------------
                     'UpdatePeople Involved Detals-----------------------
-                    With F_CaseFile.datPeopleInvolved
+                    With frmCases.datPeopleInvolved
                         For Each dr As DataGridViewRow In .Rows
                             If dr.Cells(0).Value = strInvolveID Then
                                 dr.Cells(2).Value = txtInvolvement.Text
@@ -99,7 +106,11 @@
                     End With
                     '---------------------------------------------------
                 Else
-                    With F_CaseFile.datPeopleInvolved
+                    Dim frmCase As Object
+
+                    frmCase = IIf(caseForm.Name.Equals("F_CaseFile"), F_CaseFile, F_CasesRecords)
+
+                    With frmCase.datPeopleInvolved
                         Dim strPeopleID As String
                         strPeopleID = .Rows.Count
 
@@ -114,7 +125,7 @@
                         .Rows.Add(row)
                     End With
 
-                    With F_CaseFile.datDocuments
+                    With frmCase.datDocuments
                         For Each dgr As DataGridViewRow In datDocuments.Rows
                             Dim row As String()
                             row = New String() {dgr.Cells(0).Value, _
@@ -135,26 +146,28 @@
         End Try
     End Sub
 
-    Public Sub loadDetails(intTaskMode As Integer)
-        'formMode(intTaskMode, Me)
-        'intFormMode = intTaskMode
+    Public Sub loadDetails(intTaskMode As Integer, frmCase As Form)
+        formLoadSetup(Me)
+        formMode(intTaskMode, Me)
+        btnAttach.Font = My.Settings.Substring
+        intFormMode = intTaskMode
 
-        'If intTaskMode = 0 Then
-        '    btnAttach.Visible = False
-        '    btnSave.Visible = False
-        '    Me.Height = Me.Height - (btnAttach.Height + btnSave.Height)
-        '    datDocuments.Columns("colDelete").Visible = False
-        'ElseIf intTaskMode = 1 Then
-        '    fn_ClearField(Me)
-        '    btnSave.Text = "&SAVE"
-        'Else
-        '    btnSave.Text = "&UPDATE"
-        'End If
+        If intTaskMode = 0 Then
+            btnAttach.Visible = False
+            btnSave.Visible = False
+            Me.Height = Me.Height - (btnAttach.Height + btnSave.Height)
+            datDocuments.Columns("colDelete").Visible = False
+        ElseIf intTaskMode = 1 Then
+            fn_ClearField(Me)
+            btnSave.Text = "&SAVE"
+        Else
+            btnSave.Text = "&UPDATE"
+            caseForm = frmCase
+        End If
 
         Me.ShowDialog()
     End Sub
 
     Private Sub F_PeopleInvolved_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        formLoadSetup(Me)
     End Sub
 End Class

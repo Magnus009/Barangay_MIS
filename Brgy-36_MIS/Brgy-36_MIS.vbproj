@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0EC876DB-F647-4C97-BDB9-18FEA3BE6258}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Brgy_36_MIS._mdi_MIS</StartupObject>
+    <StartupObject>Brgy_36_MIS.F_Login</StartupObject>
     <RootNamespace>Brgy_36_MIS</RootNamespace>
     <AssemblyName>Brgy-36_MIS</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -100,10 +100,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="DataSources\dsCaseStatus.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCaseStatus.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSources\dsOfficials.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsOfficials.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\dsOfficialsInfo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsOfficialsInfo.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSources\dsResidentInfo.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -144,6 +154,12 @@
       <DependentUpon>F_CasesRecords.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\F_CasesRecords.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\F_CaseStatusReport.Designer.vb">
+      <DependentUpon>F_CaseStatusReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_CaseStatusReport.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\F_ClearnceReport.Designer.vb">
@@ -198,6 +214,12 @@
       <DependentUpon>F_KPFormReport.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\F_KPFormReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\F_OfficialsListReport.Designer.vb">
+      <DependentUpon>F_OfficialsListReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_OfficialsListReport.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\F_OfficialsRecord.Designer.vb">
@@ -352,6 +374,9 @@
     <EmbeddedResource Include="Forms\F_CasesRecords.resx">
       <DependentUpon>F_CasesRecords.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_CaseStatusReport.resx">
+      <DependentUpon>F_CaseStatusReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_ClearnceReport.resx">
       <DependentUpon>F_ClearnceReport.vb</DependentUpon>
     </EmbeddedResource>
@@ -378,6 +403,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_KPFormReport.resx">
       <DependentUpon>F_KPFormReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_OfficialsListReport.resx">
+      <DependentUpon>F_OfficialsListReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_OfficialsRecord.resx">
       <DependentUpon>F_OfficialsRecord.vb</DependentUpon>
@@ -442,14 +470,27 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpCaseStatus.rdlc" />
     <EmbeddedResource Include="Reports\rpFireCertificate.rdlc" />
     <EmbeddedResource Include="Reports\rpClearance.rdlc" />
     <EmbeddedResource Include="Reports\rpHealthCertificate.rdlc" />
     <EmbeddedResource Include="Reports\rpIndigency.rdlc" />
     <EmbeddedResource Include="Reports\rpKPForm.rdlc" />
+    <EmbeddedResource Include="Reports\rpOfficialsList.rdlc" />
     <EmbeddedResource Include="Reports\rpResidentsList.rdlc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSources\dsCaseStatus.xsc">
+      <DependentUpon>dsCaseStatus.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dsCaseStatus.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCaseStatus.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSources\dsCaseStatus.xss">
+      <DependentUpon>dsCaseStatus.xsd</DependentUpon>
+    </None>
     <None Include="DataSources\dsOfficials.xsc">
       <DependentUpon>dsOfficials.xsd</DependentUpon>
     </None>
@@ -460,6 +501,17 @@
     </None>
     <None Include="DataSources\dsOfficials.xss">
       <DependentUpon>dsOfficials.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dsOfficialsInfo.xsc">
+      <DependentUpon>dsOfficialsInfo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dsOfficialsInfo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsOfficialsInfo.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSources\dsOfficialsInfo.xss">
+      <DependentUpon>dsOfficialsInfo.xsd</DependentUpon>
     </None>
     <None Include="DataSources\dsResidentInfo.xsc">
       <DependentUpon>dsResidentInfo.xsd</DependentUpon>

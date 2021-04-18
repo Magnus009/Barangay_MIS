@@ -43,6 +43,7 @@
     End Sub
 
     Private Sub F_Committee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        formLoadSetup(Me)
         getCommitteeList()
         getCommittees()
     End Sub

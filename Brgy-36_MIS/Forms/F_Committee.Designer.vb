@@ -36,8 +36,10 @@ Partial Class F_Committee
         Me.btnResidents = New System.Windows.Forms.Button()
         Me.txtResident = New System.Windows.Forms.TextBox()
         Me.lblName = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         CType(Me.datOfficials, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpCommittee.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'datOfficials
@@ -49,7 +51,7 @@ Partial Class F_Committee
         Me.datOfficials.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -64,7 +66,7 @@ Partial Class F_Committee
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.datOfficials.DefaultCellStyle = DataGridViewCellStyle2
-        Me.datOfficials.Location = New System.Drawing.Point(12, 190)
+        Me.datOfficials.Location = New System.Drawing.Point(8, 188)
         Me.datOfficials.Name = "datOfficials"
         Me.datOfficials.RowHeadersVisible = False
         Me.datOfficials.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -73,7 +75,7 @@ Partial Class F_Committee
         '
         'txtSearch
         '
-        Me.txtSearch.Location = New System.Drawing.Point(81, 162)
+        Me.txtSearch.Location = New System.Drawing.Point(71, 160)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(322, 22)
         Me.txtSearch.TabIndex = 1
@@ -81,7 +83,7 @@ Partial Class F_Committee
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(15, 165)
+        Me.Label1.Location = New System.Drawing.Point(8, 163)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(60, 17)
         Me.Label1.TabIndex = 2
@@ -89,7 +91,7 @@ Partial Class F_Committee
         '
         'btnAdd
         '
-        Me.btnAdd.Location = New System.Drawing.Point(206, 104)
+        Me.btnAdd.Location = New System.Drawing.Point(198, 104)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(100, 29)
         Me.btnAdd.TabIndex = 3
@@ -105,7 +107,7 @@ Partial Class F_Committee
         Me.grpCommittee.Controls.Add(Me.txtResident)
         Me.grpCommittee.Controls.Add(Me.lblName)
         Me.grpCommittee.Controls.Add(Me.btnAdd)
-        Me.grpCommittee.Location = New System.Drawing.Point(12, 7)
+        Me.grpCommittee.Location = New System.Drawing.Point(8, 14)
         Me.grpCommittee.Name = "grpCommittee"
         Me.grpCommittee.Size = New System.Drawing.Size(421, 146)
         Me.grpCommittee.TabIndex = 4
@@ -114,7 +116,7 @@ Partial Class F_Committee
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(306, 104)
+        Me.btnCancel.Location = New System.Drawing.Point(298, 104)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(100, 29)
         Me.btnCancel.TabIndex = 9
@@ -124,7 +126,7 @@ Partial Class F_Committee
         'cboCommittee
         '
         Me.cboCommittee.FormattingEnabled = True
-        Me.cboCommittee.Location = New System.Drawing.Point(89, 73)
+        Me.cboCommittee.Location = New System.Drawing.Point(81, 73)
         Me.cboCommittee.Name = "cboCommittee"
         Me.cboCommittee.Size = New System.Drawing.Size(273, 25)
         Me.cboCommittee.TabIndex = 8
@@ -132,7 +134,7 @@ Partial Class F_Committee
         'lblPosition
         '
         Me.lblPosition.AutoSize = True
-        Me.lblPosition.Location = New System.Drawing.Point(15, 76)
+        Me.lblPosition.Location = New System.Drawing.Point(7, 76)
         Me.lblPosition.Name = "lblPosition"
         Me.lblPosition.Size = New System.Drawing.Size(68, 17)
         Me.lblPosition.TabIndex = 7
@@ -140,7 +142,7 @@ Partial Class F_Committee
         '
         'btnResidents
         '
-        Me.btnResidents.Location = New System.Drawing.Point(365, 45)
+        Me.btnResidents.Location = New System.Drawing.Point(357, 45)
         Me.btnResidents.Name = "btnResidents"
         Me.btnResidents.Size = New System.Drawing.Size(41, 23)
         Me.btnResidents.TabIndex = 6
@@ -148,7 +150,7 @@ Partial Class F_Committee
         '
         'txtResident
         '
-        Me.txtResident.Location = New System.Drawing.Point(91, 45)
+        Me.txtResident.Location = New System.Drawing.Point(83, 45)
         Me.txtResident.Name = "txtResident"
         Me.txtResident.Size = New System.Drawing.Size(271, 22)
         Me.txtResident.TabIndex = 5
@@ -156,21 +158,30 @@ Partial Class F_Committee
         'lblName
         '
         Me.lblName.AutoSize = True
-        Me.lblName.Location = New System.Drawing.Point(34, 48)
+        Me.lblName.Location = New System.Drawing.Point(26, 48)
         Me.lblName.Name = "lblName"
         Me.lblName.Size = New System.Drawing.Size(49, 17)
         Me.lblName.TabIndex = 4
         Me.lblName.Text = "NAME :"
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.grpCommittee)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.txtSearch)
+        Me.Panel1.Controls.Add(Me.datOfficials)
+        Me.Panel1.Location = New System.Drawing.Point(6, 3)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(436, 484)
+        Me.Panel1.TabIndex = 5
+        Me.Panel1.Tag = "Secondary"
+        '
         'F_Committee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(445, 490)
-        Me.Controls.Add(Me.grpCommittee)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtSearch)
-        Me.Controls.Add(Me.datOfficials)
+        Me.ClientSize = New System.Drawing.Size(449, 490)
+        Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -178,12 +189,14 @@ Partial Class F_Committee
         Me.MinimizeBox = False
         Me.Name = "F_Committee"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Tag = "Primary"
         Me.Text = "Committee"
         CType(Me.datOfficials, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpCommittee.ResumeLayout(False)
         Me.grpCommittee.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents datOfficials As System.Windows.Forms.DataGridView
@@ -197,4 +210,5 @@ Partial Class F_Committee
     Friend WithEvents btnResidents As System.Windows.Forms.Button
     Friend WithEvents txtResident As System.Windows.Forms.TextBox
     Friend WithEvents lblName As System.Windows.Forms.Label
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
 End Class

@@ -1,5 +1,9 @@
 ﻿Public Class F_Login
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
+        userLogin()
+    End Sub
+
+    Private Sub userLogin()
         Dim dtUser As New DataTable
 
         strRequire = "" : blnRequired = False
@@ -52,5 +56,11 @@
     Private Sub lnkForgotPass_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkForgotPass.LinkClicked
         Dim frmForgotPass As New F_forgotPassword
         frmForgotPass.ShowDialog()
+    End Sub
+
+    Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            userLogin()
+        End If
     End Sub
 End Class

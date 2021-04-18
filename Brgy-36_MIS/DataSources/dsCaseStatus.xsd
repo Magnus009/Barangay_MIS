@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsCaseStatus" targetNamespace="http://tempuri.org/dsCaseStatus.xsd" xmlns:mstns="http://tempuri.org/dsCaseStatus.xsd" xmlns="http://tempuri.org/dsCaseStatus.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsCaseStatus" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsCaseStatus" msprop:Generator_UserDSName="dsCaseStatus">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtCaseStatus" msprop:Generator_TableClassName="dtCaseStatusDataTable" msprop:Generator_TableVarName="tabledtCaseStatus" msprop:Generator_TablePropName="dtCaseStatus" msprop:Generator_RowDeletingName="dtCaseStatusRowDeleting" msprop:Generator_RowChangingName="dtCaseStatusRowChanging" msprop:Generator_RowEvHandlerName="dtCaseStatusRowChangeEventHandler" msprop:Generator_RowDeletedName="dtCaseStatusRowDeleted" msprop:Generator_UserTableName="dtCaseStatus" msprop:Generator_RowChangedName="dtCaseStatusRowChanged" msprop:Generator_RowEvArgName="dtCaseStatusRowChangeEvent" msprop:Generator_RowClassName="dtCaseStatusRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Code" msprop:Generator_ColumnVarNameInTable="columnCode" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_UserColumnName="Code" type="xs:string" minOccurs="0" />
+              <xs:element name="CaseType" msprop:Generator_ColumnVarNameInTable="columnCaseType" msprop:Generator_ColumnPropNameInRow="CaseType" msprop:Generator_ColumnPropNameInTable="CaseTypeColumn" msprop:Generator_UserColumnName="CaseType" type="xs:string" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:string" minOccurs="0" />
+              <xs:element name="ReportedBy" msprop:Generator_ColumnVarNameInTable="columnReportedBy" msprop:Generator_ColumnPropNameInRow="ReportedBy" msprop:Generator_ColumnPropNameInTable="ReportedByColumn" msprop:Generator_UserColumnName="ReportedBy" type="xs:string" minOccurs="0" />
+              <xs:element name="InCharge" msprop:Generator_ColumnVarNameInTable="columnInCharge" msprop:Generator_ColumnPropNameInRow="InCharge" msprop:Generator_ColumnPropNameInTable="InChargeColumn" msprop:Generator_UserColumnName="InCharge" type="xs:string" minOccurs="0" />
+              <xs:element name="ReportedDate" msprop:Generator_ColumnVarNameInTable="columnReportedDate" msprop:Generator_ColumnPropNameInRow="ReportedDate" msprop:Generator_ColumnPropNameInTable="ReportedDateColumn" msprop:Generator_UserColumnName="ReportedDate" type="xs:string" minOccurs="0" />
+              <xs:element name="IncidentDate" msprop:Generator_ColumnVarNameInTable="columnIncidentDate" msprop:Generator_ColumnPropNameInRow="IncidentDate" msprop:Generator_ColumnPropNameInTable="IncidentDateColumn" msprop:Generator_UserColumnName="IncidentDate" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

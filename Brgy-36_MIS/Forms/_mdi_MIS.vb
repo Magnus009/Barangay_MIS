@@ -194,6 +194,22 @@ Public Class _mdi_MIS
     End Sub
 
     Private Sub RESIDENTSLISTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RESIDENTSLISTToolStripMenuItem.Click
-        F_PrintResidentsReport.ShowDialog()
+        Dim frmResidentsList As New F_PrintResidentsReport
+        frmResidentsList.MdiParent = Me
+        frmResidentsList.Show()
+    End Sub
+
+    Private Sub OfficersToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OfficersToolStripMenuItem.Click
+        Dim frmCommittee As New F_Committee
+        frmCommittee.MdiParent = Me
+        frmCommittee.Show()
+    End Sub
+
+    Private Sub OFFICIALSLISTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OFFICIALSLISTToolStripMenuItem.Click
+        F_OfficialsListReport.Show()
+    End Sub
+
+    Private Sub CASESTATUSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CASESTATUSToolStripMenuItem.Click
+        F_CaseStatusReport.Show()
     End Sub
 End Class

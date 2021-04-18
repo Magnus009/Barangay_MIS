@@ -59,7 +59,7 @@ Partial Class F_PeopleInvolved
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(189, 21)
         Me.txtName.TabIndex = 1
-        Me.txtName.Tag = "IN:Name*"
+        Me.txtName.Tag = "IN;Name*"
         Me.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1

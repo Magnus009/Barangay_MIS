@@ -26,6 +26,8 @@ Partial Class F_PrintResidentsReport
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(F_PrintResidentsReport))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.cboSamahan = New System.Windows.Forms.ComboBox()
         Me.cboCivilStatus = New System.Windows.Forms.ComboBox()
         Me.cboGender = New System.Windows.Forms.ComboBox()
         Me.lblCivilStatus = New System.Windows.Forms.Label()
@@ -42,6 +44,8 @@ Partial Class F_PrintResidentsReport
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Label17)
+        Me.Panel1.Controls.Add(Me.cboSamahan)
         Me.Panel1.Controls.Add(Me.cboCivilStatus)
         Me.Panel1.Controls.Add(Me.cboGender)
         Me.Panel1.Controls.Add(Me.lblCivilStatus)
@@ -58,10 +62,34 @@ Partial Class F_PrintResidentsReport
         Me.Panel1.TabIndex = 10
         Me.Panel1.Tag = "Secondary"
         '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(30, 82)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(68, 16)
+        Me.Label17.TabIndex = 38
+        Me.Label17.Text = "SAMAHAN :"
+        '
+        'cboSamahan
+        '
+        Me.cboSamahan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboSamahan.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cboSamahan.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboSamahan.FormattingEnabled = True
+        Me.cboSamahan.Items.AddRange(New Object() {"", "1", "2", "3"})
+        Me.cboSamahan.Location = New System.Drawing.Point(100, 78)
+        Me.cboSamahan.Name = "cboSamahan"
+        Me.cboSamahan.Size = New System.Drawing.Size(145, 24)
+        Me.cboSamahan.Sorted = True
+        Me.cboSamahan.TabIndex = 37
+        Me.cboSamahan.Tag = "IN:Samahan"
+        '
         'cboCivilStatus
         '
         Me.cboCivilStatus.FormattingEnabled = True
-        Me.cboCivilStatus.Location = New System.Drawing.Point(373, 48)
+        Me.cboCivilStatus.Location = New System.Drawing.Point(328, 47)
         Me.cboCivilStatus.Name = "cboCivilStatus"
         Me.cboCivilStatus.Size = New System.Drawing.Size(112, 25)
         Me.cboCivilStatus.TabIndex = 18
@@ -69,15 +97,15 @@ Partial Class F_PrintResidentsReport
         'cboGender
         '
         Me.cboGender.FormattingEnabled = True
-        Me.cboGender.Location = New System.Drawing.Point(373, 17)
+        Me.cboGender.Location = New System.Drawing.Point(100, 47)
         Me.cboGender.Name = "cboGender"
-        Me.cboGender.Size = New System.Drawing.Size(112, 25)
+        Me.cboGender.Size = New System.Drawing.Size(107, 25)
         Me.cboGender.TabIndex = 17
         '
         'lblCivilStatus
         '
         Me.lblCivilStatus.AutoSize = True
-        Me.lblCivilStatus.Location = New System.Drawing.Point(287, 52)
+        Me.lblCivilStatus.Location = New System.Drawing.Point(244, 51)
         Me.lblCivilStatus.Name = "lblCivilStatus"
         Me.lblCivilStatus.Size = New System.Drawing.Size(80, 17)
         Me.lblCivilStatus.TabIndex = 16
@@ -86,7 +114,7 @@ Partial Class F_PrintResidentsReport
         'lblGender
         '
         Me.lblGender.AutoSize = True
-        Me.lblGender.Location = New System.Drawing.Point(308, 17)
+        Me.lblGender.Location = New System.Drawing.Point(35, 51)
         Me.lblGender.Name = "lblGender"
         Me.lblGender.Size = New System.Drawing.Size(59, 17)
         Me.lblGender.TabIndex = 15
@@ -95,7 +123,7 @@ Partial Class F_PrintResidentsReport
         'chkIndigent
         '
         Me.chkIndigent.AutoSize = True
-        Me.chkIndigent.Location = New System.Drawing.Point(168, 48)
+        Me.chkIndigent.Location = New System.Drawing.Point(376, 20)
         Me.chkIndigent.Name = "chkIndigent"
         Me.chkIndigent.Size = New System.Drawing.Size(76, 21)
         Me.chkIndigent.TabIndex = 14
@@ -105,7 +133,7 @@ Partial Class F_PrintResidentsReport
         'chkPWD
         '
         Me.chkPWD.AutoSize = True
-        Me.chkPWD.Location = New System.Drawing.Point(168, 17)
+        Me.chkPWD.Location = New System.Drawing.Point(129, 20)
         Me.chkPWD.Name = "chkPWD"
         Me.chkPWD.Size = New System.Drawing.Size(56, 21)
         Me.chkPWD.TabIndex = 13
@@ -115,7 +143,7 @@ Partial Class F_PrintResidentsReport
         'chkInHabitant
         '
         Me.chkInHabitant.AutoSize = True
-        Me.chkInHabitant.Location = New System.Drawing.Point(24, 48)
+        Me.chkInHabitant.Location = New System.Drawing.Point(236, 20)
         Me.chkInHabitant.Name = "chkInHabitant"
         Me.chkInHabitant.Size = New System.Drawing.Size(92, 21)
         Me.chkInHabitant.TabIndex = 12
@@ -125,7 +153,7 @@ Partial Class F_PrintResidentsReport
         'chkVoters
         '
         Me.chkVoters.AutoSize = True
-        Me.chkVoters.Location = New System.Drawing.Point(24, 17)
+        Me.chkVoters.Location = New System.Drawing.Point(24, 20)
         Me.chkVoters.Name = "chkVoters"
         Me.chkVoters.Size = New System.Drawing.Size(66, 21)
         Me.chkVoters.TabIndex = 11
@@ -156,10 +184,10 @@ Partial Class F_PrintResidentsReport
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.datResidents.DefaultCellStyle = DataGridViewCellStyle2
-        Me.datResidents.Location = New System.Drawing.Point(12, 98)
+        Me.datResidents.Location = New System.Drawing.Point(12, 121)
         Me.datResidents.Name = "datResidents"
         Me.datResidents.RowHeadersVisible = False
-        Me.datResidents.Size = New System.Drawing.Size(476, 395)
+        Me.datResidents.Size = New System.Drawing.Size(476, 372)
         Me.datResidents.TabIndex = 10
         '
         'btnPrint
@@ -203,4 +231,6 @@ Partial Class F_PrintResidentsReport
     Friend WithEvents chkVoters As System.Windows.Forms.CheckBox
     Friend WithEvents datResidents As System.Windows.Forms.DataGridView
     Friend WithEvents btnPrint As System.Windows.Forms.Button
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents cboSamahan As System.Windows.Forms.ComboBox
 End Class
