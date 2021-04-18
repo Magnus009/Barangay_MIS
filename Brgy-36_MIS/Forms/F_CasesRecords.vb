@@ -28,17 +28,17 @@
 
 
     Private Sub datCases_RowEnter(sender As Object, e As DataGridViewCellEventArgs) Handles datCases.RowEnter
-        Try
-            Dim strResidentCode As String
-            strResidentCode = datResidents.Rows(e.RowIndex).Cells("ID").Value
+        'Try
+        '    Dim strResidentCode As String
+        '    strResidentCode = datResidents.Rows(e.RowIndex).Cells("ID").Value
 
-            formMode(0, pnlCaseDetails)
-            btnUpdate.Text = "UPDATE"
-            btnUpdate.BackColor = My.Settings.Primary
-            loadResidentDetails(strResidentCode)
-            loadResidentHousehold(strResidentCode)
-        Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
-        End Try
+        '    formMode(0, pnlCaseDetails)
+        '    btnUpdate.Text = "UPDATE"
+        '    btnUpdate.BackColor = My.Settings.Primary
+        '    loadResidentDetails(strResidentCode)
+        '    loadResidentHousehold(strResidentCode)
+        'Catch ex As Exception
+        '    MsgBox(ex.Message, MsgBoxStyle.Critical)
+        'End Try
     End Sub
 End Class

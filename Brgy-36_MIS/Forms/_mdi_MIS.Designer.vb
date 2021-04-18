@@ -63,6 +63,7 @@ Partial Class _mdi_MIS
         Me.BackupDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OfficersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuLogout = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RESIDENTSLISTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuMIS.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -126,7 +127,7 @@ Partial Class _mdi_MIS
         '
         Me.ComplaintsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewComplaintsToolStripMenuItem, Me.FileComplaintsToolStripMenuItem})
         Me.ComplaintsToolStripMenuItem.Name = "ComplaintsToolStripMenuItem"
-        Me.ComplaintsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ComplaintsToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.ComplaintsToolStripMenuItem.Text = "Complaints"
         '
         'ViewComplaintsToolStripMenuItem
@@ -145,7 +146,7 @@ Partial Class _mdi_MIS
         '
         Me.IncidentsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewIncidentsToolStripMenuItem, Me.ReportIncidentToolStripMenuItem})
         Me.IncidentsToolStripMenuItem.Name = "IncidentsToolStripMenuItem"
-        Me.IncidentsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.IncidentsToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.IncidentsToolStripMenuItem.Text = "Incidents"
         '
         'ViewIncidentsToolStripMenuItem
@@ -164,25 +165,25 @@ Partial Class _mdi_MIS
         '
         Me.BlotterToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewBlotterrsToolStripMenuItem, Me.FileBlotterToolStripMenuItem})
         Me.BlotterToolStripMenuItem.Name = "BlotterToolStripMenuItem"
-        Me.BlotterToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BlotterToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.BlotterToolStripMenuItem.Text = "Blotters"
         '
         'ViewBlotterrsToolStripMenuItem
         '
         Me.ViewBlotterrsToolStripMenuItem.Name = "ViewBlotterrsToolStripMenuItem"
-        Me.ViewBlotterrsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ViewBlotterrsToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
         Me.ViewBlotterrsToolStripMenuItem.Text = "View Blotterrs"
         '
         'FileBlotterToolStripMenuItem
         '
         Me.FileBlotterToolStripMenuItem.Name = "FileBlotterToolStripMenuItem"
-        Me.FileBlotterToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.FileBlotterToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
         Me.FileBlotterToolStripMenuItem.Text = "File Blotter"
         '
         'ViolationAgainstWomenChildrenToolStripMenuItem
         '
         Me.ViolationAgainstWomenChildrenToolStripMenuItem.Name = "ViolationAgainstWomenChildrenToolStripMenuItem"
-        Me.ViolationAgainstWomenChildrenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ViolationAgainstWomenChildrenToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.ViolationAgainstWomenChildrenToolStripMenuItem.Text = "VAWC"
         '
         'mnuCertificates
@@ -244,6 +245,7 @@ Partial Class _mdi_MIS
         '
         'mnuReports
         '
+        Me.mnuReports.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RESIDENTSLISTToolStripMenuItem})
         Me.mnuReports.Name = "mnuReports"
         Me.mnuReports.Size = New System.Drawing.Size(66, 20)
         Me.mnuReports.Text = "&REPORTS"
@@ -318,6 +320,12 @@ Partial Class _mdi_MIS
         Me.mnuLogout.Size = New System.Drawing.Size(65, 20)
         Me.mnuLogout.Text = "&LOGOUT"
         '
+        'RESIDENTSLISTToolStripMenuItem
+        '
+        Me.RESIDENTSLISTToolStripMenuItem.Name = "RESIDENTSLISTToolStripMenuItem"
+        Me.RESIDENTSLISTToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.RESIDENTSLISTToolStripMenuItem.Text = "RESIDENT'S LIST"
+        '
         '_mdi_MIS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
@@ -380,5 +388,6 @@ Partial Class _mdi_MIS
     Friend WithEvents BorrowHistoryToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ViolationAgainstWomenChildrenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents OfficersToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents RESIDENTSLISTToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

@@ -3,16 +3,9 @@ Public Class F_PrintFireReport
     Dim dtResidentInfo As New DataTable
     Dim dtOfficials As New DataTable
     Private Sub F_PrintFireReport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-      
+        formLoadSetup(Me)
     End Sub
 
-    Private Sub btnResident_Click(sender As Object, e As EventArgs) Handles btnResident.Click
-        Dim frmResidentList As New F_SelectionList
-
-        AddHandler frmResidentList.selectedResident, AddressOf loadResidentsInfo
-        frmResidentList.loadSelection(1)
-
-    End Sub
 
     Private Sub loadResidentsInfo(ByVal strResidentID As String)
         Try
@@ -32,6 +25,16 @@ Public Class F_PrintFireReport
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+
+    
+    Private Sub btnResident_Click(sender As Object, e As EventArgs) Handles btnResident.Click
+        Dim frmResidentList As New F_SelectionList
+
+        AddHandler frmResidentList.selectedResident, AddressOf loadResidentsInfo
+        frmResidentList.loadSelection(1)
+
     End Sub
 
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
@@ -58,6 +61,5 @@ Public Class F_PrintFireReport
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
     End Sub
 End Class

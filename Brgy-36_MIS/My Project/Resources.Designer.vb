@@ -71,7 +71,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Data Source=sd_sql_training;Persist Security Info=True;User ID=sa;Password=81at84;Initial Catalog=MIS.
+        '''  Looks up a localized string similar to Data Source=ROLLAMAS\SQL_ROLLAMAS;Initial Catalog=MIS;Integrated Security=True.
         '''</summary>
         Friend ReadOnly Property ConnectionString() As String
             Get
@@ -103,15 +103,6 @@ Namespace My.Resources
         Friend ReadOnly Property ConnectionString_temp3() As String
             Get
                 Return ResourceManager.GetString("ConnectionString_temp3", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Data Source=LAPTOP-MI8RS0PS\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=MIS.
-        '''</summary>
-        Friend ReadOnly Property ConnectionString_temp4() As String
-            Get
-                Return ResourceManager.GetString("ConnectionString_temp4", resourceCulture)
             End Get
         End Property
     End Module

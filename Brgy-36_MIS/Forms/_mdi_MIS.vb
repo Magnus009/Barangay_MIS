@@ -1,7 +1,6 @@
 ﻿Imports System.Windows.Forms
 
 Public Class _mdi_MIS
-
     Private Sub ShowNewForm(ByVal sender As Object, ByVal e As EventArgs)
         ' Create a new instance of the child form.
         Dim ChildForm As New System.Windows.Forms.Form
@@ -173,4 +172,28 @@ Public Class _mdi_MIS
         formBorrow.Show()
     End Sub
 
+    Private Sub FireIncidentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FireIncidentToolStripMenuItem.Click
+        F_PrintFireReport.ShowDialog()
+    End Sub
+
+    Private Sub COVID19RelatedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles COVID19RelatedToolStripMenuItem.Click
+        F_PrintHealthCert.ShowDialog()
+    End Sub
+
+    Private Sub BarangayClearanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BarangayClearanceToolStripMenuItem.Click
+        Dim frmPRintReport As New F_PrintIndigency
+        frmPRintReport.intReportType = 2
+        frmPRintReport.ShowDialog()
+    End Sub
+
+    Private Sub BarangayIndigencyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BarangayIndigencyToolStripMenuItem.Click
+
+        Dim frmPRintReport As New F_PrintIndigency
+        frmPRintReport.intReportType = 1
+        frmPRintReport.ShowDialog()
+    End Sub
+
+    Private Sub RESIDENTSLISTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RESIDENTSLISTToolStripMenuItem.Click
+        F_PrintResidentsReport.ShowDialog()
+    End Sub
 End Class

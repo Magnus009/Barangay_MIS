@@ -152,6 +152,12 @@
     <Compile Include="Forms\F_ClearnceReport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\F_Committee.Designer.vb">
+      <DependentUpon>F_Committee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_Committee.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\F_CurrentOfficials.Designer.vb">
       <DependentUpon>F_CurrentOfficials.vb</DependentUpon>
     </Compile>
@@ -176,10 +182,22 @@
     <Compile Include="Forms\F_ForgotPassword.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\F_HealthCertReport.Designer.vb">
+      <DependentUpon>F_HealthCertReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_HealthCertReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\F_IndigencyReport.Designer.vb">
       <DependentUpon>F_IndigencyReport.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\F_IndigencyReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\F_KPFormReport.Designer.vb">
+      <DependentUpon>F_KPFormReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_KPFormReport.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\F_OfficialsRecord.Designer.vb">
@@ -194,10 +212,34 @@
     <Compile Include="Forms\F_PrintFireReport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\F_PrintHealthCert.Designer.vb">
+      <DependentUpon>F_PrintHealthCert.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_PrintHealthCert.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\F_PrintIndigency.Designer.vb">
       <DependentUpon>F_PrintIndigency.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\F_PrintIndigency.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\F_PrintKPForm.Designer.vb">
+      <DependentUpon>F_PrintKPForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_PrintKPForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\F_PrintResidentsReport.Designer.vb">
+      <DependentUpon>F_PrintResidentsReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_PrintResidentsReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\F_ResidentsReport.Designer.vb">
+      <DependentUpon>F_ResidentsReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_ResidentsReport.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\F_SelectionList.Designer.vb">
@@ -313,6 +355,9 @@
     <EmbeddedResource Include="Forms\F_ClearnceReport.resx">
       <DependentUpon>F_ClearnceReport.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_Committee.resx">
+      <DependentUpon>F_Committee.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_CurrentOfficials.resx">
       <DependentUpon>F_CurrentOfficials.vb</DependentUpon>
     </EmbeddedResource>
@@ -325,8 +370,14 @@
     <EmbeddedResource Include="Forms\F_ForgotPassword.resx">
       <DependentUpon>F_ForgotPassword.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_HealthCertReport.resx">
+      <DependentUpon>F_HealthCertReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_IndigencyReport.resx">
       <DependentUpon>F_IndigencyReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_KPFormReport.resx">
+      <DependentUpon>F_KPFormReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_OfficialsRecord.resx">
       <DependentUpon>F_OfficialsRecord.vb</DependentUpon>
@@ -334,8 +385,20 @@
     <EmbeddedResource Include="Forms\F_PrintFireReport.resx">
       <DependentUpon>F_PrintFireReport.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_PrintHealthCert.resx">
+      <DependentUpon>F_PrintHealthCert.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_PrintIndigency.resx">
       <DependentUpon>F_PrintIndigency.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_PrintKPForm.resx">
+      <DependentUpon>F_PrintKPForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_PrintResidentsReport.resx">
+      <DependentUpon>F_PrintResidentsReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_ResidentsReport.resx">
+      <DependentUpon>F_ResidentsReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_SelectionList.resx">
       <DependentUpon>F_SelectionList.vb</DependentUpon>
@@ -384,6 +447,7 @@
     <EmbeddedResource Include="Reports\rpHealthCertificate.rdlc" />
     <EmbeddedResource Include="Reports\rpIndigency.rdlc" />
     <EmbeddedResource Include="Reports\rpKPForm.rdlc" />
+    <EmbeddedResource Include="Reports\rpResidentsList.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataSources\dsOfficials.xsc">
