@@ -4,6 +4,11 @@
     Dim intFormMode As Integer
     Dim caseForm As New Form
 
+    Dim peopleInvolved As String()
+    Dim supportingDocs As New DataTable
+
+    Friend Event involvementDetails(ByVal drPeopleInvolve As String(), ByVal dtDocuments As DataTable)
+
     Private Sub btnAttach_Click(sender As Object, e As EventArgs) Handles btnAttach.Click
         Try
             Dim strSourceFile, strFileName, strTempFile As String
@@ -147,7 +152,6 @@
     End Sub
 
     Public Sub loadDetails(intTaskMode As Integer, frmCase As Form)
-        formLoadSetup(Me)
         formMode(intTaskMode, Me)
         btnAttach.Font = My.Settings.Substring
         intFormMode = intTaskMode
@@ -169,5 +173,31 @@
     End Sub
 
     Private Sub F_PeopleInvolved_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.BackColor = My.Settings.Primary
+        pnlDetails.BackColor = My.Settings.Secondary
+    End Sub
+
+    Private Sub peopleDetails()
+        Try
+
+            peopleInvolved = New String() {}
+
+            With frmCase.datPeopleInvolved
+                Dim strPeopleID As String
+                strPeopleID = .Rows.Count
+
+                Dim row As String()
+                row = New String() {strPeopleID, _
+                                    txtName.Text, _
+                                    txtInvolvement.Text, _
+                                    chkResident.Checked, _
+                                    txtContactNo.Text, _
+                                    "•••", _
+                                    txtStatement.Text}
+                .Rows.Add(row)
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
     End Sub
 End Class

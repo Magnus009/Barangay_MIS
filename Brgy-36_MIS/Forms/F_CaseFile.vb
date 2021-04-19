@@ -23,12 +23,14 @@
                 strCaseCode = SQL_SELECT(strQuery).Tables(0).Rows(0)(0)
 
                 'Create Case Header Record
-                strQuery = "INSERT INTO dbo.CasesHeader (Code, TypeID, StatusID, CaseReport, InCharge, ReportedBy, ReportedDate, IncidentDate, CreatedDate, UpdatedDate, UpdatedBy)" + vbCrLf
+                strQuery = "INSERT INTO dbo.CasesHeader (Code, TypeID, StatusID, CaseReport, InchargeID, InCharge, ReportedByID, ReportedBy, ReportedDate, IncidentDate, CreatedDate, UpdatedDate, UpdatedBy)" + vbCrLf
                 strQuery += "VALUES ('" + strCaseCode + "', "
                 strQuery += caseType.ToString + ", "
                 strQuery += cboVal(cboStatus) + ", "
                 strQuery += "'" + txtCaseReport.Text + "', "
+                strQuery += "'" + txtInchargeID.Text + "', "
                 strQuery += "'" + txtIncharge.Text + "', "
+                strQuery += "'" + txtReportedByID.Text + "', "
                 strQuery += "'" + txtReportedBy.Text + "', "
                 strQuery += "'" + fn_Date(dtpReportedDate.Value) + "', "
                 strQuery += "'" + fn_Date(dtpIncidentDate.Value) + "', "
@@ -112,7 +114,6 @@
     ''' <param name="intCaseType">Case Type (<i>Integer</i>) </param>
     Public Sub openCase(intCaseType As Integer)
         Try
-            formLoadSetup(Me)
             'Case Type
             Select Case intCaseType
                 Case 0
@@ -154,9 +155,11 @@
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        With F_PeopleInvolved
+        Dim frmPeopleInvolved As New F_PeopleInvolved
+
+        With frmPeopleInvolved
             .strInvolveID = datPeopleInvolved.Rows.Count
-            .loadDetails(intFormTask, Me)
+            .loadDetails(1, Me)
         End With
     End Sub
 
@@ -264,5 +267,44 @@
             saveFiledCase()
             Me.Close()
         End If
+    End Sub
+
+    Private Sub btnOfficialsList_Click(sender As Object, e As EventArgs) Handles btnOfficialsList.Click
+        Dim frmOfficialsList As New F_SelectionList
+
+        AddHandler frmOfficialsList.selectedOfficial, AddressOf loadIncharge
+        frmOfficialsList.loadSelection(2)
+    End Sub
+
+    Private Sub loadIncharge(ByVal strOfficialID As String, ByVal strOfficialName As String)
+        txtInchargeID.Text = strOfficialID
+        txtIncharge.Text = strOfficialName
+    End Sub
+
+    Private Sub btnResidentList_Click(sender As Object, e As EventArgs) Handles btnResidentList.Click
+        Dim frmResidentsList As New F_SelectionList
+
+        AddHandler frmResidentsList.selectedResident, AddressOf loadReportedBy
+        frmResidentsList.loadSelection(1)
+    End Sub
+
+    Private Sub loadReportedBy(ByVal strResidentID As String)
+        txtReportedByID.Text = strResidentID
+        strQuery = "SELECT FamilyName + ', ' + GivenName + ' ' + MiddleName + ' ' + ExtensionName  FROM Residents WHERE Code = '" + strResidentID + "'"
+        txtReportedBy.Text = SQL_SELECT(strQuery).Tables(0).Rows(0)(0)
+    End Sub
+
+    Private Sub chkResident_CheckedChanged(sender As Object, e As EventArgs) Handles chkResident.CheckedChanged
+        btnResidentList.Visible = chkResident.Checked
+        If chkResident.Checked Then
+            txtReportedBy.Text = ""
+            txtReportedBy.ReadOnly = True
+        Else
+            txtReportedBy.ReadOnly = False
+        End If
+    End Sub
+
+    Private Sub F_CaseFile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        formLoadSetup(Me)
     End Sub
 End Class

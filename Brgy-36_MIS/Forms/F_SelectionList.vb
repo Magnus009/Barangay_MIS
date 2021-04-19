@@ -2,6 +2,7 @@
 
     Friend Event selectedHouseNo(ByVal strHouseNo As String, ByVal strHouseholdNo As String)
     Friend Event selectedResident(ByVal strResidentID As String)
+    Friend Event selectedOfficial(ByVal strOfficialID As String, ByVal strOfficialName As String)
 
     Private Sub loadHouses()
         Try
@@ -66,11 +67,44 @@
         End Try
     End Sub
 
+    Private Sub loadOfficials()
+        Try
+            With datList
+                Dim dtOfficial As New DataTable
+
+                .Columns.Clear()
+                strQuery = "SELECT O.Code [ID], R.FamilyName + ', ' + R.GivenName + ' ' + R.MiddleName + ' ' + R.ExtensionName [NAME], OP.Description [POSITION] FROM Officials O" + vbCrLf
+                strQuery += "INNER JOIN Residents R ON O.ResidentCode = R.Code" + vbCrLf
+                strQuery += "INNER JOIN M_OfficialPosition OP ON O.PositionID = OP.ID" + vbCrLf
+                strQuery += "WHERE getdate() BETWEEN O.TermStart AND O.TermEnd" + vbCrLf
+                If txtSearch.Text <> "" Then
+                    strQuery += "AND( " + vbCrLf
+                    strQuery += "O.Code LIKE '%" + txtSearch.Text + "%'" + vbCrLf
+                    strQuery += "OR R.FamilyName LIKE '%" + txtSearch.Text + "%'" + vbCrLf
+                    strQuery += "OR R.GivenName LIKE '%" + txtSearch.Text + "%'" + vbCrLf
+                    strQuery += "OR R.MiddleName LIKE '%" + txtSearch.Text + "%'" + vbCrLf
+                    strQuery += ")" + vbCrLf
+                End If
+                strQuery += "ORDER BY OP.ID"
+                dtOfficial = SQL_SELECT(strQuery).Tables(0)
+                .DataSource = dtOfficial
+
+                .Columns("ID").Width = .Width * 0.22
+                .Columns("NAME").Width = .Width * 0.4
+                .Columns("POSITION").Width = .Width * 0.4
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
         If Me.Text.Equals("HOUSEHOLDS LIST") Then
             loadHouses()
-        Else
+        ElseIf Me.Text.Equals("RESIDENT'S LIST") Then
             loadResidents()
+        Else
+            loadOfficials()
         End If
     End Sub
 
@@ -83,11 +117,18 @@
 
                     RaiseEvent selectedHouseNo(strHouseNo, strHouseholdNo)
                 End If
-            Else
+            ElseIf Me.Text.Equals("RESIDENT'S LIST") Then
                 If MsgBox("Select this Resident?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "CHOOSE RESIDENT") = vbYes Then
                     Dim strResidentID As String = datList.CurrentRow.Cells("ID").Value
 
                     RaiseEvent selectedResident(strResidentID)
+                End If
+            Else
+                If MsgBox("Select this Official?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "CHOOSE OFFICIAL") = vbYes Then
+                    Dim strOfficialID As String = datList.CurrentRow.Cells("ID").Value
+                    Dim strOfficialName As String = datList.CurrentRow.Cells("NAME").Value
+
+                    RaiseEvent selectedOfficial(strOfficialID, strOfficialName)
                 End If
             End If
         Catch ex As Exception
@@ -105,6 +146,9 @@
             Case 1 'Resident for Official
                 loadResidents()
                 Me.Text = "RESIDENT'S LIST"
+            Case 2 'Official Lists
+                loadOfficials()
+                Me.Text = "OFFICIAL'S LIST"
         End Select
         Me.ShowDialog()
     End Sub

@@ -54,6 +54,7 @@ Partial Class _mdi_MIS
         Me.mnuReports = New System.Windows.Forms.ToolStripMenuItem()
         Me.RESIDENTSLISTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OFFICIALSLISTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CASESTATUSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuMapping = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuMaintenance = New System.Windows.Forms.ToolStripMenuItem()
         Me.SamahanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -65,7 +66,6 @@ Partial Class _mdi_MIS
         Me.BackupDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OfficersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuLogout = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CASESTATUSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuMIS.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -264,6 +264,12 @@ Partial Class _mdi_MIS
         Me.OFFICIALSLISTToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
         Me.OFFICIALSLISTToolStripMenuItem.Text = "OFFICIAL'S LIST"
         '
+        'CASESTATUSToolStripMenuItem
+        '
+        Me.CASESTATUSToolStripMenuItem.Name = "CASESTATUSToolStripMenuItem"
+        Me.CASESTATUSToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.CASESTATUSToolStripMenuItem.Text = "CASE STATUS"
+        '
         'mnuMapping
         '
         Me.mnuMapping.Name = "mnuMapping"
@@ -334,12 +340,6 @@ Partial Class _mdi_MIS
         Me.mnuLogout.Size = New System.Drawing.Size(65, 20)
         Me.mnuLogout.Text = "&LOGOUT"
         '
-        'CASESTATUSToolStripMenuItem
-        '
-        Me.CASESTATUSToolStripMenuItem.Name = "CASESTATUSToolStripMenuItem"
-        Me.CASESTATUSToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
-        Me.CASESTATUSToolStripMenuItem.Text = "CASE STATUS"
-        '
         '_mdi_MIS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
@@ -357,7 +357,6 @@ Partial Class _mdi_MIS
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "_mdi_MIS"
         Me.Text = "MANAGEMENT INFORMATION SYSTEM  of BARANGAY 36-A  (SAP-SAP)"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.mnuMIS.ResumeLayout(False)
         Me.mnuMIS.PerformLayout()
         Me.ResumeLayout(False)

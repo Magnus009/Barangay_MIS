@@ -22,8 +22,8 @@ Partial Class F_PeopleInvolved
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtInvolvement = New System.Windows.Forms.TextBox()
@@ -46,9 +46,9 @@ Partial Class F_PeopleInvolved
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.pnlDetails = New System.Windows.Forms.Panel()
         CType(Me.datDocuments, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
+        Me.pnlDetails.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtName
@@ -169,14 +169,14 @@ Partial Class F_PeopleInvolved
         Me.datDocuments.AllowUserToResizeRows = False
         Me.datDocuments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.datDocuments.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datDocuments.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datDocuments.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.datDocuments.ColumnHeadersHeight = 30
         Me.datDocuments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.datDocuments.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.colFileName, Me.colDateSubmitted, Me.colTempFile, Me.colView, Me.colDelete})
@@ -234,13 +234,13 @@ Partial Class F_PeopleInvolved
         'colDelete
         '
         Me.colDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        Me.colDelete.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
+        Me.colDelete.DefaultCellStyle = DataGridViewCellStyle6
         Me.colDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.colDelete.HeaderText = ""
         Me.colDelete.Name = "colDelete"
@@ -307,38 +307,37 @@ Partial Class F_PeopleInvolved
         Me.Label6.Text = "*"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'Panel1
+        'pnlDetails
         '
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.chkResident)
-        Me.Panel1.Controls.Add(Me.Label6)
-        Me.Panel1.Controls.Add(Me.btnSave)
-        Me.Panel1.Controls.Add(Me.Label19)
-        Me.Panel1.Controls.Add(Me.btnAttach)
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.Label9)
-        Me.Panel1.Controls.Add(Me.txtName)
-        Me.Panel1.Controls.Add(Me.datDocuments)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.txtStatement)
-        Me.Panel1.Controls.Add(Me.txtInvolvement)
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.txtContactNo)
-        Me.Panel1.Location = New System.Drawing.Point(5, 6)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(380, 410)
-        Me.Panel1.TabIndex = 44
-        Me.Panel1.Tag = "Secondary"
+        Me.pnlDetails.Controls.Add(Me.Label1)
+        Me.pnlDetails.Controls.Add(Me.chkResident)
+        Me.pnlDetails.Controls.Add(Me.Label6)
+        Me.pnlDetails.Controls.Add(Me.btnSave)
+        Me.pnlDetails.Controls.Add(Me.Label19)
+        Me.pnlDetails.Controls.Add(Me.btnAttach)
+        Me.pnlDetails.Controls.Add(Me.Label5)
+        Me.pnlDetails.Controls.Add(Me.Label9)
+        Me.pnlDetails.Controls.Add(Me.txtName)
+        Me.pnlDetails.Controls.Add(Me.datDocuments)
+        Me.pnlDetails.Controls.Add(Me.Label2)
+        Me.pnlDetails.Controls.Add(Me.txtStatement)
+        Me.pnlDetails.Controls.Add(Me.txtInvolvement)
+        Me.pnlDetails.Controls.Add(Me.Label4)
+        Me.pnlDetails.Controls.Add(Me.Label3)
+        Me.pnlDetails.Controls.Add(Me.txtContactNo)
+        Me.pnlDetails.Location = New System.Drawing.Point(5, 6)
+        Me.pnlDetails.Name = "pnlDetails"
+        Me.pnlDetails.Size = New System.Drawing.Size(380, 410)
+        Me.pnlDetails.TabIndex = 44
+        Me.pnlDetails.Tag = "Secondary"
         '
         'F_PeopleInvolved
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(392, 422)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.pnlDetails)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -349,8 +348,8 @@ Partial Class F_PeopleInvolved
         Me.Tag = "Primary"
         Me.Text = "PEOPLE INVOLVED"
         CType(Me.datDocuments, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.pnlDetails.ResumeLayout(False)
+        Me.pnlDetails.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -376,5 +375,5 @@ Partial Class F_PeopleInvolved
     Friend WithEvents colTempFile As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colView As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents colDelete As System.Windows.Forms.DataGridViewButtonColumn
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents pnlDetails As System.Windows.Forms.Panel
 End Class
