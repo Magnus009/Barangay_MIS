@@ -154,7 +154,7 @@ Partial Class F_BarangayIndigency
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(104, 35)
         Me.Button1.TabIndex = 52
-        Me.Button1.Text = "&PRINT"
+        Me.Button1.Text = "&GENERATE"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'F_BarangayIndigency

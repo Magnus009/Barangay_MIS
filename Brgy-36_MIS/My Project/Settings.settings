@@ -47,5 +47,14 @@
     <Setting Name="Editable" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">188, 222, 232</Value>
     </Setting>
+    <Setting Name="Available" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">128, 255, 128</Value>
+    </Setting>
+    <Setting Name="Occupied" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">255, 192, 128</Value>
+    </Setting>
+    <Setting Name="Unavailable" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">255, 128, 128</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

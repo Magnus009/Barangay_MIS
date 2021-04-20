@@ -212,4 +212,11 @@ Public Class _mdi_MIS
     Private Sub CASESTATUSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CASESTATUSToolStripMenuItem.Click
         F_CaseStatusReport.Show()
     End Sub
+
+    Private Sub mnuMapping_Click(sender As Object, e As EventArgs) Handles mnuMapping.Click
+        Dim frmMapping As New F_BarangayMap
+
+        frmMapping.MdiParent = Me
+        frmMapping.Show()
+    End Sub
 End Class

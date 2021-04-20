@@ -233,6 +233,42 @@ Namespace My
                 Me("Editable") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("128, 255, 128")>  _
+        Public Property Available() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("Available"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("Available") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("255, 192, 128")>  _
+        Public Property Occupied() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("Occupied"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("Occupied") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("255, 128, 128")>  _
+        Public Property Unavailable() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("Unavailable"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("Unavailable") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

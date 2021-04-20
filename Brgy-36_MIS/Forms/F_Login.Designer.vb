@@ -42,7 +42,7 @@ Partial Class F_Login
         Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogin.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.ForeColor = System.Drawing.Color.White
-        Me.btnLogin.Location = New System.Drawing.Point(441, 333)
+        Me.btnLogin.Location = New System.Drawing.Point(80, 333)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(266, 40)
         Me.btnLogin.TabIndex = 3
@@ -55,7 +55,7 @@ Partial Class F_Login
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.ForeColor = System.Drawing.Color.White
-        Me.btnClose.Location = New System.Drawing.Point(441, 379)
+        Me.btnClose.Location = New System.Drawing.Point(80, 379)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(266, 40)
         Me.btnClose.TabIndex = 6
@@ -66,7 +66,7 @@ Partial Class F_Login
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(438, 189)
+        Me.Label1.Location = New System.Drawing.Point(77, 189)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(81, 16)
         Me.Label1.TabIndex = 3
@@ -76,7 +76,7 @@ Partial Class F_Login
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(441, 240)
+        Me.Label2.Location = New System.Drawing.Point(80, 240)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(79, 16)
         Me.Label2.TabIndex = 4
@@ -86,7 +86,7 @@ Partial Class F_Login
         '
         Me.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtUser.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUser.Location = New System.Drawing.Point(438, 208)
+        Me.txtUser.Location = New System.Drawing.Point(77, 208)
         Me.txtUser.MaxLength = 20
         Me.txtUser.Multiline = True
         Me.txtUser.Name = "txtUser"
@@ -99,7 +99,7 @@ Partial Class F_Login
         '
         Me.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPassword.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassword.Location = New System.Drawing.Point(441, 259)
+        Me.txtPassword.Location = New System.Drawing.Point(80, 259)
         Me.txtPassword.MaxLength = 20
         Me.txtPassword.Multiline = True
         Me.txtPassword.Name = "txtPassword"
@@ -115,14 +115,14 @@ Partial Class F_Login
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(418, 462)
+        Me.PictureBox1.Size = New System.Drawing.Size(46, 462)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
         'lnkForgotPass
         '
         Me.lnkForgotPass.AutoSize = True
-        Me.lnkForgotPass.Location = New System.Drawing.Point(523, 288)
+        Me.lnkForgotPass.Location = New System.Drawing.Point(162, 288)
         Me.lnkForgotPass.Name = "lnkForgotPass"
         Me.lnkForgotPass.Size = New System.Drawing.Size(102, 16)
         Me.lnkForgotPass.TabIndex = 4
@@ -131,7 +131,7 @@ Partial Class F_Login
         '
         'PictureBox2
         '
-        Me.PictureBox2.Location = New System.Drawing.Point(495, 36)
+        Me.PictureBox2.Location = New System.Drawing.Point(134, 36)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(153, 138)
         Me.PictureBox2.TabIndex = 8
@@ -142,7 +142,7 @@ Partial Class F_Login
         Me.chkShowHide.AutoSize = True
         Me.chkShowHide.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkShowHide.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkShowHide.Location = New System.Drawing.Point(657, 263)
+        Me.chkShowHide.Location = New System.Drawing.Point(296, 263)
         Me.chkShowHide.Name = "chkShowHide"
         Me.chkShowHide.Size = New System.Drawing.Size(48, 17)
         Me.chkShowHide.TabIndex = 9
@@ -155,7 +155,7 @@ Partial Class F_Login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(729, 462)
+        Me.ClientSize = New System.Drawing.Size(381, 462)
         Me.ControlBox = False
         Me.Controls.Add(Me.txtUser)
         Me.Controls.Add(Me.chkShowHide)

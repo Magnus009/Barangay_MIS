@@ -22,6 +22,15 @@ Partial Class F_BarangayMap
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(F_BarangayMap))
         Me.picMap = New System.Windows.Forms.PictureBox()
         Me.lbl1 = New System.Windows.Forms.Label()
@@ -35,15 +44,15 @@ Partial Class F_BarangayMap
         Me.lbl9 = New System.Windows.Forms.Label()
         Me.lbl10 = New System.Windows.Forms.Label()
         Me.lbl11 = New System.Windows.Forms.Label()
-        Me.lbl112 = New System.Windows.Forms.Label()
+        Me.lbl12 = New System.Windows.Forms.Label()
         Me.lbl14 = New System.Windows.Forms.Label()
         Me.lbl13 = New System.Windows.Forms.Label()
         Me.lbl15 = New System.Windows.Forms.Label()
         Me.lbl16 = New System.Windows.Forms.Label()
         Me.lbl17 = New System.Windows.Forms.Label()
         Me.lbl18 = New System.Windows.Forms.Label()
-        Me.lbl119 = New System.Windows.Forms.Label()
-        Me.lbl48 = New System.Windows.Forms.Label()
+        Me.lbl32 = New System.Windows.Forms.Label()
+        Me.lbl41 = New System.Windows.Forms.Label()
         Me.lbl47 = New System.Windows.Forms.Label()
         Me.lbl46 = New System.Windows.Forms.Label()
         Me.lbl45 = New System.Windows.Forms.Label()
@@ -72,24 +81,46 @@ Partial Class F_BarangayMap
         Me.lbl38 = New System.Windows.Forms.Label()
         Me.lbl39 = New System.Windows.Forms.Label()
         Me.btnAssign = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.lblAvailable = New System.Windows.Forms.Label()
-        Me.lblOccupied = New System.Windows.Forms.Label()
-        Me.lblUnavailable = New System.Windows.Forms.Label()
-        Me.lblLegends = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.pnlAssignOuter = New System.Windows.Forms.Panel()
+        Me.pnlAssign = New System.Windows.Forms.Panel()
+        Me.pnlSearch = New System.Windows.Forms.Panel()
+        Me.datRecords = New System.Windows.Forms.DataGridView()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtSHouseholdNo = New System.Windows.Forms.TextBox()
+        Me.txtSHouseNo = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.pnlHouseholdDetails = New System.Windows.Forms.Panel()
+        Me.cboRemarks = New System.Windows.Forms.ComboBox()
+        Me.datMember = New System.Windows.Forms.DataGridView()
+        Me.colResidentID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txtLotNo = New System.Windows.Forms.TextBox()
+        Me.txtHead = New System.Windows.Forms.TextBox()
+        Me.txtHouseNo = New System.Windows.Forms.TextBox()
+        Me.lblHead = New System.Windows.Forms.Label()
+        Me.lblHouseholdNo = New System.Windows.Forms.Label()
+        Me.lblRemarks = New System.Windows.Forms.Label()
+        Me.btnSave = New System.Windows.Forms.Button()
+        Me.lblHouseNo = New System.Windows.Forms.Label()
+        Me.lblLotNo = New System.Windows.Forms.Label()
+        Me.txtHouseholdNo = New System.Windows.Forms.TextBox()
+        Me.lblLegends = New System.Windows.Forms.Label()
+        Me.lblUnavailableColor = New System.Windows.Forms.Label()
+        Me.lblUnavailable = New System.Windows.Forms.Label()
+        Me.lblOccupiedColor = New System.Windows.Forms.Label()
+        Me.lblOccupied = New System.Windows.Forms.Label()
+        Me.lblAvailableColor = New System.Windows.Forms.Label()
+        Me.lblAvailable = New System.Windows.Forms.Label()
+        Me.btnSearch = New System.Windows.Forms.Button()
         CType(Me.picMap, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.Panel3.SuspendLayout()
-        Me.Panel4.SuspendLayout()
+        Me.pnlAssignOuter.SuspendLayout()
+        Me.pnlAssign.SuspendLayout()
+        Me.pnlSearch.SuspendLayout()
+        CType(Me.datRecords, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlHouseholdDetails.SuspendLayout()
+        CType(Me.datMember, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'picMap
@@ -214,15 +245,15 @@ Partial Class F_BarangayMap
         Me.lbl11.TabIndex = 1
         Me.lbl11.Tag = "AVAILABLE"
         '
-        'lbl112
+        'lbl12
         '
-        Me.lbl112.AutoEllipsis = True
-        Me.lbl112.BackColor = System.Drawing.Color.Transparent
-        Me.lbl112.Location = New System.Drawing.Point(585, 152)
-        Me.lbl112.Name = "lbl112"
-        Me.lbl112.Size = New System.Drawing.Size(67, 22)
-        Me.lbl112.TabIndex = 1
-        Me.lbl112.Tag = "AVAILABLE"
+        Me.lbl12.AutoEllipsis = True
+        Me.lbl12.BackColor = System.Drawing.Color.Transparent
+        Me.lbl12.Location = New System.Drawing.Point(585, 152)
+        Me.lbl12.Name = "lbl12"
+        Me.lbl12.Size = New System.Drawing.Size(67, 22)
+        Me.lbl12.TabIndex = 1
+        Me.lbl12.Tag = "AVAILABLE"
         '
         'lbl14
         '
@@ -284,25 +315,25 @@ Partial Class F_BarangayMap
         Me.lbl18.TabIndex = 3
         Me.lbl18.Tag = "AVAILABLE"
         '
-        'lbl119
+        'lbl32
         '
-        Me.lbl119.AutoEllipsis = True
-        Me.lbl119.BackColor = System.Drawing.Color.Transparent
-        Me.lbl119.Location = New System.Drawing.Point(641, 224)
-        Me.lbl119.Name = "lbl119"
-        Me.lbl119.Size = New System.Drawing.Size(99, 32)
-        Me.lbl119.TabIndex = 3
-        Me.lbl119.Tag = "AVAILABLE"
+        Me.lbl32.AutoEllipsis = True
+        Me.lbl32.BackColor = System.Drawing.Color.Transparent
+        Me.lbl32.Location = New System.Drawing.Point(641, 224)
+        Me.lbl32.Name = "lbl32"
+        Me.lbl32.Size = New System.Drawing.Size(99, 32)
+        Me.lbl32.TabIndex = 3
+        Me.lbl32.Tag = "AVAILABLE"
         '
-        'lbl48
+        'lbl41
         '
-        Me.lbl48.AutoEllipsis = True
-        Me.lbl48.BackColor = System.Drawing.Color.Transparent
-        Me.lbl48.Location = New System.Drawing.Point(310, 207)
-        Me.lbl48.Name = "lbl48"
-        Me.lbl48.Size = New System.Drawing.Size(47, 22)
-        Me.lbl48.TabIndex = 2
-        Me.lbl48.Tag = "AVAILABLE"
+        Me.lbl41.AutoEllipsis = True
+        Me.lbl41.BackColor = System.Drawing.Color.Transparent
+        Me.lbl41.Location = New System.Drawing.Point(310, 207)
+        Me.lbl41.Name = "lbl41"
+        Me.lbl41.Size = New System.Drawing.Size(47, 22)
+        Me.lbl41.TabIndex = 2
+        Me.lbl41.Tag = "AVAILABLE"
         '
         'lbl47
         '
@@ -576,153 +607,440 @@ Partial Class F_BarangayMap
         '
         'btnAssign
         '
-        Me.btnAssign.Location = New System.Drawing.Point(3, 3)
+        Me.btnAssign.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnAssign.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAssign.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAssign.ForeColor = System.Drawing.Color.White
+        Me.btnAssign.Location = New System.Drawing.Point(3, 5)
         Me.btnAssign.Name = "btnAssign"
-        Me.btnAssign.Size = New System.Drawing.Size(152, 41)
+        Me.btnAssign.Size = New System.Drawing.Size(152, 33)
         Me.btnAssign.TabIndex = 4
-        Me.btnAssign.Text = "ASSIGN HOUSEHOLD"
-        Me.btnAssign.UseVisualStyleBackColor = True
+        Me.btnAssign.Text = "ASSIGN"
+        Me.btnAssign.UseVisualStyleBackColor = False
         '
-        'Panel1
+        'pnlAssignOuter
         '
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Location = New System.Drawing.Point(0, 398)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(516, 282)
-        Me.Panel1.TabIndex = 5
+        Me.pnlAssignOuter.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.pnlAssignOuter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlAssignOuter.Controls.Add(Me.pnlAssign)
+        Me.pnlAssignOuter.Location = New System.Drawing.Point(0, 336)
+        Me.pnlAssignOuter.Name = "pnlAssignOuter"
+        Me.pnlAssignOuter.Size = New System.Drawing.Size(516, 282)
+        Me.pnlAssignOuter.TabIndex = 6
         '
-        'Panel2
+        'pnlAssign
         '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.Panel3)
-        Me.Panel2.Location = New System.Drawing.Point(-1, -1)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(516, 282)
-        Me.Panel2.TabIndex = 6
+        Me.pnlAssign.BackColor = System.Drawing.Color.White
+        Me.pnlAssign.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlAssign.Controls.Add(Me.pnlSearch)
+        Me.pnlAssign.Controls.Add(Me.pnlHouseholdDetails)
+        Me.pnlAssign.Controls.Add(Me.lblLegends)
+        Me.pnlAssign.Controls.Add(Me.lblUnavailableColor)
+        Me.pnlAssign.Controls.Add(Me.lblUnavailable)
+        Me.pnlAssign.Controls.Add(Me.lblOccupiedColor)
+        Me.pnlAssign.Controls.Add(Me.lblOccupied)
+        Me.pnlAssign.Controls.Add(Me.lblAvailableColor)
+        Me.pnlAssign.Controls.Add(Me.lblAvailable)
+        Me.pnlAssign.Controls.Add(Me.btnSearch)
+        Me.pnlAssign.Controls.Add(Me.btnAssign)
+        Me.pnlAssign.Location = New System.Drawing.Point(7, 9)
+        Me.pnlAssign.Name = "pnlAssign"
+        Me.pnlAssign.Size = New System.Drawing.Size(501, 263)
+        Me.pnlAssign.TabIndex = 7
         '
-        'Panel3
+        'pnlSearch
         '
-        Me.Panel3.BackColor = System.Drawing.Color.White
-        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel3.Controls.Add(Me.lblLegends)
-        Me.Panel3.Controls.Add(Me.Label4)
-        Me.Panel3.Controls.Add(Me.lblUnavailable)
-        Me.Panel3.Controls.Add(Me.Label3)
-        Me.Panel3.Controls.Add(Me.lblOccupied)
-        Me.Panel3.Controls.Add(Me.Label2)
-        Me.Panel3.Controls.Add(Me.lblAvailable)
-        Me.Panel3.Controls.Add(Me.Panel4)
-        Me.Panel3.Controls.Add(Me.btnAssign)
-        Me.Panel3.Location = New System.Drawing.Point(7, 9)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(501, 263)
-        Me.Panel3.TabIndex = 7
+        Me.pnlSearch.BackColor = System.Drawing.Color.White
+        Me.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlSearch.Controls.Add(Me.datRecords)
+        Me.pnlSearch.Controls.Add(Me.txtSearch)
+        Me.pnlSearch.Controls.Add(Me.Label4)
+        Me.pnlSearch.Controls.Add(Me.Label2)
+        Me.pnlSearch.Controls.Add(Me.txtSHouseholdNo)
+        Me.pnlSearch.Controls.Add(Me.txtSHouseNo)
+        Me.pnlSearch.Controls.Add(Me.Label1)
+        Me.pnlSearch.Location = New System.Drawing.Point(158, 3)
+        Me.pnlSearch.Name = "pnlSearch"
+        Me.pnlSearch.Size = New System.Drawing.Size(330, 253)
+        Me.pnlSearch.TabIndex = 9
         '
-        'TextBox1
+        'datRecords
         '
-        Me.TextBox1.Location = New System.Drawing.Point(82, 18)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 22)
-        Me.TextBox1.TabIndex = 5
+        Me.datRecords.AllowUserToAddRows = False
+        Me.datRecords.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.datRecords.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(112, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datRecords.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.datRecords.ColumnHeadersHeight = 30
+        Me.datRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.datRecords.Location = New System.Drawing.Point(10, 65)
+        Me.datRecords.MultiSelect = False
+        Me.datRecords.Name = "datRecords"
+        Me.datRecords.ReadOnly = True
+        Me.datRecords.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datRecords.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.datRecords.RowHeadersVisible = False
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.datRecords.RowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.datRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.datRecords.Size = New System.Drawing.Size(309, 180)
+        Me.datRecords.TabIndex = 15
+        '
+        'txtSearch
+        '
+        Me.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtSearch.Location = New System.Drawing.Point(74, 33)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(248, 22)
+        Me.txtSearch.TabIndex = 13
+        Me.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(17, 37)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(56, 15)
+        Me.Label4.TabIndex = 14
+        Me.Label4.Text = "SEARCH :"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(149, 11)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(101, 15)
+        Me.Label2.TabIndex = 10
+        Me.Label2.Text = "HOUSEHOLD No. :"
+        '
+        'txtSHouseholdNo
+        '
+        Me.txtSHouseholdNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtSHouseholdNo.Location = New System.Drawing.Point(253, 7)
+        Me.txtSHouseholdNo.Name = "txtSHouseholdNo"
+        Me.txtSHouseholdNo.Size = New System.Drawing.Size(69, 22)
+        Me.txtSHouseholdNo.TabIndex = 9
+        Me.txtSHouseholdNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txtSHouseNo
+        '
+        Me.txtSHouseNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtSHouseNo.Location = New System.Drawing.Point(74, 7)
+        Me.txtSHouseNo.Name = "txtSHouseNo"
+        Me.txtSHouseNo.Size = New System.Drawing.Size(61, 22)
+        Me.txtSHouseNo.TabIndex = 7
+        Me.txtSHouseNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(18, 18)
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(2, 11)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(48, 17)
-        Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(71, 15)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "HOUSE No. :"
         '
-        'Panel4
+        'pnlHouseholdDetails
         '
-        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel4.Controls.Add(Me.Label1)
-        Me.Panel4.Controls.Add(Me.TextBox1)
-        Me.Panel4.Location = New System.Drawing.Point(161, 3)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(330, 244)
-        Me.Panel4.TabIndex = 7
+        Me.pnlHouseholdDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlHouseholdDetails.Controls.Add(Me.cboRemarks)
+        Me.pnlHouseholdDetails.Controls.Add(Me.datMember)
+        Me.pnlHouseholdDetails.Controls.Add(Me.txtLotNo)
+        Me.pnlHouseholdDetails.Controls.Add(Me.txtHead)
+        Me.pnlHouseholdDetails.Controls.Add(Me.txtHouseNo)
+        Me.pnlHouseholdDetails.Controls.Add(Me.lblHead)
+        Me.pnlHouseholdDetails.Controls.Add(Me.lblHouseholdNo)
+        Me.pnlHouseholdDetails.Controls.Add(Me.lblRemarks)
+        Me.pnlHouseholdDetails.Controls.Add(Me.btnSave)
+        Me.pnlHouseholdDetails.Controls.Add(Me.lblHouseNo)
+        Me.pnlHouseholdDetails.Controls.Add(Me.lblLotNo)
+        Me.pnlHouseholdDetails.Controls.Add(Me.txtHouseholdNo)
+        Me.pnlHouseholdDetails.Location = New System.Drawing.Point(161, 3)
+        Me.pnlHouseholdDetails.Name = "pnlHouseholdDetails"
+        Me.pnlHouseholdDetails.Size = New System.Drawing.Size(330, 253)
+        Me.pnlHouseholdDetails.TabIndex = 7
         '
-        'lblAvailable
+        'cboRemarks
         '
-        Me.lblAvailable.AutoSize = True
-        Me.lblAvailable.Location = New System.Drawing.Point(37, 101)
-        Me.lblAvailable.Name = "lblAvailable"
-        Me.lblAvailable.Size = New System.Drawing.Size(72, 17)
-        Me.lblAvailable.TabIndex = 7
-        Me.lblAvailable.Text = "AVAILABLE"
+        Me.cboRemarks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboRemarks.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboRemarks.FormattingEnabled = True
+        Me.cboRemarks.Items.AddRange(New Object() {"AVAILABLE", "OCCUPIED", "UNAVAILABLE"})
+        Me.cboRemarks.Location = New System.Drawing.Point(220, 10)
+        Me.cboRemarks.Name = "cboRemarks"
+        Me.cboRemarks.Size = New System.Drawing.Size(96, 24)
+        Me.cboRemarks.TabIndex = 8
         '
-        'lblOccupied
+        'datMember
         '
-        Me.lblOccupied.AutoSize = True
-        Me.lblOccupied.Location = New System.Drawing.Point(37, 126)
-        Me.lblOccupied.Name = "lblOccupied"
-        Me.lblOccupied.Size = New System.Drawing.Size(69, 17)
-        Me.lblOccupied.TabIndex = 8
-        Me.lblOccupied.Text = "OCCUPIED"
+        Me.datMember.AllowUserToAddRows = False
+        Me.datMember.AllowUserToDeleteRows = False
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.datMember.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(112, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datMember.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        Me.datMember.ColumnHeadersHeight = 30
+        Me.datMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.datMember.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colResidentID, Me.colName})
+        Me.datMember.Location = New System.Drawing.Point(7, 100)
+        Me.datMember.MultiSelect = False
+        Me.datMember.Name = "datMember"
+        Me.datMember.ReadOnly = True
+        Me.datMember.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datMember.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        Me.datMember.RowHeadersVisible = False
+        Me.datMember.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.datMember.Size = New System.Drawing.Size(309, 122)
+        Me.datMember.TabIndex = 7
         '
-        'lblUnavailable
+        'colResidentID
         '
-        Me.lblUnavailable.AutoSize = True
-        Me.lblUnavailable.Location = New System.Drawing.Point(37, 151)
-        Me.lblUnavailable.Name = "lblUnavailable"
-        Me.lblUnavailable.Size = New System.Drawing.Size(89, 17)
-        Me.lblUnavailable.TabIndex = 9
-        Me.lblUnavailable.Text = "UNAVAILABLE"
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colResidentID.DefaultCellStyle = DataGridViewCellStyle7
+        Me.colResidentID.HeaderText = "ID"
+        Me.colResidentID.Name = "colResidentID"
+        Me.colResidentID.ReadOnly = True
+        '
+        'colName
+        '
+        Me.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colName.DefaultCellStyle = DataGridViewCellStyle8
+        Me.colName.HeaderText = "NAME"
+        Me.colName.Name = "colName"
+        Me.colName.ReadOnly = True
+        '
+        'txtLotNo
+        '
+        Me.txtLotNo.Location = New System.Drawing.Point(74, 11)
+        Me.txtLotNo.Name = "txtLotNo"
+        Me.txtLotNo.ReadOnly = True
+        Me.txtLotNo.Size = New System.Drawing.Size(61, 22)
+        Me.txtLotNo.TabIndex = 5
+        Me.txtLotNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txtHead
+        '
+        Me.txtHead.Location = New System.Drawing.Point(125, 72)
+        Me.txtHead.Name = "txtHead"
+        Me.txtHead.ReadOnly = True
+        Me.txtHead.Size = New System.Drawing.Size(191, 22)
+        Me.txtHead.TabIndex = 5
+        Me.txtHead.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txtHouseNo
+        '
+        Me.txtHouseNo.Location = New System.Drawing.Point(74, 37)
+        Me.txtHouseNo.Name = "txtHouseNo"
+        Me.txtHouseNo.ReadOnly = True
+        Me.txtHouseNo.Size = New System.Drawing.Size(61, 22)
+        Me.txtHouseNo.TabIndex = 5
+        Me.txtHouseNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lblHead
+        '
+        Me.lblHead.AutoSize = True
+        Me.lblHead.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHead.Location = New System.Drawing.Point(7, 76)
+        Me.lblHead.Name = "lblHead"
+        Me.lblHead.Size = New System.Drawing.Size(112, 15)
+        Me.lblHead.TabIndex = 6
+        Me.lblHead.Text = "HOUSEHOLD HEAD :"
+        '
+        'lblHouseholdNo
+        '
+        Me.lblHouseholdNo.AutoSize = True
+        Me.lblHouseholdNo.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHouseholdNo.Location = New System.Drawing.Point(145, 41)
+        Me.lblHouseholdNo.Name = "lblHouseholdNo"
+        Me.lblHouseholdNo.Size = New System.Drawing.Size(101, 15)
+        Me.lblHouseholdNo.TabIndex = 6
+        Me.lblHouseholdNo.Text = "HOUSEHOLD No. :"
+        '
+        'lblRemarks
+        '
+        Me.lblRemarks.AutoSize = True
+        Me.lblRemarks.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRemarks.Location = New System.Drawing.Point(155, 15)
+        Me.lblRemarks.Name = "lblRemarks"
+        Me.lblRemarks.Size = New System.Drawing.Size(64, 15)
+        Me.lblRemarks.TabIndex = 6
+        Me.lblRemarks.Text = "REMARKS :"
+        '
+        'btnSave
+        '
+        Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSave.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSave.ForeColor = System.Drawing.Color.White
+        Me.btnSave.Location = New System.Drawing.Point(247, 222)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(69, 28)
+        Me.btnSave.TabIndex = 4
+        Me.btnSave.Text = "SAVE"
+        Me.btnSave.UseVisualStyleBackColor = False
+        Me.btnSave.Visible = False
+        '
+        'lblHouseNo
+        '
+        Me.lblHouseNo.AutoSize = True
+        Me.lblHouseNo.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHouseNo.Location = New System.Drawing.Point(4, 41)
+        Me.lblHouseNo.Name = "lblHouseNo"
+        Me.lblHouseNo.Size = New System.Drawing.Size(71, 15)
+        Me.lblHouseNo.TabIndex = 6
+        Me.lblHouseNo.Text = "HOUSE No. :"
+        '
+        'lblLotNo
+        '
+        Me.lblLotNo.AutoSize = True
+        Me.lblLotNo.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLotNo.Location = New System.Drawing.Point(21, 15)
+        Me.lblLotNo.Name = "lblLotNo"
+        Me.lblLotNo.Size = New System.Drawing.Size(54, 15)
+        Me.lblLotNo.TabIndex = 6
+        Me.lblLotNo.Text = "LOT No. :"
+        '
+        'txtHouseholdNo
+        '
+        Me.txtHouseholdNo.Location = New System.Drawing.Point(247, 37)
+        Me.txtHouseholdNo.Name = "txtHouseholdNo"
+        Me.txtHouseholdNo.ReadOnly = True
+        Me.txtHouseholdNo.Size = New System.Drawing.Size(69, 22)
+        Me.txtHouseholdNo.TabIndex = 5
+        Me.txtHouseholdNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblLegends
         '
         Me.lblLegends.AutoSize = True
         Me.lblLegends.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLegends.Location = New System.Drawing.Point(47, 72)
+        Me.lblLegends.Location = New System.Drawing.Point(45, 163)
         Me.lblLegends.Name = "lblLegends"
         Me.lblLegends.Size = New System.Drawing.Size(65, 16)
         Me.lblLegends.TabIndex = 10
         Me.lblLegends.Text = "LEGENDS"
         '
-        'Label2
+        'lblUnavailableColor
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Green
-        Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label2.Location = New System.Drawing.Point(15, 101)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(19, 19)
-        Me.Label2.TabIndex = 7
-        Me.Label2.Text = "   "
+        Me.lblUnavailableColor.AutoSize = True
+        Me.lblUnavailableColor.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.lblUnavailableColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblUnavailableColor.Location = New System.Drawing.Point(15, 235)
+        Me.lblUnavailableColor.Name = "lblUnavailableColor"
+        Me.lblUnavailableColor.Size = New System.Drawing.Size(19, 19)
+        Me.lblUnavailableColor.TabIndex = 9
+        Me.lblUnavailableColor.Text = "   "
         '
-        'Label3
+        'lblUnavailable
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Orange
-        Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label3.Location = New System.Drawing.Point(15, 126)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(19, 19)
-        Me.Label3.TabIndex = 8
-        Me.Label3.Text = "   "
+        Me.lblUnavailable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblUnavailable.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUnavailable.Location = New System.Drawing.Point(13, 233)
+        Me.lblUnavailable.Name = "lblUnavailable"
+        Me.lblUnavailable.Size = New System.Drawing.Size(129, 23)
+        Me.lblUnavailable.TabIndex = 9
+        Me.lblUnavailable.Text = "UNAVAILABLE"
+        Me.lblUnavailable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label4
+        'lblOccupiedColor
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Gray
-        Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label4.Location = New System.Drawing.Point(15, 151)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(19, 19)
-        Me.Label4.TabIndex = 9
-        Me.Label4.Text = "   "
+        Me.lblOccupiedColor.AutoSize = True
+        Me.lblOccupiedColor.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.lblOccupiedColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblOccupiedColor.Location = New System.Drawing.Point(15, 210)
+        Me.lblOccupiedColor.Name = "lblOccupiedColor"
+        Me.lblOccupiedColor.Size = New System.Drawing.Size(19, 19)
+        Me.lblOccupiedColor.TabIndex = 8
+        Me.lblOccupiedColor.Text = "   "
+        '
+        'lblOccupied
+        '
+        Me.lblOccupied.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblOccupied.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOccupied.Location = New System.Drawing.Point(13, 208)
+        Me.lblOccupied.Name = "lblOccupied"
+        Me.lblOccupied.Size = New System.Drawing.Size(129, 23)
+        Me.lblOccupied.TabIndex = 8
+        Me.lblOccupied.Text = "OCCUPIED"
+        Me.lblOccupied.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblAvailableColor
+        '
+        Me.lblAvailableColor.AutoSize = True
+        Me.lblAvailableColor.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.lblAvailableColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblAvailableColor.Location = New System.Drawing.Point(15, 185)
+        Me.lblAvailableColor.Name = "lblAvailableColor"
+        Me.lblAvailableColor.Size = New System.Drawing.Size(19, 19)
+        Me.lblAvailableColor.TabIndex = 7
+        Me.lblAvailableColor.Text = "   "
+        '
+        'lblAvailable
+        '
+        Me.lblAvailable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblAvailable.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAvailable.Location = New System.Drawing.Point(13, 183)
+        Me.lblAvailable.Name = "lblAvailable"
+        Me.lblAvailable.Size = New System.Drawing.Size(129, 23)
+        Me.lblAvailable.TabIndex = 7
+        Me.lblAvailable.Text = "AVAILABLE"
+        Me.lblAvailable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btnSearch
+        '
+        Me.btnSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearch.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearch.ForeColor = System.Drawing.Color.White
+        Me.btnSearch.Location = New System.Drawing.Point(3, 41)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(152, 33)
+        Me.btnSearch.TabIndex = 4
+        Me.btnSearch.Text = "SEARCH"
+        Me.btnSearch.UseVisualStyleBackColor = False
         '
         'F_BarangayMap
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(939, 680)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.lbl119)
+        Me.Controls.Add(Me.pnlAssignOuter)
+        Me.Controls.Add(Me.lbl32)
         Me.Controls.Add(Me.lbl20)
         Me.Controls.Add(Me.lbl25)
         Me.Controls.Add(Me.lbl39)
@@ -753,11 +1071,11 @@ Partial Class F_BarangayMap
         Me.Controls.Add(Me.lbl45)
         Me.Controls.Add(Me.lbl46)
         Me.Controls.Add(Me.lbl47)
-        Me.Controls.Add(Me.lbl48)
+        Me.Controls.Add(Me.lbl41)
         Me.Controls.Add(Me.lbl15)
         Me.Controls.Add(Me.lbl13)
         Me.Controls.Add(Me.lbl14)
-        Me.Controls.Add(Me.lbl112)
+        Me.Controls.Add(Me.lbl12)
         Me.Controls.Add(Me.lbl11)
         Me.Controls.Add(Me.lbl10)
         Me.Controls.Add(Me.lbl9)
@@ -780,12 +1098,15 @@ Partial Class F_BarangayMap
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Barangay Map"
         CType(Me.picMap, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
+        Me.pnlAssignOuter.ResumeLayout(False)
+        Me.pnlAssign.ResumeLayout(False)
+        Me.pnlAssign.PerformLayout()
+        Me.pnlSearch.ResumeLayout(False)
+        Me.pnlSearch.PerformLayout()
+        CType(Me.datRecords, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlHouseholdDetails.ResumeLayout(False)
+        Me.pnlHouseholdDetails.PerformLayout()
+        CType(Me.datMember, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -801,15 +1122,15 @@ Partial Class F_BarangayMap
     Friend WithEvents lbl9 As System.Windows.Forms.Label
     Friend WithEvents lbl10 As System.Windows.Forms.Label
     Friend WithEvents lbl11 As System.Windows.Forms.Label
-    Friend WithEvents lbl112 As System.Windows.Forms.Label
+    Friend WithEvents lbl12 As System.Windows.Forms.Label
     Friend WithEvents lbl14 As System.Windows.Forms.Label
     Friend WithEvents lbl13 As System.Windows.Forms.Label
     Friend WithEvents lbl15 As System.Windows.Forms.Label
     Friend WithEvents lbl16 As System.Windows.Forms.Label
     Friend WithEvents lbl17 As System.Windows.Forms.Label
     Friend WithEvents lbl18 As System.Windows.Forms.Label
-    Friend WithEvents lbl119 As System.Windows.Forms.Label
-    Friend WithEvents lbl48 As System.Windows.Forms.Label
+    Friend WithEvents lbl32 As System.Windows.Forms.Label
+    Friend WithEvents lbl41 As System.Windows.Forms.Label
     Friend WithEvents lbl47 As System.Windows.Forms.Label
     Friend WithEvents lbl46 As System.Windows.Forms.Label
     Friend WithEvents lbl45 As System.Windows.Forms.Label
@@ -838,17 +1159,37 @@ Partial Class F_BarangayMap
     Friend WithEvents lbl38 As System.Windows.Forms.Label
     Friend WithEvents lbl39 As System.Windows.Forms.Label
     Friend WithEvents btnAssign As System.Windows.Forms.Button
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents Panel3 As System.Windows.Forms.Panel
+    Friend WithEvents pnlAssignOuter As System.Windows.Forms.Panel
+    Friend WithEvents pnlAssign As System.Windows.Forms.Panel
     Friend WithEvents lblLegends As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents lblUnavailableColor As System.Windows.Forms.Label
     Friend WithEvents lblUnavailable As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents lblOccupiedColor As System.Windows.Forms.Label
     Friend WithEvents lblOccupied As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents lblAvailableColor As System.Windows.Forms.Label
     Friend WithEvents lblAvailable As System.Windows.Forms.Label
-    Friend WithEvents Panel4 As System.Windows.Forms.Panel
+    Friend WithEvents pnlHouseholdDetails As System.Windows.Forms.Panel
+    Friend WithEvents lblLotNo As System.Windows.Forms.Label
+    Friend WithEvents txtLotNo As System.Windows.Forms.TextBox
+    Friend WithEvents lblHouseholdNo As System.Windows.Forms.Label
+    Friend WithEvents lblHouseNo As System.Windows.Forms.Label
+    Friend WithEvents txtHouseholdNo As System.Windows.Forms.TextBox
+    Friend WithEvents txtHouseNo As System.Windows.Forms.TextBox
+    Friend WithEvents datMember As System.Windows.Forms.DataGridView
+    Friend WithEvents txtHead As System.Windows.Forms.TextBox
+    Friend WithEvents lblHead As System.Windows.Forms.Label
+    Friend WithEvents cboRemarks As System.Windows.Forms.ComboBox
+    Friend WithEvents lblRemarks As System.Windows.Forms.Label
+    Friend WithEvents colResidentID As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colName As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents btnSave As System.Windows.Forms.Button
+    Friend WithEvents btnSearch As System.Windows.Forms.Button
+    Friend WithEvents pnlSearch As System.Windows.Forms.Panel
+    Friend WithEvents txtSHouseNo As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtSearch As System.Windows.Forms.TextBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents txtSHouseholdNo As System.Windows.Forms.TextBox
+    Friend WithEvents datRecords As System.Windows.Forms.DataGridView
 End Class

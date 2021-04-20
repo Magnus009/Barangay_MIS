@@ -188,8 +188,11 @@
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         If btnUpdate.Text = "UPDATE" Then
             formMode(2, pnlCaseDetails)
+            btnResidentList.Visible = False
             btnUpdate.Text = "SAVE"
             btnUpdate.BackColor = Color.Green
+            btnResidentList.Visible = True
+            btnOfficialsList.Visible = True
             btnAttach.Visible = True
             btnAdd.Visible = True
             datPeopleInvolved.Columns("colView").Visible = True
@@ -217,6 +220,8 @@
             Else
                 'NO EVENT FOR CANCEL
             End If
+            btnResidentList.Visible = False
+            btnOfficialsList.Visible = False
         End If
     End Sub
 
@@ -237,7 +242,9 @@
             strQuery = "UPDATE CasesHeader" + vbCrLf
             strQuery += "SET StatusID = " + cboVal(cboStatus) + vbCrLf
             strQuery += ", CaseReport = '" + txtCaseReport.Text + "'" + vbCrLf
+            strQuery += ", InchargeID = '" + txtInchargeID.Text + "'" + vbCrLf
             strQuery += ", InCharge = '" + txtIncharge.Text + "'" + vbCrLf
+            strQuery += ", ReportedByID = '" + txtReportedByID.Text + "'" + vbCrLf
             strQuery += ", ReportedBy = '" + txtReportedBy.Text + "'" + vbCrLf
             strQuery += ", ReportedDate = '" + fn_Date(dtpReportedDate.Value) + "'" + vbCrLf
             strQuery += ", IncidentDate = '" + fn_Date(dtpIncidentDate.Value) + "'" + vbCrLf
@@ -361,5 +368,29 @@
         Else
             btnUpdate.Enabled = True
         End If
+    End Sub
+
+    Private Sub btnResidentList_Click(sender As Object, e As EventArgs) Handles btnResidentList.Click
+        Dim frmResidentsList As New F_SelectionList
+
+        AddHandler frmResidentsList.selectedResident, AddressOf loadReportedBy
+        frmResidentsList.loadSelection(1)
+    End Sub
+    Private Sub loadReportedBy(ByVal strResidentID As String)
+        txtReportedByID.Text = strResidentID
+        strQuery = "SELECT FamilyName + ', ' + GivenName + ' ' + MiddleName + ' ' + ExtensionName  FROM Residents WHERE Code = '" + strResidentID + "'"
+        txtReportedBy.Text = SQL_SELECT(strQuery).Tables(0).Rows(0)(0)
+    End Sub
+
+    Private Sub btnOfficialsList_Click(sender As Object, e As EventArgs) Handles btnOfficialsList.Click
+        Dim frmOfficialsList As New F_SelectionList
+
+        AddHandler frmOfficialsList.selectedOfficial, AddressOf loadIncharge
+        frmOfficialsList.loadSelection(2)
+    End Sub
+
+    Private Sub loadIncharge(ByVal strOfficialID As String, ByVal strOfficialName As String)
+        txtInchargeID.Text = strOfficialID
+        txtIncharge.Text = strOfficialName
     End Sub
 End Class

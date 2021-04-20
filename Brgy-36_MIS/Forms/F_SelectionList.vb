@@ -10,7 +10,7 @@
                 Dim dtHouses As New DataTable
 
                 .Columns.Clear()
-                strQuery = "SELECT H.HouseNo 'HOUSE No.', H.HouseholdNo '#', coalesce(R.FamilyName + ', ' + R.GivenName, '--') 'HOUSEHOLD HEAD' FROM Household H" + vbCrLf
+                strQuery = "SELECT H.HouseholdNo '#', H.HouseNo 'HOUSE No.', coalesce(R.FamilyName + ', ' + R.GivenName, '--') 'HOUSEHOLD HEAD' FROM Household H" + vbCrLf
                 strQuery += "LEFT JOIN HouseholdMember HM ON H.HouseNo = HM.HouseNo" + vbCrLf
                 strQuery += "AND H.HouseholdNo = HM.HouseholdNo" + vbCrLf
                 strQuery += "AND HM.Role = 1" + vbCrLf

@@ -55,6 +55,10 @@ Represents a strongly typed in-memory cache of data.
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:Brgy_36_MIS.My.Resources.Resources.pointer">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="T:Brgy_36_MIS.My.Resources.Resources">
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.

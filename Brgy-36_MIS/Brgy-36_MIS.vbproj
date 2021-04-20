@@ -565,6 +565,7 @@
   <ItemGroup>
     <Content Include="Bangay-Logo.ico" />
     <Content Include="BarangayLogo.ico" />
+    <None Include="Resources\pointer.png" />
     <None Include="Resources\Map.png" />
     <None Include="Resources\Brgy-36.png" />
   </ItemGroup>
