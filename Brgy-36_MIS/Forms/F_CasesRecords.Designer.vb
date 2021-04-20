@@ -22,10 +22,10 @@ Partial Class F_CasesRecords
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -34,7 +34,6 @@ Partial Class F_CasesRecords
         Me.dtpReported = New System.Windows.Forms.DateTimePicker()
         Me.dtpIncident = New System.Windows.Forms.DateTimePicker()
         Me.datCases = New System.Windows.Forms.DataGridView()
-        Me.btnFile = New System.Windows.Forms.Button()
         Me.pnlCase = New System.Windows.Forms.Panel()
         Me.pnlCaseDetails = New System.Windows.Forms.Panel()
         Me.btnAttach = New System.Windows.Forms.Button()
@@ -56,11 +55,14 @@ Partial Class F_CasesRecords
         Me.colContactNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colView = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.colStatement = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colResidentID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtCaseReport = New System.Windows.Forms.TextBox()
         Me.lblCaseReport = New System.Windows.Forms.Label()
+        Me.txtReportedByID = New System.Windows.Forms.TextBox()
         Me.txtReportedBy = New System.Windows.Forms.TextBox()
         Me.txtCode = New System.Windows.Forms.TextBox()
+        Me.txtInchargeID = New System.Windows.Forms.TextBox()
         Me.txtIncharge = New System.Windows.Forms.TextBox()
         Me.cboStatus = New System.Windows.Forms.ComboBox()
         Me.dtpIncidentDate = New System.Windows.Forms.DateTimePicker()
@@ -161,14 +163,14 @@ Partial Class F_CasesRecords
         Me.datCases.AllowUserToResizeRows = False
         Me.datCases.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.datCases.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datCases.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datCases.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.datCases.ColumnHeadersHeight = 30
         Me.datCases.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.datCases.Location = New System.Drawing.Point(8, 65)
@@ -181,16 +183,6 @@ Partial Class F_CasesRecords
         Me.datCases.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.datCases.Size = New System.Drawing.Size(445, 441)
         Me.datCases.TabIndex = 7
-        '
-        'btnFile
-        '
-        Me.btnFile.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFile.Location = New System.Drawing.Point(353, 400)
-        Me.btnFile.Name = "btnFile"
-        Me.btnFile.Size = New System.Drawing.Size(146, 52)
-        Me.btnFile.TabIndex = 21
-        Me.btnFile.Text = "&FILE NEW CASE"
-        Me.btnFile.UseVisualStyleBackColor = True
         '
         'pnlCase
         '
@@ -210,7 +202,6 @@ Partial Class F_CasesRecords
         '
         'pnlCaseDetails
         '
-        Me.pnlCaseDetails.Controls.Add(Me.btnFile)
         Me.pnlCaseDetails.Controls.Add(Me.btnAttach)
         Me.pnlCaseDetails.Controls.Add(Me.btnAdd)
         Me.pnlCaseDetails.Controls.Add(Me.btnUpdate)
@@ -220,8 +211,10 @@ Partial Class F_CasesRecords
         Me.pnlCaseDetails.Controls.Add(Me.Label9)
         Me.pnlCaseDetails.Controls.Add(Me.txtCaseReport)
         Me.pnlCaseDetails.Controls.Add(Me.lblCaseReport)
+        Me.pnlCaseDetails.Controls.Add(Me.txtReportedByID)
         Me.pnlCaseDetails.Controls.Add(Me.txtReportedBy)
         Me.pnlCaseDetails.Controls.Add(Me.txtCode)
+        Me.pnlCaseDetails.Controls.Add(Me.txtInchargeID)
         Me.pnlCaseDetails.Controls.Add(Me.txtIncharge)
         Me.pnlCaseDetails.Controls.Add(Me.cboStatus)
         Me.pnlCaseDetails.Controls.Add(Me.dtpIncidentDate)
@@ -287,14 +280,14 @@ Partial Class F_CasesRecords
         Me.datDocuments.AllowUserToDeleteRows = False
         Me.datDocuments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.datDocuments.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datDocuments.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datDocuments.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.datDocuments.ColumnHeadersHeight = 30
         Me.datDocuments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.datDocuments.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colPresenterID, Me.colFileName, Me.colDateSubmitted, Me.colSourceFile, Me.colOpen, Me.colDelete})
@@ -348,13 +341,13 @@ Partial Class F_CasesRecords
         '
         'colDelete
         '
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White
-        Me.colDelete.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        Me.colDelete.DefaultCellStyle = DataGridViewCellStyle3
         Me.colDelete.FillWeight = 68.60507!
         Me.colDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.colDelete.HeaderText = ""
@@ -368,17 +361,17 @@ Partial Class F_CasesRecords
         Me.datPeopleInvolved.AllowUserToDeleteRows = False
         Me.datPeopleInvolved.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.datPeopleInvolved.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datPeopleInvolved.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datPeopleInvolved.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.datPeopleInvolved.ColumnHeadersHeight = 30
         Me.datPeopleInvolved.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.datPeopleInvolved.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.colName, Me.colInvolvement, Me.colResident, Me.colContactNo, Me.colView, Me.colStatement})
+        Me.datPeopleInvolved.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.colName, Me.colInvolvement, Me.colResident, Me.colContactNo, Me.colView, Me.colStatement, Me.colResidentID})
         Me.datPeopleInvolved.Location = New System.Drawing.Point(18, 222)
         Me.datPeopleInvolved.Name = "datPeopleInvolved"
         Me.datPeopleInvolved.ReadOnly = True
@@ -446,6 +439,13 @@ Partial Class F_CasesRecords
         Me.colStatement.ReadOnly = True
         Me.colStatement.Visible = False
         '
+        'colResidentID
+        '
+        Me.colResidentID.HeaderText = "RESIDENTID"
+        Me.colResidentID.Name = "colResidentID"
+        Me.colResidentID.ReadOnly = True
+        Me.colResidentID.Visible = False
+        '
         'Label9
         '
         Me.Label9.AutoSize = True
@@ -480,6 +480,18 @@ Partial Class F_CasesRecords
         Me.lblCaseReport.Text = "CASE REPORT :"
         Me.lblCaseReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'txtReportedByID
+        '
+        Me.txtReportedByID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtReportedByID.Location = New System.Drawing.Point(255, 37)
+        Me.txtReportedByID.MaxLength = 20
+        Me.txtReportedByID.Name = "txtReportedByID"
+        Me.txtReportedByID.ReadOnly = True
+        Me.txtReportedByID.Size = New System.Drawing.Size(14, 21)
+        Me.txtReportedByID.TabIndex = 5
+        Me.txtReportedByID.Tag = ""
+        Me.txtReportedByID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'txtReportedBy
         '
         Me.txtReportedBy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -502,6 +514,18 @@ Partial Class F_CasesRecords
         Me.txtCode.Size = New System.Drawing.Size(118, 21)
         Me.txtCode.TabIndex = 1
         Me.txtCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txtInchargeID
+        '
+        Me.txtInchargeID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtInchargeID.Location = New System.Drawing.Point(255, 64)
+        Me.txtInchargeID.MaxLength = 20
+        Me.txtInchargeID.Name = "txtInchargeID"
+        Me.txtInchargeID.ReadOnly = True
+        Me.txtInchargeID.Size = New System.Drawing.Size(14, 21)
+        Me.txtInchargeID.TabIndex = 9
+        Me.txtInchargeID.Tag = ""
+        Me.txtInchargeID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtIncharge
         '
@@ -648,7 +672,6 @@ Partial Class F_CasesRecords
     Friend WithEvents dtpReported As System.Windows.Forms.DateTimePicker
     Friend WithEvents dtpIncident As System.Windows.Forms.DateTimePicker
     Friend WithEvents datCases As System.Windows.Forms.DataGridView
-    Friend WithEvents btnFile As System.Windows.Forms.Button
     Friend WithEvents pnlCase As System.Windows.Forms.Panel
     Friend WithEvents pnlCaseDetails As System.Windows.Forms.Panel
     Friend WithEvents txtReportedBy As System.Windows.Forms.TextBox
@@ -676,6 +699,10 @@ Partial Class F_CasesRecords
     Friend WithEvents colSourceFile As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colOpen As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents colDelete As System.Windows.Forms.DataGridViewButtonColumn
+    Public WithEvents datPeopleInvolved As System.Windows.Forms.DataGridView
+    Public WithEvents datDocuments As System.Windows.Forms.DataGridView
+    Friend WithEvents txtReportedByID As System.Windows.Forms.TextBox
+    Friend WithEvents txtInchargeID As System.Windows.Forms.TextBox
     Friend WithEvents colID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colName As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colInvolvement As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -683,6 +710,5 @@ Partial Class F_CasesRecords
     Friend WithEvents colContactNo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colView As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents colStatement As System.Windows.Forms.DataGridViewTextBoxColumn
-    Public WithEvents datPeopleInvolved As System.Windows.Forms.DataGridView
-    Public WithEvents datDocuments As System.Windows.Forms.DataGridView
+    Friend WithEvents colResidentID As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

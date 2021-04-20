@@ -77,7 +77,6 @@ Partial Class F_OfficialsRecord
         Me.lblID = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.btnAdd = New System.Windows.Forms.Button()
         CType(Me.datOfficials, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.pnlInformations.SuspendLayout()
@@ -224,7 +223,6 @@ Partial Class F_OfficialsRecord
         '
         'pnlInformations
         '
-        Me.pnlInformations.Controls.Add(Me.btnAdd)
         Me.pnlInformations.Controls.Add(Me.txtOfficialID)
         Me.pnlInformations.Controls.Add(Me.Label8)
         Me.pnlInformations.Controls.Add(Me.cboPosition)
@@ -740,19 +738,6 @@ Partial Class F_OfficialsRecord
         Me.Label5.Size = New System.Drawing.Size(494, 188)
         Me.Label5.TabIndex = 1
         '
-        'btnAdd
-        '
-        Me.btnAdd.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAdd.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(269, 409)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(114, 45)
-        Me.btnAdd.TabIndex = 41
-        Me.btnAdd.Tag = "Primary"
-        Me.btnAdd.Text = "ADD"
-        Me.btnAdd.UseVisualStyleBackColor = False
-        '
         'F_OfficialsRecord
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
@@ -829,5 +814,4 @@ Partial Class F_OfficialsRecord
     Friend WithEvents btnSearch As System.Windows.Forms.Button
     Friend WithEvents txtOfficialID As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents btnAdd As System.Windows.Forms.Button
 End Class

@@ -40,7 +40,6 @@
             formMode(0, pnlCaseDetails)
             btnUpdate.Text = "UPDATE"
             btnUpdate.BackColor = My.Settings.Primary
-            btnFile.Visible = True
             btnAttach.Visible = False
             btnAdd.Visible = False
             datPeopleInvolved.Columns("colView").Visible = False
@@ -64,7 +63,9 @@
                 If .Rows.Count <> 0 Then
                     txtCode.Text = .Rows(0)("Code")
                     txtReportedBy.Text = .Rows(0)("ReportedBy")
+                    txtReportedByID.Text = .Rows(0)("ReportedByID")
                     txtIncharge.Text = .Rows(0)("InCharge")
+                    txtInchargeID.Text = .Rows(0)("InchargeID")
                     cboStatus.SelectedValue = .Rows(0)("StatusID")
                     dtpReportedDate.Value = .Rows(0)("ReportedDate")
                     dtpIncidentDate.Value = .Rows(0)("IncidentDate")
@@ -80,7 +81,7 @@
 
                     datPeopleInvolved.Rows.Clear()
                     For Each row As DataRow In dtPeople.Rows
-                        rowPeople = New String() {row(1), row(2), row(4), row(3), row(5), "•••", row(6)}
+                        rowPeople = New String() {row("Seq"), row("PersonInvolved"), row("Involvement"), row("isResident"), row("ContactNo"), "•••", row("Statement"), row("ResidentCode")}
                         datPeopleInvolved.Rows.Add(rowPeople)
                     Next
 
@@ -189,7 +190,6 @@
             formMode(2, pnlCaseDetails)
             btnUpdate.Text = "SAVE"
             btnUpdate.BackColor = Color.Green
-            btnFile.Visible = False
             btnAttach.Visible = True
             btnAdd.Visible = True
             datPeopleInvolved.Columns("colView").Visible = True
@@ -202,7 +202,6 @@
                 updateCase()
                 btnUpdate.Text = "UPDATE"
                 btnUpdate.BackColor = My.Settings.Primary
-                btnFile.Visible = True
                 btnAttach.Visible = False
                 btnAdd.Visible = False
                 datPeopleInvolved.Columns("colView").Visible = False
@@ -211,7 +210,6 @@
                 formMode(0, pnlCaseDetails)
                 btnUpdate.Text = "UPDATE"
                 btnUpdate.BackColor = My.Settings.Primary
-                btnFile.Visible = True
                 btnAttach.Visible = False
                 btnAdd.Visible = False
                 datPeopleInvolved.Columns("colView").Visible = False
@@ -228,10 +226,6 @@
             .strInvolveID = datPeopleInvolved.Rows.Count
             .loadDetails(1, Me)
         End With
-    End Sub
-
-    Private Sub btnFile_Click(sender As Object, e As EventArgs) Handles btnFile.Click
-        frmCase.openCase(intCaseType)
     End Sub
 
     Private Sub updateCase()

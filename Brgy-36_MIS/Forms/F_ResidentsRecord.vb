@@ -171,19 +171,16 @@
             formMode(2, pnlInformations)
             btnUpdate.Text = "SAVE"
             btnUpdate.BackColor = Color.Green
-            btnAdd.Visible = False
         Else
             Dim msgDialog As DialogResult
             msgDialog = MsgBox("Save changes?", MsgBoxStyle.Question + MsgBoxStyle.YesNoCancel, "SAVE")
 
             If msgDialog = Windows.Forms.DialogResult.Yes Then
                 updateInfos()
-                btnAdd.Visible = True
             ElseIf msgDialog = Windows.Forms.DialogResult.No Then
                 formMode(0, pnlInformations)
                 btnUpdate.Text = "UPDATE"
                 btnUpdate.BackColor = My.Settings.Primary
-                btnAdd.Visible = True
             Else
                 'NO EVENT FOR CANCEL
             End If
@@ -228,12 +225,5 @@
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
-    End Sub
-
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        Dim frmResident As New F_Resident
-
-        frmResident.ShowDialog()
-        loadResidentRecords()
     End Sub
 End Class

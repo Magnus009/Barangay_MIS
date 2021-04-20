@@ -23,7 +23,7 @@ Partial Class F_BarangayMap
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(F_BarangayMap))
-        Me.picMAp = New System.Windows.Forms.PictureBox()
+        Me.picMap = New System.Windows.Forms.PictureBox()
         Me.lbl1 = New System.Windows.Forms.Label()
         Me.lbl2 = New System.Windows.Forms.Label()
         Me.lbl3 = New System.Windows.Forms.Label()
@@ -43,12 +43,12 @@ Partial Class F_BarangayMap
         Me.lbl17 = New System.Windows.Forms.Label()
         Me.lbl18 = New System.Windows.Forms.Label()
         Me.lbl119 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.Label24 = New System.Windows.Forms.Label()
+        Me.lbl48 = New System.Windows.Forms.Label()
+        Me.lbl47 = New System.Windows.Forms.Label()
+        Me.lbl46 = New System.Windows.Forms.Label()
+        Me.lbl45 = New System.Windows.Forms.Label()
+        Me.lbl44 = New System.Windows.Forms.Label()
+        Me.lbl43 = New System.Windows.Forms.Label()
         Me.lbl42 = New System.Windows.Forms.Label()
         Me.lbl19 = New System.Windows.Forms.Label()
         Me.lbl21 = New System.Windows.Forms.Label()
@@ -71,495 +71,657 @@ Partial Class F_BarangayMap
         Me.lbl37 = New System.Windows.Forms.Label()
         Me.lbl38 = New System.Windows.Forms.Label()
         Me.lbl39 = New System.Windows.Forms.Label()
-        CType(Me.picMAp, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btnAssign = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.lblAvailable = New System.Windows.Forms.Label()
+        Me.lblOccupied = New System.Windows.Forms.Label()
+        Me.lblUnavailable = New System.Windows.Forms.Label()
+        Me.lblLegends = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        CType(Me.picMap, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
-        'picMAp
+        'picMap
         '
-        Me.picMAp.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.picMAp.Image = Global.Brgy_36_MIS.My.Resources.Resources.Map
-        Me.picMAp.Location = New System.Drawing.Point(0, 0)
-        Me.picMAp.Name = "picMAp"
-        Me.picMAp.Size = New System.Drawing.Size(939, 680)
-        Me.picMAp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picMAp.TabIndex = 0
-        Me.picMAp.TabStop = False
+        Me.picMap.BackColor = System.Drawing.Color.Transparent
+        Me.picMap.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.picMap.Image = Global.Brgy_36_MIS.My.Resources.Resources.Map
+        Me.picMap.Location = New System.Drawing.Point(0, 0)
+        Me.picMap.Name = "picMap"
+        Me.picMap.Size = New System.Drawing.Size(939, 680)
+        Me.picMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picMap.TabIndex = 0
+        Me.picMap.TabStop = False
         '
         'lbl1
         '
         Me.lbl1.AutoEllipsis = True
-        Me.lbl1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl1.BackColor = System.Drawing.Color.Transparent
         Me.lbl1.Location = New System.Drawing.Point(331, 60)
         Me.lbl1.Name = "lbl1"
         Me.lbl1.Size = New System.Drawing.Size(52, 41)
         Me.lbl1.TabIndex = 1
-        Me.lbl1.Text = "1"
+        Me.lbl1.Tag = "AVAILABLE"
         '
         'lbl2
         '
         Me.lbl2.AutoEllipsis = True
-        Me.lbl2.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl2.BackColor = System.Drawing.Color.Transparent
         Me.lbl2.Location = New System.Drawing.Point(400, 42)
         Me.lbl2.Name = "lbl2"
         Me.lbl2.Size = New System.Drawing.Size(28, 60)
         Me.lbl2.TabIndex = 1
-        Me.lbl2.Text = "1"
+        Me.lbl2.Tag = "AVAILABLE"
         '
         'lbl3
         '
         Me.lbl3.AutoEllipsis = True
-        Me.lbl3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl3.BackColor = System.Drawing.Color.Transparent
         Me.lbl3.Location = New System.Drawing.Point(434, 60)
         Me.lbl3.Name = "lbl3"
         Me.lbl3.Size = New System.Drawing.Size(53, 53)
         Me.lbl3.TabIndex = 1
-        Me.lbl3.Text = "1"
+        Me.lbl3.Tag = "AVAILABLE"
         '
         'lbl4
         '
         Me.lbl4.AutoEllipsis = True
-        Me.lbl4.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl4.BackColor = System.Drawing.Color.Transparent
         Me.lbl4.Location = New System.Drawing.Point(493, 60)
         Me.lbl4.Name = "lbl4"
         Me.lbl4.Size = New System.Drawing.Size(53, 42)
         Me.lbl4.TabIndex = 1
-        Me.lbl4.Text = "1"
+        Me.lbl4.Tag = "AVAILABLE"
         '
         'lbl5
         '
         Me.lbl5.AutoEllipsis = True
-        Me.lbl5.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl5.BackColor = System.Drawing.Color.Transparent
         Me.lbl5.Location = New System.Drawing.Point(560, 84)
         Me.lbl5.Name = "lbl5"
         Me.lbl5.Size = New System.Drawing.Size(38, 30)
         Me.lbl5.TabIndex = 1
-        Me.lbl5.Text = "1"
+        Me.lbl5.Tag = "AVAILABLE"
         '
         'lbl6
         '
         Me.lbl6.AutoEllipsis = True
-        Me.lbl6.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl6.BackColor = System.Drawing.Color.Transparent
         Me.lbl6.Location = New System.Drawing.Point(604, 84)
         Me.lbl6.Name = "lbl6"
         Me.lbl6.Size = New System.Drawing.Size(31, 47)
         Me.lbl6.TabIndex = 1
-        Me.lbl6.Text = "1"
+        Me.lbl6.Tag = "AVAILABLE"
         '
         'lbl7
         '
         Me.lbl7.AutoEllipsis = True
-        Me.lbl7.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl7.BackColor = System.Drawing.Color.Transparent
         Me.lbl7.Location = New System.Drawing.Point(641, 60)
         Me.lbl7.Name = "lbl7"
         Me.lbl7.Size = New System.Drawing.Size(56, 34)
         Me.lbl7.TabIndex = 1
-        Me.lbl7.Text = "1"
+        Me.lbl7.Tag = "AVAILABLE"
         '
         'lbl8
         '
         Me.lbl8.AutoEllipsis = True
-        Me.lbl8.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl8.BackColor = System.Drawing.Color.Transparent
         Me.lbl8.Location = New System.Drawing.Point(651, 104)
         Me.lbl8.Name = "lbl8"
         Me.lbl8.Size = New System.Drawing.Size(56, 48)
         Me.lbl8.TabIndex = 1
-        Me.lbl8.Text = "1"
+        Me.lbl8.Tag = "AVAILABLE"
         '
         'lbl9
         '
         Me.lbl9.AutoEllipsis = True
-        Me.lbl9.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl9.BackColor = System.Drawing.Color.Transparent
         Me.lbl9.Location = New System.Drawing.Point(327, 114)
         Me.lbl9.Name = "lbl9"
         Me.lbl9.Size = New System.Drawing.Size(41, 39)
         Me.lbl9.TabIndex = 1
-        Me.lbl9.Text = "1"
+        Me.lbl9.Tag = "AVAILABLE"
         '
         'lbl10
         '
         Me.lbl10.AutoEllipsis = True
-        Me.lbl10.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl10.BackColor = System.Drawing.Color.Transparent
         Me.lbl10.Location = New System.Drawing.Point(511, 132)
         Me.lbl10.Name = "lbl10"
         Me.lbl10.Size = New System.Drawing.Size(27, 33)
         Me.lbl10.TabIndex = 1
-        Me.lbl10.Text = "1"
+        Me.lbl10.Tag = "AVAILABLE"
         '
         'lbl11
         '
         Me.lbl11.AutoEllipsis = True
-        Me.lbl11.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl11.BackColor = System.Drawing.Color.Transparent
         Me.lbl11.Location = New System.Drawing.Point(544, 163)
         Me.lbl11.Name = "lbl11"
         Me.lbl11.Size = New System.Drawing.Size(34, 33)
         Me.lbl11.TabIndex = 1
-        Me.lbl11.Text = "1"
+        Me.lbl11.Tag = "AVAILABLE"
         '
         'lbl112
         '
         Me.lbl112.AutoEllipsis = True
-        Me.lbl112.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl112.BackColor = System.Drawing.Color.Transparent
         Me.lbl112.Location = New System.Drawing.Point(585, 152)
         Me.lbl112.Name = "lbl112"
         Me.lbl112.Size = New System.Drawing.Size(67, 22)
         Me.lbl112.TabIndex = 1
-        Me.lbl112.Text = "1"
+        Me.lbl112.Tag = "AVAILABLE"
         '
         'lbl14
         '
         Me.lbl14.AutoEllipsis = True
-        Me.lbl14.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl14.BackColor = System.Drawing.Color.Transparent
         Me.lbl14.Location = New System.Drawing.Point(658, 163)
         Me.lbl14.Name = "lbl14"
         Me.lbl14.Size = New System.Drawing.Size(67, 47)
         Me.lbl14.TabIndex = 1
-        Me.lbl14.Text = "1"
+        Me.lbl14.Tag = "AVAILABLE"
         '
         'lbl13
         '
         Me.lbl13.AutoEllipsis = True
-        Me.lbl13.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl13.BackColor = System.Drawing.Color.Transparent
         Me.lbl13.Location = New System.Drawing.Point(595, 180)
         Me.lbl13.Name = "lbl13"
         Me.lbl13.Size = New System.Drawing.Size(50, 36)
         Me.lbl13.TabIndex = 2
-        Me.lbl13.Text = "1"
+        Me.lbl13.Tag = "AVAILABLE"
         '
         'lbl15
         '
         Me.lbl15.AutoEllipsis = True
-        Me.lbl15.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl15.BackColor = System.Drawing.Color.Transparent
         Me.lbl15.Location = New System.Drawing.Point(321, 163)
         Me.lbl15.Name = "lbl15"
         Me.lbl15.Size = New System.Drawing.Size(47, 33)
         Me.lbl15.TabIndex = 2
-        Me.lbl15.Text = "1"
+        Me.lbl15.Tag = "AVAILABLE"
         '
         'lbl16
         '
         Me.lbl16.AutoEllipsis = True
-        Me.lbl16.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl16.BackColor = System.Drawing.Color.Transparent
         Me.lbl16.Location = New System.Drawing.Point(374, 163)
         Me.lbl16.Name = "lbl16"
         Me.lbl16.Size = New System.Drawing.Size(63, 47)
         Me.lbl16.TabIndex = 3
-        Me.lbl16.Text = "1"
+        Me.lbl16.Tag = "AVAILABLE"
         '
         'lbl17
         '
         Me.lbl17.AutoEllipsis = True
-        Me.lbl17.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl17.BackColor = System.Drawing.Color.Transparent
         Me.lbl17.Location = New System.Drawing.Point(471, 192)
         Me.lbl17.Name = "lbl17"
         Me.lbl17.Size = New System.Drawing.Size(50, 47)
         Me.lbl17.TabIndex = 3
-        Me.lbl17.Text = "1"
+        Me.lbl17.Tag = "AVAILABLE"
         '
         'lbl18
         '
         Me.lbl18.AutoEllipsis = True
-        Me.lbl18.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl18.BackColor = System.Drawing.Color.Transparent
         Me.lbl18.Location = New System.Drawing.Point(527, 222)
         Me.lbl18.Name = "lbl18"
         Me.lbl18.Size = New System.Drawing.Size(50, 47)
         Me.lbl18.TabIndex = 3
-        Me.lbl18.Text = "1"
+        Me.lbl18.Tag = "AVAILABLE"
         '
         'lbl119
         '
         Me.lbl119.AutoEllipsis = True
-        Me.lbl119.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl119.BackColor = System.Drawing.Color.Transparent
         Me.lbl119.Location = New System.Drawing.Point(641, 224)
         Me.lbl119.Name = "lbl119"
         Me.lbl119.Size = New System.Drawing.Size(99, 32)
         Me.lbl119.TabIndex = 3
-        Me.lbl119.Text = "1"
+        Me.lbl119.Tag = "AVAILABLE"
         '
-        'Label19
+        'lbl48
         '
-        Me.Label19.AutoEllipsis = True
-        Me.Label19.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label19.Location = New System.Drawing.Point(310, 207)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(47, 22)
-        Me.Label19.TabIndex = 2
-        Me.Label19.Text = "1"
+        Me.lbl48.AutoEllipsis = True
+        Me.lbl48.BackColor = System.Drawing.Color.Transparent
+        Me.lbl48.Location = New System.Drawing.Point(310, 207)
+        Me.lbl48.Name = "lbl48"
+        Me.lbl48.Size = New System.Drawing.Size(47, 22)
+        Me.lbl48.TabIndex = 2
+        Me.lbl48.Tag = "AVAILABLE"
         '
-        'Label20
+        'lbl47
         '
-        Me.Label20.AutoEllipsis = True
-        Me.Label20.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label20.Location = New System.Drawing.Point(310, 234)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(47, 35)
-        Me.Label20.TabIndex = 2
-        Me.Label20.Text = "1"
+        Me.lbl47.AutoEllipsis = True
+        Me.lbl47.BackColor = System.Drawing.Color.Transparent
+        Me.lbl47.Location = New System.Drawing.Point(310, 234)
+        Me.lbl47.Name = "lbl47"
+        Me.lbl47.Size = New System.Drawing.Size(47, 35)
+        Me.lbl47.TabIndex = 2
+        Me.lbl47.Tag = "AVAILABLE"
         '
-        'Label21
+        'lbl46
         '
-        Me.Label21.AutoEllipsis = True
-        Me.Label21.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label21.Location = New System.Drawing.Point(368, 210)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(49, 59)
-        Me.Label21.TabIndex = 2
-        Me.Label21.Text = "1"
+        Me.lbl46.AutoEllipsis = True
+        Me.lbl46.BackColor = System.Drawing.Color.Transparent
+        Me.lbl46.Location = New System.Drawing.Point(368, 210)
+        Me.lbl46.Name = "lbl46"
+        Me.lbl46.Size = New System.Drawing.Size(49, 59)
+        Me.lbl46.TabIndex = 2
+        Me.lbl46.Tag = "AVAILABLE"
         '
-        'Label22
+        'lbl45
         '
-        Me.Label22.AutoEllipsis = True
-        Me.Label22.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label22.Location = New System.Drawing.Point(424, 224)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(29, 59)
-        Me.Label22.TabIndex = 2
-        Me.Label22.Text = "1"
+        Me.lbl45.AutoEllipsis = True
+        Me.lbl45.BackColor = System.Drawing.Color.Transparent
+        Me.lbl45.Location = New System.Drawing.Point(424, 224)
+        Me.lbl45.Name = "lbl45"
+        Me.lbl45.Size = New System.Drawing.Size(29, 59)
+        Me.lbl45.TabIndex = 2
+        Me.lbl45.Tag = "AVAILABLE"
         '
-        'Label23
+        'lbl44
         '
-        Me.Label23.AutoEllipsis = True
-        Me.Label23.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label23.Location = New System.Drawing.Point(471, 269)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(29, 51)
-        Me.Label23.TabIndex = 2
-        Me.Label23.Text = "1"
+        Me.lbl44.AutoEllipsis = True
+        Me.lbl44.BackColor = System.Drawing.Color.Transparent
+        Me.lbl44.Location = New System.Drawing.Point(471, 269)
+        Me.lbl44.Name = "lbl44"
+        Me.lbl44.Size = New System.Drawing.Size(29, 51)
+        Me.lbl44.TabIndex = 2
+        Me.lbl44.Tag = "AVAILABLE"
         '
-        'Label24
+        'lbl43
         '
-        Me.Label24.AutoEllipsis = True
-        Me.Label24.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label24.Location = New System.Drawing.Point(466, 251)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(50, 11)
-        Me.Label24.TabIndex = 3
-        Me.Label24.Text = "1"
+        Me.lbl43.AutoEllipsis = True
+        Me.lbl43.BackColor = System.Drawing.Color.Transparent
+        Me.lbl43.Location = New System.Drawing.Point(466, 251)
+        Me.lbl43.Name = "lbl43"
+        Me.lbl43.Size = New System.Drawing.Size(50, 11)
+        Me.lbl43.TabIndex = 3
+        Me.lbl43.Tag = "AVAILABLE"
         '
         'lbl42
         '
         Me.lbl42.AutoEllipsis = True
-        Me.lbl42.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl42.BackColor = System.Drawing.Color.Transparent
         Me.lbl42.Location = New System.Drawing.Point(511, 278)
         Me.lbl42.Name = "lbl42"
         Me.lbl42.Size = New System.Drawing.Size(50, 47)
         Me.lbl42.TabIndex = 3
-        Me.lbl42.Text = "1"
+        Me.lbl42.Tag = "AVAILABLE"
         '
         'lbl19
         '
         Me.lbl19.AutoEllipsis = True
-        Me.lbl19.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl19.BackColor = System.Drawing.Color.Transparent
         Me.lbl19.Location = New System.Drawing.Point(567, 273)
         Me.lbl19.Name = "lbl19"
         Me.lbl19.Size = New System.Drawing.Size(50, 62)
         Me.lbl19.TabIndex = 3
-        Me.lbl19.Text = "1"
+        Me.lbl19.Tag = "AVAILABLE"
         '
         'lbl21
         '
         Me.lbl21.AutoEllipsis = True
-        Me.lbl21.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl21.BackColor = System.Drawing.Color.Transparent
         Me.lbl21.Location = New System.Drawing.Point(623, 297)
         Me.lbl21.Name = "lbl21"
         Me.lbl21.Size = New System.Drawing.Size(18, 62)
         Me.lbl21.TabIndex = 3
-        Me.lbl21.Text = "1"
+        Me.lbl21.Tag = "AVAILABLE"
         '
         'lbl22
         '
         Me.lbl22.AutoEllipsis = True
-        Me.lbl22.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl22.BackColor = System.Drawing.Color.Transparent
         Me.lbl22.Location = New System.Drawing.Point(647, 297)
         Me.lbl22.Name = "lbl22"
         Me.lbl22.Size = New System.Drawing.Size(18, 62)
         Me.lbl22.TabIndex = 3
-        Me.lbl22.Text = "1"
+        Me.lbl22.Tag = "AVAILABLE"
         '
         'lbl23
         '
         Me.lbl23.AutoEllipsis = True
-        Me.lbl23.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl23.BackColor = System.Drawing.Color.Transparent
         Me.lbl23.Location = New System.Drawing.Point(671, 315)
         Me.lbl23.Name = "lbl23"
         Me.lbl23.Size = New System.Drawing.Size(18, 62)
         Me.lbl23.TabIndex = 3
-        Me.lbl23.Text = "1"
+        Me.lbl23.Tag = "AVAILABLE"
         '
         'lbl40
         '
         Me.lbl40.AutoEllipsis = True
-        Me.lbl40.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl40.BackColor = System.Drawing.Color.Transparent
         Me.lbl40.Location = New System.Drawing.Point(698, 300)
         Me.lbl40.Name = "lbl40"
         Me.lbl40.Size = New System.Drawing.Size(57, 38)
         Me.lbl40.TabIndex = 3
-        Me.lbl40.Text = "1"
+        Me.lbl40.Tag = "AVAILABLE"
         '
         'lbl20
         '
         Me.lbl20.AutoEllipsis = True
-        Me.lbl20.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl20.BackColor = System.Drawing.Color.Transparent
         Me.lbl20.Location = New System.Drawing.Point(683, 273)
         Me.lbl20.Name = "lbl20"
         Me.lbl20.Size = New System.Drawing.Size(57, 21)
         Me.lbl20.TabIndex = 3
-        Me.lbl20.Text = "1"
+        Me.lbl20.Tag = "AVAILABLE"
         '
         'lbl24
         '
         Me.lbl24.AutoEllipsis = True
-        Me.lbl24.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl24.BackColor = System.Drawing.Color.Transparent
         Me.lbl24.Location = New System.Drawing.Point(695, 352)
         Me.lbl24.Name = "lbl24"
         Me.lbl24.Size = New System.Drawing.Size(30, 38)
         Me.lbl24.TabIndex = 3
-        Me.lbl24.Text = "1"
+        Me.lbl24.Tag = "AVAILABLE"
         '
         'lbl26
         '
         Me.lbl26.AutoEllipsis = True
-        Me.lbl26.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl26.BackColor = System.Drawing.Color.Transparent
         Me.lbl26.Location = New System.Drawing.Point(731, 362)
         Me.lbl26.Name = "lbl26"
         Me.lbl26.Size = New System.Drawing.Size(52, 38)
         Me.lbl26.TabIndex = 3
-        Me.lbl26.Text = "1"
+        Me.lbl26.Tag = "AVAILABLE"
         '
         'lbl25
         '
         Me.lbl25.AutoEllipsis = True
-        Me.lbl25.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl25.BackColor = System.Drawing.Color.Transparent
         Me.lbl25.Location = New System.Drawing.Point(731, 344)
         Me.lbl25.Name = "lbl25"
         Me.lbl25.Size = New System.Drawing.Size(52, 15)
         Me.lbl25.TabIndex = 3
-        Me.lbl25.Text = "1"
+        Me.lbl25.Tag = "AVAILABLE"
         '
         'lbl27
         '
         Me.lbl27.AutoEllipsis = True
-        Me.lbl27.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl27.BackColor = System.Drawing.Color.Transparent
         Me.lbl27.Location = New System.Drawing.Point(525, 398)
         Me.lbl27.Name = "lbl27"
         Me.lbl27.Size = New System.Drawing.Size(36, 38)
         Me.lbl27.TabIndex = 3
-        Me.lbl27.Text = "1"
+        Me.lbl27.Tag = "AVAILABLE"
         '
         'lbl28
         '
         Me.lbl28.AutoEllipsis = True
-        Me.lbl28.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl28.BackColor = System.Drawing.Color.Transparent
         Me.lbl28.Location = New System.Drawing.Point(567, 409)
         Me.lbl28.Name = "lbl28"
         Me.lbl28.Size = New System.Drawing.Size(18, 38)
         Me.lbl28.TabIndex = 3
-        Me.lbl28.Text = "1"
+        Me.lbl28.Tag = "AVAILABLE"
         '
         'lbl29
         '
         Me.lbl29.AutoEllipsis = True
-        Me.lbl29.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl29.BackColor = System.Drawing.Color.Transparent
         Me.lbl29.Location = New System.Drawing.Point(585, 421)
         Me.lbl29.Name = "lbl29"
         Me.lbl29.Size = New System.Drawing.Size(18, 38)
         Me.lbl29.TabIndex = 3
-        Me.lbl29.Text = "1"
+        Me.lbl29.Tag = "AVAILABLE"
         '
         'lbl30
         '
         Me.lbl30.AutoEllipsis = True
-        Me.lbl30.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl30.BackColor = System.Drawing.Color.Transparent
         Me.lbl30.Location = New System.Drawing.Point(604, 421)
         Me.lbl30.Name = "lbl30"
         Me.lbl30.Size = New System.Drawing.Size(18, 38)
         Me.lbl30.TabIndex = 3
-        Me.lbl30.Text = "1"
+        Me.lbl30.Tag = "AVAILABLE"
         '
         'lbl31
         '
         Me.lbl31.AutoEllipsis = True
-        Me.lbl31.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl31.BackColor = System.Drawing.Color.Transparent
         Me.lbl31.Location = New System.Drawing.Point(634, 421)
         Me.lbl31.Name = "lbl31"
         Me.lbl31.Size = New System.Drawing.Size(31, 38)
         Me.lbl31.TabIndex = 3
-        Me.lbl31.Text = "1"
+        Me.lbl31.Tag = "AVAILABLE"
         '
         'lbl33
         '
         Me.lbl33.AutoEllipsis = True
-        Me.lbl33.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl33.BackColor = System.Drawing.Color.Transparent
         Me.lbl33.Location = New System.Drawing.Point(623, 459)
         Me.lbl33.Name = "lbl33"
         Me.lbl33.Size = New System.Drawing.Size(31, 25)
         Me.lbl33.TabIndex = 3
-        Me.lbl33.Text = "1"
+        Me.lbl33.Tag = "AVAILABLE"
         '
         'lbl34
         '
         Me.lbl34.AutoEllipsis = True
-        Me.lbl34.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl34.BackColor = System.Drawing.Color.Transparent
         Me.lbl34.Location = New System.Drawing.Point(671, 446)
         Me.lbl34.Name = "lbl34"
         Me.lbl34.Size = New System.Drawing.Size(31, 51)
         Me.lbl34.TabIndex = 3
-        Me.lbl34.Text = "1"
+        Me.lbl34.Tag = "AVAILABLE"
         '
         'lbl35
         '
         Me.lbl35.AutoEllipsis = True
-        Me.lbl35.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl35.BackColor = System.Drawing.Color.Transparent
         Me.lbl35.Location = New System.Drawing.Point(724, 468)
         Me.lbl35.Name = "lbl35"
         Me.lbl35.Size = New System.Drawing.Size(31, 51)
         Me.lbl35.TabIndex = 3
-        Me.lbl35.Text = "1"
+        Me.lbl35.Tag = "AVAILABLE"
         '
         'lbl36
         '
         Me.lbl36.AutoEllipsis = True
-        Me.lbl36.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl36.BackColor = System.Drawing.Color.Transparent
         Me.lbl36.Location = New System.Drawing.Point(761, 468)
         Me.lbl36.Name = "lbl36"
         Me.lbl36.Size = New System.Drawing.Size(31, 51)
         Me.lbl36.TabIndex = 3
-        Me.lbl36.Text = "1"
+        Me.lbl36.Tag = "AVAILABLE"
         '
         'lbl37
         '
         Me.lbl37.AutoEllipsis = True
-        Me.lbl37.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl37.BackColor = System.Drawing.Color.Transparent
         Me.lbl37.Location = New System.Drawing.Point(774, 536)
         Me.lbl37.Name = "lbl37"
         Me.lbl37.Size = New System.Drawing.Size(31, 37)
         Me.lbl37.TabIndex = 3
-        Me.lbl37.Text = "1"
+        Me.lbl37.Tag = "AVAILABLE"
         '
         'lbl38
         '
         Me.lbl38.AutoEllipsis = True
-        Me.lbl38.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl38.BackColor = System.Drawing.Color.Transparent
         Me.lbl38.Location = New System.Drawing.Point(786, 485)
         Me.lbl38.Name = "lbl38"
         Me.lbl38.Size = New System.Drawing.Size(31, 51)
         Me.lbl38.TabIndex = 3
-        Me.lbl38.Text = "1"
+        Me.lbl38.Tag = "AVAILABLE"
         '
         'lbl39
         '
         Me.lbl39.AutoEllipsis = True
-        Me.lbl39.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lbl39.BackColor = System.Drawing.Color.Transparent
         Me.lbl39.Location = New System.Drawing.Point(811, 510)
         Me.lbl39.Name = "lbl39"
         Me.lbl39.Size = New System.Drawing.Size(31, 51)
         Me.lbl39.TabIndex = 3
-        Me.lbl39.Text = "1"
+        Me.lbl39.Tag = "AVAILABLE"
+        '
+        'btnAssign
+        '
+        Me.btnAssign.Location = New System.Drawing.Point(3, 3)
+        Me.btnAssign.Name = "btnAssign"
+        Me.btnAssign.Size = New System.Drawing.Size(152, 41)
+        Me.btnAssign.TabIndex = 4
+        Me.btnAssign.Text = "ASSIGN HOUSEHOLD"
+        Me.btnAssign.UseVisualStyleBackColor = True
+        '
+        'Panel1
+        '
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Panel2)
+        Me.Panel1.Location = New System.Drawing.Point(0, 398)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(516, 282)
+        Me.Panel1.TabIndex = 5
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.Panel3)
+        Me.Panel2.Location = New System.Drawing.Point(-1, -1)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(516, 282)
+        Me.Panel2.TabIndex = 6
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.lblLegends)
+        Me.Panel3.Controls.Add(Me.Label4)
+        Me.Panel3.Controls.Add(Me.lblUnavailable)
+        Me.Panel3.Controls.Add(Me.Label3)
+        Me.Panel3.Controls.Add(Me.lblOccupied)
+        Me.Panel3.Controls.Add(Me.Label2)
+        Me.Panel3.Controls.Add(Me.lblAvailable)
+        Me.Panel3.Controls.Add(Me.Panel4)
+        Me.Panel3.Controls.Add(Me.btnAssign)
+        Me.Panel3.Location = New System.Drawing.Point(7, 9)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(501, 263)
+        Me.Panel3.TabIndex = 7
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(82, 18)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox1.TabIndex = 5
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(18, 18)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(48, 17)
+        Me.Label1.TabIndex = 6
+        Me.Label1.Text = "Label1"
+        '
+        'Panel4
+        '
+        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(Me.Label1)
+        Me.Panel4.Controls.Add(Me.TextBox1)
+        Me.Panel4.Location = New System.Drawing.Point(161, 3)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(330, 244)
+        Me.Panel4.TabIndex = 7
+        '
+        'lblAvailable
+        '
+        Me.lblAvailable.AutoSize = True
+        Me.lblAvailable.Location = New System.Drawing.Point(37, 101)
+        Me.lblAvailable.Name = "lblAvailable"
+        Me.lblAvailable.Size = New System.Drawing.Size(72, 17)
+        Me.lblAvailable.TabIndex = 7
+        Me.lblAvailable.Text = "AVAILABLE"
+        '
+        'lblOccupied
+        '
+        Me.lblOccupied.AutoSize = True
+        Me.lblOccupied.Location = New System.Drawing.Point(37, 126)
+        Me.lblOccupied.Name = "lblOccupied"
+        Me.lblOccupied.Size = New System.Drawing.Size(69, 17)
+        Me.lblOccupied.TabIndex = 8
+        Me.lblOccupied.Text = "OCCUPIED"
+        '
+        'lblUnavailable
+        '
+        Me.lblUnavailable.AutoSize = True
+        Me.lblUnavailable.Location = New System.Drawing.Point(37, 151)
+        Me.lblUnavailable.Name = "lblUnavailable"
+        Me.lblUnavailable.Size = New System.Drawing.Size(89, 17)
+        Me.lblUnavailable.TabIndex = 9
+        Me.lblUnavailable.Text = "UNAVAILABLE"
+        '
+        'lblLegends
+        '
+        Me.lblLegends.AutoSize = True
+        Me.lblLegends.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLegends.Location = New System.Drawing.Point(47, 72)
+        Me.lblLegends.Name = "lblLegends"
+        Me.lblLegends.Size = New System.Drawing.Size(65, 16)
+        Me.lblLegends.TabIndex = 10
+        Me.lblLegends.Text = "LEGENDS"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Green
+        Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label2.Location = New System.Drawing.Point(15, 101)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(19, 19)
+        Me.Label2.TabIndex = 7
+        Me.Label2.Text = "   "
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Orange
+        Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label3.Location = New System.Drawing.Point(15, 126)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(19, 19)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "   "
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Gray
+        Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label4.Location = New System.Drawing.Point(15, 151)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(19, 19)
+        Me.Label4.TabIndex = 9
+        Me.Label4.Text = "   "
         '
         'F_BarangayMap
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(939, 680)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.lbl119)
         Me.Controls.Add(Me.lbl20)
         Me.Controls.Add(Me.lbl25)
@@ -584,14 +746,14 @@ Partial Class F_BarangayMap
         Me.Controls.Add(Me.lbl19)
         Me.Controls.Add(Me.lbl42)
         Me.Controls.Add(Me.lbl18)
-        Me.Controls.Add(Me.Label24)
+        Me.Controls.Add(Me.lbl43)
         Me.Controls.Add(Me.lbl17)
         Me.Controls.Add(Me.lbl16)
-        Me.Controls.Add(Me.Label23)
-        Me.Controls.Add(Me.Label22)
-        Me.Controls.Add(Me.Label21)
-        Me.Controls.Add(Me.Label20)
-        Me.Controls.Add(Me.Label19)
+        Me.Controls.Add(Me.lbl44)
+        Me.Controls.Add(Me.lbl45)
+        Me.Controls.Add(Me.lbl46)
+        Me.Controls.Add(Me.lbl47)
+        Me.Controls.Add(Me.lbl48)
         Me.Controls.Add(Me.lbl15)
         Me.Controls.Add(Me.lbl13)
         Me.Controls.Add(Me.lbl14)
@@ -607,18 +769,27 @@ Partial Class F_BarangayMap
         Me.Controls.Add(Me.lbl3)
         Me.Controls.Add(Me.lbl2)
         Me.Controls.Add(Me.lbl1)
-        Me.Controls.Add(Me.picMAp)
+        Me.Controls.Add(Me.picMap)
         Me.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "F_BarangayMap"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Barangay Map"
-        CType(Me.picMAp, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picMap, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents picMAp As System.Windows.Forms.PictureBox
+    Friend WithEvents picMap As System.Windows.Forms.PictureBox
     Friend WithEvents lbl1 As System.Windows.Forms.Label
     Friend WithEvents lbl2 As System.Windows.Forms.Label
     Friend WithEvents lbl3 As System.Windows.Forms.Label
@@ -638,12 +809,12 @@ Partial Class F_BarangayMap
     Friend WithEvents lbl17 As System.Windows.Forms.Label
     Friend WithEvents lbl18 As System.Windows.Forms.Label
     Friend WithEvents lbl119 As System.Windows.Forms.Label
-    Friend WithEvents Label19 As System.Windows.Forms.Label
-    Friend WithEvents Label20 As System.Windows.Forms.Label
-    Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents Label22 As System.Windows.Forms.Label
-    Friend WithEvents Label23 As System.Windows.Forms.Label
-    Friend WithEvents Label24 As System.Windows.Forms.Label
+    Friend WithEvents lbl48 As System.Windows.Forms.Label
+    Friend WithEvents lbl47 As System.Windows.Forms.Label
+    Friend WithEvents lbl46 As System.Windows.Forms.Label
+    Friend WithEvents lbl45 As System.Windows.Forms.Label
+    Friend WithEvents lbl44 As System.Windows.Forms.Label
+    Friend WithEvents lbl43 As System.Windows.Forms.Label
     Friend WithEvents lbl42 As System.Windows.Forms.Label
     Friend WithEvents lbl19 As System.Windows.Forms.Label
     Friend WithEvents lbl21 As System.Windows.Forms.Label
@@ -666,4 +837,18 @@ Partial Class F_BarangayMap
     Friend WithEvents lbl37 As System.Windows.Forms.Label
     Friend WithEvents lbl38 As System.Windows.Forms.Label
     Friend WithEvents lbl39 As System.Windows.Forms.Label
+    Friend WithEvents btnAssign As System.Windows.Forms.Button
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents Panel3 As System.Windows.Forms.Panel
+    Friend WithEvents lblLegends As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents lblUnavailable As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents lblOccupied As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents lblAvailable As System.Windows.Forms.Label
+    Friend WithEvents Panel4 As System.Windows.Forms.Panel
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
 End Class

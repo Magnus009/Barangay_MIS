@@ -88,7 +88,6 @@ Partial Class F_ResidentsRecord
         Me.lblID = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.btnAdd = New System.Windows.Forms.Button()
         CType(Me.datResidents, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlSearch.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -232,7 +231,6 @@ Partial Class F_ResidentsRecord
         '
         'pnlInformations
         '
-        Me.pnlInformations.Controls.Add(Me.btnAdd)
         Me.pnlInformations.Controls.Add(Me.dtpBirthdate)
         Me.pnlInformations.Controls.Add(Me.dtpDelivery)
         Me.pnlInformations.Controls.Add(Me.btnUpdate)
@@ -904,19 +902,6 @@ Partial Class F_ResidentsRecord
         Me.Label5.Size = New System.Drawing.Size(566, 248)
         Me.Label5.TabIndex = 1
         '
-        'btnAdd
-        '
-        Me.btnAdd.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAdd.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(344, 462)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(114, 45)
-        Me.btnAdd.TabIndex = 52
-        Me.btnAdd.Tag = "Primary"
-        Me.btnAdd.Text = "ADD RESIDENT"
-        Me.btnAdd.UseVisualStyleBackColor = False
-        '
         'F_ResidentsRecord
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
@@ -1007,5 +992,4 @@ Partial Class F_ResidentsRecord
     Friend WithEvents Label45 As System.Windows.Forms.Label
     Friend WithEvents btnUpdate As System.Windows.Forms.Button
     Friend WithEvents btnClear As System.Windows.Forms.Button
-    Friend WithEvents btnAdd As System.Windows.Forms.Button
 End Class
