@@ -31,10 +31,7 @@ Partial Class F_Committee
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.grpCommittee = New System.Windows.Forms.GroupBox()
         Me.btnCancel = New System.Windows.Forms.Button()
-        Me.cboCommittee = New System.Windows.Forms.ComboBox()
-        Me.lblPosition = New System.Windows.Forms.Label()
-        Me.btnResidents = New System.Windows.Forms.Button()
-        Me.txtResident = New System.Windows.Forms.TextBox()
+        Me.txtDescription = New System.Windows.Forms.TextBox()
         Me.lblName = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         CType(Me.datOfficials, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,16 +63,16 @@ Partial Class F_Committee
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.datOfficials.DefaultCellStyle = DataGridViewCellStyle2
-        Me.datOfficials.Location = New System.Drawing.Point(8, 188)
+        Me.datOfficials.Location = New System.Drawing.Point(8, 168)
         Me.datOfficials.Name = "datOfficials"
         Me.datOfficials.RowHeadersVisible = False
         Me.datOfficials.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datOfficials.Size = New System.Drawing.Size(421, 288)
+        Me.datOfficials.Size = New System.Drawing.Size(421, 308)
         Me.datOfficials.TabIndex = 0
         '
         'txtSearch
         '
-        Me.txtSearch.Location = New System.Drawing.Point(71, 160)
+        Me.txtSearch.Location = New System.Drawing.Point(71, 140)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(322, 22)
         Me.txtSearch.TabIndex = 1
@@ -83,7 +80,7 @@ Partial Class F_Committee
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(8, 163)
+        Me.Label1.Location = New System.Drawing.Point(8, 143)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(60, 17)
         Me.Label1.TabIndex = 2
@@ -91,7 +88,7 @@ Partial Class F_Committee
         '
         'btnAdd
         '
-        Me.btnAdd.Location = New System.Drawing.Point(198, 104)
+        Me.btnAdd.Location = New System.Drawing.Point(198, 77)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(100, 29)
         Me.btnAdd.TabIndex = 3
@@ -101,59 +98,31 @@ Partial Class F_Committee
         'grpCommittee
         '
         Me.grpCommittee.Controls.Add(Me.btnCancel)
-        Me.grpCommittee.Controls.Add(Me.cboCommittee)
-        Me.grpCommittee.Controls.Add(Me.lblPosition)
-        Me.grpCommittee.Controls.Add(Me.btnResidents)
-        Me.grpCommittee.Controls.Add(Me.txtResident)
+        Me.grpCommittee.Controls.Add(Me.txtDescription)
         Me.grpCommittee.Controls.Add(Me.lblName)
         Me.grpCommittee.Controls.Add(Me.btnAdd)
         Me.grpCommittee.Location = New System.Drawing.Point(8, 14)
         Me.grpCommittee.Name = "grpCommittee"
-        Me.grpCommittee.Size = New System.Drawing.Size(421, 146)
+        Me.grpCommittee.Size = New System.Drawing.Size(421, 119)
         Me.grpCommittee.TabIndex = 4
         Me.grpCommittee.TabStop = False
         Me.grpCommittee.Text = " COMMITTEE INFORMATION"
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(298, 104)
+        Me.btnCancel.Location = New System.Drawing.Point(298, 77)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(100, 29)
         Me.btnCancel.TabIndex = 9
         Me.btnCancel.Text = "CANCEL"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
-        'cboCommittee
+        'txtDescription
         '
-        Me.cboCommittee.FormattingEnabled = True
-        Me.cboCommittee.Location = New System.Drawing.Point(81, 73)
-        Me.cboCommittee.Name = "cboCommittee"
-        Me.cboCommittee.Size = New System.Drawing.Size(273, 25)
-        Me.cboCommittee.TabIndex = 8
-        '
-        'lblPosition
-        '
-        Me.lblPosition.AutoSize = True
-        Me.lblPosition.Location = New System.Drawing.Point(7, 76)
-        Me.lblPosition.Name = "lblPosition"
-        Me.lblPosition.Size = New System.Drawing.Size(68, 17)
-        Me.lblPosition.TabIndex = 7
-        Me.lblPosition.Text = "POSITION :"
-        '
-        'btnResidents
-        '
-        Me.btnResidents.Location = New System.Drawing.Point(357, 45)
-        Me.btnResidents.Name = "btnResidents"
-        Me.btnResidents.Size = New System.Drawing.Size(41, 23)
-        Me.btnResidents.TabIndex = 6
-        Me.btnResidents.UseVisualStyleBackColor = True
-        '
-        'txtResident
-        '
-        Me.txtResident.Location = New System.Drawing.Point(83, 45)
-        Me.txtResident.Name = "txtResident"
-        Me.txtResident.Size = New System.Drawing.Size(271, 22)
-        Me.txtResident.TabIndex = 5
+        Me.txtDescription.Location = New System.Drawing.Point(83, 45)
+        Me.txtDescription.Name = "txtDescription"
+        Me.txtDescription.Size = New System.Drawing.Size(271, 22)
+        Me.txtDescription.TabIndex = 5
         '
         'lblName
         '
@@ -205,10 +174,7 @@ Partial Class F_Committee
     Friend WithEvents btnAdd As System.Windows.Forms.Button
     Friend WithEvents grpCommittee As System.Windows.Forms.GroupBox
     Friend WithEvents btnCancel As System.Windows.Forms.Button
-    Friend WithEvents cboCommittee As System.Windows.Forms.ComboBox
-    Friend WithEvents lblPosition As System.Windows.Forms.Label
-    Friend WithEvents btnResidents As System.Windows.Forms.Button
-    Friend WithEvents txtResident As System.Windows.Forms.TextBox
+    Friend WithEvents txtDescription As System.Windows.Forms.TextBox
     Friend WithEvents lblName As System.Windows.Forms.Label
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
 End Class

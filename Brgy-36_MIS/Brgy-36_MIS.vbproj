@@ -132,6 +132,12 @@
     <Compile Include="Forms\F_BarangayIndigency.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\F_BarangayMap.Designer.vb">
+      <DependentUpon>F_BarangayMap.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_BarangayMap.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\F_Borrow.Designer.vb">
       <DependentUpon>F_Borrow.vb</DependentUpon>
     </Compile>
@@ -362,6 +368,9 @@
     <EmbeddedResource Include="Forms\F_BarangayIndigency.resx">
       <DependentUpon>F_BarangayIndigency.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_BarangayMap.resx">
+      <DependentUpon>F_BarangayMap.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_Borrow.resx">
       <DependentUpon>F_Borrow.vb</DependentUpon>
     </EmbeddedResource>
@@ -556,6 +565,7 @@
   <ItemGroup>
     <Content Include="Bangay-Logo.ico" />
     <Content Include="BarangayLogo.ico" />
+    <None Include="Resources\Map.png" />
     <None Include="Resources\Brgy-36.png" />
   </ItemGroup>
   <ItemGroup />

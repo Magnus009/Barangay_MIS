@@ -4,10 +4,7 @@
     Dim intFormMode As Integer
     Dim caseForm As New Form
 
-    Dim peopleInvolved As String()
-    Dim supportingDocs As New DataTable
-
-    Friend Event involvementDetails(ByVal drPeopleInvolve As String(), ByVal dtDocuments As DataTable)
+    Friend Event involvementDetails(ByVal strPeopleInvolved As String(), ByVal dtDocuments As DataTable)
 
     Private Sub btnAttach_Click(sender As Object, e As EventArgs) Handles btnAttach.Click
         Try
@@ -66,84 +63,13 @@
                 MsgBox("Please complete the required fields(*):" & vbCrLf & strRequire, MsgBoxStyle.Exclamation, "Required Items")
                 strRequire = "" : blnRequired = False
             Else
-                If btnSave.Text = "&UPDATE" Then
-                    Dim frmCases As New F_CasesRecords
-                    frmCases = caseForm
-                    'Reload Documents-----------------------------------
-                    With frmCases.datDocuments
-                        Dim strRows As String = ""
-                        For Each dr As DataGridViewRow In .Rows
-                            If dr.Cells(0).Value = strInvolveID Then
-                                strRows += dr.Index.ToString + ","
-                            End If
-                        Next
-                        If strRows <> "" Then
-                            strRows = Strings.Left(strRows, Len(strRows) - 1)
-                            For Each row As String In strRows.Split(",").Reverse
-                                Dim intRow As Integer
-                                intRow = Convert.ToInt32(row)
-                                .Rows.RemoveAt(intRow)
-                            Next
-                        End If
+                Dim strPeople As String()
+                Dim dt As New DataTable
 
-                        For Each dgr As DataGridViewRow In datDocuments.Rows
-                            Dim row As String()
-                            row = New String() {dgr.Cells(0).Value, _
-                                                dgr.Cells(1).Value, _
-                                                dgr.Cells(2).Value, _
-                                                dgr.Cells(3).Value, _
-                                                "•••", _
-                                                "X"}
-                            .Rows.Add(row)
-                        Next
-                    End With
-                    '---------------------------------------------------
-                    'UpdatePeople Involved Detals-----------------------
-                    With frmCases.datPeopleInvolved
-                        For Each dr As DataGridViewRow In .Rows
-                            If dr.Cells(0).Value = strInvolveID Then
-                                dr.Cells(2).Value = txtInvolvement.Text
-                                dr.Cells(3).Value = chkResident.Checked
-                                dr.Cells(4).Value = txtContactNo.Text
-                                dr.Cells(6).Value = txtStatement.Text
-                            End If
-                        Next
-                    End With
-                    '---------------------------------------------------
-                Else
-                    Dim frmCase As Object
-
-                    frmCase = IIf(caseForm.Name.Equals("F_CaseFile"), F_CaseFile, F_CasesRecords)
-
-                    With frmCase.datPeopleInvolved
-                        Dim strPeopleID As String
-                        strPeopleID = .Rows.Count
-
-                        Dim row As String()
-                        row = New String() {strPeopleID, _
-                                            txtName.Text, _
-                                            txtInvolvement.Text, _
-                                            chkResident.Checked, _
-                                            txtContactNo.Text, _
-                                            "•••", _
-                                            txtStatement.Text}
-                        .Rows.Add(row)
-                    End With
-
-                    With frmCase.datDocuments
-                        For Each dgr As DataGridViewRow In datDocuments.Rows
-                            Dim row As String()
-                            row = New String() {dgr.Cells(0).Value, _
-                                                dgr.Cells(1).Value, _
-                                                dgr.Cells(2).Value, _
-                                                dgr.Cells(3).Value, _
-                                                "•••", _
-                                                "X"}
-                            .Rows.Add(row)
-                        Next
-                    End With
-                End If
-
+                strPeople = peopleDetails(strInvolveID)
+                dt = supportingDocuments()
+                RaiseEvent involvementDetails(strPeople, dt)
+              
                 Me.Close()
             End If
         Catch ex As Exception
@@ -177,27 +103,90 @@
         pnlDetails.BackColor = My.Settings.Secondary
     End Sub
 
-    Private Sub peopleDetails()
+    Private Function peopleDetails(ByVal strPeopleID As String) As String()
+        Dim peopleInvolved As String()
         Try
+            peopleInvolved = New String() {strPeopleID, _
+                                           txtName.Text, _
+                                           txtInvolvement.Text, _
+                                           chkResident.Checked, _
+                                           txtContactNo.Text, _
+                                           "•••", _
+                                           txtStatement.Text, _
+                                           txtResidentID.Text}
+            Return peopleInvolved
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Function
+    Private Function supportingDocuments() As DataTable
+        Dim supportingDocs As New DataTable
+        Try
+            With supportingDocs
+                .Columns.Add("colPresenterID")
+                .Columns.Add("colFileName")
+                .Columns.Add("colDateSubmitted")
+                .Columns.Add("colSourceFile")
+                .Columns.Add("colOpen")
+                .Columns.Add("colDelete")
 
-            peopleInvolved = New String() {}
-
-            With frmCase.datPeopleInvolved
-                Dim strPeopleID As String
-                strPeopleID = .Rows.Count
-
-                Dim row As String()
-                row = New String() {strPeopleID, _
-                                    txtName.Text, _
-                                    txtInvolvement.Text, _
-                                    chkResident.Checked, _
-                                    txtContactNo.Text, _
-                                    "•••", _
-                                    txtStatement.Text}
-                .Rows.Add(row)
+                For Each dgRow As DataGridViewRow In datDocuments.Rows
+                    Dim rowVal As String()
+                    rowVal = New String() {dgRow.Cells(0).Value, _
+                                           dgRow.Cells(1).Value, _
+                                           dgRow.Cells(2).Value, _
+                                           dgRow.Cells(3).Value, _
+                                           "OPEN", _
+                                           "X"}
+                    .Rows.Add(rowVal)
+                Next
             End With
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
+        Return supportingDocs
+    End Function
+    Public Sub loadInvolvedDetails(ByVal strPeopleDetails As String(), ByVal supportingDocs As DataTable)
+        Try
+            'Person Involved Details
+            strInvolveID = strPeopleDetails(0)
+            chkResident.Checked = strPeopleDetails(2)
+            txtName.Text = strPeopleDetails(1)
+            txtInvolvement.Text = strPeopleDetails(3)
+            txtContactNo.Text = strPeopleDetails(4)
+            txtStatement.Text = strPeopleDetails(5)
+           
+            'Supporting Docs
+            For Each dr As DataRow In supportingDocs.Rows
+                Dim row As String()
+                row = New String() {dr(0), dr(1), dr(2), dr(3), dr(4), dr(5)}
+                datDocuments.Rows.Add(row)
+            Next
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
+    Private Sub btnResidentList_Click(sender As Object, e As EventArgs) Handles btnResidentList.Click
+        Dim frmResidentsList As New F_SelectionList
+
+        AddHandler frmResidentsList.selectedResident, AddressOf loadReportedBy
+        frmResidentsList.loadSelection(1)
+    End Sub
+
+    Private Sub loadReportedBy(ByVal strResidentID As String)
+        txtResidentID.Text = strResidentID
+        strQuery = "SELECT FamilyName + ', ' + GivenName + ' ' + MiddleName + ' ' + ExtensionName  FROM Residents WHERE Code = '" + strResidentID + "'"
+        txtName.Text = SQL_SELECT(strQuery).Tables(0).Rows(0)(0)
+    End Sub
+
+    Private Sub chkResident_CheckedChanged(sender As Object, e As EventArgs) Handles chkResident.CheckedChanged
+        btnResidentList.Visible = chkResident.Checked
+        If chkResident.Checked Then
+            txtName.Text = ""
+            txtName.ReadOnly = True
+        Else
+            txtName.ReadOnly = False
+        End If
     End Sub
 End Class

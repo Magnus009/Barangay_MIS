@@ -7,7 +7,8 @@
     ''' <remarks></remarks>
     Dim caseType As Integer
 
-    Private Sub saveFiledCase()
+    Private Function saveFiledCase() As Boolean
+        Dim blnSaved As Boolean = False
         Try
             Dim strCaseID As String = ""
             Dim strCaseCode As String
@@ -23,7 +24,7 @@
                 strCaseCode = SQL_SELECT(strQuery).Tables(0).Rows(0)(0)
 
                 'Create Case Header Record
-                strQuery = "INSERT INTO dbo.CasesHeader (Code, TypeID, StatusID, CaseReport, InchargeID, InCharge, ReportedByID, ReportedBy, ReportedDate, IncidentDate, CreatedDate, UpdatedDate, UpdatedBy)" + vbCrLf
+                strQuery = "INSERT INTO CasesHeader (Code, TypeID, StatusID, CaseReport, InchargeID, InCharge, ReportedByID, ReportedBy, ReportedDate, IncidentDate, CreatedDate, UpdatedDate, UpdatedBy)" + vbCrLf
                 strQuery += "VALUES ('" + strCaseCode + "', "
                 strQuery += caseType.ToString + ", "
                 strQuery += cboVal(cboStatus) + ", "
@@ -37,15 +38,17 @@
                 strQuery += "getdate(), "
                 strQuery += "getdate(), "
                 strQuery += "'" + UserName + "')"
+                blnSaved = SQL_EXECUTE(strQuery)
 
-                If SQL_EXECUTE(strQuery) Then
+                If blnSaved Then
                     'Add Case Details
                     For Each drPeople As DataGridViewRow In datPeopleInvolved.Rows
                         Dim strResident As String = IIf(drPeople.Cells("colResident").Value = "True", "1", "0")
 
-                        strQuery = "INSERT INTO CasesDetails (Code, Seq, PersonInvolved, isResident, Involvement, ContactNo, Statement, CreatedDate, UpdatedDate, UpdatedBy)" + vbCrLf
+                        strQuery = "INSERT INTO CasesDetails (Code, Seq, ResidentCode, PersonInvolved, isResident, Involvement, ContactNo, Statement, CreatedDate, UpdatedDate, UpdatedBy)" + vbCrLf
                         strQuery += "VALUES ('" + strCaseCode + "', "
                         strQuery += drPeople.Cells("colID").Value + ", "
+                        strQuery += "'" + drPeople.Cells("colResidentID").Value + "', "
                         strQuery += "'" + drPeople.Cells("colName").Value + "', "
                         strQuery += strResident + ", "
                         strQuery += "'" + drPeople.Cells("colInvolvement").Value + "', "
@@ -54,8 +57,9 @@
                         strQuery += "getdate(), "
                         strQuery += "getdate(), "
                         strQuery += "'" + UserName + "')"
+                        blnSaved = SQL_EXECUTE(strQuery)
 
-                        If SQL_EXECUTE(strQuery) Then
+                        If blnSaved Then
                             intDocNo = 0
 
                             For Each drDocs As DataGridViewRow In datDocuments.Rows
@@ -106,7 +110,8 @@
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, Me.Text)
         End Try
-    End Sub
+        Return blnSaved
+    End Function
 
     ''' <summary>
     ''' Open Case form <b>CaseType::</b> [0]=>Complaints || [1]=>Incidents || [2]=>Blotters
@@ -157,15 +162,64 @@
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Dim frmPeopleInvolved As New F_PeopleInvolved
 
-        With frmPeopleInvolved
-            .strInvolveID = datPeopleInvolved.Rows.Count
-            .loadDetails(1, Me)
-        End With
+        frmPeopleInvolved.strInvolveID = datPeopleInvolved.Rows.Count
+        AddHandler frmPeopleInvolved.involvementDetails, AddressOf loadInfo
+        frmPeopleInvolved.loadDetails(1, Me)
     End Sub
+
+    Private Sub loadInfo(ByVal strPeopleInvolved As String(), ByVal dtDocuments As DataTable)
+        Try
+            If strPeopleInvolved(0) >= datPeopleInvolved.Rows.Count Then 'ADD
+                'Person Involved Details
+                datPeopleInvolved.Rows.Add(strPeopleInvolved)
+
+                'Supporting Documents
+                For Each dr As DataRow In dtDocuments.Rows
+                    Dim row As String()
+                    row = New String() {dr(0), dr(1), dr(2), dr(3), dr(4), dr(5)}
+                    datDocuments.Rows.Add(row)
+                Next
+            Else 'UPDATE
+                'Person Involved Details
+                For Each dr As DataGridViewRow In datPeopleInvolved.Rows
+                    If strPeopleInvolved(0).Equals(dr.Cells(0).Value) Then
+                        For i As Integer = 1 To 7
+                            dr.Cells(i).Value = strPeopleInvolved(i)
+                        Next
+                    End If
+                Next
+
+                'Supporting Documents
+                Dim strRemove As String = ""
+                For Each dr As DataGridViewRow In datDocuments.Rows
+                    If strPeopleInvolved(0).Equals(dr.Cells(0).Value) Then
+                        strRemove += dr.Index.ToString + ","
+                        'datDocuments.Rows.Remove(dr)
+                    End If
+                Next
+
+                For Each strIndex As String In strRemove.Split(",").Reverse
+                    If strIndex <> "" Then
+                        datDocuments.Rows.RemoveAt(Convert.ToInt32(strIndex))
+                    End If
+                Next
+
+                For Each dr As DataRow In dtDocuments.Rows
+                    Dim row As String()
+                    row = New String() {dr(0), dr(1), dr(2), dr(3), dr(4), dr(5)}
+                    datDocuments.Rows.Add(row)
+                Next
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
 
     Private Sub loadCaseStatus(intCaseType As Integer)
         strQuery = "SELECT StatusID, Description FROM M_CaseStatus WHERE DeletedDate IS NULL AND TypeID = " + intCaseType.ToString
         cboDataBinding(cboStatus, strQuery, "--STATUS--")
+        cboStatus.SelectedIndex = 1
     End Sub
 
     Private Sub datDocuments_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datDocuments.CellContentClick
@@ -234,38 +288,55 @@
 
     Private Sub datPeopleInvolved_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datPeopleInvolved.CellContentClick
         If e.ColumnIndex = 5 Then
-            With F_PeopleInvolved
-                'Involved Details
-                .strInvolveID = datPeopleInvolved.Rows(e.RowIndex).Cells("colID").Value
-                .txtName.Text = datPeopleInvolved.Rows(e.RowIndex).Cells("colName").Value
-                .chkResident.Checked = datPeopleInvolved.Rows(e.RowIndex).Cells("colResident").Value
-                .txtInvolvement.Text = datPeopleInvolved.Rows(e.RowIndex).Cells("colInvolvement").Value
-                .txtContactNo.Text = datPeopleInvolved.Rows(e.RowIndex).Cells("colContactNo").Value
-                .txtStatement.Text = datPeopleInvolved.Rows(e.RowIndex).Cells("colStatement").Value
-                'Supporting Documents
-                .datDocuments.Rows.Clear()
-                For Each dgr As DataGridViewRow In datDocuments.Rows
-                    If dgr.Cells("colPresenterID").Value = datPeopleInvolved.Rows(e.RowIndex).Cells("colID").Value Then
-                        Dim row As String()
-                        row = New String() {dgr.Cells("colPresenterID").Value, _
-                                            dgr.Cells("colFileName").Value, _
-                                            dgr.Cells("colDateSubmitted").Value, _
-                                            dgr.Cells("colSourceFile").Value, _
-                                            "•••", _
-                                            "X"}
-                        .datDocuments.Rows.Add(row)
-                    End If
-                Next
-                .loadDetails(2, Me)
+            Dim frmInvolveDetails As New F_PeopleInvolved
+            Dim strPersonInvolved As String()
+
+            Dim dtSupportingDocs As New DataTable
+            With dtSupportingDocs
+                .Columns.Add("colPresenterID")
+                .Columns.Add("colFileName")
+                .Columns.Add("colDateSubmitted")
+                .Columns.Add("colSourceFile")
+                .Columns.Add("colOpen")
+                .Columns.Add("colDelete")
             End With
+
+            With datPeopleInvolved
+                'Involved Details
+                strPersonInvolved = New String() {.Rows(e.RowIndex).Cells("colID").Value, _
+                                                  .Rows(e.RowIndex).Cells("colName").Value, _
+                                                  .Rows(e.RowIndex).Cells("colResident").Value, _
+                                                  .Rows(e.RowIndex).Cells("colInvolvement").Value, _
+                                                  .Rows(e.RowIndex).Cells("colContactNo").Value, _
+                                                  .Rows(e.RowIndex).Cells("colStatement").Value}
+            End With
+
+            'Supporting Documents
+            For Each dgr As DataGridViewRow In datDocuments.Rows
+                If dgr.Cells("colPresenterID").Value = datPeopleInvolved.Rows(e.RowIndex).Cells("colID").Value Then
+                    Dim row As String()
+                    row = New String() {dgr.Cells("colPresenterID").Value, _
+                                        dgr.Cells("colFileName").Value, _
+                                        dgr.Cells("colDateSubmitted").Value, _
+                                        dgr.Cells("colSourceFile").Value, _
+                                        "•••", _
+                                        "X"}
+                    dtSupportingDocs.Rows.Add(row)
+                End If
+            Next
+
+            AddHandler frmInvolveDetails.involvementDetails, AddressOf loadInfo
+            frmInvolveDetails.loadInvolvedDetails(strPersonInvolved, dtSupportingDocs)
+            frmInvolveDetails.loadDetails(2, Me)
         End If
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         MsgBox("Do you want to save this record?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "File Case")
         If vbYes Then
-            saveFiledCase()
-            Me.Close()
+            If saveFiledCase() Then
+                Me.Close()
+            End If
         End If
     End Sub
 
