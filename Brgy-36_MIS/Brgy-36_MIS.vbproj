@@ -216,6 +216,12 @@
     <Compile Include="Forms\F_IndigencyReport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\F_ItemInventory.Designer.vb">
+      <DependentUpon>F_ItemInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_ItemInventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\F_KPFormReport.Designer.vb">
       <DependentUpon>F_KPFormReport.vb</DependentUpon>
     </Compile>
@@ -409,6 +415,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_IndigencyReport.resx">
       <DependentUpon>F_IndigencyReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_ItemInventory.resx">
+      <DependentUpon>F_ItemInventory.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_KPFormReport.resx">
       <DependentUpon>F_KPFormReport.vb</DependentUpon>

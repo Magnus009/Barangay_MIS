@@ -151,7 +151,7 @@ Public Class _mdi_MIS
         formRegistration.Show()
     End Sub
 
-    Private Sub EquipmentsPropertiesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EquipmentsPropertiesToolStripMenuItem.Click
+    Private Sub EquipmentsPropertiesToolStripMenuItem_Click(sender As Object, e As EventArgs)
         F_Inventory.MdiParent = Me
         F_Inventory.Show()
     End Sub
@@ -166,7 +166,7 @@ Public Class _mdi_MIS
         F_Officials.Show()
     End Sub
 
-    Private Sub BorrowHistoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BorrowHistoryToolStripMenuItem.Click
+    Private Sub BorrowHistoryToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim formBorrow As New F_Borrow
         formBorrow.MdiParent = Me
         formBorrow.Show()
@@ -218,5 +218,11 @@ Public Class _mdi_MIS
 
         frmMapping.MdiParent = Me
         frmMapping.Show()
+    End Sub
+
+    Private Sub mnuInventories_Click(sender As Object, e As EventArgs) Handles mnuInventories.Click
+        Dim frmItemInventory As New F_ItemInventory
+        frmItemInventory.MdiParent = Me
+        frmItemInventory.Show()
     End Sub
 End Class

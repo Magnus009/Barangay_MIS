@@ -49,8 +49,6 @@ Partial Class _mdi_MIS
         Me.FireIncidentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.COVID19RelatedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuInventories = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BorrowHistoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EquipmentsPropertiesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuReports = New System.Windows.Forms.ToolStripMenuItem()
         Me.RESIDENTSLISTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OFFICIALSLISTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -129,7 +127,7 @@ Partial Class _mdi_MIS
         '
         Me.ComplaintsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewComplaintsToolStripMenuItem, Me.FileComplaintsToolStripMenuItem})
         Me.ComplaintsToolStripMenuItem.Name = "ComplaintsToolStripMenuItem"
-        Me.ComplaintsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ComplaintsToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.ComplaintsToolStripMenuItem.Text = "Complaints"
         '
         'ViewComplaintsToolStripMenuItem
@@ -148,7 +146,7 @@ Partial Class _mdi_MIS
         '
         Me.IncidentsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewIncidentsToolStripMenuItem, Me.ReportIncidentToolStripMenuItem})
         Me.IncidentsToolStripMenuItem.Name = "IncidentsToolStripMenuItem"
-        Me.IncidentsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.IncidentsToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.IncidentsToolStripMenuItem.Text = "Incidents"
         '
         'ViewIncidentsToolStripMenuItem
@@ -167,7 +165,7 @@ Partial Class _mdi_MIS
         '
         Me.BlotterToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewBlotterrsToolStripMenuItem, Me.FileBlotterToolStripMenuItem})
         Me.BlotterToolStripMenuItem.Name = "BlotterToolStripMenuItem"
-        Me.BlotterToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BlotterToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.BlotterToolStripMenuItem.Text = "Blotters"
         '
         'ViewBlotterrsToolStripMenuItem
@@ -185,7 +183,7 @@ Partial Class _mdi_MIS
         'ViolationAgainstWomenChildrenToolStripMenuItem
         '
         Me.ViolationAgainstWomenChildrenToolStripMenuItem.Name = "ViolationAgainstWomenChildrenToolStripMenuItem"
-        Me.ViolationAgainstWomenChildrenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ViolationAgainstWomenChildrenToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.ViolationAgainstWomenChildrenToolStripMenuItem.Text = "VAWC"
         Me.ViolationAgainstWomenChildrenToolStripMenuItem.Visible = False
         '
@@ -229,23 +227,9 @@ Partial Class _mdi_MIS
         '
         'mnuInventories
         '
-        Me.mnuInventories.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BorrowHistoryToolStripMenuItem, Me.EquipmentsPropertiesToolStripMenuItem})
         Me.mnuInventories.Name = "mnuInventories"
         Me.mnuInventories.Size = New System.Drawing.Size(89, 20)
         Me.mnuInventories.Text = "&INVENTORIES"
-        '
-        'BorrowHistoryToolStripMenuItem
-        '
-        Me.BorrowHistoryToolStripMenuItem.Name = "BorrowHistoryToolStripMenuItem"
-        Me.BorrowHistoryToolStripMenuItem.Size = New System.Drawing.Size(223, 22)
-        Me.BorrowHistoryToolStripMenuItem.Text = "Borrow Equipment/Property"
-        Me.BorrowHistoryToolStripMenuItem.Visible = False
-        '
-        'EquipmentsPropertiesToolStripMenuItem
-        '
-        Me.EquipmentsPropertiesToolStripMenuItem.Name = "EquipmentsPropertiesToolStripMenuItem"
-        Me.EquipmentsPropertiesToolStripMenuItem.Size = New System.Drawing.Size(223, 22)
-        Me.EquipmentsPropertiesToolStripMenuItem.Text = "Equipments/Properties"
         '
         'mnuReports
         '
@@ -289,7 +273,7 @@ Partial Class _mdi_MIS
         '
         Me.SamahanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewToolStripMenuItem1, Me.RegisterToolStripMenuItem1})
         Me.SamahanToolStripMenuItem.Name = "SamahanToolStripMenuItem"
-        Me.SamahanToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SamahanToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.SamahanToolStripMenuItem.Text = "Accounts"
         '
         'ViewToolStripMenuItem1
@@ -308,7 +292,7 @@ Partial Class _mdi_MIS
         '
         Me.SamahanToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewToolStripMenuItem, Me.RegisterToolStripMenuItem})
         Me.SamahanToolStripMenuItem1.Name = "SamahanToolStripMenuItem1"
-        Me.SamahanToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.SamahanToolStripMenuItem1.Size = New System.Drawing.Size(145, 22)
         Me.SamahanToolStripMenuItem1.Text = "Samahan"
         '
         'ViewToolStripMenuItem
@@ -326,13 +310,13 @@ Partial Class _mdi_MIS
         'BackupDataToolStripMenuItem
         '
         Me.BackupDataToolStripMenuItem.Name = "BackupDataToolStripMenuItem"
-        Me.BackupDataToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BackupDataToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.BackupDataToolStripMenuItem.Text = "Back-up Data"
         '
         'OfficersToolStripMenuItem
         '
         Me.OfficersToolStripMenuItem.Name = "OfficersToolStripMenuItem"
-        Me.OfficersToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.OfficersToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.OfficersToolStripMenuItem.Text = "Committee"
         '
         'mnuLogout
@@ -394,7 +378,6 @@ Partial Class _mdi_MIS
     Friend WithEvents BarangayCertificatesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents FireIncidentToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents COVID19RelatedToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EquipmentsPropertiesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SamahanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SamahanToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ViewToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -402,7 +385,6 @@ Partial Class _mdi_MIS
     Friend WithEvents BackupDataToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ViewToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RegisterToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents BorrowHistoryToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ViolationAgainstWomenChildrenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents OfficersToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RESIDENTSLISTToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
