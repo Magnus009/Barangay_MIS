@@ -22,9 +22,9 @@ Partial Class F_CaseFile
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtCode = New System.Windows.Forms.TextBox()
         Me.lblCaseCode = New System.Windows.Forms.Label()
         Me.txtIncharge = New System.Windows.Forms.TextBox()
@@ -40,6 +40,14 @@ Partial Class F_CaseFile
         Me.lblCaseReport = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.datPeopleInvolved = New System.Windows.Forms.DataGridView()
+        Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colInvolvement = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colResident = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.colContactNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colView = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.colStatement = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colResidentID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.datDocuments = New System.Windows.Forms.DataGridView()
         Me.colPresenterID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colFileName = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,14 +69,6 @@ Partial Class F_CaseFile
         Me.chkResident = New System.Windows.Forms.CheckBox()
         Me.txtReportedByID = New System.Windows.Forms.TextBox()
         Me.txtInchargeID = New System.Windows.Forms.TextBox()
-        Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colInvolvement = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colResident = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.colContactNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colView = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.colStatement = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colResidentID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.datPeopleInvolved, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.datDocuments, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -237,14 +237,14 @@ Partial Class F_CaseFile
         Me.datPeopleInvolved.AllowUserToDeleteRows = False
         Me.datPeopleInvolved.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.datPeopleInvolved.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datPeopleInvolved.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datPeopleInvolved.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.datPeopleInvolved.ColumnHeadersHeight = 30
         Me.datPeopleInvolved.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.datPeopleInvolved.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.colName, Me.colInvolvement, Me.colResident, Me.colContactNo, Me.colView, Me.colStatement, Me.colResidentID})
@@ -256,281 +256,6 @@ Partial Class F_CaseFile
         Me.datPeopleInvolved.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.datPeopleInvolved.Size = New System.Drawing.Size(450, 107)
         Me.datPeopleInvolved.TabIndex = 23
-        '
-        'datDocuments
-        '
-        Me.datDocuments.AllowUserToAddRows = False
-        Me.datDocuments.AllowUserToDeleteRows = False
-        Me.datDocuments.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.datDocuments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.datDocuments.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datDocuments.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.datDocuments.ColumnHeadersHeight = 30
-        Me.datDocuments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.datDocuments.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colPresenterID, Me.colFileName, Me.colDateSubmitted, Me.colSourceFile, Me.colOpen, Me.colDelete})
-        Me.datDocuments.Location = New System.Drawing.Point(484, 123)
-        Me.datDocuments.Name = "datDocuments"
-        Me.datDocuments.ReadOnly = True
-        Me.datDocuments.RowHeadersVisible = False
-        Me.datDocuments.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.datDocuments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datDocuments.Size = New System.Drawing.Size(303, 235)
-        Me.datDocuments.TabIndex = 26
-        '
-        'colPresenterID
-        '
-        Me.colPresenterID.HeaderText = "PresenterID"
-        Me.colPresenterID.Name = "colPresenterID"
-        Me.colPresenterID.ReadOnly = True
-        Me.colPresenterID.Visible = False
-        '
-        'colFileName
-        '
-        Me.colFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colFileName.FillWeight = 201.6989!
-        Me.colFileName.HeaderText = "FILE NAME"
-        Me.colFileName.Name = "colFileName"
-        Me.colFileName.ReadOnly = True
-        Me.colFileName.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        '
-        'colDateSubmitted
-        '
-        Me.colDateSubmitted.HeaderText = "Date Submited"
-        Me.colDateSubmitted.Name = "colDateSubmitted"
-        Me.colDateSubmitted.ReadOnly = True
-        Me.colDateSubmitted.Visible = False
-        '
-        'colSourceFile
-        '
-        Me.colSourceFile.HeaderText = "Source File"
-        Me.colSourceFile.Name = "colSourceFile"
-        Me.colSourceFile.ReadOnly = True
-        Me.colSourceFile.Visible = False
-        '
-        'colOpen
-        '
-        Me.colOpen.FillWeight = 64.54688!
-        Me.colOpen.HeaderText = ""
-        Me.colOpen.Name = "colOpen"
-        Me.colOpen.ReadOnly = True
-        Me.colOpen.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.colOpen.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'colDelete
-        '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        Me.colDelete.DefaultCellStyle = DataGridViewCellStyle3
-        Me.colDelete.FillWeight = 68.60507!
-        Me.colDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.colDelete.HeaderText = ""
-        Me.colDelete.Name = "colDelete"
-        Me.colDelete.ReadOnly = True
-        '
-        'Label9
-        '
-        Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label9.AutoSize = True
-        Me.Label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label9.Location = New System.Drawing.Point(484, 104)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(159, 16)
-        Me.Label9.TabIndex = 25
-        Me.Label9.Text = "SUPPORTING DOCUMENTS :"
-        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'btnAdd
-        '
-        Me.btnAdd.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(416, 359)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(62, 27)
-        Me.btnAdd.TabIndex = 24
-        Me.btnAdd.Text = "&ADD"
-        Me.btnAdd.UseVisualStyleBackColor = True
-        '
-        'btnAttach
-        '
-        Me.btnAttach.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnAttach.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAttach.Location = New System.Drawing.Point(673, 359)
-        Me.btnAttach.Name = "btnAttach"
-        Me.btnAttach.Size = New System.Drawing.Size(114, 27)
-        Me.btnAttach.TabIndex = 27
-        Me.btnAttach.Text = "A&TTACH FILE"
-        Me.btnAttach.UseVisualStyleBackColor = True
-        '
-        'btnSave
-        '
-        Me.btnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSave.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.Location = New System.Drawing.Point(673, 392)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(114, 52)
-        Me.btnSave.TabIndex = 28
-        Me.btnSave.Text = "&SAVE"
-        Me.btnSave.UseVisualStyleBackColor = True
-        '
-        'cboStatus
-        '
-        Me.cboStatus.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboStatus.FormattingEnabled = True
-        Me.cboStatus.Location = New System.Drawing.Point(669, 12)
-        Me.cboStatus.Name = "cboStatus"
-        Me.cboStatus.Size = New System.Drawing.Size(118, 24)
-        Me.cboStatus.TabIndex = 14
-        Me.cboStatus.Tag = "IN:Status"
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.Color.Red
-        Me.Label19.Location = New System.Drawing.Point(63, 43)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(11, 13)
-        Me.Label19.TabIndex = 3
-        Me.Label19.Tag = "reqSign"
-        Me.Label19.Text = "*"
-        Me.Label19.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Red
-        Me.Label1.Location = New System.Drawing.Point(23, 70)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(11, 13)
-        Me.Label1.TabIndex = 8
-        Me.Label1.Tag = "reqSign"
-        Me.Label1.Text = "*"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Red
-        Me.Label7.Location = New System.Drawing.Point(16, 104)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(11, 13)
-        Me.Label7.TabIndex = 19
-        Me.Label7.Tag = "reqSign"
-        Me.Label7.Text = "*"
-        Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Panel1
-        '
-        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.AutoSize = True
-        Me.Panel1.Controls.Add(Me.btnOfficialsList)
-        Me.Panel1.Controls.Add(Me.btnResidentList)
-        Me.Panel1.Controls.Add(Me.chkResident)
-        Me.Panel1.Controls.Add(Me.txtReportedBy)
-        Me.Panel1.Controls.Add(Me.btnSave)
-        Me.Panel1.Controls.Add(Me.btnAttach)
-        Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Controls.Add(Me.lblCaseCode)
-        Me.Panel1.Controls.Add(Me.btnAdd)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.datPeopleInvolved)
-        Me.Panel1.Controls.Add(Me.Label8)
-        Me.Panel1.Controls.Add(Me.txtCode)
-        Me.Panel1.Controls.Add(Me.Label19)
-        Me.Panel1.Controls.Add(Me.Label9)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.datDocuments)
-        Me.Panel1.Controls.Add(Me.cboStatus)
-        Me.Panel1.Controls.Add(Me.txtReportedByID)
-        Me.Panel1.Controls.Add(Me.txtInchargeID)
-        Me.Panel1.Controls.Add(Me.txtIncharge)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.txtCaseReport)
-        Me.Panel1.Controls.Add(Me.lblCaseReport)
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.Label6)
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.dtpIncidentDate)
-        Me.Panel1.Controls.Add(Me.dtpReportedDate)
-        Me.Panel1.Location = New System.Drawing.Point(8, 6)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(803, 450)
-        Me.Panel1.TabIndex = 0
-        Me.Panel1.Tag = "Secondary"
-        '
-        'btnOfficialsList
-        '
-        Me.btnOfficialsList.BackColor = System.Drawing.Color.White
-        Me.btnOfficialsList.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btnOfficialsList.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnOfficialsList.Location = New System.Drawing.Point(374, 66)
-        Me.btnOfficialsList.Name = "btnOfficialsList"
-        Me.btnOfficialsList.Size = New System.Drawing.Size(30, 24)
-        Me.btnOfficialsList.TabIndex = 11
-        Me.btnOfficialsList.Text = "..."
-        Me.btnOfficialsList.UseVisualStyleBackColor = False
-        '
-        'btnResidentList
-        '
-        Me.btnResidentList.BackColor = System.Drawing.Color.White
-        Me.btnResidentList.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btnResidentList.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnResidentList.Location = New System.Drawing.Point(374, 40)
-        Me.btnResidentList.Name = "btnResidentList"
-        Me.btnResidentList.Size = New System.Drawing.Size(30, 24)
-        Me.btnResidentList.TabIndex = 6
-        Me.btnResidentList.Text = "..."
-        Me.btnResidentList.UseVisualStyleBackColor = False
-        Me.btnResidentList.Visible = False
-        '
-        'chkResident
-        '
-        Me.chkResident.AutoSize = True
-        Me.chkResident.Location = New System.Drawing.Point(298, 14)
-        Me.chkResident.Name = "chkResident"
-        Me.chkResident.Size = New System.Drawing.Size(76, 20)
-        Me.chkResident.TabIndex = 2
-        Me.chkResident.Text = "RESIDENT"
-        Me.chkResident.UseVisualStyleBackColor = True
-        '
-        'txtReportedByID
-        '
-        Me.txtReportedByID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtReportedByID.Location = New System.Drawing.Point(410, 41)
-        Me.txtReportedByID.MaxLength = 20
-        Me.txtReportedByID.Name = "txtReportedByID"
-        Me.txtReportedByID.Size = New System.Drawing.Size(102, 21)
-        Me.txtReportedByID.TabIndex = 7
-        Me.txtReportedByID.Tag = ""
-        Me.txtReportedByID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtReportedByID.Visible = False
-        '
-        'txtInchargeID
-        '
-        Me.txtInchargeID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtInchargeID.Location = New System.Drawing.Point(410, 68)
-        Me.txtInchargeID.MaxLength = 20
-        Me.txtInchargeID.Name = "txtInchargeID"
-        Me.txtInchargeID.Size = New System.Drawing.Size(102, 21)
-        Me.txtInchargeID.TabIndex = 12
-        Me.txtInchargeID.Tag = ""
-        Me.txtInchargeID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtInchargeID.Visible = False
         '
         'colID
         '
@@ -596,11 +321,286 @@ Partial Class F_CaseFile
         Me.colResidentID.ReadOnly = True
         Me.colResidentID.Visible = False
         '
+        'datDocuments
+        '
+        Me.datDocuments.AllowUserToAddRows = False
+        Me.datDocuments.AllowUserToDeleteRows = False
+        Me.datDocuments.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.datDocuments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.datDocuments.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datDocuments.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
+        Me.datDocuments.ColumnHeadersHeight = 30
+        Me.datDocuments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.datDocuments.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colPresenterID, Me.colFileName, Me.colDateSubmitted, Me.colSourceFile, Me.colOpen, Me.colDelete})
+        Me.datDocuments.Location = New System.Drawing.Point(484, 123)
+        Me.datDocuments.Name = "datDocuments"
+        Me.datDocuments.ReadOnly = True
+        Me.datDocuments.RowHeadersVisible = False
+        Me.datDocuments.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.datDocuments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.datDocuments.Size = New System.Drawing.Size(303, 235)
+        Me.datDocuments.TabIndex = 26
+        '
+        'colPresenterID
+        '
+        Me.colPresenterID.HeaderText = "PresenterID"
+        Me.colPresenterID.Name = "colPresenterID"
+        Me.colPresenterID.ReadOnly = True
+        Me.colPresenterID.Visible = False
+        '
+        'colFileName
+        '
+        Me.colFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colFileName.FillWeight = 201.6989!
+        Me.colFileName.HeaderText = "FILE NAME"
+        Me.colFileName.Name = "colFileName"
+        Me.colFileName.ReadOnly = True
+        Me.colFileName.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
+        'colDateSubmitted
+        '
+        Me.colDateSubmitted.HeaderText = "Date Submited"
+        Me.colDateSubmitted.Name = "colDateSubmitted"
+        Me.colDateSubmitted.ReadOnly = True
+        Me.colDateSubmitted.Visible = False
+        '
+        'colSourceFile
+        '
+        Me.colSourceFile.HeaderText = "Source File"
+        Me.colSourceFile.Name = "colSourceFile"
+        Me.colSourceFile.ReadOnly = True
+        Me.colSourceFile.Visible = False
+        '
+        'colOpen
+        '
+        Me.colOpen.FillWeight = 64.54688!
+        Me.colOpen.HeaderText = ""
+        Me.colOpen.Name = "colOpen"
+        Me.colOpen.ReadOnly = True
+        Me.colOpen.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.colOpen.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        '
+        'colDelete
+        '
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White
+        Me.colDelete.DefaultCellStyle = DataGridViewCellStyle12
+        Me.colDelete.FillWeight = 68.60507!
+        Me.colDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.colDelete.HeaderText = ""
+        Me.colDelete.Name = "colDelete"
+        Me.colDelete.ReadOnly = True
+        '
+        'Label9
+        '
+        Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label9.AutoSize = True
+        Me.Label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label9.Location = New System.Drawing.Point(484, 104)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(159, 16)
+        Me.Label9.TabIndex = 25
+        Me.Label9.Text = "SUPPORTING DOCUMENTS :"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'btnAdd
+        '
+        Me.btnAdd.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.Location = New System.Drawing.Point(416, 359)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(62, 27)
+        Me.btnAdd.TabIndex = 24
+        Me.btnAdd.Text = "&ADD"
+        Me.btnAdd.UseVisualStyleBackColor = True
+        '
+        'btnAttach
+        '
+        Me.btnAttach.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnAttach.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAttach.Location = New System.Drawing.Point(484, 359)
+        Me.btnAttach.Name = "btnAttach"
+        Me.btnAttach.Size = New System.Drawing.Size(114, 27)
+        Me.btnAttach.TabIndex = 27
+        Me.btnAttach.Text = "A&TTACH FILE"
+        Me.btnAttach.UseVisualStyleBackColor = True
+        '
+        'btnSave
+        '
+        Me.btnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSave.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSave.Location = New System.Drawing.Point(673, 359)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(114, 52)
+        Me.btnSave.TabIndex = 28
+        Me.btnSave.Text = "&SAVE"
+        Me.btnSave.UseVisualStyleBackColor = True
+        '
+        'cboStatus
+        '
+        Me.cboStatus.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboStatus.FormattingEnabled = True
+        Me.cboStatus.Location = New System.Drawing.Point(669, 12)
+        Me.cboStatus.Name = "cboStatus"
+        Me.cboStatus.Size = New System.Drawing.Size(118, 24)
+        Me.cboStatus.TabIndex = 14
+        Me.cboStatus.Tag = "IN:Status"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.Color.Red
+        Me.Label19.Location = New System.Drawing.Point(63, 43)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(11, 13)
+        Me.Label19.TabIndex = 3
+        Me.Label19.Tag = "reqSign"
+        Me.Label19.Text = "*"
+        Me.Label19.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Red
+        Me.Label1.Location = New System.Drawing.Point(20, 70)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(11, 13)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Tag = "reqSign"
+        Me.Label1.Text = "*"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Red
+        Me.Label7.Location = New System.Drawing.Point(8, 104)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(11, 13)
+        Me.Label7.TabIndex = 19
+        Me.Label7.Tag = "reqSign"
+        Me.Label7.Text = "*"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.AutoSize = True
+        Me.Panel1.Controls.Add(Me.btnOfficialsList)
+        Me.Panel1.Controls.Add(Me.btnResidentList)
+        Me.Panel1.Controls.Add(Me.chkResident)
+        Me.Panel1.Controls.Add(Me.txtReportedBy)
+        Me.Panel1.Controls.Add(Me.btnSave)
+        Me.Panel1.Controls.Add(Me.btnAttach)
+        Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Controls.Add(Me.lblCaseCode)
+        Me.Panel1.Controls.Add(Me.btnAdd)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.datPeopleInvolved)
+        Me.Panel1.Controls.Add(Me.Label8)
+        Me.Panel1.Controls.Add(Me.txtCode)
+        Me.Panel1.Controls.Add(Me.Label19)
+        Me.Panel1.Controls.Add(Me.Label9)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.datDocuments)
+        Me.Panel1.Controls.Add(Me.cboStatus)
+        Me.Panel1.Controls.Add(Me.txtReportedByID)
+        Me.Panel1.Controls.Add(Me.txtInchargeID)
+        Me.Panel1.Controls.Add(Me.txtIncharge)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.txtCaseReport)
+        Me.Panel1.Controls.Add(Me.lblCaseReport)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.dtpIncidentDate)
+        Me.Panel1.Controls.Add(Me.dtpReportedDate)
+        Me.Panel1.Location = New System.Drawing.Point(5, 4)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(803, 416)
+        Me.Panel1.TabIndex = 0
+        Me.Panel1.Tag = "Secondary"
+        '
+        'btnOfficialsList
+        '
+        Me.btnOfficialsList.BackColor = System.Drawing.Color.White
+        Me.btnOfficialsList.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnOfficialsList.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnOfficialsList.Location = New System.Drawing.Point(374, 66)
+        Me.btnOfficialsList.Name = "btnOfficialsList"
+        Me.btnOfficialsList.Size = New System.Drawing.Size(30, 24)
+        Me.btnOfficialsList.TabIndex = 11
+        Me.btnOfficialsList.Text = "..."
+        Me.btnOfficialsList.UseVisualStyleBackColor = False
+        '
+        'btnResidentList
+        '
+        Me.btnResidentList.BackColor = System.Drawing.Color.White
+        Me.btnResidentList.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnResidentList.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnResidentList.Location = New System.Drawing.Point(374, 40)
+        Me.btnResidentList.Name = "btnResidentList"
+        Me.btnResidentList.Size = New System.Drawing.Size(30, 24)
+        Me.btnResidentList.TabIndex = 6
+        Me.btnResidentList.Text = "..."
+        Me.btnResidentList.UseVisualStyleBackColor = False
+        Me.btnResidentList.Visible = False
+        '
+        'chkResident
+        '
+        Me.chkResident.AutoSize = True
+        Me.chkResident.Location = New System.Drawing.Point(298, 14)
+        Me.chkResident.Name = "chkResident"
+        Me.chkResident.Size = New System.Drawing.Size(76, 20)
+        Me.chkResident.TabIndex = 2
+        Me.chkResident.Text = "RESIDENT"
+        Me.chkResident.UseVisualStyleBackColor = True
+        '
+        'txtReportedByID
+        '
+        Me.txtReportedByID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtReportedByID.Location = New System.Drawing.Point(410, 41)
+        Me.txtReportedByID.MaxLength = 20
+        Me.txtReportedByID.Name = "txtReportedByID"
+        Me.txtReportedByID.Size = New System.Drawing.Size(102, 21)
+        Me.txtReportedByID.TabIndex = 7
+        Me.txtReportedByID.Tag = ""
+        Me.txtReportedByID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtReportedByID.Visible = False
+        '
+        'txtInchargeID
+        '
+        Me.txtInchargeID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtInchargeID.Location = New System.Drawing.Point(410, 68)
+        Me.txtInchargeID.MaxLength = 20
+        Me.txtInchargeID.Name = "txtInchargeID"
+        Me.txtInchargeID.Size = New System.Drawing.Size(102, 21)
+        Me.txtInchargeID.TabIndex = 12
+        Me.txtInchargeID.Tag = ""
+        Me.txtInchargeID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtInchargeID.Visible = False
+        '
         'F_CaseFile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(818, 461)
+        Me.ClientSize = New System.Drawing.Size(812, 425)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle

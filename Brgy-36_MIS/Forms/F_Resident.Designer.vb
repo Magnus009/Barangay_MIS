@@ -983,8 +983,6 @@ Partial Class F_Resident
         '
         'pnlInfos
         '
-        Me.pnlInfos.BackColor = System.Drawing.Color.White
-        Me.pnlInfos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pnlInfos.Controls.Add(Me.lblDelivery)
         Me.pnlInfos.Controls.Add(Me.btnSave)
         Me.pnlInfos.Controls.Add(Me.btnClear)
@@ -1067,7 +1065,7 @@ Partial Class F_Resident
         Me.pnlInfos.Controls.Add(Me.Label35)
         Me.pnlInfos.Controls.Add(Me.Label37)
         Me.pnlInfos.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pnlInfos.Location = New System.Drawing.Point(10, 7)
+        Me.pnlInfos.Location = New System.Drawing.Point(5, 5)
         Me.pnlInfos.Name = "pnlInfos"
         Me.pnlInfos.Size = New System.Drawing.Size(925, 577)
         Me.pnlInfos.TabIndex = 1
@@ -1197,7 +1195,7 @@ Partial Class F_Resident
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(944, 590)
+        Me.ClientSize = New System.Drawing.Size(936, 587)
         Me.Controls.Add(Me.pnlInfos)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle

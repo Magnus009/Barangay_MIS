@@ -48,6 +48,10 @@ Partial Class F_Borrow
         Me.chkResident = New System.Windows.Forms.CheckBox()
         Me.txtBorrower = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnResidentList = New System.Windows.Forms.Button()
+        Me.txtBorrowerID = New System.Windows.Forms.TextBox()
+        Me.btnIncharge = New System.Windows.Forms.Button()
+        Me.txtInchargeID = New System.Windows.Forms.TextBox()
         Me.pnlBorrow.SuspendLayout()
         CType(Me.datItems, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.datBorrowItems, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,6 +59,10 @@ Partial Class F_Borrow
         '
         'pnlBorrow
         '
+        Me.pnlBorrow.Controls.Add(Me.txtInchargeID)
+        Me.pnlBorrow.Controls.Add(Me.btnIncharge)
+        Me.pnlBorrow.Controls.Add(Me.txtBorrowerID)
+        Me.pnlBorrow.Controls.Add(Me.btnResidentList)
         Me.pnlBorrow.Controls.Add(Me.Label7)
         Me.pnlBorrow.Controls.Add(Me.Label19)
         Me.pnlBorrow.Controls.Add(Me.Label5)
@@ -83,7 +91,7 @@ Partial Class F_Borrow
         Me.pnlBorrow.Location = New System.Drawing.Point(7, 6)
         Me.pnlBorrow.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.pnlBorrow.Name = "pnlBorrow"
-        Me.pnlBorrow.Size = New System.Drawing.Size(738, 411)
+        Me.pnlBorrow.Size = New System.Drawing.Size(738, 389)
         Me.pnlBorrow.TabIndex = 0
         Me.pnlBorrow.Tag = "Secondary"
         '
@@ -214,9 +222,9 @@ Partial Class F_Borrow
         'btnSave
         '
         Me.btnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSave.Location = New System.Drawing.Point(632, 352)
+        Me.btnSave.Location = New System.Drawing.Point(632, 348)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(95, 47)
+        Me.btnSave.Size = New System.Drawing.Size(95, 36)
         Me.btnSave.TabIndex = 0
         Me.btnSave.Text = "SAVE"
         Me.btnSave.UseVisualStyleBackColor = True
@@ -300,7 +308,7 @@ Partial Class F_Borrow
         Me.txtContactNo.Location = New System.Drawing.Point(137, 38)
         Me.txtContactNo.Mask = "(+63)000-000-0000"
         Me.txtContactNo.Name = "txtContactNo"
-        Me.txtContactNo.Size = New System.Drawing.Size(121, 21)
+        Me.txtContactNo.Size = New System.Drawing.Size(127, 21)
         Me.txtContactNo.TabIndex = 4
         Me.txtContactNo.Tag = "IN:ContactNo *"
         Me.txtContactNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -317,14 +325,17 @@ Partial Class F_Borrow
         '
         'txtIncharge
         '
+        Me.txtIncharge.BackColor = System.Drawing.Color.White
         Me.txtIncharge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtIncharge.Location = New System.Drawing.Point(137, 65)
         Me.txtIncharge.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtIncharge.MaxLength = 200
         Me.txtIncharge.Name = "txtIncharge"
+        Me.txtIncharge.ReadOnly = True
         Me.txtIncharge.Size = New System.Drawing.Size(212, 21)
         Me.txtIncharge.TabIndex = 7
         Me.txtIncharge.Tag = "IN:Officer Incharge*"
+        Me.txtIncharge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label3
         '
@@ -355,6 +366,7 @@ Partial Class F_Borrow
         Me.txtBorrower.Size = New System.Drawing.Size(212, 21)
         Me.txtBorrower.TabIndex = 2
         Me.txtBorrower.Tag = "IN:Borrower Name*"
+        Me.txtBorrower.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
@@ -365,11 +377,52 @@ Partial Class F_Borrow
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "BORROWER NAME :"
         '
+        'btnResidentList
+        '
+        Me.btnResidentList.BackColor = System.Drawing.Color.White
+        Me.btnResidentList.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnResidentList.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnResidentList.Location = New System.Drawing.Point(349, 10)
+        Me.btnResidentList.Name = "btnResidentList"
+        Me.btnResidentList.Size = New System.Drawing.Size(30, 23)
+        Me.btnResidentList.TabIndex = 43
+        Me.btnResidentList.Text = "..."
+        Me.btnResidentList.UseVisualStyleBackColor = False
+        Me.btnResidentList.Visible = False
+        '
+        'txtBorrowerID
+        '
+        Me.txtBorrowerID.Location = New System.Drawing.Point(379, 11)
+        Me.txtBorrowerID.Name = "txtBorrowerID"
+        Me.txtBorrowerID.Size = New System.Drawing.Size(100, 21)
+        Me.txtBorrowerID.TabIndex = 44
+        Me.txtBorrowerID.Visible = False
+        '
+        'btnIncharge
+        '
+        Me.btnIncharge.BackColor = System.Drawing.Color.White
+        Me.btnIncharge.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnIncharge.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnIncharge.Location = New System.Drawing.Point(349, 64)
+        Me.btnIncharge.Name = "btnIncharge"
+        Me.btnIncharge.Size = New System.Drawing.Size(30, 23)
+        Me.btnIncharge.TabIndex = 43
+        Me.btnIncharge.Text = "..."
+        Me.btnIncharge.UseVisualStyleBackColor = False
+        '
+        'txtInchargeID
+        '
+        Me.txtInchargeID.Location = New System.Drawing.Point(379, 65)
+        Me.txtInchargeID.Name = "txtInchargeID"
+        Me.txtInchargeID.Size = New System.Drawing.Size(100, 21)
+        Me.txtInchargeID.TabIndex = 44
+        Me.txtInchargeID.Visible = False
+        '
         'F_Borrow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(753, 423)
+        Me.ClientSize = New System.Drawing.Size(753, 401)
         Me.Controls.Add(Me.pnlBorrow)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
@@ -415,4 +468,8 @@ Partial Class F_Borrow
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents btnResidentList As System.Windows.Forms.Button
+    Friend WithEvents txtBorrowerID As System.Windows.Forms.TextBox
+    Friend WithEvents txtInchargeID As System.Windows.Forms.TextBox
+    Friend WithEvents btnIncharge As System.Windows.Forms.Button
 End Class

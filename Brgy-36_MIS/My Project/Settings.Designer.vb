@@ -104,7 +104,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Century Gothic, 9.75pt, style=Bold")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Century Gothic, 8.25pt, style=Bold")>  _
         Public Property TableHeader() As Global.System.Drawing.Font
             Get
                 Return CType(Me("TableHeader"),Global.System.Drawing.Font)

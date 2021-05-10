@@ -23,22 +23,15 @@ Partial Class F_forgotPassword
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(F_forgotPassword))
-        Me.txtQuestion_2 = New System.Windows.Forms.TextBox()
-        Me.txtQuestion_1 = New System.Windows.Forms.TextBox()
         Me.btnVerify = New System.Windows.Forms.Button()
         Me.btnSubmit = New System.Windows.Forms.Button()
         Me.txtUserName = New System.Windows.Forms.TextBox()
         Me.pnlVerification = New System.Windows.Forms.Panel()
-        Me.lblAsterisk_2 = New System.Windows.Forms.Label()
-        Me.lblAsterisk_1 = New System.Windows.Forms.Label()
+        Me.txtAnswer = New System.Windows.Forms.TextBox()
         Me.lblUserName = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.lblQ2 = New System.Windows.Forms.Label()
         Me.lblQ1 = New System.Windows.Forms.Label()
-        Me.lblA2 = New System.Windows.Forms.Label()
-        Me.txtAnswer_2 = New System.Windows.Forms.TextBox()
         Me.lblA1 = New System.Windows.Forms.Label()
-        Me.txtAnswer_1 = New System.Windows.Forms.TextBox()
         Me.lblSecurityFrame = New System.Windows.Forms.Label()
         Me.btnConfirm = New System.Windows.Forms.Button()
         Me.lblOP = New System.Windows.Forms.Label()
@@ -53,30 +46,11 @@ Partial Class F_forgotPassword
         Me.chkShowHide_CNP = New System.Windows.Forms.CheckBox()
         Me.chkShowHide_NP = New System.Windows.Forms.CheckBox()
         Me.chkShowHide_P = New System.Windows.Forms.CheckBox()
+        Me.cboQuestion = New System.Windows.Forms.ComboBox()
         Me.pnlVerification.SuspendLayout()
         CType(Me.picChangePass, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlTop.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'txtQuestion_2
-        '
-        Me.txtQuestion_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtQuestion_2.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtQuestion_2.Location = New System.Drawing.Point(110, 136)
-        Me.txtQuestion_2.Name = "txtQuestion_2"
-        Me.txtQuestion_2.ReadOnly = True
-        Me.txtQuestion_2.Size = New System.Drawing.Size(262, 21)
-        Me.txtQuestion_2.TabIndex = 6
-        '
-        'txtQuestion_1
-        '
-        Me.txtQuestion_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtQuestion_1.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtQuestion_1.Location = New System.Drawing.Point(110, 77)
-        Me.txtQuestion_1.Name = "txtQuestion_1"
-        Me.txtQuestion_1.ReadOnly = True
-        Me.txtQuestion_1.Size = New System.Drawing.Size(262, 21)
-        Me.txtQuestion_1.TabIndex = 4
         '
         'btnVerify
         '
@@ -118,56 +92,33 @@ Partial Class F_forgotPassword
         '
         'pnlVerification
         '
+        Me.pnlVerification.Controls.Add(Me.cboQuestion)
         Me.pnlVerification.Controls.Add(Me.txtUserName)
-        Me.pnlVerification.Controls.Add(Me.txtQuestion_2)
-        Me.pnlVerification.Controls.Add(Me.txtQuestion_1)
-        Me.pnlVerification.Controls.Add(Me.txtAnswer_2)
-        Me.pnlVerification.Controls.Add(Me.txtAnswer_1)
-        Me.pnlVerification.Controls.Add(Me.lblAsterisk_2)
-        Me.pnlVerification.Controls.Add(Me.lblAsterisk_1)
+        Me.pnlVerification.Controls.Add(Me.txtAnswer)
         Me.pnlVerification.Controls.Add(Me.btnVerify)
         Me.pnlVerification.Controls.Add(Me.btnSubmit)
         Me.pnlVerification.Controls.Add(Me.lblUserName)
         Me.pnlVerification.Controls.Add(Me.Label1)
-        Me.pnlVerification.Controls.Add(Me.lblQ2)
         Me.pnlVerification.Controls.Add(Me.lblQ1)
-        Me.pnlVerification.Controls.Add(Me.lblA2)
         Me.pnlVerification.Controls.Add(Me.lblA1)
         Me.pnlVerification.Controls.Add(Me.lblSecurityFrame)
         Me.pnlVerification.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlVerification.Location = New System.Drawing.Point(0, 239)
+        Me.pnlVerification.Location = New System.Drawing.Point(0, 14)
         Me.pnlVerification.Name = "pnlVerification"
-        Me.pnlVerification.Size = New System.Drawing.Size(409, 12)
+        Me.pnlVerification.Size = New System.Drawing.Size(409, 237)
         Me.pnlVerification.TabIndex = 3
         Me.pnlVerification.Tag = "Secondary"
         '
-        'lblAsterisk_2
+        'txtAnswer
         '
-        Me.lblAsterisk_2.AutoSize = True
-        Me.lblAsterisk_2.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAsterisk_2.ForeColor = System.Drawing.Color.Red
-        Me.lblAsterisk_2.Location = New System.Drawing.Point(30, 165)
-        Me.lblAsterisk_2.Name = "lblAsterisk_2"
-        Me.lblAsterisk_2.Size = New System.Drawing.Size(11, 13)
-        Me.lblAsterisk_2.TabIndex = 41
-        Me.lblAsterisk_2.Tag = "reqSign"
-        Me.lblAsterisk_2.Text = "*"
-        Me.lblAsterisk_2.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.lblAsterisk_2.Visible = False
-        '
-        'lblAsterisk_1
-        '
-        Me.lblAsterisk_1.AutoSize = True
-        Me.lblAsterisk_1.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAsterisk_1.ForeColor = System.Drawing.Color.Red
-        Me.lblAsterisk_1.Location = New System.Drawing.Point(30, 106)
-        Me.lblAsterisk_1.Name = "lblAsterisk_1"
-        Me.lblAsterisk_1.Size = New System.Drawing.Size(11, 13)
-        Me.lblAsterisk_1.TabIndex = 40
-        Me.lblAsterisk_1.Tag = "reqSign"
-        Me.lblAsterisk_1.Text = "*"
-        Me.lblAsterisk_1.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.lblAsterisk_1.Visible = False
+        Me.txtAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtAnswer.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAnswer.Location = New System.Drawing.Point(110, 139)
+        Me.txtAnswer.Name = "txtAnswer"
+        Me.txtAnswer.ReadOnly = True
+        Me.txtAnswer.Size = New System.Drawing.Size(262, 21)
+        Me.txtAnswer.TabIndex = 3
+        Me.txtAnswer.Tag = "IN:Answer*"
         '
         'lblUserName
         '
@@ -183,74 +134,32 @@ Partial Class F_forgotPassword
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(50, 53)
+        Me.Label1.Location = New System.Drawing.Point(30, 78)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(116, 15)
+        Me.Label1.Size = New System.Drawing.Size(312, 15)
         Me.Label1.TabIndex = 28
-        Me.Label1.Text = "SECURITY QUESTION"
+        Me.Label1.Text = "PLEASE ANSWER 1 OF THE QUESTION FOR VERIFICATION."
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'lblQ2
-        '
-        Me.lblQ2.AutoSize = True
-        Me.lblQ2.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblQ2.Location = New System.Drawing.Point(36, 140)
-        Me.lblQ2.Name = "lblQ2"
-        Me.lblQ2.Size = New System.Drawing.Size(68, 13)
-        Me.lblQ2.TabIndex = 27
-        Me.lblQ2.Text = "QUESTION 2 : "
         '
         'lblQ1
         '
         Me.lblQ1.AutoSize = True
         Me.lblQ1.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblQ1.Location = New System.Drawing.Point(36, 81)
+        Me.lblQ1.Location = New System.Drawing.Point(36, 118)
         Me.lblQ1.Name = "lblQ1"
-        Me.lblQ1.Size = New System.Drawing.Size(68, 13)
+        Me.lblQ1.Size = New System.Drawing.Size(60, 13)
         Me.lblQ1.TabIndex = 26
-        Me.lblQ1.Text = "QUESTION 1 : "
-        '
-        'lblA2
-        '
-        Me.lblA2.AutoSize = True
-        Me.lblA2.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblA2.Location = New System.Drawing.Point(43, 165)
-        Me.lblA2.Name = "lblA2"
-        Me.lblA2.Size = New System.Drawing.Size(61, 13)
-        Me.lblA2.TabIndex = 25
-        Me.lblA2.Text = "ANSWER 2 : "
-        '
-        'txtAnswer_2
-        '
-        Me.txtAnswer_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtAnswer_2.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAnswer_2.Location = New System.Drawing.Point(110, 161)
-        Me.txtAnswer_2.Name = "txtAnswer_2"
-        Me.txtAnswer_2.ReadOnly = True
-        Me.txtAnswer_2.Size = New System.Drawing.Size(262, 21)
-        Me.txtAnswer_2.TabIndex = 4
-        Me.txtAnswer_2.Tag = "IN:Answer 2*"
+        Me.lblQ1.Text = "QUESTION : "
         '
         'lblA1
         '
         Me.lblA1.AutoSize = True
         Me.lblA1.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblA1.Location = New System.Drawing.Point(43, 106)
+        Me.lblA1.Location = New System.Drawing.Point(43, 143)
         Me.lblA1.Name = "lblA1"
-        Me.lblA1.Size = New System.Drawing.Size(61, 13)
+        Me.lblA1.Size = New System.Drawing.Size(53, 13)
         Me.lblA1.TabIndex = 24
-        Me.lblA1.Text = "ANSWER 1 : "
-        '
-        'txtAnswer_1
-        '
-        Me.txtAnswer_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtAnswer_1.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAnswer_1.Location = New System.Drawing.Point(110, 102)
-        Me.txtAnswer_1.Name = "txtAnswer_1"
-        Me.txtAnswer_1.ReadOnly = True
-        Me.txtAnswer_1.Size = New System.Drawing.Size(262, 21)
-        Me.txtAnswer_1.TabIndex = 3
-        Me.txtAnswer_1.Tag = "IN:Answer 1*"
+        Me.lblA1.Text = "ANSWER : "
         '
         'lblSecurityFrame
         '
@@ -396,7 +305,7 @@ Partial Class F_forgotPassword
         Me.pnlTop.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlTop.Location = New System.Drawing.Point(0, 0)
         Me.pnlTop.Name = "pnlTop"
-        Me.pnlTop.Size = New System.Drawing.Size(409, 239)
+        Me.pnlTop.Size = New System.Drawing.Size(409, 14)
         Me.pnlTop.TabIndex = 4
         Me.pnlTop.Tag = "Primary"
         '
@@ -442,6 +351,15 @@ Partial Class F_forgotPassword
         Me.chkShowHide_P.Text = "&Show"
         Me.chkShowHide_P.UseVisualStyleBackColor = False
         '
+        'cboQuestion
+        '
+        Me.cboQuestion.Enabled = False
+        Me.cboQuestion.FormattingEnabled = True
+        Me.cboQuestion.Location = New System.Drawing.Point(110, 112)
+        Me.cboQuestion.Name = "cboQuestion"
+        Me.cboQuestion.Size = New System.Drawing.Size(262, 24)
+        Me.cboQuestion.TabIndex = 41
+        '
         'F_forgotPassword
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
@@ -468,20 +386,15 @@ Partial Class F_forgotPassword
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents txtQuestion_2 As System.Windows.Forms.TextBox
-    Friend WithEvents txtQuestion_1 As System.Windows.Forms.TextBox
     Friend WithEvents btnVerify As System.Windows.Forms.Button
     Friend WithEvents btnSubmit As System.Windows.Forms.Button
     Friend WithEvents txtUserName As System.Windows.Forms.TextBox
     Friend WithEvents pnlVerification As System.Windows.Forms.Panel
     Friend WithEvents lblUserName As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents lblQ2 As System.Windows.Forms.Label
     Friend WithEvents lblQ1 As System.Windows.Forms.Label
-    Friend WithEvents lblA2 As System.Windows.Forms.Label
-    Friend WithEvents txtAnswer_2 As System.Windows.Forms.TextBox
     Friend WithEvents lblA1 As System.Windows.Forms.Label
-    Friend WithEvents txtAnswer_1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtAnswer As System.Windows.Forms.TextBox
     Friend WithEvents lblSecurityFrame As System.Windows.Forms.Label
     Friend WithEvents btnConfirm As System.Windows.Forms.Button
     Friend WithEvents lblOP As System.Windows.Forms.Label
@@ -493,9 +406,8 @@ Partial Class F_forgotPassword
     Friend WithEvents picChangePass As System.Windows.Forms.PictureBox
     Friend WithEvents btnBack As System.Windows.Forms.Button
     Friend WithEvents pnlTop As System.Windows.Forms.Panel
-    Friend WithEvents lblAsterisk_2 As System.Windows.Forms.Label
-    Friend WithEvents lblAsterisk_1 As System.Windows.Forms.Label
     Friend WithEvents chkShowHide_CNP As System.Windows.Forms.CheckBox
     Friend WithEvents chkShowHide_NP As System.Windows.Forms.CheckBox
     Friend WithEvents chkShowHide_P As System.Windows.Forms.CheckBox
+    Friend WithEvents cboQuestion As System.Windows.Forms.ComboBox
 End Class

@@ -144,23 +144,27 @@
                     strQuery = "SELECT dbo.fn_colID ('B')"
                     strBorrowID = SQL_SELECT(strQuery).Tables(0).Rows(0)(0)
 
-                    strQuery = "INSERT INTO BorrowHeader (" + vbCrLf
-                    strQuery += "Code, " + vbCrLf
-                    strQuery += "Borrower, " + vbCrLf
+                    strQuery = "INSERT INTO T_BorrowHeader (" + vbCrLf
+                    strQuery += "BorrowCode, " + vbCrLf
+                    strQuery += "BorrowerName, " + vbCrLf
+                    strQuery += "BorrowerID, " + vbCrLf
                     strQuery += "isResidence, " + vbCrLf
-                    strQuery += "InCharge, " + vbCrLf
+                    strQuery += "inCharge, " + vbCrLf
+                    strQuery += "inChargeID, " + vbCrLf
                     strQuery += "StatusID, " + vbCrLf
                     strQuery += "ContactNo, " + vbCrLf
                     strQuery += "BorrowedDate, " + vbCrLf
-                    strQuery += "ReturnedDate, " + vbCrLf
+                    strQuery += "ReturnDate, " + vbCrLf
                     strQuery += "CreatedDate, " + vbCrLf
                     strQuery += "UpdatedDate, " + vbCrLf
                     strQuery += "UpdatedBy)" + vbCrLf
                     strQuery += "VALUES (" + vbCrLf
                     strQuery += "'" + strBorrowID + "', " + vbCrLf
                     strQuery += "'" + txtBorrower.Text + "', " + vbCrLf
+                    strQuery += "'" + txtBorrowerID.Text + "', " + vbCrLf
                     strQuery += chkVal(chkResident) + ", " + vbCrLf
                     strQuery += "'" + txtIncharge.Text + "', " + vbCrLf
+                    strQuery += "'" + txtInchargeID.Text + "', " + vbCrLf
                     strQuery += cboVal(cboStatus) + ", " + vbCrLf
                     strQuery += "'" + txtContactNo.Text + "', " + vbCrLf
                     strQuery += "'" + fn_Date(dtpBorrowDate.Value) + "', " + vbCrLf
@@ -171,11 +175,11 @@
 
                     If SQL_EXECUTE(strQuery) Then
                         For Each dgvRow As DataGridViewRow In datBorrowItems.Rows
-                            strQuery = "INSERT INTO BorrowDetails (" + vbCrLf
-                            strQuery += "Code, " + vbCrLf
+                            strQuery = "INSERT INTO T_BorrowDetails (" + vbCrLf
+                            strQuery += "BorrowCode, " + vbCrLf
                             strQuery += "SeqNo, " + vbCrLf
                             strQuery += "ItemID, " + vbCrLf
-                            strQuery += "BorrowedQTY, " + vbCrLf
+                            strQuery += "QTY, " + vbCrLf
                             strQuery += "CreatedDate, " + vbCrLf
                             strQuery += "UpdatedDate," + vbCrLf
                             strQuery += "UpdatedBy)" + vbCrLf
@@ -203,5 +207,36 @@
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
+    End Sub
+
+    Private Sub chkResident_CheckedChanged(sender As Object, e As EventArgs) Handles chkResident.CheckedChanged
+        btnResidentList.Visible = chkResident.Checked
+        txtBorrower.ReadOnly = chkResident.Checked
+        txtBorrower.Clear()
+        txtBorrowerID.Clear()
+    End Sub
+
+    Private Sub btnResidentList_Click(sender As Object, e As EventArgs) Handles btnResidentList.Click
+        Dim frmResidentsList As New F_SelectionList
+
+        AddHandler frmResidentsList.selectedResident, AddressOf loadReportedBy
+        frmResidentsList.loadSelection(1)
+    End Sub
+
+    Private Sub loadReportedBy(ByVal strResidentID As String)
+        txtBorrowerID.Text = strResidentID
+        strQuery = "SELECT FamilyName + ', ' + GivenName + ' ' + MiddleName + ' ' + ExtensionName  FROM Residents WHERE Code = '" + strResidentID + "'"
+        txtBorrower.Text = SQL_SELECT(strQuery).Tables(0).Rows(0)(0)
+    End Sub
+
+    Private Sub btnIncharge_Click(sender As Object, e As EventArgs) Handles btnIncharge.Click
+        Dim frmOfficialsList As New F_SelectionList
+
+        AddHandler frmOfficialsList.selectedOfficial, AddressOf loadIncharge
+        frmOfficialsList.loadSelection(2)
+    End Sub
+    Private Sub loadIncharge(ByVal strOfficialID As String, ByVal strOfficialName As String)
+        txtInchargeID.Text = strOfficialID
+        txtIncharge.Text = strOfficialName
     End Sub
 End Class

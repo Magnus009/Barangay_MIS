@@ -2,11 +2,12 @@
     Dim intCaseType As Integer
 
     Dim frmCase As New F_CaseFile
+
     Public Sub loadCaseRecords(caseType As Integer, Optional strFilter As String = "")
-        'CaseType:: [0]=>Complaints || [1]=>Incidents || [2]=>Blotters
+        'CaseType:: [0]=>Complaints || [1]=>Incidents || [2]=>Blotters || [2]=>VAWC
         Try
             intCaseType = caseType
-            Me.Text = Choose(caseType + 1, "COMPLAINTS", "INCIDENTS", "BLOTTERS") & " RECORDS"
+            Me.Text = Choose(caseType + 1, "COMPLAINTS", "INCIDENTS", "BLOTTERS", "VAWC") & " RECORDS"
             Dim dtCases As New DataTable
             strQuery = "SELECT C.CODE, C.ReportedBy AS 'REPORTED BY', convert(VARCHAR, C.IncidentDate, 111) AS 'INCIDENT DATE', S.Description AS STATUS FROM CasesHeader C" + vbCrLf
             strQuery += "INNER JOIN M_CaseStatus S ON C.StatusID = S.StatusID AND S.TypeID = " + caseType.ToString + vbCrLf
@@ -26,8 +27,38 @@
                 .Columns(3).Width = .Width * 0.15
             End With
 
-
             Me.Show()
+            If caseType <> 2 Then
+                lblDueTomCLR.Visible = False : lblDueTom.Visible = False
+                lblOverDueCLR.Visible = False : lblOverDue.Visible = False
+                datCases.Height = 441
+            Else
+                Dim dtBlotter As New DataTable
+                Dim strDueTom As String = ""
+                Dim strOverDue As String = ""
+
+                strQuery = "SELECT BD.CaseCode, datediff(day, getdate(), BD.ScheduleDate) FROM BlotterDetails BD" + vbCrLf
+                strQuery += "WHERE BD.StatusID = 1 AND BD.MeetingDate IS NULL" + vbCrLf
+                strQuery += "AND BD.Seq = (SELECT max(Seq) FROM BlotterDetails WHERE CaseCode = BD.CaseCode)"
+                dtBlotter = SQL_SELECT(strQuery).Tables(0)
+
+                For Each dr As DataRow In dtBlotter.Rows
+                    If dr(1) = 0 Or dr(1) = 1 Then
+                        strDueTom += dr(0).ToString + "/"
+                    ElseIf dr(1) < 0 Then
+                        strOverDue += dr(0).ToString + "/"
+                    End If
+                Next
+
+                For Each row As DataGridViewRow In datCases.Rows
+                    If strDueTom.Contains(row.Cells("CODE").Value.ToString) Then
+                        datCases.Rows(row.Index).DefaultCellStyle.BackColor = Color.LightBlue
+                    ElseIf strOverDue.Contains(row.Cells("CODE").Value.ToString) Then
+                        datCases.Rows(row.Index).DefaultCellStyle.BackColor = Color.Red
+                    End If
+                Next
+            End If
+
             datPeopleInvolved.ColumnHeadersDefaultCellStyle.Font = My.Settings.Font
             datDocuments.ColumnHeadersDefaultCellStyle.Font = My.Settings.Font
             btnAdd.Font = My.Settings.Substring
@@ -36,12 +67,10 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
     Private Sub loadCaseStatus(intCaseType As Integer)
         strQuery = "SELECT StatusID, Description FROM M_CaseStatus WHERE DeletedDate IS NULL AND TypeID = " + intCaseType.ToString
         cboDataBinding(cboStatus, strQuery, "--STATUS--")
     End Sub
-
     Private Sub datCases_RowEnter(sender As Object, e As DataGridViewCellEventArgs) Handles datCases.RowEnter
         Try
             Dim strCaseCode As String
@@ -59,7 +88,6 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
     Private Sub loadCaseDetails(strCaseCode As String)
         Try
             Dim dtCaseHeader As New DataTable
@@ -79,6 +107,22 @@
                     dtpReportedDate.Value = .Rows(0)("ReportedDate")
                     dtpIncidentDate.Value = .Rows(0)("IncidentDate")
                     txtCaseReport.Text = .Rows(0)("CaseReport")
+
+                    If intCaseType = 0 Then
+                        btnBlotter.Visible = True
+                        If .Rows(0)("StatusID") <= 1 Then
+                            btnBlotter.Enabled = True
+                            btnUpdate.Enabled = True
+                        ElseIf .Rows(0)("StatusID") = 4 Then
+                            btnBlotter.Visible = False
+                            btnUpdate.Enabled = False
+                        Else
+                            btnBlotter.Enabled = False
+                            btnUpdate.Enabled = True
+                        End If
+                    Else
+                        btnBlotter.Visible = False
+                    End If
 
                     'load People Involved
                     Dim dtPeople As New DataTable
@@ -115,7 +159,6 @@
         End Try
 
     End Sub
-
     Private Sub datDocuments_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datDocuments.CellContentClick
         If e.ColumnIndex = 4 Then
             openFile(datDocuments.Rows(e.RowIndex).Cells("colSourceFile").Value)
@@ -128,7 +171,6 @@
             End If
         End If
     End Sub
-
     Private Sub btnAttach_Click(sender As Object, e As EventArgs) Handles btnAttach.Click
         Try
             Dim strSourceFile, strFileName, strTempFile As String
@@ -164,7 +206,6 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
     Private Sub datPeopleInvolved_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datPeopleInvolved.CellContentClick
         If e.ColumnIndex = 5 Then
             Dim frmInvolveDetails As New F_PeopleInvolved
@@ -208,46 +249,23 @@
             frmInvolveDetails.loadInvolvedDetails(strPersonInvolved, dtSupportingDocs)
             frmInvolveDetails.loadDetails(2, Me)
         End If
-        'If e.ColumnIndex = 5 Then
-        '    With F_PeopleInvolved
-        '        'Involved Details
-        '        .strInvolveID = datPeopleInvolved.Rows(e.RowIndex).Cells("colID").Value
-        '        .txtName.Text = datPeopleInvolved.Rows(e.RowIndex).Cells("colName").Value
-        '        .chkResident.Checked = datPeopleInvolved.Rows(e.RowIndex).Cells("colResident").Value
-        '        .txtInvolvement.Text = datPeopleInvolved.Rows(e.RowIndex).Cells("colInvolvement").Value
-        '        .txtContactNo.Text = datPeopleInvolved.Rows(e.RowIndex).Cells("colContactNo").Value
-        '        .txtStatement.Text = datPeopleInvolved.Rows(e.RowIndex).Cells("colStatement").Value
-        '        'Supporting Documents
-        '        .datDocuments.Rows.Clear()
-        '        For Each dgr As DataGridViewRow In datDocuments.Rows
-        '            If dgr.Cells("colPresenterID").Value = datPeopleInvolved.Rows(e.RowIndex).Cells("colID").Value Then
-        '                Dim row As String()
-        '                row = New String() {dgr.Cells("colPresenterID").Value, _
-        '                                    dgr.Cells("colFileName").Value, _
-        '                                    dgr.Cells("colDateSubmitted").Value, _
-        '                                    dgr.Cells("colSourceFile").Value, _
-        '                                    "•••", _
-        '                                    "X"}
-        '                .datDocuments.Rows.Add(row)
-        '            End If
-        '        Next
-        '        .loadDetails(2, Me)
-        '    End With
-        'End If
     End Sub
-
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         If btnUpdate.Text = "UPDATE" Then
-            formMode(2, pnlCaseDetails)
-            btnResidentList.Visible = False
-            btnUpdate.Text = "SAVE"
-            btnUpdate.BackColor = Color.Green
-            btnResidentList.Visible = True
-            btnOfficialsList.Visible = True
-            btnAttach.Visible = True
-            btnAdd.Visible = True
-            datPeopleInvolved.Columns("colView").Visible = True
-            datDocuments.Columns("colDelete").Visible = True
+            If intCaseType = 2 And cboStatus.SelectedValue = 1 Then
+                blotterCase()
+            Else
+                formMode(2, pnlCaseDetails)
+                btnResidentList.Visible = False
+                btnUpdate.Text = "SAVE"
+                btnUpdate.BackColor = Color.Green
+                btnResidentList.Visible = True
+                btnOfficialsList.Visible = True
+                btnAttach.Visible = True
+                btnAdd.Visible = True
+                datPeopleInvolved.Columns("colView").Visible = True
+                datDocuments.Columns("colDelete").Visible = True
+            End If
         Else
             Dim msgDialog As DialogResult
             msgDialog = MsgBox("Save changes?", MsgBoxStyle.Question + MsgBoxStyle.YesNoCancel, "SAVE")
@@ -278,7 +296,6 @@
             End If
         End If
     End Sub
-
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Dim frmPeopleInvolved As New F_PeopleInvolved
 
@@ -292,7 +309,6 @@
         '    .loadDetails(1, Me)
         'End With
     End Sub
-
     Private Sub loadInfo(ByVal strPeopleInvolved As String(), ByVal dtDocuments As DataTable)
         Try
             If strPeopleInvolved(0) >= datPeopleInvolved.Rows.Count Then 'ADD
@@ -340,7 +356,6 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
     Private Sub updateCase()
         Try
             Dim strFile As String
@@ -471,7 +486,6 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
     Private Sub F_CasesRecords_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If txtCode.Text = "" Then
             btnUpdate.Enabled = False
@@ -481,7 +495,6 @@
         formLoadSetup(Me)
         loadCaseStatus(intCaseType)
     End Sub
-
     Private Sub btnResidentList_Click(sender As Object, e As EventArgs) Handles btnResidentList.Click
         Dim frmResidentsList As New F_SelectionList
 
@@ -493,19 +506,16 @@
         strQuery = "SELECT FamilyName + ', ' + GivenName + ' ' + MiddleName + ' ' + ExtensionName  FROM Residents WHERE Code = '" + strResidentID + "'"
         txtReportedBy.Text = SQL_SELECT(strQuery).Tables(0).Rows(0)(0)
     End Sub
-
     Private Sub btnOfficialsList_Click(sender As Object, e As EventArgs) Handles btnOfficialsList.Click
         Dim frmOfficialsList As New F_SelectionList
 
         AddHandler frmOfficialsList.selectedOfficial, AddressOf loadIncharge
         frmOfficialsList.loadSelection(2)
     End Sub
-
     Private Sub loadIncharge(ByVal strOfficialID As String, ByVal strOfficialName As String)
         txtInchargeID.Text = strOfficialID
         txtIncharge.Text = strOfficialName
     End Sub
-
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Try
             Dim strfilter As String = ""
@@ -527,4 +537,63 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+
+    Private Sub btnBlotter_Click(sender As Object, e As EventArgs) Handles btnBlotter.Click
+        blotterCase()
+    End Sub
+
+    Private Sub blotterCase()
+        Try
+            Dim frmBlotter As New F_CaseFile
+
+            With frmBlotter
+                If intCaseType = 2 Then
+                    .txtCode.Text = txtCode.Text
+                Else
+                    .strComplaintBlotterCode = txtCode.Text
+                End If
+
+                .chkResident.Checked = txtReportedByID.Text <> ""
+                .loadReportedBy(txtReportedByID.Text)
+                .loadIncharge(txtInchargeID.Text, txtIncharge.Text)
+
+                .dtpReportedDate.Value = dtpReportedDate.Value
+                .dtpIncidentDate.Value = dtpIncidentDate.Value
+                .txtCaseReport.Text = txtCaseReport.Text
+
+                'load People Involved
+                Dim dtPeople As New DataTable
+                strQuery = "SELECT * FROM CasesDetails" + vbCrLf
+                strQuery += "WHERE Code = '" + txtCode.Text + "'" + vbCrLf
+                strQuery += "AND DeletedDate IS NULL"
+                dtPeople = SQL_SELECT(strQuery).Tables(0)
+                Dim rowPeople As String()
+
+                .datPeopleInvolved.Rows.Clear()
+                For Each row As DataRow In dtPeople.Rows
+                    rowPeople = New String() {row("Seq"), row("PersonInvolved"), row("Involvement"), row("isResident"), row("ContactNo"), "•••", row("Statement"), row("ResidentCode")}
+                    .datPeopleInvolved.Rows.Add(rowPeople)
+                Next
+
+                'load Case Documents
+                Dim dtDocuments As New DataTable
+                strQuery = "SELECT * FROM CasesDocuments" + vbCrLf
+                strQuery += "WHERE Code = '" + txtCode.Text + "'" + vbCrLf
+                strQuery += "AND DeletedDate IS NULL"
+                dtDocuments = SQL_SELECT(strQuery).Tables(0)
+                Dim rowDocs As String()
+
+                .datDocuments.Rows.Clear()
+                For Each row As DataRow In dtDocuments.Rows
+                    rowDocs = New String() {row(1), getFileName(row(3)), row(4), row(3), "•••", "X"}
+                    .datDocuments.Rows.Add(rowDocs)
+                Next
+                .openCase(2)
+                loadCaseDetails(txtCode.Text)
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
 End Class

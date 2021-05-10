@@ -155,11 +155,11 @@
 
                 If SQL_EXECUTE(strQuery) Then
                     strQuery = "UPDATE M_ItemsInventory" + vbCrLf
-                    strQuery += "SET TotalQTY = @totalqty," + vbCrLf
-                    strQuery += "	Stocks = @stocks," + vbCrLf
-                    strQuery += "UpdatedDate = @updateddate," + vbCrLf
-                    strQuery += "UpdatedBy = @updatedby" + vbCrLf
-                    strQuery += "WHERE ItemID = ''"
+                    strQuery += "SET TotalQTY = " + txtTotal.Text + "," + vbCrLf
+                    strQuery += "	Stocks = " + txtStocks.Text + "," + vbCrLf
+                    strQuery += "UpdatedDate = getdate()," + vbCrLf
+                    strQuery += "UpdatedBy = '" + UserName + "'" + vbCrLf
+                    strQuery += "WHERE ItemID = '" + txtItemID.Text + "'"
                     If SQL_EXECUTE(strQuery) Then
                         MsgBox("Item update successfully!", MsgBoxStyle.Information, "Update Item")
                     End If

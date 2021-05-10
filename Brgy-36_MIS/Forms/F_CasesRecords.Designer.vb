@@ -35,11 +35,16 @@ Partial Class F_CasesRecords
         Me.dtpIncident = New System.Windows.Forms.DateTimePicker()
         Me.datCases = New System.Windows.Forms.DataGridView()
         Me.pnlCase = New System.Windows.Forms.Panel()
+        Me.lblOverDue = New System.Windows.Forms.Label()
+        Me.lblOverDueCLR = New System.Windows.Forms.Label()
+        Me.lblDueTom = New System.Windows.Forms.Label()
+        Me.lblDueTomCLR = New System.Windows.Forms.Label()
         Me.pnlCaseDetails = New System.Windows.Forms.Panel()
         Me.btnOfficialsList = New System.Windows.Forms.Button()
         Me.btnResidentList = New System.Windows.Forms.Button()
         Me.btnAttach = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
+        Me.btnBlotter = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.datDocuments = New System.Windows.Forms.DataGridView()
@@ -183,11 +188,15 @@ Partial Class F_CasesRecords
         Me.datCases.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.datCases.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.datCases.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datCases.Size = New System.Drawing.Size(445, 441)
+        Me.datCases.Size = New System.Drawing.Size(445, 413)
         Me.datCases.TabIndex = 7
         '
         'pnlCase
         '
+        Me.pnlCase.Controls.Add(Me.lblOverDue)
+        Me.pnlCase.Controls.Add(Me.lblOverDueCLR)
+        Me.pnlCase.Controls.Add(Me.lblDueTom)
+        Me.pnlCase.Controls.Add(Me.lblDueTomCLR)
         Me.pnlCase.Controls.Add(Me.datCases)
         Me.pnlCase.Controls.Add(Me.txtSearch)
         Me.pnlCase.Controls.Add(Me.dtpIncident)
@@ -196,11 +205,49 @@ Partial Class F_CasesRecords
         Me.pnlCase.Controls.Add(Me.btnSearch)
         Me.pnlCase.Controls.Add(Me.Label4)
         Me.pnlCase.Controls.Add(Me.Label2)
-        Me.pnlCase.Location = New System.Drawing.Point(6, 7)
+        Me.pnlCase.Location = New System.Drawing.Point(5, 5)
         Me.pnlCase.Name = "pnlCase"
         Me.pnlCase.Size = New System.Drawing.Size(461, 514)
         Me.pnlCase.TabIndex = 1
         Me.pnlCase.Tag = "Secondary"
+        '
+        'lblOverDue
+        '
+        Me.lblOverDue.AutoSize = True
+        Me.lblOverDue.Location = New System.Drawing.Point(237, 487)
+        Me.lblOverDue.Name = "lblOverDue"
+        Me.lblOverDue.Size = New System.Drawing.Size(60, 16)
+        Me.lblOverDue.TabIndex = 8
+        Me.lblOverDue.Text = "OVERDUE"
+        '
+        'lblOverDueCLR
+        '
+        Me.lblOverDueCLR.BackColor = System.Drawing.Color.Red
+        Me.lblOverDueCLR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblOverDueCLR.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.lblOverDueCLR.Location = New System.Drawing.Point(208, 484)
+        Me.lblOverDueCLR.Name = "lblOverDueCLR"
+        Me.lblOverDueCLR.Size = New System.Drawing.Size(23, 22)
+        Me.lblOverDueCLR.TabIndex = 8
+        '
+        'lblDueTom
+        '
+        Me.lblDueTom.AutoSize = True
+        Me.lblDueTom.Location = New System.Drawing.Point(43, 487)
+        Me.lblDueTom.Name = "lblDueTom"
+        Me.lblDueTom.Size = New System.Drawing.Size(146, 16)
+        Me.lblDueTom.TabIndex = 8
+        Me.lblDueTom.Text = "DUE TODAY/TOMORROW"
+        '
+        'lblDueTomCLR
+        '
+        Me.lblDueTomCLR.BackColor = System.Drawing.Color.LightBlue
+        Me.lblDueTomCLR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblDueTomCLR.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.lblDueTomCLR.Location = New System.Drawing.Point(14, 484)
+        Me.lblDueTomCLR.Name = "lblDueTomCLR"
+        Me.lblDueTomCLR.Size = New System.Drawing.Size(23, 22)
+        Me.lblDueTomCLR.TabIndex = 8
         '
         'pnlCaseDetails
         '
@@ -208,6 +255,7 @@ Partial Class F_CasesRecords
         Me.pnlCaseDetails.Controls.Add(Me.btnResidentList)
         Me.pnlCaseDetails.Controls.Add(Me.btnAttach)
         Me.pnlCaseDetails.Controls.Add(Me.btnAdd)
+        Me.pnlCaseDetails.Controls.Add(Me.btnBlotter)
         Me.pnlCaseDetails.Controls.Add(Me.btnUpdate)
         Me.pnlCaseDetails.Controls.Add(Me.Label10)
         Me.pnlCaseDetails.Controls.Add(Me.datDocuments)
@@ -229,7 +277,7 @@ Partial Class F_CasesRecords
         Me.pnlCaseDetails.Controls.Add(Me.lblCaseCode)
         Me.pnlCaseDetails.Controls.Add(Me.Label1)
         Me.pnlCaseDetails.Controls.Add(Me.Label5)
-        Me.pnlCaseDetails.Location = New System.Drawing.Point(473, 7)
+        Me.pnlCaseDetails.Location = New System.Drawing.Point(472, 5)
         Me.pnlCaseDetails.Name = "pnlCaseDetails"
         Me.pnlCaseDetails.Size = New System.Drawing.Size(505, 514)
         Me.pnlCaseDetails.TabIndex = 2
@@ -282,6 +330,17 @@ Partial Class F_CasesRecords
         Me.btnAdd.Text = "&ADD"
         Me.btnAdd.UseVisualStyleBackColor = True
         Me.btnAdd.Visible = False
+        '
+        'btnBlotter
+        '
+        Me.btnBlotter.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBlotter.Location = New System.Drawing.Point(353, 396)
+        Me.btnBlotter.Name = "btnBlotter"
+        Me.btnBlotter.Size = New System.Drawing.Size(146, 52)
+        Me.btnBlotter.TabIndex = 20
+        Me.btnBlotter.Text = "BLOTTER COMPLAINT"
+        Me.btnBlotter.UseVisualStyleBackColor = True
+        Me.btnBlotter.Visible = False
         '
         'btnUpdate
         '
@@ -674,7 +733,7 @@ Partial Class F_CasesRecords
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(984, 533)
+        Me.ClientSize = New System.Drawing.Size(983, 524)
         Me.Controls.Add(Me.pnlCaseDetails)
         Me.Controls.Add(Me.pnlCase)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -745,4 +804,9 @@ Partial Class F_CasesRecords
     Friend WithEvents colResidentID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents btnOfficialsList As System.Windows.Forms.Button
     Friend WithEvents btnResidentList As System.Windows.Forms.Button
+    Friend WithEvents btnBlotter As System.Windows.Forms.Button
+    Friend WithEvents lblOverDue As System.Windows.Forms.Label
+    Friend WithEvents lblOverDueCLR As System.Windows.Forms.Label
+    Friend WithEvents lblDueTom As System.Windows.Forms.Label
+    Friend WithEvents lblDueTomCLR As System.Windows.Forms.Label
 End Class

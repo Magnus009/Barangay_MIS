@@ -108,57 +108,52 @@ Public Class _mdi_MIS
     End Sub
 
     Private Sub ViewComplaintsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewComplaintsToolStripMenuItem.Click
-        F_CasesRecords.MdiParent = Me
-        F_CasesRecords.loadCaseRecords(0)
+        Dim frmComplaintsRecord As New F_CasesRecords
+
+        frmComplaintsRecord.MdiParent = Me
+        frmComplaintsRecord.loadCaseRecords(0)
     End Sub
 
     Private Sub ViewIncidentsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewIncidentsToolStripMenuItem.Click
-        F_CasesRecords.MdiParent = Me
-        F_CasesRecords.loadCaseRecords(1)
+        Dim frmIncidentsRecord As New F_CasesRecords
+
+        frmIncidentsRecord.MdiParent = Me
+        frmIncidentsRecord.loadCaseRecords(1)
     End Sub
 
     Private Sub ViewBlotterrsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewBlotterrsToolStripMenuItem.Click
-        F_CasesRecords.MdiParent = Me
-        F_CasesRecords.loadCaseRecords(2)
+        Dim frmBlottersRecord As New F_CasesRecords
+
+        frmBlottersRecord.MdiParent = Me
+        frmBlottersRecord.loadCaseRecords(2)
     End Sub
 
     Private Sub FileComplaintsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FileComplaintsToolStripMenuItem.Click
-        F_CaseFile.openCase(0)
+        Dim formComplaint As New F_CaseFile
+        formComplaint.openCase(0)
     End Sub
 
     Private Sub ReportIncidentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportIncidentToolStripMenuItem.Click
-        F_CaseFile.openCase(1)
+        Dim formIncident As New F_CaseFile
+        formIncident.openCase(1)
     End Sub
 
     Private Sub FileBlotterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FileBlotterToolStripMenuItem.Click
-        F_CaseFile.openCase(2)
+        Dim formBlotter As New F_CaseFile
+        formBlotter.openCase(2)
     End Sub
 
     Private Sub ViewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewToolStripMenuItem.Click
-        F_Samahan.MdiParent = Me
-        F_Samahan.Show()
+        Dim formSamahan As New F_Samahan
+        
+        formSamahan.MdiParent = Me
+        formSamahan.Show()
     End Sub
 
     Private Sub RegisterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegisterToolStripMenuItem.Click
         Dim formRegSamahan As New F_AddSamahan
         formRegSamahan.MdiParent = Me
         formRegSamahan.Show()
-    End Sub
-
-    Private Sub RegisterToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles RegisterToolStripMenuItem1.Click
-        Dim formRegistration As New F_UserRegistration
-        formRegistration.MdiParent = Me
-        formRegistration.Show()
-    End Sub
-
-    Private Sub EquipmentsPropertiesToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        F_Inventory.MdiParent = Me
-        F_Inventory.Show()
-    End Sub
-
-    Private Sub ViewToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ViewToolStripMenuItem1.Click
-        F_UserAccounts.MdiParent = Me
-        F_UserAccounts.Show()
     End Sub
 
     Private Sub AddOfficialsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddOfficialsToolStripMenuItem.Click
@@ -224,5 +219,41 @@ Public Class _mdi_MIS
         Dim frmItemInventory As New F_ItemInventory
         frmItemInventory.MdiParent = Me
         frmItemInventory.Show()
+    End Sub
+
+    Private Sub BorrowItemEquipmentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BorrowItemEquipmentToolStripMenuItem.Click
+        Dim frmBorrow As New F_Borrow
+        frmBorrow.MdiParent = Me
+        frmBorrow.Show()
+    End Sub
+
+    Private Sub BorrowHistoryToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles BorrowHistoryToolStripMenuItem.Click
+        Dim frmBorrowHistory As New F_BorrowHistory
+        frmBorrowHistory.MdiParent = Me
+        frmBorrowHistory.Show()
+    End Sub
+
+    Private Sub ViewVAWCToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewVAWCToolStripMenuItem.Click
+        Dim frmVAWCRecord As New F_CasesRecords
+
+        frmVAWCRecord.MdiParent = Me
+        frmVAWCRecord.loadCaseRecords(3)
+    End Sub
+
+    Private Sub ReportVAWCToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportVAWCToolStripMenuItem.Click
+        Dim formVAWC As New F_CaseFile
+        formVAWC.openCase(3)
+    End Sub
+
+    Private Sub AccountsToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AccountsToolStripMenuItem1.Click
+        Dim frmAccounts As New F_UserAccounts
+        frmAccounts.MdiParent = Me
+        frmAccounts.Show()
+    End Sub
+
+    Private Sub RegisterToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles RegisterToolStripMenuItem3.Click
+        Dim formRegistration As New F_UserRegistration
+        formRegistration.MdiParent = Me
+        formRegistration.Show()
     End Sub
 End Class

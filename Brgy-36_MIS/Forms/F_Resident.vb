@@ -128,7 +128,11 @@
     End Sub
 
     Private Sub dtpBirthdate_ValueChanged(sender As Object, e As EventArgs) Handles dtpBirthdate.ValueChanged
-        txtAge.Text = Math.Floor(DateDiff(DateInterval.Day, dtpBirthdate.Value, Now) / 365.25)
+        If dtpBirthdate.Value > Now Then
+            MsgBox("Invalid Birthdate!", MsgBoxStyle.Critical, "ERROR")
+        Else
+            txtAge.Text = Math.Floor(DateDiff(DateInterval.Day, dtpBirthdate.Value, Now) / 365.25)
+        End If
     End Sub
 
     Private Sub txtStreet_LostFocus(sender As Object, e As EventArgs) Handles txtStreet.LostFocus

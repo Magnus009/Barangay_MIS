@@ -138,16 +138,22 @@
     <Compile Include="Forms\F_BarangayMap.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\F_BlotterComplaint.Designer.vb">
+      <DependentUpon>F_BlotterComplaint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_BlotterComplaint.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\F_Borrow.Designer.vb">
       <DependentUpon>F_Borrow.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\F_Borrow.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_BorrowItems.Designer.vb">
-      <DependentUpon>F_BorrowItems.vb</DependentUpon>
+    <Compile Include="Forms\F_BorrowHistory.Designer.vb">
+      <DependentUpon>F_BorrowHistory.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\F_BorrowItems.vb">
+    <Compile Include="Forms\F_BorrowHistory.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\F_CaseFile.Designer.vb">
@@ -282,18 +288,6 @@
     <Compile Include="Forms\F_SelectionList.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_Inventory.Designer.vb">
-      <DependentUpon>F_Inventory.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\F_Inventory.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\F_Items.Designer.vb">
-      <DependentUpon>F_Items.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\F_Items.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\F_Login.Designer.vb">
       <DependentUpon>F_Login.vb</DependentUpon>
     </Compile>
@@ -377,11 +371,14 @@
     <EmbeddedResource Include="Forms\F_BarangayMap.resx">
       <DependentUpon>F_BarangayMap.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_BlotterComplaint.resx">
+      <DependentUpon>F_BlotterComplaint.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_Borrow.resx">
       <DependentUpon>F_Borrow.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_BorrowItems.resx">
-      <DependentUpon>F_BorrowItems.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\F_BorrowHistory.resx">
+      <DependentUpon>F_BorrowHistory.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_CaseFile.resx">
       <DependentUpon>F_CaseFile.vb</DependentUpon>
@@ -448,12 +445,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_SelectionList.resx">
       <DependentUpon>F_SelectionList.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_Inventory.resx">
-      <DependentUpon>F_Inventory.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_Items.resx">
-      <DependentUpon>F_Items.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_Login.resx">
       <DependentUpon>F_Login.vb</DependentUpon>

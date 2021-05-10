@@ -125,6 +125,7 @@ Partial Class F_UserAccounts
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "F_UserAccounts"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Tag = "Primary"
         Me.Text = "USER ACCOUNTS"
         CType(Me.datAccounts, System.ComponentModel.ISupportInitialize).EndInit()

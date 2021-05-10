@@ -6,6 +6,7 @@
     ''' </summary>
     ''' <remarks></remarks>
     Dim caseType As Integer
+    Friend strComplaintBlotterCode As String
 
     Private Function saveFiledCase() As Boolean
         Dim blnSaved As Boolean = False
@@ -18,6 +19,8 @@
             strRequire = "" : blnRequired = False
             If fn_CheckRequire(Me) Then
                 Throw New Exception("Please input on the following field(s):" + vbCrLf + strRequire)
+            ElseIf cboStatus.SelectedValue = -1 Then
+                Throw New Exception("Please Choose Case Status!")
             Else
                 strCaseID = Choose(caseType + 1, "CP", "IN", "BL", "WC")
                 strQuery = "SELECT dbo.fn_colID ('" + strCaseID + "')"
@@ -106,12 +109,57 @@
                         SQL_EXECUTE(strQuery)
                     End If
                 Next
+                If caseType = 2 Then
+                    If cboStatus.SelectedValue = 1 Then
+                        Dim frmBlotter As New F_BlotterComplaint
+                        frmBlotter.txtCode.Text = strCaseCode
+                        AddHandler frmBlotter.complaintBlottered, AddressOf blottered
+                        frmBlotter.ShowDialog()
+                    ElseIf cboStatus.SelectedValue = 0 Then
+                        Dim strSeq As String
+                        strQuery = "SELECT coalesce(max(Seq), 0) + 1 FROM BlotterDetails WHERE CaseCode = '" + strCaseCode + "'"
+                        strSeq = SQL_SELECT(strQuery).Tables(0).Rows(0)(0)
+
+                        strQuery = "INSERT INTO BlotterDetails (" + vbCrLf
+                        strQuery += "CaseCode, " + vbCrLf
+                        strQuery += "Seq, " + vbCrLf
+                        strQuery += "StatusID, " + vbCrLf
+                        strQuery += "CreatedDate, " + vbCrLf
+                        strQuery += "UpdatedDate, " + vbCrLf
+                        strQuery += "UpdatedBy)"
+                        strQuery += "VALUES (" + vbCrLf
+                        strQuery += "'" + strCaseCode + "', " + vbCrLf
+                        strQuery += strSeq + ", " + vbCrLf
+                        strQuery += "0, " + vbCrLf
+                        strQuery += "getdate(), " + vbCrLf
+                        strQuery += "getdate(), " + vbCrLf
+                        strQuery += "'" + UserName + "')"
+                        SQL_EXECUTE(strQuery)
+                    End If
+                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, Me.Text)
         End Try
         Return blnSaved
     End Function
+
+    Private Sub blottered(saved As Boolean)
+        If saved Then
+            Try
+                strQuery = "UPDATE CasesHeader" + vbCrLf
+                strQuery += "SET StatusID = 4" + vbCrLf
+                strQuery += "WHERE Code = '" + strComplaintBlotterCode + "'"
+
+                If SQL_EXECUTE(strQuery) Then
+                    MsgBox("Complaint blottered successfully!", MsgBoxStyle.Information)
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message, MsgBoxStyle.Critical)
+            End Try
+        End If
+    End Sub
+
 
     ''' <summary>
     ''' Open Case form <b>CaseType::</b> [0]=>Complaints || [1]=>Incidents || [2]=>Blotters
@@ -215,11 +263,18 @@
         End Try
     End Sub
 
-
     Private Sub loadCaseStatus(intCaseType As Integer)
-        strQuery = "SELECT StatusID, Description FROM M_CaseStatus WHERE DeletedDate IS NULL AND TypeID = " + intCaseType.ToString
+        strQuery = "SELECT StatusID, Description FROM M_CaseStatus WHERE DeletedDate IS NULL "
+        If intCaseType = 0 Then
+            strQuery += "AND TypeID = 0 AND StatusID < 4"
+        ElseIf intCaseType = 2 Then
+            strQuery += "AND TypeID = 2 AND StatusID < 2"
+        Else
+            strQuery += "AND TypeID = " + intCaseType.ToString
+        End If
+
         cboDataBinding(cboStatus, strQuery, "--STATUS--")
-        cboStatus.SelectedIndex = 1
+        cboStatus.SelectedIndex = IIf(intCaseType = 2, 0, 1)
     End Sub
 
     Private Sub datDocuments_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datDocuments.CellContentClick
@@ -347,7 +402,7 @@
         frmOfficialsList.loadSelection(2)
     End Sub
 
-    Private Sub loadIncharge(ByVal strOfficialID As String, ByVal strOfficialName As String)
+    Public Sub loadIncharge(ByVal strOfficialID As String, ByVal strOfficialName As String)
         txtInchargeID.Text = strOfficialID
         txtIncharge.Text = strOfficialName
     End Sub
@@ -359,7 +414,7 @@
         frmResidentsList.loadSelection(1)
     End Sub
 
-    Private Sub loadReportedBy(ByVal strResidentID As String)
+    Public Sub loadReportedBy(ByVal strResidentID As String)
         txtReportedByID.Text = strResidentID
         strQuery = "SELECT FamilyName + ', ' + GivenName + ' ' + MiddleName + ' ' + ExtensionName  FROM Residents WHERE Code = '" + strResidentID + "'"
         txtReportedBy.Text = SQL_SELECT(strQuery).Tables(0).Rows(0)(0)

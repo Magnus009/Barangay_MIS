@@ -14,10 +14,19 @@
                 If dtVerification.Rows.Count <> 0 Then
                     MsgBox("Answer the security question to verify", MsgBoxStyle.Information)
 
-                    txtAnswer_1.ReadOnly = False : txtAnswer_2.ReadOnly = False
-                    lblAsterisk_1.Visible = True : lblAsterisk_2.Visible = True
-                    txtQuestion_1.Text = dtVerification.Rows(0)(2)
-                    txtQuestion_2.Text = dtVerification.Rows(0)(4)
+                    Dim dtQuestion As New DataTable
+                    dtQuestion.Columns.Add("Question")
+                    dtQuestion.Columns.Add("Answer")
+
+                    dtQuestion.Rows.Add(dtVerification.Rows(0)(2), dtVerification.Rows(0)(3))
+                    dtQuestion.Rows.Add(dtVerification.Rows(0)(4), dtVerification.Rows(0)(5))
+
+                    cboQuestion.DataSource = dtQuestion
+                    cboQuestion.DisplayMember = "Question"
+                    cboQuestion.ValueMember = "Answer"
+
+                    cboQuestion.Enabled = True
+                    txtAnswer.ReadOnly = False : txtAnswer.Clear()
                 End If
             Else
                 Throw New Exception("Input USERNAME for verification")
@@ -32,12 +41,13 @@
         Try
             If fn_CheckRequire(Me) Then
                 MsgBox("Please complete the required fields(*):" & vbCrLf & strRequire, MsgBoxStyle.Exclamation, "Required Items")
-                strRequire = ""
+                strRequire = "" : blnRequired = False
             Else
-                If txtAnswer_1.Text.ToLower = dtVerification.Rows(0)(3).ToString.ToLower And _
-                    txtAnswer_2.Text.ToLower = dtVerification.Rows(0)(5).ToString.ToLower Then
+                If txtAnswer.Text = cboQuestion.SelectedValue Then
                     txtOldPass.Text = dtVerification.Rows(0)(6)
                     pnlTop.Height = 230
+                Else
+                    Throw New Exception("Incorrect Answer")
                 End If
             End If
         Catch ex As Exception
@@ -75,6 +85,7 @@
         formLoadSetup(Me)
         btnSubmit.BackColor = Color.Green
         btnConfirm.BackColor = Color.Green
+        btnBack.BackColor = Color.Black
         pnlTop.Height = 20
     End Sub
 

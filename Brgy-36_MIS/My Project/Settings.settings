@@ -15,7 +15,7 @@
       <Value Profile="(Default)">255, 192, 128</Value>
     </Setting>
     <Setting Name="TableHeader" Type="System.Drawing.Font" Scope="User">
-      <Value Profile="(Default)">Century Gothic, 9.75pt, style=Bold</Value>
+      <Value Profile="(Default)">Century Gothic, 8.25pt, style=Bold</Value>
     </Setting>
     <Setting Name="Selected" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">50, 113, 240</Value>

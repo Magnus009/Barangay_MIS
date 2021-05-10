@@ -70,23 +70,23 @@ Partial Class F_ItemInventory
         Me.pnlInventory.Controls.Add(Me.Label10)
         Me.pnlInventory.Location = New System.Drawing.Point(6, 5)
         Me.pnlInventory.Name = "pnlInventory"
-        Me.pnlInventory.Size = New System.Drawing.Size(637, 383)
+        Me.pnlInventory.Size = New System.Drawing.Size(842, 383)
         Me.pnlInventory.TabIndex = 0
         Me.pnlInventory.Tag = "Secondary"
         '
         'txtStocks
         '
-        Me.txtStocks.Location = New System.Drawing.Point(423, 279)
+        Me.txtStocks.Location = New System.Drawing.Point(627, 279)
         Me.txtStocks.MaxLength = 6
         Me.txtStocks.Name = "txtStocks"
         Me.txtStocks.Size = New System.Drawing.Size(83, 21)
-        Me.txtStocks.TabIndex = 76
+        Me.txtStocks.TabIndex = 7
         Me.txtStocks.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(364, 281)
+        Me.Label6.Location = New System.Drawing.Point(568, 281)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(51, 16)
         Me.Label6.TabIndex = 75
@@ -94,17 +94,17 @@ Partial Class F_ItemInventory
         '
         'txtTotal
         '
-        Me.txtTotal.Location = New System.Drawing.Point(423, 250)
+        Me.txtTotal.Location = New System.Drawing.Point(627, 250)
         Me.txtTotal.MaxLength = 6
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.Size = New System.Drawing.Size(83, 21)
-        Me.txtTotal.TabIndex = 74
+        Me.txtTotal.TabIndex = 6
         Me.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(344, 252)
+        Me.Label5.Location = New System.Drawing.Point(548, 252)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(71, 16)
         Me.Label5.TabIndex = 73
@@ -115,10 +115,10 @@ Partial Class F_ItemInventory
         Me.btnAdd.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAdd.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(392, 337)
+        Me.btnAdd.Location = New System.Drawing.Point(596, 337)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(114, 34)
-        Me.btnAdd.TabIndex = 72
+        Me.btnAdd.TabIndex = 9
         Me.btnAdd.Tag = "Primary"
         Me.btnAdd.Text = "ADD ITEM"
         Me.btnAdd.UseVisualStyleBackColor = False
@@ -128,10 +128,10 @@ Partial Class F_ItemInventory
         Me.btnUpdate.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdate.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdate.Location = New System.Drawing.Point(512, 337)
+        Me.btnUpdate.Location = New System.Drawing.Point(716, 337)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(114, 34)
-        Me.btnUpdate.TabIndex = 72
+        Me.btnUpdate.TabIndex = 8
         Me.btnUpdate.Tag = "Primary"
         Me.btnUpdate.Text = "UPDATE"
         Me.btnUpdate.UseVisualStyleBackColor = False
@@ -142,17 +142,17 @@ Partial Class F_ItemInventory
         Me.cboType.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cboType.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboType.FormattingEnabled = True
-        Me.cboType.Location = New System.Drawing.Point(361, 102)
+        Me.cboType.Location = New System.Drawing.Point(565, 102)
         Me.cboType.Name = "cboType"
         Me.cboType.Size = New System.Drawing.Size(183, 24)
-        Me.cboType.TabIndex = 71
+        Me.cboType.TabIndex = 4
         Me.cboType.Tag = ""
         '
         'lblItems
         '
         Me.lblItems.AutoSize = True
         Me.lblItems.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblItems.Location = New System.Drawing.Point(344, 9)
+        Me.lblItems.Location = New System.Drawing.Point(548, 9)
         Me.lblItems.Name = "lblItems"
         Me.lblItems.Size = New System.Drawing.Size(108, 16)
         Me.lblItems.TabIndex = 68
@@ -161,16 +161,16 @@ Partial Class F_ItemInventory
         '
         'txtDescription
         '
-        Me.txtDescription.Location = New System.Drawing.Point(361, 151)
+        Me.txtDescription.Location = New System.Drawing.Point(565, 151)
         Me.txtDescription.MaxLength = 500
         Me.txtDescription.Multiline = True
         Me.txtDescription.Name = "txtDescription"
         Me.txtDescription.Size = New System.Drawing.Size(257, 86)
-        Me.txtDescription.TabIndex = 2
+        Me.txtDescription.TabIndex = 5
         '
         'txtItemID
         '
-        Me.txtItemID.Location = New System.Drawing.Point(446, 28)
+        Me.txtItemID.Location = New System.Drawing.Point(650, 28)
         Me.txtItemID.MaxLength = 50
         Me.txtItemID.Name = "txtItemID"
         Me.txtItemID.Size = New System.Drawing.Size(139, 21)
@@ -179,16 +179,16 @@ Partial Class F_ItemInventory
         '
         'txtItemName
         '
-        Me.txtItemName.Location = New System.Drawing.Point(361, 55)
+        Me.txtItemName.Location = New System.Drawing.Point(565, 55)
         Me.txtItemName.MaxLength = 50
         Me.txtItemName.Name = "txtItemName"
         Me.txtItemName.Size = New System.Drawing.Size(257, 21)
-        Me.txtItemName.TabIndex = 2
+        Me.txtItemName.TabIndex = 3
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(344, 132)
+        Me.Label4.Location = New System.Drawing.Point(548, 132)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(86, 16)
         Me.Label4.TabIndex = 1
@@ -197,7 +197,7 @@ Partial Class F_ItemInventory
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(344, 83)
+        Me.Label3.Location = New System.Drawing.Point(548, 83)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(67, 16)
         Me.Label3.TabIndex = 1
@@ -206,7 +206,7 @@ Partial Class F_ItemInventory
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(344, 36)
+        Me.Label2.Location = New System.Drawing.Point(548, 36)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(46, 16)
         Me.Label2.TabIndex = 1
@@ -218,7 +218,7 @@ Partial Class F_ItemInventory
         Me.txtSearch.MaxLength = 50
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(256, 21)
-        Me.txtSearch.TabIndex = 2
+        Me.txtSearch.TabIndex = 0
         '
         'Label1
         '
@@ -237,15 +237,15 @@ Partial Class F_ItemInventory
         Me.datItems.Location = New System.Drawing.Point(6, 34)
         Me.datItems.Name = "datItems"
         Me.datItems.ReadOnly = True
-        Me.datItems.Size = New System.Drawing.Size(319, 343)
-        Me.datItems.TabIndex = 0
+        Me.datItems.Size = New System.Drawing.Size(523, 343)
+        Me.datItems.TabIndex = 1
         '
         'Label10
         '
         Me.Label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label10.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(331, 17)
+        Me.Label10.Location = New System.Drawing.Point(535, 17)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(300, 360)
         Me.Label10.TabIndex = 69
@@ -255,7 +255,7 @@ Partial Class F_ItemInventory
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(649, 394)
+        Me.ClientSize = New System.Drawing.Size(854, 394)
         Me.Controls.Add(Me.pnlInventory)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
