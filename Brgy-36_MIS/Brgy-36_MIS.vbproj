@@ -234,6 +234,12 @@
     <Compile Include="Forms\F_KPFormReport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\F_Mapping.Designer.vb">
+      <DependentUpon>F_Mapping.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_Mapping.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\F_OfficialsListReport.Designer.vb">
       <DependentUpon>F_OfficialsListReport.vb</DependentUpon>
     </Compile>
@@ -418,6 +424,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_KPFormReport.resx">
       <DependentUpon>F_KPFormReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_Mapping.resx">
+      <DependentUpon>F_Mapping.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_OfficialsListReport.resx">
       <DependentUpon>F_OfficialsListReport.vb</DependentUpon>
