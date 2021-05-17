@@ -7,6 +7,7 @@
         'POSITION
         strQuery = "SELECT * FROM M_OfficialPosition WHERE DeletedDate IS NULL"
         cboDataBinding(cboPosition, strQuery, "---")
+        AddHandler cboPosition.SelectedValueChanged, AddressOf cboPositionValueChanged
 
         'RANK
         strQuery = "SELECT * FROM M_OfficialsRank WHERE DeletedDate IS NULL"
@@ -119,5 +120,16 @@
 
     Private Sub dtpTermStart_ValueChanged(sender As Object, e As EventArgs) Handles dtpTermStart.ValueChanged
         dtpTermEnd.Value = DateAdd(DateInterval.Year, 3, dtpTermStart.Value)
+    End Sub
+
+
+    Private Sub cboPositionValueChanged(sender As Object, e As EventArgs)
+        If cboPosition.SelectedValue = 2 Or cboPosition.SelectedValue = 4 Then
+            cboRank.Enabled = True
+            cboRank.SelectedValue = -1
+        Else
+            cboRank.Enabled = False
+            cboRank.SelectedValue = 1
+        End If
     End Sub
 End Class

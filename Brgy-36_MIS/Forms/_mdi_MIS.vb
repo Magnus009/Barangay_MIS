@@ -256,4 +256,17 @@ Public Class _mdi_MIS
         formRegistration.MdiParent = Me
         formRegistration.Show()
     End Sub
+
+    Private Sub ViewToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ViewToolStripMenuItem1.Click
+        Dim frmStreets As New F_Street
+        frmStreets.MdiParent = Me
+        frmStreets.Show()
+    End Sub
+
+    Private Sub AddToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem.Click
+        Dim frmAddStreet As New F_AddStreet
+        frmAddStreet.MdiParent = Me
+        frmAddStreet.Show()
+    End Sub
+
 End Class

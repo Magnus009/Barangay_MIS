@@ -42,8 +42,35 @@
                     dtChart = SQL_SELECT(strQuery).Tables(0)
                 Case 2
                     strChartArea = "Blotters"
+
+                    strQuery = "SELECT 'SETTLED' AS NAME, count(*) AS COUNT FROM BlotterDetails" + vbCrLf
+                    strQuery += "WHERE StatusID = 0" + vbCrLf
+                    strQuery += "UNION ALL" + vbCrLf
+                    strQuery += "SELECT 'UNSETTLED' AS NAME, count(*) AS COUNT FROM BlotterDetails" + vbCrLf
+                    strQuery += "WHERE StatusID = 1" + vbCrLf
+                    strQuery += "UNION ALL" + vbCrLf
+                    strQuery += "SELECT 'SCHEDULED' AS NAME, count(*) AS COUNT FROM BlotterDetails" + vbCrLf
+                    strQuery += "WHERE ScheduleDate Is Not NULL" + vbCrLf
+                    strQuery += "UNION ALL" + vbCrLf
+                    strQuery += "SELECT 'DUE DATE' AS NAME, count(*) AS COUNT FROM BlotterDetails" + vbCrLf
+                    strQuery += "WHERE Convert(VARCHAR(10), ScheduleDate, 112) = Convert(VARCHAR(10), getdate(), 112)" + vbCrLf
+                    strQuery += "AND MeetingDate IS NULL" + vbCrLf
+                    strQuery += "UNION ALL" + vbCrLf
+                    strQuery += "SELECT 'OVERDUE' AS NAME, count(*) AS COUNT FROM BlotterDetails" + vbCrLf
+                    strQuery += "WHERE DateDiff(Day, ScheduleDate, getdate()) > 0" + vbCrLf
+                    strQuery += "AND MeetingDate IS NULL"
+                    dtChart = SQL_SELECT(strQuery).Tables(0)
                 Case 3
                     strChartArea = "Inventory"
+
+                    strQuery = "SELECT 'BORROW' AS NAME, count(*) AS COUNT FROM T_BorrowHeader WHERE StatusID = 1" + vbCrLf
+                    strQuery += "UNION ALL" + vbCrLf
+                    strQuery += "SELECT 'RETURNED' AS NAME, count(*) AS COUNT FROM T_BorrowHeader WHERE StatusID = 4" + vbCrLf
+                    strQuery += "UNION ALL" + vbCrLf
+                    strQuery += "SELECT 'CANCELLED' AS NAME, count(*) AS COUNT FROM T_BorrowHeader WHERE StatusID = 3" + vbCrLf
+                    strQuery += "UNION ALL" + vbCrLf
+                    strQuery += "SELECT 'OVERDUE' AS NAME, count(*) AS COUNT FROM T_BorrowHeader WHERE StatusID = 2"
+                    dtChart = SQL_SELECT(strQuery).Tables(0)
             End Select
 
 
@@ -82,18 +109,16 @@
                             .Points(2).Color = Color.LightSkyBlue
                             .Points(3).Color = Color.Pink
                         Case 2
-                            .Points(0).Color = Color.OrangeRed
-                            .Points(0).Color = Color.LightGreen
-                            .Points(0).Color = Color.LightGoldenrodYellow
-                            .Points(0).Color = Color.SeaGreen
-                            .Points(0).Color = Color.Orange
+                            .Points(0).Color = Color.Green
+                            .Points(1).Color = Color.Gray
+                            .Points(2).Color = Color.LightGoldenrodYellow
+                            .Points(3).Color = Color.Blue
+                            .Points(4).Color = Color.Red
                         Case 3
                             .Points(0).Color = Color.Blue
                             .Points(0).Color = Color.LimeGreen
-                            .Points(0).Color = Color.LightYellow
-                            .Points(0).Color = Color.ForestGreen
-                            .Points(0).Color = Color.LightBlue
-                            .Points(0).Color = Color.Red
+                            .Points(0).Color = Color.Orange
+                            .Points(0).Color = Color.Maroon
                     End Select
                 End With
             End With
@@ -102,6 +127,6 @@
         End Try
     End Sub
     Private Sub tabGraph_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tabGraph.SelectedIndexChanged
-        loadChart(tabGraph.SelectedIndex + 1, chrtResident)
+        loadChart(tabGraph.SelectedIndex + 1, Choose(tabGraph.SelectedIndex + 1, chrtResident, chrtBlotters, chrtInventory))
     End Sub
 End Class

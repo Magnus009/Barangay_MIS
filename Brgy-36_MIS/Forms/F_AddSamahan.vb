@@ -64,4 +64,8 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+
+    Private Sub F_AddSamahan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        formLoadSetup(Me)
+    End Sub
 End Class

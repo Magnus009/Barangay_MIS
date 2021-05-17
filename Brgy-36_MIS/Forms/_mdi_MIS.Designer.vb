@@ -60,6 +60,9 @@ Partial Class _mdi_MIS
         Me.CASESTATUSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuMapping = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuMaintenance = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StreetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ViewToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AddToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SamahanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegisterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -300,10 +303,29 @@ Partial Class _mdi_MIS
         '
         'mnuMaintenance
         '
-        Me.mnuMaintenance.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SamahanToolStripMenuItem1, Me.BackupDataToolStripMenuItem, Me.OfficersToolStripMenuItem})
+        Me.mnuMaintenance.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StreetToolStripMenuItem, Me.SamahanToolStripMenuItem1, Me.BackupDataToolStripMenuItem, Me.OfficersToolStripMenuItem})
         Me.mnuMaintenance.Name = "mnuMaintenance"
         Me.mnuMaintenance.Size = New System.Drawing.Size(102, 20)
         Me.mnuMaintenance.Text = "M&AINTENANCE"
+        '
+        'StreetToolStripMenuItem
+        '
+        Me.StreetToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewToolStripMenuItem1, Me.AddToolStripMenuItem})
+        Me.StreetToolStripMenuItem.Name = "StreetToolStripMenuItem"
+        Me.StreetToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.StreetToolStripMenuItem.Text = "Street"
+        '
+        'ViewToolStripMenuItem1
+        '
+        Me.ViewToolStripMenuItem1.Name = "ViewToolStripMenuItem1"
+        Me.ViewToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.ViewToolStripMenuItem1.Text = "View"
+        '
+        'AddToolStripMenuItem
+        '
+        Me.AddToolStripMenuItem.Name = "AddToolStripMenuItem"
+        Me.AddToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AddToolStripMenuItem.Text = "Add"
         '
         'SamahanToolStripMenuItem1
         '
@@ -431,5 +453,8 @@ Partial Class _mdi_MIS
     Friend WithEvents ACCOUNTSToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AccountsToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RegisterToolStripMenuItem3 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents StreetToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ViewToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AddToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

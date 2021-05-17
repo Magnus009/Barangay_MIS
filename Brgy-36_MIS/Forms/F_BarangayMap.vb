@@ -126,6 +126,8 @@ Public Class F_BarangayMap
                 lbl = CType(Me.Controls(dr("HouseLot")), Label)
 
                 lbl.Tag = dr("Remarks")
+                lbl.BackColor = Color.LightGray
+
                 AddHandler lbl.MouseHover, AddressOf LotHover
                 AddHandler lbl.MouseLeave, AddressOf LotLeave
             Next

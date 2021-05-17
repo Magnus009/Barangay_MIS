@@ -126,6 +126,12 @@
     <Compile Include="Forms\F_AddSamahan.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\F_AddStreet.Designer.vb">
+      <DependentUpon>F_AddStreet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_AddStreet.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\F_BarangayIndigency.Designer.vb">
       <DependentUpon>F_BarangayIndigency.vb</DependentUpon>
     </Compile>
@@ -330,6 +336,12 @@
     <Compile Include="Forms\F_Samahan.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\F_Street.Designer.vb">
+      <DependentUpon>F_Street.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_Street.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\F_UserAccounts.Designer.vb">
       <DependentUpon>F_UserAccounts.vb</DependentUpon>
     </Compile>
@@ -370,6 +382,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Forms\F_AddSamahan.resx">
       <DependentUpon>F_AddSamahan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_AddStreet.resx">
+      <DependentUpon>F_AddStreet.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_BarangayIndigency.resx">
       <DependentUpon>F_BarangayIndigency.vb</DependentUpon>
@@ -473,6 +488,9 @@
     <EmbeddedResource Include="Forms\F_Samahan.resx">
       <DependentUpon>F_Samahan.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_Street.resx">
+      <DependentUpon>F_Street.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_UserAccounts.resx">
       <DependentUpon>F_UserAccounts.vb</DependentUpon>
     </EmbeddedResource>
@@ -574,8 +592,8 @@
   <ItemGroup>
     <Content Include="Bangay-Logo.ico" />
     <Content Include="BarangayLogo.ico" />
-    <None Include="Resources\pointer.png" />
     <None Include="Resources\Map.png" />
+    <None Include="Resources\pointer.png" />
     <None Include="Resources\Brgy-36.png" />
   </ItemGroup>
   <ItemGroup />

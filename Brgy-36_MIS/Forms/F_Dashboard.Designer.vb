@@ -174,7 +174,7 @@ Partial Class F_Dashboard
         '
         'pnlHeader
         '
-        Me.pnlHeader.BackColor = System.Drawing.Color.DodgerBlue
+        Me.pnlHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.pnlHeader.Controls.Add(Me.Label1)
         Me.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlHeader.Location = New System.Drawing.Point(0, 0)
@@ -195,7 +195,7 @@ Partial Class F_Dashboard
         '
         'btnShowHide
         '
-        Me.btnShowHide.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnShowHide.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.btnShowHide.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnShowHide.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnShowHide.ForeColor = System.Drawing.Color.White
