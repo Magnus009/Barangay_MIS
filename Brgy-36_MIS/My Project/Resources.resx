@@ -131,7 +131,7 @@
     <value>Data Source=ANDRE\BRGY_SQL;Integrated Security=SSPI;Initial Catalog=MIS</value>
   </data>
   <data name="ConnectionString" xml:space="preserve">
-    <value>Data Source=ROLLAMAS\SQL_ROLLAMAS;Initial Catalog=MIS;Integrated Security=True</value>
+    <value>Data Source=sd_sql_training;Persist Security Info=True;User ID=sa;Password=81at84;Initial Catalog=MIS</value>
     <comment>Database Connection String</comment>
   </data>
   <data name="pointer" type="System.Resources.ResXFileRef, System.Windows.Forms">

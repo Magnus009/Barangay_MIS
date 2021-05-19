@@ -50,6 +50,9 @@ Public Class F_PrintResidentsReport
             If chkIndigent.Checked Then
                 strQuery += "AND R.Indigent =1" & vbCrLf
             End If
+            If chkSenior.Checked Then
+                strQuery += "AND (datediff(day, BirthDate, getdate()) / 365.25) >= 60"
+            End If
             If cboGender.Text <> "" Then
                 If cboGender.SelectedIndex = 0 Then
                     strQuery += "AND R.Gender ='F'" & vbCrLf
@@ -122,6 +125,9 @@ Public Class F_PrintResidentsReport
             If chkIndigent.Checked Then
                 strQuery += "AND R.Indigent =1" & vbCrLf
             End If
+            If chkSenior.Checked Then
+                strQuery += "AND (datediff(day, BirthDate, getdate()) / 365.25) >= 60"
+            End If
             If cboGender.Text <> "" Then
                 If cboGender.SelectedIndex = 0 Then
                     strQuery += "AND R.Gender ='F'" & vbCrLf
@@ -182,4 +188,12 @@ Public Class F_PrintResidentsReport
         getResidents()
     End Sub
 
+    Private Sub chkSenior_CheckedChanged(sender As Object, e As EventArgs) Handles chkSenior.CheckedChanged
+        getResidents()
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        fn_ClearField(Me)
+        getResidents()
+    End Sub
 End Class

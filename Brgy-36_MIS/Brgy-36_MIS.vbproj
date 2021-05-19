@@ -105,6 +105,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsCaseStatus.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSources\dsInventory.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsInventory.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSources\dsOfficials.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -228,6 +233,12 @@
     <Compile Include="Forms\F_IndigencyReport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\F_InventoryReport.Designer.vb">
+      <DependentUpon>F_InventoryReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_InventoryReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\F_ItemInventory.Designer.vb">
       <DependentUpon>F_ItemInventory.vb</DependentUpon>
     </Compile>
@@ -238,6 +249,12 @@
       <DependentUpon>F_KPFormReport.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\F_KPFormReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\F_LotOwner.Designer.vb">
+      <DependentUpon>F_LotOwner.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_LotOwner.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\F_Mapping.Designer.vb">
@@ -274,6 +291,12 @@
       <DependentUpon>F_PrintIndigency.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\F_PrintIndigency.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\F_PrintInventoryReport.Designer.vb">
+      <DependentUpon>F_PrintInventoryReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_PrintInventoryReport.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\F_PrintKPForm.Designer.vb">
@@ -434,11 +457,17 @@
     <EmbeddedResource Include="Forms\F_IndigencyReport.resx">
       <DependentUpon>F_IndigencyReport.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_InventoryReport.resx">
+      <DependentUpon>F_InventoryReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_ItemInventory.resx">
       <DependentUpon>F_ItemInventory.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_KPFormReport.resx">
       <DependentUpon>F_KPFormReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_LotOwner.resx">
+      <DependentUpon>F_LotOwner.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_Mapping.resx">
       <DependentUpon>F_Mapping.vb</DependentUpon>
@@ -457,6 +486,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_PrintIndigency.resx">
       <DependentUpon>F_PrintIndigency.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_PrintInventoryReport.resx">
+      <DependentUpon>F_PrintInventoryReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_PrintKPForm.resx">
       <DependentUpon>F_PrintKPForm.vb</DependentUpon>
@@ -511,6 +543,7 @@
     <EmbeddedResource Include="Reports\rpClearance.rdlc" />
     <EmbeddedResource Include="Reports\rpHealthCertificate.rdlc" />
     <EmbeddedResource Include="Reports\rpIndigency.rdlc" />
+    <EmbeddedResource Include="Reports\rpInventory.rdlc" />
     <EmbeddedResource Include="Reports\rpKPForm.rdlc" />
     <EmbeddedResource Include="Reports\rpOfficialsList.rdlc" />
     <EmbeddedResource Include="Reports\rpResidentsList.rdlc" />
@@ -526,6 +559,17 @@
     </None>
     <None Include="DataSources\dsCaseStatus.xss">
       <DependentUpon>dsCaseStatus.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dsInventory.xsc">
+      <DependentUpon>dsInventory.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dsInventory.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsInventory.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSources\dsInventory.xss">
+      <DependentUpon>dsInventory.xsd</DependentUpon>
     </None>
     <None Include="DataSources\dsOfficials.xsc">
       <DependentUpon>dsOfficials.xsd</DependentUpon>

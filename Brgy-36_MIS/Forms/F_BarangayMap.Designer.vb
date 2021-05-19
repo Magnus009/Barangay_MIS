@@ -24,13 +24,13 @@ Partial Class F_BarangayMap
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(F_BarangayMap))
         Me.picMap = New System.Windows.Forms.PictureBox()
         Me.lbl1 = New System.Windows.Forms.Label()
@@ -83,14 +83,6 @@ Partial Class F_BarangayMap
         Me.btnAssign = New System.Windows.Forms.Button()
         Me.pnlAssignOuter = New System.Windows.Forms.Panel()
         Me.pnlAssign = New System.Windows.Forms.Panel()
-        Me.pnlSearch = New System.Windows.Forms.Panel()
-        Me.datRecords = New System.Windows.Forms.DataGridView()
-        Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtSHouseholdNo = New System.Windows.Forms.TextBox()
-        Me.txtSHouseNo = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.pnlHouseholdDetails = New System.Windows.Forms.Panel()
         Me.cboRemarks = New System.Windows.Forms.ComboBox()
         Me.datMember = New System.Windows.Forms.DataGridView()
@@ -106,6 +98,14 @@ Partial Class F_BarangayMap
         Me.lblHouseNo = New System.Windows.Forms.Label()
         Me.lblLotNo = New System.Windows.Forms.Label()
         Me.txtHouseholdNo = New System.Windows.Forms.TextBox()
+        Me.pnlSearch = New System.Windows.Forms.Panel()
+        Me.datRecords = New System.Windows.Forms.DataGridView()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtSHouseholdNo = New System.Windows.Forms.TextBox()
+        Me.txtSHouseNo = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.lblLegends = New System.Windows.Forms.Label()
         Me.lblUnavailableColor = New System.Windows.Forms.Label()
         Me.lblUnavailable = New System.Windows.Forms.Label()
@@ -117,10 +117,10 @@ Partial Class F_BarangayMap
         CType(Me.picMap, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlAssignOuter.SuspendLayout()
         Me.pnlAssign.SuspendLayout()
-        Me.pnlSearch.SuspendLayout()
-        CType(Me.datRecords, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlHouseholdDetails.SuspendLayout()
         CType(Me.datMember, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlSearch.SuspendLayout()
+        CType(Me.datRecords, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'picMap
@@ -632,8 +632,8 @@ Partial Class F_BarangayMap
         '
         Me.pnlAssign.BackColor = System.Drawing.Color.White
         Me.pnlAssign.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pnlAssign.Controls.Add(Me.pnlSearch)
         Me.pnlAssign.Controls.Add(Me.pnlHouseholdDetails)
+        Me.pnlAssign.Controls.Add(Me.pnlSearch)
         Me.pnlAssign.Controls.Add(Me.lblLegends)
         Me.pnlAssign.Controls.Add(Me.lblUnavailableColor)
         Me.pnlAssign.Controls.Add(Me.lblUnavailable)
@@ -647,118 +647,6 @@ Partial Class F_BarangayMap
         Me.pnlAssign.Name = "pnlAssign"
         Me.pnlAssign.Size = New System.Drawing.Size(501, 263)
         Me.pnlAssign.TabIndex = 7
-        '
-        'pnlSearch
-        '
-        Me.pnlSearch.BackColor = System.Drawing.Color.White
-        Me.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pnlSearch.Controls.Add(Me.datRecords)
-        Me.pnlSearch.Controls.Add(Me.txtSearch)
-        Me.pnlSearch.Controls.Add(Me.Label4)
-        Me.pnlSearch.Controls.Add(Me.Label2)
-        Me.pnlSearch.Controls.Add(Me.txtSHouseholdNo)
-        Me.pnlSearch.Controls.Add(Me.txtSHouseNo)
-        Me.pnlSearch.Controls.Add(Me.Label1)
-        Me.pnlSearch.Location = New System.Drawing.Point(158, 3)
-        Me.pnlSearch.Name = "pnlSearch"
-        Me.pnlSearch.Size = New System.Drawing.Size(330, 253)
-        Me.pnlSearch.TabIndex = 9
-        '
-        'datRecords
-        '
-        Me.datRecords.AllowUserToAddRows = False
-        Me.datRecords.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.datRecords.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(112, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datRecords.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.datRecords.ColumnHeadersHeight = 30
-        Me.datRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.datRecords.Location = New System.Drawing.Point(10, 65)
-        Me.datRecords.MultiSelect = False
-        Me.datRecords.Name = "datRecords"
-        Me.datRecords.ReadOnly = True
-        Me.datRecords.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datRecords.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.datRecords.RowHeadersVisible = False
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.datRecords.RowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.datRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datRecords.Size = New System.Drawing.Size(309, 180)
-        Me.datRecords.TabIndex = 15
-        '
-        'txtSearch
-        '
-        Me.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtSearch.Location = New System.Drawing.Point(74, 33)
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(248, 22)
-        Me.txtSearch.TabIndex = 13
-        Me.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(17, 37)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(56, 15)
-        Me.Label4.TabIndex = 14
-        Me.Label4.Text = "SEARCH :"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(149, 11)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(101, 15)
-        Me.Label2.TabIndex = 10
-        Me.Label2.Text = "HOUSEHOLD No. :"
-        '
-        'txtSHouseholdNo
-        '
-        Me.txtSHouseholdNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtSHouseholdNo.Location = New System.Drawing.Point(253, 7)
-        Me.txtSHouseholdNo.Name = "txtSHouseholdNo"
-        Me.txtSHouseholdNo.Size = New System.Drawing.Size(69, 22)
-        Me.txtSHouseholdNo.TabIndex = 9
-        Me.txtSHouseholdNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'txtSHouseNo
-        '
-        Me.txtSHouseNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtSHouseNo.Location = New System.Drawing.Point(74, 7)
-        Me.txtSHouseNo.Name = "txtSHouseNo"
-        Me.txtSHouseNo.Size = New System.Drawing.Size(61, 22)
-        Me.txtSHouseNo.TabIndex = 7
-        Me.txtSHouseNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(2, 11)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(71, 15)
-        Me.Label1.TabIndex = 8
-        Me.Label1.Text = "HOUSE No. :"
         '
         'pnlHouseholdDetails
         '
@@ -795,18 +683,18 @@ Partial Class F_BarangayMap
         '
         Me.datMember.AllowUserToAddRows = False
         Me.datMember.AllowUserToDeleteRows = False
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.datMember.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(112, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datMember.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.datMember.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(112, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datMember.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.datMember.ColumnHeadersHeight = 30
         Me.datMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.datMember.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colResidentID, Me.colName})
@@ -815,14 +703,14 @@ Partial Class F_BarangayMap
         Me.datMember.Name = "datMember"
         Me.datMember.ReadOnly = True
         Me.datMember.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datMember.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datMember.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.datMember.RowHeadersVisible = False
         Me.datMember.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.datMember.Size = New System.Drawing.Size(309, 122)
@@ -830,8 +718,8 @@ Partial Class F_BarangayMap
         '
         'colResidentID
         '
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.colResidentID.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colResidentID.DefaultCellStyle = DataGridViewCellStyle3
         Me.colResidentID.HeaderText = "ID"
         Me.colResidentID.Name = "colResidentID"
         Me.colResidentID.ReadOnly = True
@@ -839,8 +727,8 @@ Partial Class F_BarangayMap
         'colName
         '
         Me.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.colName.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colName.DefaultCellStyle = DataGridViewCellStyle4
         Me.colName.HeaderText = "NAME"
         Me.colName.Name = "colName"
         Me.colName.ReadOnly = True
@@ -944,6 +832,118 @@ Partial Class F_BarangayMap
         Me.txtHouseholdNo.Size = New System.Drawing.Size(69, 22)
         Me.txtHouseholdNo.TabIndex = 5
         Me.txtHouseholdNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'pnlSearch
+        '
+        Me.pnlSearch.BackColor = System.Drawing.Color.White
+        Me.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlSearch.Controls.Add(Me.datRecords)
+        Me.pnlSearch.Controls.Add(Me.txtSearch)
+        Me.pnlSearch.Controls.Add(Me.Label4)
+        Me.pnlSearch.Controls.Add(Me.Label2)
+        Me.pnlSearch.Controls.Add(Me.txtSHouseholdNo)
+        Me.pnlSearch.Controls.Add(Me.txtSHouseNo)
+        Me.pnlSearch.Controls.Add(Me.Label1)
+        Me.pnlSearch.Location = New System.Drawing.Point(158, 3)
+        Me.pnlSearch.Name = "pnlSearch"
+        Me.pnlSearch.Size = New System.Drawing.Size(330, 253)
+        Me.pnlSearch.TabIndex = 9
+        '
+        'datRecords
+        '
+        Me.datRecords.AllowUserToAddRows = False
+        Me.datRecords.AllowUserToDeleteRows = False
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.datRecords.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(112, Byte), Integer))
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datRecords.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        Me.datRecords.ColumnHeadersHeight = 30
+        Me.datRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.datRecords.Location = New System.Drawing.Point(10, 65)
+        Me.datRecords.MultiSelect = False
+        Me.datRecords.Name = "datRecords"
+        Me.datRecords.ReadOnly = True
+        Me.datRecords.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datRecords.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        Me.datRecords.RowHeadersVisible = False
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.datRecords.RowsDefaultCellStyle = DataGridViewCellStyle9
+        Me.datRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.datRecords.Size = New System.Drawing.Size(309, 180)
+        Me.datRecords.TabIndex = 15
+        '
+        'txtSearch
+        '
+        Me.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtSearch.Location = New System.Drawing.Point(74, 33)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(248, 22)
+        Me.txtSearch.TabIndex = 13
+        Me.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(17, 37)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(56, 15)
+        Me.Label4.TabIndex = 14
+        Me.Label4.Text = "SEARCH :"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(149, 11)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(101, 15)
+        Me.Label2.TabIndex = 10
+        Me.Label2.Text = "HOUSEHOLD No. :"
+        '
+        'txtSHouseholdNo
+        '
+        Me.txtSHouseholdNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtSHouseholdNo.Location = New System.Drawing.Point(253, 7)
+        Me.txtSHouseholdNo.Name = "txtSHouseholdNo"
+        Me.txtSHouseholdNo.Size = New System.Drawing.Size(69, 22)
+        Me.txtSHouseholdNo.TabIndex = 9
+        Me.txtSHouseholdNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txtSHouseNo
+        '
+        Me.txtSHouseNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtSHouseNo.Location = New System.Drawing.Point(74, 7)
+        Me.txtSHouseNo.Name = "txtSHouseNo"
+        Me.txtSHouseNo.Size = New System.Drawing.Size(61, 22)
+        Me.txtSHouseNo.TabIndex = 7
+        Me.txtSHouseNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(2, 11)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(71, 15)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "HOUSE No. :"
         '
         'lblLegends
         '
@@ -1101,12 +1101,12 @@ Partial Class F_BarangayMap
         Me.pnlAssignOuter.ResumeLayout(False)
         Me.pnlAssign.ResumeLayout(False)
         Me.pnlAssign.PerformLayout()
-        Me.pnlSearch.ResumeLayout(False)
-        Me.pnlSearch.PerformLayout()
-        CType(Me.datRecords, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlHouseholdDetails.ResumeLayout(False)
         Me.pnlHouseholdDetails.PerformLayout()
         CType(Me.datMember, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlSearch.ResumeLayout(False)
+        Me.pnlSearch.PerformLayout()
+        CType(Me.datRecords, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsInventory" targetNamespace="http://tempuri.org/dsInventory.xsd" xmlns:mstns="http://tempuri.org/dsInventory.xsd" xmlns="http://tempuri.org/dsInventory.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsInventory" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsInventory" msprop:Generator_UserDSName="dsInventory">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtInventory" msprop:Generator_TableClassName="dtInventoryDataTable" msprop:Generator_TableVarName="tabledtInventory" msprop:Generator_TablePropName="dtInventory" msprop:Generator_RowDeletingName="dtInventoryRowDeleting" msprop:Generator_RowChangingName="dtInventoryRowChanging" msprop:Generator_RowEvHandlerName="dtInventoryRowChangeEventHandler" msprop:Generator_RowDeletedName="dtInventoryRowDeleted" msprop:Generator_UserTableName="dtInventory" msprop:Generator_RowChangedName="dtInventoryRowChanged" msprop:Generator_RowEvArgName="dtInventoryRowChangeEvent" msprop:Generator_RowClassName="dtInventoryRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BorrowCode" msprop:Generator_ColumnVarNameInTable="columnBorrowCode" msprop:Generator_ColumnPropNameInRow="BorrowCode" msprop:Generator_ColumnPropNameInTable="BorrowCodeColumn" msprop:Generator_UserColumnName="BorrowCode" type="xs:string" minOccurs="0" />
+              <xs:element name="BorrowerName" msprop:Generator_ColumnVarNameInTable="columnBorrowerName" msprop:Generator_ColumnPropNameInRow="BorrowerName" msprop:Generator_ColumnPropNameInTable="BorrowerNameColumn" msprop:Generator_UserColumnName="BorrowerName" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemName" msprop:Generator_ColumnVarNameInTable="columnItemName" msprop:Generator_ColumnPropNameInRow="ItemName" msprop:Generator_ColumnPropNameInTable="ItemNameColumn" msprop:Generator_UserColumnName="ItemName" type="xs:string" minOccurs="0" />
+              <xs:element name="QTY" msprop:Generator_ColumnVarNameInTable="columnQTY" msprop:Generator_ColumnPropNameInRow="QTY" msprop:Generator_ColumnPropNameInTable="QTYColumn" msprop:Generator_UserColumnName="QTY" type="xs:string" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:string" minOccurs="0" />
+              <xs:element name="BorrowedDate" msprop:Generator_ColumnVarNameInTable="columnBorrowedDate" msprop:Generator_ColumnPropNameInRow="BorrowedDate" msprop:Generator_ColumnPropNameInTable="BorrowedDateColumn" msprop:Generator_UserColumnName="BorrowedDate" type="xs:string" minOccurs="0" />
+              <xs:element name="ReturnDate" msprop:Generator_ColumnVarNameInTable="columnReturnDate" msprop:Generator_ColumnPropNameInRow="ReturnDate" msprop:Generator_ColumnPropNameInTable="ReturnDateColumn" msprop:Generator_UserColumnName="ReturnDate" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

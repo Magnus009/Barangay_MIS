@@ -111,7 +111,7 @@ Module M_Functions
                     Case GetType(ComboBox)
                         Dim cbo As New ComboBox
                         cbo = ctrl
-                        cbo.SelectedIndex = -1
+                        cbo.SelectedValue = -1
                     Case GetType(CheckBox)
                         Dim chk As New CheckBox
                         chk = ctrl
@@ -160,7 +160,11 @@ Module M_Functions
                 Case GetType(ComboBox)
                     Dim cbo As New ComboBox
                     cbo = ctrl
-                    cbo.SelectedIndex = -1
+                    cbo.SelectedValue = -1
+                Case GetType(CheckBox)
+                    Dim chk As New CheckBox
+                    chk = ctrl
+                    chk.Checked = False
                 Case GetType(GroupBox)
                     groupControls(ctrl)
                 Case Else

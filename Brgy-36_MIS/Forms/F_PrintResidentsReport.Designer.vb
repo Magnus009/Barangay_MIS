@@ -26,6 +26,8 @@ Partial Class F_PrintResidentsReport
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(F_PrintResidentsReport))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnClear = New System.Windows.Forms.Button()
+        Me.chkSenior = New System.Windows.Forms.CheckBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.cboSamahan = New System.Windows.Forms.ComboBox()
         Me.cboCivilStatus = New System.Windows.Forms.ComboBox()
@@ -44,6 +46,8 @@ Partial Class F_PrintResidentsReport
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.btnClear)
+        Me.Panel1.Controls.Add(Me.chkSenior)
         Me.Panel1.Controls.Add(Me.Label17)
         Me.Panel1.Controls.Add(Me.cboSamahan)
         Me.Panel1.Controls.Add(Me.cboCivilStatus)
@@ -61,6 +65,25 @@ Partial Class F_PrintResidentsReport
         Me.Panel1.Size = New System.Drawing.Size(500, 549)
         Me.Panel1.TabIndex = 10
         Me.Panel1.Tag = "Secondary"
+        '
+        'btnClear
+        '
+        Me.btnClear.Location = New System.Drawing.Point(391, 78)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(97, 37)
+        Me.btnClear.TabIndex = 40
+        Me.btnClear.Text = "CLEAR FILTER"
+        Me.btnClear.UseVisualStyleBackColor = True
+        '
+        'chkSenior
+        '
+        Me.chkSenior.AutoSize = True
+        Me.chkSenior.Location = New System.Drawing.Point(280, 20)
+        Me.chkSenior.Name = "chkSenior"
+        Me.chkSenior.Size = New System.Drawing.Size(107, 21)
+        Me.chkSenior.TabIndex = 39
+        Me.chkSenior.Text = "Senior Citizen"
+        Me.chkSenior.UseVisualStyleBackColor = True
         '
         'Label17
         '
@@ -123,7 +146,7 @@ Partial Class F_PrintResidentsReport
         'chkIndigent
         '
         Me.chkIndigent.AutoSize = True
-        Me.chkIndigent.Location = New System.Drawing.Point(376, 20)
+        Me.chkIndigent.Location = New System.Drawing.Point(402, 20)
         Me.chkIndigent.Name = "chkIndigent"
         Me.chkIndigent.Size = New System.Drawing.Size(76, 21)
         Me.chkIndigent.TabIndex = 14
@@ -133,7 +156,7 @@ Partial Class F_PrintResidentsReport
         'chkPWD
         '
         Me.chkPWD.AutoSize = True
-        Me.chkPWD.Location = New System.Drawing.Point(129, 20)
+        Me.chkPWD.Location = New System.Drawing.Point(99, 20)
         Me.chkPWD.Name = "chkPWD"
         Me.chkPWD.Size = New System.Drawing.Size(56, 21)
         Me.chkPWD.TabIndex = 13
@@ -143,7 +166,7 @@ Partial Class F_PrintResidentsReport
         'chkInHabitant
         '
         Me.chkInHabitant.AutoSize = True
-        Me.chkInHabitant.Location = New System.Drawing.Point(236, 20)
+        Me.chkInHabitant.Location = New System.Drawing.Point(172, 20)
         Me.chkInHabitant.Name = "chkInHabitant"
         Me.chkInHabitant.Size = New System.Drawing.Size(92, 21)
         Me.chkInHabitant.TabIndex = 12
@@ -192,7 +215,7 @@ Partial Class F_PrintResidentsReport
         '
         'btnPrint
         '
-        Me.btnPrint.Location = New System.Drawing.Point(374, 496)
+        Me.btnPrint.Location = New System.Drawing.Point(376, 496)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(112, 46)
         Me.btnPrint.TabIndex = 19
@@ -233,4 +256,6 @@ Partial Class F_PrintResidentsReport
     Friend WithEvents btnPrint As System.Windows.Forms.Button
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents cboSamahan As System.Windows.Forms.ComboBox
+    Friend WithEvents chkSenior As System.Windows.Forms.CheckBox
+    Friend WithEvents btnClear As System.Windows.Forms.Button
 End Class

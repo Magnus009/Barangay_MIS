@@ -111,7 +111,7 @@
                                            txtInvolvement.Text, _
                                            chkResident.Checked, _
                                            txtContactNo.Text, _
-                                           "•••", _
+                                            "•••", _
                                            txtStatement.Text, _
                                            txtResidentID.Text}
             Return peopleInvolved
