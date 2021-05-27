@@ -50,9 +50,9 @@
 
             dlg = MsgBox("Do you want this residence to occupy this Lot?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "LOT OWNER")
             If dlg = Windows.Forms.DialogResult.Yes Then
-                Dim strLotName As String = lblLot.Text.Replace("LOT ", "")
-                Dim strLotID As String = Strings.Left(strLotName, InStr(strLotName, "-") - 1)
-                Dim strLotNo As String = StrReverse(Strings.Left(StrReverse(strLotName), InStr(strLotName, "-") - 1))
+                Dim strLotName As String() = lblLot.Text.Replace("LOT ", "").Split("-")
+                Dim strLotID As String = strLotName(0)
+                Dim strLotNo As String = strLotName(1)
 
                 strQuery = "INSERT INTO Mapping (" + vbCrLf
                 strQuery += "LotID, " + vbCrLf

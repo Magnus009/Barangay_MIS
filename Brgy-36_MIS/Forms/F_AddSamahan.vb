@@ -2,8 +2,8 @@
     Dim strID As String
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Try
-            strRequire = "" : blnRequired = False
             If fn_CheckRequire(Me) Then
+                strRequire = "" : blnRequired = False
                 Throw New Exception("Please input on the following field(s):" + vbCrLf + strRequire)
             Else
                 If btnSave.Text = "&SAVE" Then

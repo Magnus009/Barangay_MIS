@@ -16,8 +16,8 @@
             Dim strFile As String
             Dim intDocNo As Integer
 
-            strRequire = "" : blnRequired = False
             If fn_CheckRequire(Me) Then
+                strRequire = "" : blnRequired = False
                 Throw New Exception("Please input on the following field(s):" + vbCrLf + strRequire)
             ElseIf cboStatus.SelectedValue = -1 Then
                 Throw New Exception("Please Choose Case Status!")

@@ -209,7 +209,7 @@ Public Class _mdi_MIS
     End Sub
 
     Private Sub mnuMapping_Click(sender As Object, e As EventArgs) Handles mnuMapping.Click
-        Dim frmMapping As New F_BarangayMap
+        Dim frmMapping As New F_Mapping
 
         frmMapping.MdiParent = Me
         frmMapping.Show()

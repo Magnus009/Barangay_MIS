@@ -73,8 +73,8 @@
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Try
             If fn_CheckRequire(Me) Then
-                MsgBox("Please complete the required fields(*):" & vbCrLf & strRequire, MsgBoxStyle.Exclamation, "Required Items")
                 strRequire = "" : blnRequired = False
+                MsgBox("Please complete the required fields(*):" & vbCrLf & strRequire, MsgBoxStyle.Exclamation, "Required Items")
             Else
 
                 Dim strOfficialCode As String

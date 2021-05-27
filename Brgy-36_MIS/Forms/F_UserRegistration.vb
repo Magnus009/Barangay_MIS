@@ -49,6 +49,7 @@
             Dim strID As String
 
             If fn_CheckRequire(Me) Then
+                strRequire = "" : blnRequired = False
                 MsgBox("Please fill out all the required field" & vbCrLf & strRequire, vbOKOnly + vbExclamation)
             Else
                 strQuery = ""

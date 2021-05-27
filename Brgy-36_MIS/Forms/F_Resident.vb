@@ -43,8 +43,8 @@
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Try
             If fn_CheckRequire(Me) Then
+                strRequire = "" : blnRequired = False
                 MsgBox("Please complete the required fields(*):" & vbCrLf & strRequire, MsgBoxStyle.Exclamation, "Required Items")
-                strRequire = ""
             Else
                 'Insert Resident Information
                 Dim strResidentCode As String

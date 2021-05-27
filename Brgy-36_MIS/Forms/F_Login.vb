@@ -6,8 +6,8 @@
     Private Sub userLogin()
         Dim dtUser As New DataTable
 
-        strRequire = "" : blnRequired = False
         If fn_CheckRequire(Me) Then
+            strRequire = "" : blnRequired = False
             MsgBox("Please input users:" + vbCrLf + strRequire, MsgBoxStyle.Exclamation, "LOGIN")
         Else
             strQuery = "SELECT * FROM M_UserAccounts" & vbCrLf
